@@ -27,13 +27,14 @@
   <!-- اسپلش -->
   <section id="view-splash" class="view active">
     <div class="splash">
-      <div class="luminous">
-        <p class="basmala">بسم الله الرحمن الرحیم</p>
-        <p class="verse">ادْخُلُوهَا بِسَلَامٍ آمِنِينَ</p>
-        <p class="small">به سلامت و امنیت وارد شوید</p>
+      <div class="salawat-card">
+        <span class="spark tl">✦</span><span class="spark tr">✦</span><span class="spark bl">✦</span><span class="spark br">✦</span>
+        <p class="salawat-rose">🌹</p>
+        <h1 class="salawat-cost">هزینهٔ استفاده از این اپلیکیشن:<b>یک صلوات</b></h1>
+        <p class="salawat-gift">هدیه به روح ملکوتی حضرت نرجس خاتون<br>سلام‌الله علیها</p>
+        <p class="salawat-arabic">اللهم صل علی محمد و آل محمد و عجل فرجهم</p>
+        <button class="btn salawat-btn" onclick="go('welcome')">🌹 صلوات فرستادم؛ ورود به راهنما</button>
       </div>
-      <p>راهنمای زایرین عمار غزنه</p>
-      <button class="btn" onclick="go('welcome')">ورود به راهنما</button>
     </div>
   </section>
 
@@ -54,6 +55,10 @@
       <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
       <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
       <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
+    </div>
+    <button class="btn install-btn" id="install-btn" style="margin-top:13px">📲 نصب اپ (دانلود و کار آفلاین)</button>
+    <div class="box small" id="install-help" style="display:none">
+      <p>برای نصب دستی: در مرورگر اندروید از منوی ⋮ گزینهٔ «افزودن به صفحهٔ اصلی» را بزن؛ در آیفون از دکمهٔ اشتراک Safari گزینهٔ «Add to Home Screen» را انتخاب کن. پس از نصب، اپ بدون اینترنت هم باز می‌شود.</p>
     </div>
   </section>
 
@@ -141,7 +146,7 @@
         <p>شماره تماس: <a href="tel:+93799854321" dir="ltr">+93799854321</a></p>
         <p>واتساپ: <a href="https://wa.me/93799854321" target="_blank" rel="noopener">واتساپ عمار غزنه</a></p>
         <p>تلگرام: <a href="https://t.me/+93799854321" target="_blank" rel="noopener">تلگرام عمار غزنه</a></p>
-        <p>فیسبوک: <span class="visa-slot">[لینک در زمان انتشار درج می‌شود]</span></p>
+        <p>فیسبوک: <a href="https://facebook.com/100006072485713" target="_blank" rel="noopener">فیسبوک عمار غزنه</a></p>
       </div>
     </section>
     <div class="box visa-only">
@@ -158,7 +163,15 @@
       <p>شماره تلفن: <a href="tel:+93799854321" dir="ltr">+93799854321</a></p>
       <p>واتساپ: <a href="https://wa.me/93799854321" target="_blank" rel="noopener">واتساپ عمار غزنه</a></p>
       <p>تلگرام: <a href="https://t.me/+93799854321" target="_blank" rel="noopener">تلگرام عمار غزنه</a></p>
-      <p>فیسبوک: <span class="small">[لینک در زمان انتشار درج می‌شود]</span></p>
+      <p>فیسبوک: <a href="https://facebook.com/100006072485713" target="_blank" rel="noopener">فیسبوک عمار غزنه</a></p>
+    </div>
+    <div class="box">
+      <h3>ما را دنبال کنید</h3>
+      <p class="small">کانال واتساپ و پیج فیسبوک عمار غزنه:</p>
+      <div class="socbtns">
+        <a class="socbtn wa" href="https://chat.whatsapp.com/G9LGHLvSq4rHlWzmwR2P99?s=cl&p=a&iam=2" target="_blank" rel="noopener">کانال واتساپ عمار غزنه ↗</a>
+        <a class="socbtn fb" href="https://www.facebook.com/share/p/19o1zptuzr/" target="_blank" rel="noopener">پیج فیسبوک عمار غزنه ↗</a>
+      </div>
     </div>
     <p class="small">این اپ هم خدماتی است و هم تبلیغات موقّر؛ بدون فشار و فریب.</p>
   </section>
@@ -180,7 +193,6 @@
     <button class="btn small gold" style="margin-bottom:13px" onclick="openChecklist()">🎒 چک‌لیست وسایل پیش از سفر</button>
     <div id="section-congrats"></div>
     <div class="path" id="section-path"></div>
-    <div class="steplist" id="section-list"></div>
     <div id="section-reports"></div>
     <button class="btn gold" onclick="go('booklet')">📖 کتابچهٔ خاطرات من</button>
   </section>
@@ -195,6 +207,18 @@
       </span>
     </div>
     <div id="step-detail"></div>
+  </section>
+
+  <!-- جزئیات عمل معروف -->
+  <section id="view-amal" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <div id="amal-detail"></div>
   </section>
 
   <!-- کتابچهٔ خاطرات -->
@@ -238,6 +262,9 @@ const CONTACTS = {
 <script src="src/data/tours.js"></script>
 <script src="src/data/sources.js"></script>
 <script src="src/data/chatbot-kb.js"></script>
+<script src="src/data/amal.js"></script>
+<script src="src/data/literary.js"></script>
+<script src="src/data/banners.js"></script>
 <script src="src/js/utils.js"></script>
 <script src="src/js/state.js"></script>
 <script src="src/js/router.js"></script>
@@ -252,6 +279,7 @@ const CONTACTS = {
 <script src="src/js/icons.js"></script>
 <script src="src/js/render.js"></script>
 <script src="src/js/main.js"></script>
+<script src="src/js/install.js"></script>
 <script src="src/js/chatbot.js"></script>
 </body>
 </html>

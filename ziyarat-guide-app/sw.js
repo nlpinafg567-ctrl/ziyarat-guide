@@ -2,7 +2,7 @@
    کش پوستهٔ اپ برای کارکرد آفلاین. بدون وابستگی خارجی در زمان اجرا؛
    فقط لینک‌های تور مجازی بیرونی‌اند و آفلاین باز نمی‌شوند.
    با هر انتشار، نسخهٔ کش (CACHE) بالا می‌رود. */
-const CACHE = "zg-v2";
+const CACHE = "zg-v4";
 const FILES = [
   "./index.html",
   "./manifest.json",
@@ -12,6 +12,21 @@ const FILES = [
   "./assets/fonts/vazirmatn-latin.woff2",
   "./assets/logo-ammar.png",
   "./assets/qr-whatsapp.png",
+  "./assets/banners/kaaba.jpg",
+  "./assets/banners/nabawi.jpg",
+  "./assets/banners/miqat.jpg",
+  "./assets/banners/mina.jpg",
+  "./assets/banners/arafat.jpg",
+  "./assets/banners/ali.jpg",
+  "./assets/banners/kufa.jpg",
+  "./assets/banners/abbas.jpg",
+  "./assets/banners/husayn.jpg",
+  "./assets/banners/kazimayn.jpg",
+  "./assets/banners/askari.jpg",
+  "./assets/banners/reza.jpg",
+  "./assets/banners/masumeh.jpg",
+  "./assets/banners/shahcheragh.jpg",
+  "./assets/banners/abdolazim.jpg",
   "./src/css/variables.css",
   "./src/css/fonts.css",
   "./src/css/base.css",
@@ -32,6 +47,9 @@ const FILES = [
   "./src/data/tours.js",
   "./src/data/sources.js",
   "./src/data/chatbot-kb.js",
+  "./src/data/amal.js",
+  "./src/data/literary.js",
+  "./src/data/banners.js",
   "./src/js/utils.js",
   "./src/js/state.js",
   "./src/js/router.js",
@@ -46,6 +64,7 @@ const FILES = [
   "./src/js/icons.js",
   "./src/js/render.js",
   "./src/js/main.js",
+  "./src/js/install.js",
   "./src/js/chatbot.js"
 ];
 self.addEventListener("install", (e) => {
