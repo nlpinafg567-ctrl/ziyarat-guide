@@ -62,6 +62,10 @@
   border-radius:var(--r-13);border:1px solid var(--gold);
   box-shadow:0 6px 14px rgba(13,59,46,.18)}
 .photocredit{margin:var(--sp-5) 0 0;font-size:var(--fs-13);color:#8a8378;text-align:end}
+/* نقشهٔ عراق در رأس بخش عتبات: بدون برش ۱۶:۹ تا نوشته‌های نقشه نبرند. */
+.photobanner.iraqmap img{aspect-ratio:auto;height:auto}
+/* تصویر مرجع کامل در رأس بخش (مثل اینفوگرافیک حج): بدون برش. */
+.photobanner.fullimg img{aspect-ratio:auto;height:auto}
 .box{border:1px solid #e8e0cf;border-radius:var(--r-13);padding:var(--sp-13);
   margin-bottom:var(--sp-13);background:linear-gradient(180deg,#ffffff,var(--white) 70%,#fdf8ea);
   box-shadow:0 4px 10px rgba(13,59,46,.08),inset 0 1px 0 rgba(255,255,255,1)}
@@ -92,6 +96,7 @@
   background:radial-gradient(circle at 50% 20%,#fff8e6,var(--cream) 75%);text-align:center;
   box-shadow:0 10px 22px rgba(197,164,109,.30),inset 0 1px 0 rgba(255,255,255,1)}
 .summary-card h3{color:var(--emerald);margin:0 0 var(--sp-8);font-weight:900}
+.summary-card img.stepinfo{width:100%;height:auto;border-radius:var(--r-13);border:2px solid var(--gold);margin:var(--sp-8) 0}
 /* کارت‌های لینک تور مجازی — فقط CSS؛ متن و آدرس لینک‌ها عیناً می‌مانند.
    هر لینک یک کارت شیک است: نشان پخش طلایی، عنوان پررنگ زمردی، نشان رفتن
    در انتها. یادداشت لینک کتاب درایو (در انتظار تأیید مالک) لینک نیست و
