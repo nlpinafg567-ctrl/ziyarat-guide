@@ -81,16 +81,12 @@ const VIRTUAL_TOURS = {
   madina: [
     { type: "تور", title: "حرم رسول الله و بقیع — زیارت مجازی (پانومن)", url: "https://www.panoman.ir/projects/rasolallah/1.html" },
     { type: "تور", title: "مسجد النبی — تور رسمی مجمع طبع قرآن ملک فهد", url: "https://vr.qurancomplex.gov.sa/msq/" },
-    { type: "تور", title: "مسجد النبی — تور سه‌بعدی (غیررسمی)", url: "https://www.3dmekanlar.com/en/prophets-mosque.html" },
-  ],
-  miqat: [
-    { type: "تور", title: "میقات ذوالحلیفه — تور سه‌بعدی مسجد میقات (فقط میقات مدینه)", url: "https://www.3dmekanlar.com/en/dhul-hulayfah-masjid.html" }
   ],
   tawaf: [
     { type: "تور", title: "طواف — تور مجازی مسجد الحرام و کعبه (IRpano)", url: "https://irpano.ir/ap/masjed/Mecca/" },
   ],
   mina: [
-    { type: "تور", title: "منا — تور سه‌بعدی", url: "https://www.3dmekanlar.com/en/mina.html" }
+    { type: "تور", title: "تور مجازی منطقهٔ منا", url: "https://www.3dmekanlar.com/en/mina.html" }
   ],
   arafat: [
     { type: "تور", title: "عرفات — تور سه‌بعدی", url: "https://www.3dmekanlar.com/en/arafat-1.html" }
