@@ -40,3 +40,6 @@ p{font-size:var(--fs-16);margin:var(--sp-8) 0}
   .view.active,.salawat-card,.about-banner::after,.stepbanner::after{animation:none!important}
   .about-banner::after,.stepbanner::after{display:none}
 }
+
+/* برچسب کنترل قلم (۴ نوامبر ۲۰۲۶): «متن» کنار الف−/الف+ */
+.fontlabel{align-self:center;font-size:var(--fs-13);color:var(--charcoal);opacity:.7}

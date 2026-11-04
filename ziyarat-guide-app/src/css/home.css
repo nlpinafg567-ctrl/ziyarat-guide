@@ -36,3 +36,10 @@
 
 /* ---------- دکمهٔ نصب اپ (مورد ۲۸) ---------- */
 .install-btn{width:100%}
+
+/* کارت ادامهٔ سفر، شمارش معکوس و جست‌وجو (۴ نوامبر ۲۰۲۶) */
+.continue-card{width:100%;text-align:right;padding:var(--sp-13);border:1px solid var(--gold);border-radius:var(--r-13);background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
+.countdown{font-weight:bold;color:var(--emerald)}
+.search-box{margin-top:var(--sp-13)}
+.search-box input{width:100%;height:34px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
+.search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:8px 13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}

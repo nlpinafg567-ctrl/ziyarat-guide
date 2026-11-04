@@ -30,3 +30,6 @@
   padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
 .chat-form button{height:34px;border:none;border-radius:var(--r-8);padding:0 21px;
   background:var(--emerald);color:#fff;font-size:var(--fs-16);cursor:pointer}
+
+/* دکمهٔ شناور روی محتوا ننشیند: ته صفحه به اندازهٔ دکمه + حاشیه خالی است */
+.app{padding-bottom:84px}
