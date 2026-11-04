@@ -93,11 +93,17 @@ function renderSection() {
   } else {
     $("section-congrats").innerHTML = "";
   }
-  $("section-scene").innerHTML = sectionScene(key);
+  $("section-scene").innerHTML = (key === "atabat" ? `<div class="photobanner iraqmap"><img src="assets/iraq-pilgrimage-map.jpg" alt="نقشهٔ اماکن زیارتی عراق" loading="lazy"></div>` : key === "hajj" ? `<div class="photobanner fullimg"><img src="assets/hajj-tamattu-hamshahri.jpg" alt="اینفوگرافیک مناسک حج" loading="lazy"><p class="photocredit">منبع تصویر: همشهری آنلاین</p></div><div class="photobanner fullimg"><img src="assets/hajj-tamattu-local.png" alt="اینفوگرافیک بومی مناسک حج تمتع، ۱۹ گام" loading="lazy"><p class="photocredit">اینفوگرافیک بومی عمار غزنه — خلاصهٔ آموزشی ۱۹ گام حج</p></div>` : "") + sectionScene(key);
+  if (key === "umrah") {
+    $("section-scene").innerHTML += `<div class="box gold"><h3>میقات‌های آغاز عمره</h3><p>پنج میقات اصلی: ذوالحلیفه (مسجد شجره، راه مدینه)، وادی عقیق (راه عراق و نجد)، جحفه (راه شام و مصر و مغرب؛ امروز از رابغِ نزدیک آن محرم می‌شوند)، یلملم (راه یمن)، قرن المنازل (راه طائف).</p><p>عمرهٔ تمتع فقط از پنج میقات یا محاذات آن‌هاست؛ عمرهٔ مفردهٔ ساکن مکه از ادنی‌الحل (نزدیک‌ترین نقطهٔ خارج از حرم، مانند تنعیم) است. ساکن جده که جده عرفاً مقر اوست، از خود جده محرم می‌شود؛ مسافرِ رسیده به جده فقط با نذر و در صورت احراز محاذات، از جده محرم می‌شود.</p><p class="small">📖 منابع: مناسک حج آیت‌الله العظمی سیستانی و مناسک حج آیت‌الله العظمی فیاض؛ تفصیل در سند میقات‌های اپ.</p></div>`;
+  }
+  if (key === "hajj") {
+    $("section-scene").innerHTML += `<div class="box gold"><h3>چک‌لیست احکام اصلی حج تمتع (۱۳ عمل، نزد آیت‌الله العظمی سیستانی)</h3><p>۱ احرام از مکه (رکن) ۲ وقوف عرفات (رکن) ۳ وقوف مشعر (رکن) ۴ رمی عقبه ۵ قربانی ۶ حلق یا تقصیر ۷ طواف حج (رکن) ۸ نماز طواف ۹ سعی (رکن) ۱۰ طواف نساء ۱۱ نماز طواف نساء ۱۲ بیتوتهٔ منا در شب‌های ۱۱ و ۱۲ ۱۳ رمی سه‌گانه در روزهای ۱۱ و ۱۲.</p><p>ترتیب روز عید: رمی، قربانی، حلق یا تقصیر، طواف و نماز و سعی، طواف نساء، بازگشت به منا. زائر افغانستانی که فاصله‌اش بیش از ۸۸ کیلومتر است، وظیفه‌اش حج تمتع است.</p><p class="small">📖 منابع: مناسک حج آیت‌الله العظمی سیستانی و مناسک حج آیت‌الله العظمی فیاض؛ اختلاف‌های مشعر، رمی روز ۱۳ و حلق سال‌اولی در چت‌بات اپ آمده است.</p></div>`;
+  }
   $("section-progress").style.width = (total ? Math.round(done * 100 / total) : 0) + "%";
   $("section-progress-text").textContent = done > 0 ? `${fa(done)} از ${fa(total)} مرحله تمام شده` : `${fa(total)} مرحله در پیش است`;
   $("section-path").innerHTML = sectionPathHTML(key, sec, cur);
-  $("section-reports").innerHTML = sectionReportsHTML(key);
+  $("section-reports").innerHTML = sectionReportsHTML(key) + sectionLinksHTML(key);
 }
 
 /* ---------- جزئیات مرحله ---------- */

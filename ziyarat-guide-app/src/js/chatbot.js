@@ -25,7 +25,7 @@ const CHATBOT_CITY_FA = { mecca: "مکه", madina: "مدینه", najaf: "نجف"
 const CHATBOT_SECTION_TITLES = { umrah: "حج عمره", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران" };
 
 function chatbotNormalize(s) {
-  return (s || "").replace(/[\u064B-\u0652\u0670]/g, "").replace(/ـ/g, "")
+  return (s || "").replace(/[\u064B-\u0655\u0670]/g, "").replace(/ـ/g, "")
     .replace(/[يى]/g, "ی").replace(/ك/g, "ک").replace(/ة/g, "ه").replace(/[ؤإأآ]/g, "ا")
     .replace(/[۰-۹]/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹".indexOf(d); })
     .replace(/[؟?،؛:.()«»""''\/\\-]/g, " ").replace(/‌/g, "").replace(/\s+/g, " ").trim();
@@ -86,6 +86,9 @@ function chatbotRetrieve(question, limit) {
   const scored = chatbotBuildIndex().map(function (e) {
     const titleT = chatbotTokens(e.title), keyT = chatbotTokens(e.keys || ""), textT = chatbotTokens(e.text);
     let score = 0;
+    /* تطبیق کامل عنوان: اگر همهٔ واژه‌های عنوان ورودی در سؤال باشد،
+       همان ورودی جواب آماده است و باید اول بیاید (نه حدس از روی متن). */
+    if (titleT.length >= 2 && titleT.every(function (w) { return uniq.indexOf(w) !== -1; })) score += 6;
     uniq.forEach(function (t) {
       if (titleT.indexOf(t) !== -1) score += 3;
       else if (keyT.indexOf(t) !== -1) score += 2;
@@ -101,7 +104,7 @@ function chatbotStatus() { return CHATBOT_PROXY_URL ? "proxy" : "no-proxy"; }
 
 /* ---------- رابط کاربری (فقط در مرورگر) ---------- */
 if (typeof document !== "undefined") {
-  const CHATBOT_QUICK = ["طواف نساء چیست؟", "ترتیب زیارت کربلا چگونه است؟", "تور مجازی نجف را بده", "آداب زیارت چیست؟"];
+  const CHATBOT_QUICK = ["طواف نساء چیست؟", "ترتیب زیارت کربلا چگونه است؟", "میقات‌های عمره کدام‌اند؟", "محرمات احرام چند مورد است؟", "اعمال عمرهٔ مفرده چیست؟", "اعمال حج تمتع چیست؟", "دعای طواف چیست؟", "از جده چگونه محرم شوم؟", "تور مجازی نجف را بده", "آداب زیارت چیست؟"];
   function chatbotEl(id) { return document.getElementById(id); }
   function chatbotEscape(s) {
     return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

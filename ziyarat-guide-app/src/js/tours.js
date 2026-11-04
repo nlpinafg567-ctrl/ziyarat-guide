@@ -29,6 +29,29 @@ function sectionReportsHTML(key) {
   return html;
 }
 
+/* پیوندهای بیشترِ همین بخش (دستور مالک ۴ نوامبر: لینک‌های فرستاده‌شده
+   در مسیر اصلی خودشان به‌عنوان لینک می‌آیند؛ این‌جا فقط لینک است،
+   نه تبلیغ و نه شمارهٔ تماس آن شرکت‌ها). */
+const SECTION_LINKS = {
+  atabat: [
+    { title: "تور گردشگری جاذبه‌های تاریخی کربلا (مقالهٔ گروه زیارتی مدائن)", url: "https://share.google/hvKgOl1EsxsOqjCrj", type: "مقاله" },
+    { title: "اماکن زیارتی شهرهای عراق (پست اینستاگرام)", url: "https://www.instagram.com/p/DaGP6u2CspP", type: "اینستاگرام" },
+    { title: "اماکن زیارتی شهرهای عراق — کربلا، کاظمین، بغداد و حله (پست اینستاگرام)", url: "https://www.instagram.com/p/DaLNiEcj5V4", type: "اینستاگرام" },
+    { title: "۱۸ مکان زیارتی نجف با جزئیات و نقشه (ویکی پرواز)", url: "https://share.google/qVFVrATXZYPghfZCM", type: "مقاله" }
+  ],
+  umrah: [
+    { title: "زیارت مجازی قبرستان بقیع (پانورامای ۳۶۰)", url: "https://gahar.ir/%d8%b2%db%8c%d8%a7%d8%b1%d8%aa-%d9%85%d8%ac%d8%a7%d8%b2%db%8c-%d9%82%d8%a8%d8%b1%d8%b3%d8%aa%d8%a7%d9%86-%d8%a8%d9%82%db%8c%d8%b9/", type: "مقاله" }
+  ]
+};
+function sectionLinksHTML(key) {
+  const list = (typeof SECTION_LINKS !== "undefined" && SECTION_LINKS[key]) || [];
+  if (!list.length) return "";
+  let html = `<div class="box gold"><h3>🔗 پیوندهای بیشتر</h3><p class="small">لینک بیرونی؛ با لمس، در مرورگر باز می‌شود:</p><ul>`;
+  list.forEach(l => html += `<li><a class="external" href="${l.url}" target="_blank" rel="noopener">${l.title}<span class="ttype">${l.type || "پیوند"}</span></a></li>`);
+  html += `</ul></div>`;
+  return html;
+}
+
 /* کارت لینک کتاب‌های گوگل درایوِ همین زیارت (لینک‌ها عیناً از خودِ درایو).
    بخش ایران کتاب اختصاصی ندارد؛ فقط لینک پوشهٔ منابع نشان داده می‌شود. */
 function driveHTML(key) {
@@ -108,6 +131,56 @@ const INFOGRAPHIC_COVERS = {
   "madina-infographic.html": "madina-photo-3d.png",
   "makka-infographic.html": "makka-photo-3d.png",
   "karbala-infographic.html": "karbala-photo-3d.png"
+};
+/* اینفوگرافیک تصویری هر مرحله برای کارت ۶ (خلاصهٔ مرحله) — ۴ نوامبر ۲۰۲۶،
+   فقط محلی، بدون انتشار: کلید = همان stepKey خلاصه (مثل atabat-1)،
+   مقدار = فایل تصویر در assets/infographics. هر مرحله فقط پس از تأیید
+   سبک نمونهٔ نجف و با یک پرامپت کامل جداگانه ساخته و با چشم‌خوانی قبول
+   می‌شود؛ مرحلهٔ بدون ورودی، همان خلاصهٔ متنی پیشین را نشان می‌دهد. */
+const STEP_IMAGES = {
+  "atabat-1": "assets/infographics/atabat-1.png",
+  "atabat-2": "assets/infographics/atabat-2.png",
+  "atabat-3": "assets/infographics/atabat-3.png",
+  "atabat-4": "assets/infographics/atabat-4.png",
+  "atabat-5": "assets/infographics/atabat-5.png",
+  "atabat-6": "assets/infographics/atabat-6.png",
+  "atabat-7": "assets/infographics/atabat-7.png"
+};
+/* تصاویر افزودهٔ کارت ۶ (پس از تصویر مرحله می‌آیند) — مثل اینفوگرافیک
+   «آثار و برکات زیارت امام حسین (ع)» که مالک ۴ نوامبر فرستاد. */
+const STEP_EXTRA_IMAGES = {
+  "atabat-1": ["assets/ahlolbait-ali.jpg"],
+  "atabat-2": ["assets/ahlolbait-koofeh.jpg", "assets/ahlolbait-sahleh.jpg"],
+  "atabat-3": ["assets/ahlolbait-abbas.jpg"],
+  "atabat-5": ["assets/hussain-ziyarat-blessings.jpg", "assets/ahlolbait-hossein.jpg"],
+  "atabat-21": ["assets/ahlolbait-kazemaiyn.jpg"],
+  "atabat-22": ["assets/ahlolbait-asqareiean.jpg"],
+  "iran-1": ["assets/reza-ziyarat-blessings.jpg", "assets/reza-ziyarat-etiquettes.jpg"],
+  "iran-2": ["assets/masoumeh-virtues-tebyan.jpg", "assets/masoumeh-greatness-tebyan.jpg"],
+  "iran-4": ["assets/abdolazim-bio-tasnim.jpg", "assets/abdolazim-letter-ahlolbait.jpg", "assets/abdolazim-1000years-iqna.jpg"],
+  "umrah-2": ["assets/nabawi-map.jpg", "assets/baghi-map.jpg"],
+  "umrah-3": ["assets/muharramat-umrah.png"]
+};
+/* اعتبار تصاویر افزودهٔ کارت ۶ — کلید = همان مسیر تصویر. */
+const STEP_EXTRA_CREDITS = {
+  "assets/hussain-ziyarat-blessings.jpg": "منبع تصویر: خبرگزاری موج",
+  "assets/reza-ziyarat-blessings.jpg": "منبع تصویر: تبیان",
+  "assets/reza-ziyarat-etiquettes.jpg": "منبع تصویر: آستان قدس رضوی",
+  "assets/abdolazim-1000years-iqna.jpg": "منبع تصویر: ایکنا",
+  "assets/masoumeh-virtues-tebyan.jpg": "منبع تصویر: تبیان",
+  "assets/masoumeh-greatness-tebyan.jpg": "منبع تصویر: تبیان",
+  "assets/abdolazim-bio-tasnim.jpg": "منبع تصویر: خبرگزاری تسنیم",
+  "assets/abdolazim-letter-ahlolbait.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/nabawi-map.jpg": "منبع تصویر: محمدامین عابدینی",
+  "assets/baghi-map.jpg": "منبع تصویر: حجج",
+  "assets/muharramat-umrah.png": "اینفوگرافیک آموزشی عمار غزنه — منابع: مناسک آیت‌الله العظمی سیستانی و آیت‌الله العظمی فیاض",
+  "assets/ahlolbait-ali.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-koofeh.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-sahleh.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-abbas.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-hossein.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-kazemaiyn.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/ahlolbait-asqareiean.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت"
 };
 function infographicHTML(key, s) {
   let links = (typeof STEP_INFOGRAPHICS !== "undefined" && STEP_INFOGRAPHICS[key + "-" + s.id]) || [];
