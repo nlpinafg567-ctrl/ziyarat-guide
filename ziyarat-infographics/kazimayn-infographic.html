@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کاظمین — نقشهٔ حرم امام کاظم (ع) و امام جواد (ع) | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:17px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot .applink{display:inline-block;margin-top:14px;background:#C5A46D;color:#0D3B2E;font-size:21px;font-weight:700;padding:12px 32px;border-radius:34px;text-decoration:none;box-shadow:0 6px 0 #8C7440}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot a{color:#C5A46D}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+.foot .applink{font-size:18px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>کاظمین</h1>
+    <div class="sub">نقشهٔ حرم امام موسی کاظم (ع) و امام جواد (ع) و بزرگان آن</div>
+    <div class="intro">روی تصویر هر مقام بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.</div>
+    <div class="geo">مختصات مجموعهٔ حرم: ۳۳٫۳۸۰۰۰° شمالی، ۴۴٫۳۳۸۰۶° شرقی (ویکی‌پدیای انگلیسی، Al-Kadhimiya Mosque)؛ مختصات در سطح مقام منتشر نشده است.</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ حرم کاظمین با جای مقام‌ها"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FC3D4"/><stop offset="1" stop-color="#4E7D94"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نقشهٔ حرم کاظمین — شمال بالا</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<line x1="492" y1="140" x2="492" y2="170" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<g><rect x="380" y="80" width="224" height="60" rx="10" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 452 80 Q 452 52 492 52 Q 532 52 532 80 Z" fill="url(#blue)"/><rect x="488" y="36" width="8" height="16" rx="4" fill="url(#goldD)"/></g>
+<text class="lbl" x="620" y="108" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">مسجد صفوی</text><text class="lbl" x="620" y="132" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">شمال حرم، گنبد کاشی‌کاری کوتاه</text>
+<rect x="172" y="170" width="640" height="600" fill="#F3EAD0" stroke="#C5A46D" stroke-width="4"/>
+<rect x="392" y="570" width="200" height="60" fill="#EFE6CC" stroke="#C5A46D" stroke-width="2"/>
+<rect x="332" y="370" width="60" height="200" fill="#EFE6CC" stroke="#C5A46D" stroke-width="2"/>
+<rect x="592" y="370" width="60" height="200" fill="#EFE6CC" stroke="#C5A46D" stroke-width="2"/>
+<text x="492" y="605" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">رواق جنوبی (باب‌القریش)</text>
+<g class="mq" data-open="1" role="button" tabindex="0" aria-label="حرم امام موسی کاظم و امام جواد"><circle class="hit" cx="492" cy="450" r="130"/><g class="dep"><rect x="392" y="370" width="200" height="200" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><rect x="452" y="430" width="80" height="90" fill="#F7F3EA" stroke="#C5A46D" stroke-width="3"/><line x1="452" y1="475" x2="532" y2="475" stroke="#C5A46D" stroke-width="2"/><path d="M 392 370 Q 392 300 442 300 Q 492 300 492 370 Z" fill="url(#gold)"/><path d="M 492 370 Q 492 300 542 300 Q 592 300 592 370 Z" fill="url(#gold)"/><rect x="438" y="272" width="8" height="28" rx="4" fill="url(#goldD)"/><circle cx="442" cy="270" r="8" fill="url(#gold)"/><rect x="538" y="272" width="8" height="28" rx="4" fill="url(#goldD)"/><circle cx="542" cy="270" r="8" fill="url(#gold)"/><ellipse cx="420" cy="330" rx="14" ry="26" fill="#FFF" opacity=".28"/><ellipse cx="520" cy="330" rx="14" ry="26" fill="#FFF" opacity=".28"/><rect x="372" y="340" width="12" height="230" fill="url(#goldD)"/><path d="M 366 340 Q 366 326 378 326 Q 390 326 390 340 Z" fill="url(#gold)"/><rect x="600" y="340" width="12" height="230" fill="url(#goldD)"/><path d="M 594 340 Q 594 326 606 326 Q 618 326 618 340 Z" fill="url(#gold)"/><rect x="384" y="300" width="10" height="70" fill="url(#goldD)"/><rect x="590" y="300" width="10" height="70" fill="url(#goldD)"/></g><circle class="bdg" cx="492" cy="370" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="492" y="377" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱</text><text x="492" y="455" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="700" fill="#0D3B2E">جواد (ع)</text><text x="492" y="500" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="700" fill="#0D3B2E">کاظم (ع)</text><text x="492" y="418" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="14" fill="#F7F3EA">یک ضریح برای دو قبر</text><text x="492" y="552" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#F7F3EA">روضه ۴۰×۳۰ متر</text></g>
+<g class="mq" data-open="2" role="button" tabindex="0" aria-label="خواجه نصیرالدین طوسی"><circle class="hit" cx="362" cy="465" r="40"/><g class="dep"><rect x="340" y="445" width="44" height="40" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 352 485 L 352 468 Q 352 458 362 458 Q 372 458 372 468 L 372 485 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="362" cy="445" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="362" y="452" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۲</text></g>
+<text class="lbl" x="324" y="470" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">خواجه نصیر</text>
+<g class="mq" data-open="3" role="button" tabindex="0" aria-label="شیخ مفید"><circle class="hit" cx="622" cy="440" r="40"/><g class="dep"><rect x="600" y="420" width="44" height="40" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 612 460 L 612 443 Q 612 433 622 433 Q 632 433 632 443 L 632 460 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="622" cy="420" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="622" y="427" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۳</text></g>
+<text class="lbl" x="660" y="445" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">شیخ مفید</text>
+<g class="mq" data-open="4" role="button" tabindex="0" aria-label="ابن قولویه"><circle class="hit" cx="622" cy="520" r="40"/><g class="dep"><rect x="600" y="500" width="44" height="40" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 612 540 L 612 523 Q 612 513 622 513 Q 632 513 632 523 L 632 540 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="622" cy="500" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="622" y="507" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۴</text></g>
+<text class="lbl" x="660" y="525" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">ابن قولویه</text>
+<g><rect x="799" y="436" width="26" height="110" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text class="lbl" x="835" y="480" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">باب المراد</text></g>
+<g><rect x="447" y="757" width="90" height="26" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text x="492" y="800" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">باب القبله</text></g>
+<text class="lbl" x="190" y="750" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">صحن ۳۷۰×۳۵۰ متر</text>
+<line x1="812" y1="740" x2="835" y2="720" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<g class="mq" data-open="5" role="button" tabindex="0" aria-label="سید مرتضی و سید رضی"><circle class="hit" cx="867" cy="752" r="60"/><g class="dep"><rect x="835" y="690" width="64" height="54" rx="6" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 847 690 Q 847 668 867 668 Q 887 668 887 690 Z" fill="url(#gold)"/><rect x="835" y="760" width="64" height="54" rx="6" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 847 760 Q 847 738 867 738 Q 887 738 887 760 Z" fill="url(#gold)"/></g><circle class="bdg" cx="867" cy="745" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="867" y="752" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۵</text></g>
+<text class="lbl" x="867" y="850" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">سید مرتضی و سید رضی</text><text class="lbl" x="867" y="874" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">دو ساختمان جدا — مرتضی جلو، رضی پشت آن</text>
+</svg>
+  </div>
+  <div class="maphint">روی تصویر هر مقام بزنید تا کارتش باز شود. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>حرم امام موسی کاظم (ع) و امام جواد (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> مرکز مجموعه؛ قبر کاظم (ع) در قسمت جنوبی داخل ضریح و قبر جواد (ع) در قسمت شمالی داخل ضریح است.</p><p>روی دو قبر، دو گنبد طلایی دوقلو و چهار مناره است و در داخل حرم، روی دو صندوق خاتم، یک ضریح نقره‌ای قرار دارد. چهار رواق دور روضه است (۴۰ متر شمال تا جنوب و ۳۰ متر شرق تا غرب) و صحن ۳۷۰×۳۵۰ متر حرم را از سه سمت شرقی، غربی و جنوبی فراگرفته است؛ مسجد صفوی در شمال حرم است.</p><p><b class="g">اعمال:</b> زیارت امام کاظم (ع) و زیارت امام جواد (ع) در کتاب دیدار با عترت، فصل کاظمین آمده است.</p><p class="src">استناد: دیدار با عترت، فصل کاظمین ص ۳۸۱/۳۹۰/۴۱۳ (شماره‌های فهرست کتاب چند صفحه جلوتر از سربرگ PDF است)؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>خواجه نصیرالدین طوسی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> رواق غربی، مشهور به رواق خواجه نصیر؛ دو ورودی در دو طرف قبر او به روضه باز می‌شود.</p><p>در ۱۸ ذی‌حجهٔ سال ۶۷۲ هـ.ق در بغداد درگذشت و در مجاورت حرم، درون سردابهٔ قدیمی خالی که گفته می‌شود برای خلیفهٔ عباسی الناصر ساخته شده بود، به خاک سپرده شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این قبر ذکر نشده است.</p><p class="src">استناد: زیارتگاه‌های عراق ج۱، مدخل ۱۱۶.</p></article>
+    <article class="card" data-card="3"><div class="chead"><div class="cnum">۳</div><h3>شیخ مفید</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> رواق شرقی (باب‌المراد)، کنار ابن‌قولویه و نزدیک قبر جواد (ع)؛ دانشنامهٔ اسلامی جای او را در پایین‌پای امام کاظم (ع) در همین رواق ذکر کرده است.</p><p>ابتدا در خانهٔ خود دفن شد و پس از چند سال پیکرش به مقابر قریش منتقل و نزدیک قبر امام جواد (ع) به خاک سپرده شد؛ به‌نقل از شهید اول، کنار قبر شیخ خود ابن‌قولویه است. در شب جمعه، سه روز مانده از رمضان سال ۴۱۳ هـ.ق درگذشت. بر قبر او ضریحی فولادی و کهن است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این قبر ذکر نشده است.</p><p class="src">استناد: زیارتگاه‌های عراق ج۱، مدخل ۱۱۵؛ شهید اول از طریق علامه مجلسی، بحارالانوار ج ۱۰۴.</p></article>
+    <article class="card" data-card="4"><div class="chead"><div class="cnum">۴</div><h3>ابن قولویه (جعفر بن محمد بن قولویهٔ قمی)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> رواق شرقی (باب‌المراد)، در پایین‌پا، کنار شیخ مفید.</p><p>کتاب مشهورش «کامل الزیارات» است. به‌نقل از شهید اول، مرقد مشهور او در کاظمین، کنار قبر شاگردش شیخ مفید است و زیارت می‌شود. در سال ۳۶۸ هـ.ق درگذشت.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این قبر ذکر نشده است.</p><p class="src">استناد: زیارتگاه‌های عراق ج۱؛ دانشنامهٔ اسلامی (شیخ مفید و ابن‌قولویه در رواق باب‌المراد به خاک سپرده شده‌اند).</p></article>
+    <article class="card" data-card="5"><div class="chead"><div class="cnum">۵</div><h3>سید مرتضی و سید رضی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> دو ساختمان جداگانه، بیرون صحن، نزدیک یکدیگر، در جنوب شرقی دیوار صحن؛ یک خیابان بین مرقد آن دو و حرم فاصله انداخته است. به‌نقل پژوهش دانشگاه اهل‌بیت، مرقد سید رضی پشت مرقد سید مرتضی و در خیابان شریف رضی است.</p><p>سید مرتضی (علم‌الهدی) و برادرش سید رضی، گردآورندهٔ نهج‌البلاغه، دو تن از بزرگان امامیه در قرن پنجم هجری‌اند و مرقد هر دو در همین دو ساختمان است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مزارها ذکر نشده است.</p><p class="src">استناد: زیارتگاه‌های عراق ج۱، مدخل‌های ۱۲۰ و ۱۲۱؛ دانشنامهٔ اسلامی؛ راهنمای زیارت کاظمین (ziarat.co: سید مرتضی و سید رضی از بزرگان مدفون در کاظمین)؛ پژوهش دانشگاه اهل‌بیت (مدینة الکاظمین، معلم دینی سیاحی): رضی پشت مرتضی، در خیابان شریف رضی.</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <a class="applink" href="../ziyarat-guide-app/index.html#atabat-21">باز کردن مرحلهٔ کاظمین در اپ ↗</a>
+    <p>حرم و رواق‌ها: زیارتگاه‌های عراق ج۱؛ دیدار با عترت، فصل کاظمین ص ۳۸۱/۳۹۰/۴۱۳ (شماره‌های فهرست کتاب چند صفحه جلوتر از سربرگ PDF است)؛ سیدین: دانشنامهٔ اسلامی و زائر کربلا ص ۴۹.</p>
+    <p>تصحیح نسبت به گزارش پیشین: رواق باب‌المراد شرقی است، نه جنوبی. جهت قبلهٔ اختصاصی حرم در منابع خوانده‌شده مستند نشده است؛ نام باب‌القبله به‌تنهایی دلیل جهت قبله نیست و پیکان قبلهٔ محاسباتی گذاشته نشده است. جهت قبلهٔ شهر بغداد در پایگاه اوقات شرعی آوینی ۲۰ درجه از جنوب به‌سمت غرب آمده است، ولی این عدد شهری، جهت حرم نیست. نقشهٔ رسمی عتبه با جهت‌نما یافت نشد؛ چیدمان بر پایهٔ جهت‌های مستند منابع مکتوب است.</p>
+    <p>ابعاد مستند: صحن ۳۷۰×۳۵۰ متر، روضه ۴۰×۳۰ متر؛ بنای حرم برای خوانایی بزرگ‌تر از مقیاس کشیده شده است و رواق شمالی زیر گنبدها قرار گرفته و جداگانه کشیده نشده است. جای دقیق قبرها در کدام بخش رواق همچنان در منابع نیامده است (فقط پایین‌پا بودن مفید و ابن‌قولویه در رواق شرقی مستند شد). ترتیب نسبی سیدین اکنون مستند است (رضی پشت مرتضی)، ولی جهت قطبی دو ساختمان روی نقشه برچسب نخورده است. شمار دروازه‌های صحن در منابع ناسازگار است: دانشنامهٔ اسلامی هفت در دورهٔ قاجار با فهرست نام‌ها می‌آورد و ویکی‌پدیای عربی و زائرانه ده در کنونی (سه اصلی) می‌آورند و منبع رسمی عتبه عددی نداده است، پس عدد قطعی نوشته نشد. مختصات دانشنامهٔ اسلامی (۳۳٫۳۷۹۷۵° شمالی، ۴۴٫۳۳۹۸۳° شرقی) حدود ۱۶۵ متر شرقی‌تر و ۲۸ متر جنوبی‌تر از مبنای ویکی‌پدیا (۳۳٫۳۸۰۰۰°، ۴۴٫۳۳۸۰۶°) است؛ مرجع نقطه (مرکز یا ورودی) در منابع ذکر نشده است، پس مبنا عوض نشد.</p>
+    <p>تصاویر مقام‌ها بازنمایی سه‌بعدی شماتیک بر پایهٔ ویژگی‌های مستندشان‌اند، نه عکس واقعی؛ عکس‌های اصلی در <a href="https://aljawadain.com/multimedia/images-library/image-albums/single?image_album_id=14">گالری رسمی عتبهٔ کاظمین</a> دیده شود.</p>
+    <p class="note">بدون انسان، بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+})();
+</script>
+</body>
+</html>

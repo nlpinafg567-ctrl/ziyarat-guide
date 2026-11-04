@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مدینه — نقشهٔ مسجد النبی و مکان‌های زیارتی شهر</title>
+<style>
+@font-face{font-family:Vazirmatn;src:url(../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url(../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2) format('woff2');font-weight:700}
+*{box-sizing:border-box}
+body{margin:0;background:#0D3B2E;font-family:Vazirmatn,Tahoma,sans-serif;color:#202823}
+.poster{max-width:1080px;margin:0 auto;background:#F7F3EA;border-radius:21px;overflow:hidden}
+header{background:linear-gradient(160deg,#0D3B2E,#123f31 55%,#0D3B2E);color:#FFFEFB;text-align:center;padding:34px 21px 21px}
+header img{width:104px}
+h1{font-size:52px;margin:13px 0 8px}
+header .sub{font-size:26px;color:#C5A46D;font-weight:700}
+header p{font-size:19px;line-height:1.9;margin:8px 0 0}
+.mapwrap{padding:21px}
+.mapwrap h2{text-align:center;font-size:26px;margin:0 0 8px}
+.mapscroll{overflow-x:auto}
+.mapscroll svg{min-width:984px;display:block}
+.mapscroll svg text{pointer-events:none}
+.mq{cursor:pointer}
+.mq .hit{fill:transparent;stroke:none}
+.mq .bd{fill:#C5A46D;stroke:#fff;stroke-width:3}
+.mq .bn{font-family:Vazirmatn,Tahoma,sans-serif;font-size:21px;font-weight:700;fill:#0D3B2E;pointer-events:none}
+.lbl{font-family:Vazirmatn,Tahoma,sans-serif;font-size:16px;fill:#3D4A44}
+.lblb{font-family:Vazirmatn,Tahoma,sans-serif;font-size:16px;font-weight:700;fill:#0D3B2E}
+.lbls{font-family:Vazirmatn,Tahoma,sans-serif;font-size:14px;fill:#3D4A44}
+.cards{padding:0 21px 21px}
+.card{display:none;background:#FFFEFB;border:1px solid #C5A46D;border-left:8px solid #C5A46D;border-radius:13px;padding:21px;animation:cardIn .38s ease}
+.card.open{display:block}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card .top{display:flex;align-items:center;justify-content:space-between;gap:13px}
+.card h3{font-size:26px;margin:0}
+.card .num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#E8D5A0,#C5A46D);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:21px;color:#0D3B2E;flex:none}
+.close{border:0;border-radius:34px;background:#0D3B2E;color:#FFFEFB;padding:8px 16px;font-family:inherit;font-size:16px;cursor:pointer}
+.card p{font-size:19px;line-height:2;margin:13px 0 0}
+.card .src{font-size:16px;color:#3D4A44;border-top:1px dashed #C5A46D;padding-top:8px}
+.maphint{text-align:center;font-size:17px;color:#3D4A44;padding:0 21px 13px}
+footer{background:#0D3B2E;color:#FFFEFB;text-align:center;padding:21px}
+footer h3{font-size:26px;margin:0 0 13px}
+footer a.applink{display:inline-block;background:linear-gradient(135deg,#E8D5A0,#C5A46D);color:#0D3B2E;text-decoration:none;font-weight:700;font-size:21px;padding:13px 26px;border-radius:34px}
+footer p{font-size:15px;line-height:2;color:#E8E0CC;margin:13px 0 0}
+footer a{color:#C5A46D}
+@media(max-width:480px){h1{font-size:34px}header .sub{font-size:21px}.card p{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="poster">
+<header>
+<img src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+<h1>مدینهٔ منوره</h1>
+<div class="sub">نقشهٔ مسجد النبی (ص) و مکان‌های زیارتی شهر</div>
+<p>روی تصویر هر مکان در نقشه بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.<br>
+مختصات مسجد النبی: ۲۴٫۴۶۸۳۳° شمالی، ۳۹٫۶۱۰۸۳° شرقی (ویکی‌پدیای انگلیسی، سطح خود مسجد)؛ مختصات هر مکان در کارتش با سطحش آمده است. در نقشه عدد فاصلهٔ قطعی نیامده است، چون فاصله‌ها در منابع با نقطهٔ مرجع متفاوت‌اند؛ فاصله‌هایی که نقطهٔ مرجعشان در منبع روشن است (مانند غمامه از باب‌السلام و مباهله از بقیع) در کارت همان مکان آمده است.</p>
+</header>
+<div class="mapwrap">
+<h2>نقشهٔ شهر مدینه — شمال بالا</h2>
+<div class="mapscroll">
+<svg viewBox="0 0 984 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ شهر مدینه و مکان‌های زیارتی">
+<rect x="172" y="170" width="640" height="620" fill="#EFE6CC" stroke="#C5A46D" stroke-width="2"/>
+<circle cx="210" cy="200" r="18" fill="#0D3B2E"/><text x="210" y="207" fill="#C5A46D" text-anchor="middle" font-size="18">↑</text>
+<text class="lblb" x="210" y="230" text-anchor="middle">شمال</text>
+<!-- احد، شمال -->
+<g class="mq" data-open="3"><circle class="hit" cx="492" cy="255" r="45"/><polygon points="412,290 492,210 572,290" fill="#D8CBAF" stroke="#C5A46D" stroke-width="2"/><rect x="462" y="290" width="60" height="18" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="492" cy="240" r="16"/><text class="bn" x="492" y="247" text-anchor="middle">۳</text></g>
+<text class="lblb" x="492" y="330" text-anchor="middle">احد — کوه و مقبرهٔ شهدا</text>
+<!-- قبلتین، شمال غرب -->
+<g class="mq" data-open="5"><circle class="hit" cx="300" cy="300" r="45"/><rect x="270" y="270" width="60" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 270 270 Q 270 240 300 240 Q 330 240 330 270 Z" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="330" cy="275" r="16"/><text class="bn" x="330" y="282" text-anchor="middle">۵</text></g>
+<text class="lblb" x="300" y="350" text-anchor="middle">مسجد قبلتین</text>
+<text class="lbls" x="300" y="372" text-anchor="middle">محراب کنونی رو به مکه</text>
+<!-- مباهله، شمال بقیع -->
+<g class="mq" data-open="8"><circle class="hit" cx="635" cy="300" r="45"/><rect x="605" y="270" width="60" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 605 270 Q 605 245 635 245 Q 665 245 665 270 Z" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="665" cy="275" r="16"/><text class="bn" x="665" y="282" text-anchor="middle">۸</text></g>
+<text class="lblb" x="635" y="250" text-anchor="middle">مسجد مباهله (الاجابه)</text>
+<text class="lbls" x="635" y="350" text-anchor="middle">رواق قبله در جنوب</text>
+<!-- غمامه، غرب -->
+<g class="mq" data-open="7"><circle class="hit" cx="350" cy="430" r="45"/><rect x="320" y="400" width="60" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 320 400 Q 320 375 350 375 Q 380 375 380 400 Z" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="380" cy="405" r="16"/><text class="bn" x="380" y="412" text-anchor="middle">۷</text></g>
+<text class="lblb" x="350" y="485" text-anchor="middle">مسجد غمامه</text>
+<text class="lbls" x="350" y="507" text-anchor="middle">محراب در دیوار جنوبی</text>
+<!-- مسجد النبی، مرکز -->
+<g class="mq" data-open="1"><circle class="hit" cx="492" cy="440" r="55"/><rect x="452" y="400" width="80" height="80" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><path d="M 452 400 Q 452 340 492 340 Q 532 340 532 400 Z" fill="#5B8A6A" stroke="#3D6A4E" stroke-width="2"/><ellipse cx="492" cy="370" rx="14" ry="22" fill="#FFFEFB" opacity=".35"/><rect x="488" y="315" width="8" height="25" fill="#C5A46D"/><circle cx="492" cy="312" r="7" fill="#C5A46D"/><rect x="440" y="360" width="8" height="120" fill="#C5A46D"/><rect x="536" y="360" width="8" height="120" fill="#C5A46D"/><circle class="bd" cx="492" cy="365" r="17"/><text class="bn" x="492" y="372" text-anchor="middle">۱</text></g>
+<text class="lblb" x="492" y="500" text-anchor="middle">مسجد النبی (ص)</text>
+<text class="lbls" x="492" y="522" text-anchor="middle">قبله: جنوب</text>
+<!-- بقیع، شرق -->
+<g class="mq" data-open="2"><circle class="hit" cx="635" cy="435" r="45"/><rect x="590" y="400" width="90" height="70" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><rect x="595" y="420" width="14" height="14" fill="#C5A46D"/><circle cx="625" cy="435" r="3" fill="#9A8F7A"/><circle cx="645" cy="450" r="3" fill="#9A8F7A"/><circle cx="660" cy="430" r="3" fill="#9A8F7A"/><circle class="bd" cx="670" cy="405" r="16"/><text class="bn" x="670" y="412" text-anchor="middle">۲</text></g>
+<text class="lblb" x="635" y="492" text-anchor="middle">بقیع</text>
+<!-- مساجد فتح، شمال غرب (دامنهٔ سلع) -->
+<g class="mq" data-open="6"><circle class="hit" cx="310" cy="570" r="45"/><rect x="270" y="550" width="30" height="25" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><rect x="305" y="545" width="30" height="30" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><rect x="340" y="552" width="30" height="23" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="345" cy="545" r="16"/><text class="bn" x="345" y="552" text-anchor="middle">۶</text></g>
+<text class="lblb" x="310" y="620" text-anchor="middle">مساجد فتح (سبعه)</text>
+<text class="lbls" x="310" y="642" text-anchor="middle">شبستان فتح در جنوب (قبله)</text>
+<!-- قبا، جنوب -->
+<g class="mq" data-open="4"><circle class="hit" cx="492" cy="620" r="45"/><rect x="462" y="590" width="60" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 462 590 Q 462 560 492 560 Q 522 560 522 590 Z" fill="#FFFEFB" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="522" cy="585" r="16"/><text class="bn" x="522" y="592" text-anchor="middle">۴</text></g>
+<text class="lblb" x="492" y="670" text-anchor="middle">مسجد قبا</text>
+<text class="lbls" x="492" y="692" text-anchor="middle">قبله: جنوب غربی</text>
+<!-- فضیخ، شرق قبا — ویرانه -->
+<g class="mq" data-open="9"><circle class="hit" cx="640" cy="655" r="45"/><rect x="610" y="630" width="60" height="50" fill="none" stroke="#9A8F7A" stroke-width="2" stroke-dasharray="6 4"/><line x1="610" y1="655" x2="670" y2="655" stroke="#9A8F7A" stroke-width="2" stroke-dasharray="6 4"/><circle class="bd" cx="670" cy="635" r="16"/><text class="bn" x="670" y="642" text-anchor="middle">۹</text></g>
+<text class="lblb" x="640" y="700" text-anchor="middle">مسجد فضیخ (ویرانه)</text>
+<text class="lbl" x="790" y="760" text-anchor="start">شهر مدینه</text>
+</svg>
+</div>
+</div>
+<p class="maphint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</p>
+<div class="cards">
+<section class="card" data-card="1"><div class="top"><span class="num">۱</span><h3>مسجد النبی (ص)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> مرکز و قلب شهر مدینه. روضهٔ منوره در ناحیهٔ جنوب شرقی مسجد، میان قبر و منبر پیامبر (ص) است؛ طول ۲۲ متر و عرض ۱۵ متر. گنبد سبز در گوشهٔ جنوب شرقی مسجد، بر فراز مرقد است.</p>
+<p><b>معماری:</b> گنبد سبز بلندتر از گنبدهای سفید دیگر، ۱۰ مناره به ارتفاع ۱۰۵ متر، ستون‌های مرمر سفید و گنبدهای متحرک بر بام.</p>
+<p><b>قبله:</b> در آغاز قبلهٔ مسجد به سمت شمال (بیت‌المقدس) بود؛ پس از تغییر قبله، محراب و دیوار قبله در جنوب مسجد است.</p>
+<p><b>اعمال:</b> زیارت پیامبر (ص) و روضهٔ منوره؛ صبح‌ها و بعدازظهرها برای بانوان باز است.</p>
+<p class="src">استناد: ویکی‌پدیای انگلیسی، مدخل Prophet's Mosque؛ ویکی حج، «مسجد النبی». مختصات: ۲۴٫۴۶۸۳۳° شمالی، ۳۹٫۶۱۰۸۳° شرقی (سطح خود مسجد). محدودهٔ دقیق روضه میان علما اختلاف دارد.</p></section>
+<section class="card" data-card="2"><div class="top"><span class="num">۲</span><h3>بقیع (جنت البقیع)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> شرق مسجد النبی، در ناحیهٔ شرقی آن؛ ضلع غربی قبرستان که ورودی اصلی است، پیوسته به صحن حرم نبوی است. درون بقیع: حرم ائمه در سمت غربی و منتهی‌الیه بقیع است؛ چهار امام در کنار هم، و به فاصلهٔ ۲ تا ۳ متری آن‌ها قبر عباس، و در کنار آن قبر فاطمه بنت اسد. گروه‌بندی غربی بقیع («مقابر بنی‌هاشم»): ائمهٔ چهارگانه با عباس و فاطمه بنت اسد در یک نقطه؛ همسران پیامبر در یک نقطه؛ رقیه و ام‌کلثوم در کنار هم؛ عمه‌ها با ام‌البنین در کنار هم.</p>
+<p><b>وضعیت کنونی:</b> فضای باز و ساده، بدون بقعه و گنبد؛ قبرها فقط نشانه‌ای ساده به‌صورت سنگ بالای سر دارند.</p>
+<p><b>اعمال:</b> زیارت ائمهٔ بقیع (ع)؛ قبرستان صبح‌ها پس از نماز صبح و بعدازظهرها پس از نماز عصر باز است.</p>
+<p class="src">استناد: ویکی‌پدیای انگلیسی، مدخل Al-Baqi Cemetery؛ fa.al-shia.org، «تاریخ حرم ائمه بقیع (۱)»؛ wikibin.ir، «بقیع»؛ «راهنمای زائران عمرهٔ مفرده» (۱۳۸۱). مختصات: ۲۴٫۴۶۶۹۴° شمالی، ۳۹٫۶۱۶۳۹° شرقی (سطح خود قبرستان)؛ مختصات جداگانهٔ هر قبر منفرد منتشر نشده است. ترتیب چهار امام در کنار هم و جای دقیق ام‌البنین، ابراهیم و دختران نسبت به گروه بنی‌هاشم به‌صورت نقشه نیامد.</p></section>
+<section class="card" data-card="3"><div class="top"><span class="num">۳</span><h3>احد — حمزه سیدالشهداء و شهدای احد</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> شمال مدینه؛ کوه احد رشته‌کوهی شرق‌به‌غرب به طول ۶ تا ۷٫۵ کیلومتر است. مقبرهٔ شهدا در دامنهٔ کوه احد است (یک منبع «جنوب کوه» و منبع دیگر «سفح غربی» می‌گوید؛ جهت سفح یکسان نیست) و مسجد سیدالشهداءِ نوساز در پای کوه، کنار قبرستان است. موسوعهٔ معالم مدینه (mrsc) مقبره را در سفح غربی کوه و نزدیک ۴ کیلومتر از مسجد النبی می‌آورد، در برابر ۵ کیلومتر برای مقبره در ویکی‌پدیای عربی و ۵٫۵ کیلومتر برای خود کوه در ویکی حج — پس عدد کوه و عدد مقبره یکی نیست.</p>
+<p><b>اعمال:</b> زیارت حمزه سیدالشهداء و شهدای احد.</p>
+<p class="src">استناد: ویکی حج، «کوه احد» و «مقبرهٔ شهدای احد»؛ ویکی‌پدیای انگلیسی، مدخل Mount Uhud. مختصات: کوه احد ۲۴٫۵۱۰۲۸° شمالی، ۳۹٫۶۱۳۸۹° شرقی (سطح خود کوه، نه قبرستان)؛ مسجد سیدالشهداء مجاور ۲۴٫۵۰۳۵۱۶۷° شمالی، ۳۹٫۶۱۲۷۱۶۷° شرقی (سطح مسجد مجاور، نه خود قبرستان)؛ مختصات اختصاصی خود قبرستان منتشر نشده است (جایگزین با قید: شهر مدینه ۲۴٫۴۷°، ۳۹٫۶۱°).</p></section>
+<section class="card" data-card="4"><div class="top"><span class="num">۴</span><h3>مسجد قبا</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> جنوب/جنوب غربی مدینه، منطقهٔ قبا؛ نخستین مسجد ساخته‌شده به دستور پیامبر (ص) و مصداق آیهٔ «لَمَسْجِدٌ أُسِّسَ عَلَى التَّقْوَىٰ» (توبه: ۱۰۸) بنا به روایات بسیار.</p>
+<p><b>قبله:</b> پس از تغییر قبله، پایه‌های قبلهٔ مسجد از بیت‌المقدس به سوی کعبه تغییر کرد؛ سمت قبلهٔ مسجد در ویکی‌بین (به نقل از «آثار اسلامی مکه و مدینه»، جعفریان، ص۲۴۴) «جنوب غربی» ذکر شده است.</p>
+<p><b>معماری:</b> بنای کنونی (بازسازی ۱۴۰۶ ق / ۱۹۸۶ م) با گنبدهای سفید دنده‌دار و نمای سنگ بازالت؛ ۶ گنبد بزرگ به قطر ۱۲ متر و در مجموع ۵۶ گنبد (۶ بزرگ + گنبدهای کوچک)؛ ۴ مناره (ارتفاع مناره ۴۲ متر در برابر ۴۷ متر در منابع ناهماهنگ است).</p>
+<p><b>اعمال:</b> نماز در مسجد قبا؛ شبستان جنوبی، محل نماز پیامبر (ص) نزدیک ستون سوم کنونی است.</p>
+<p class="src">استناد: ویکی حج، «مسجد قبا»؛ ویکی‌پدیای فارسی، «مسجد قبا»؛ ویکی‌بین، «مسجد قبا» (به نقل از آثار اسلامی مکه و مدینه، جعفریان، ص۲۴۴: سمت قبله جنوب غربی)؛ دانشنامهٔ اسلامی: پس از تغییر قبله، پایه‌های قبله از بیت‌المقدس به کعبه تغییر کرد. مختصات: ۲۴٫۴۳۹۱۷° شمالی، ۳۹٫۶۱۷۲۲° شرقی (ویکی‌پدیای انگلیسی، مدخل Quba Mosque؛ سطح خود مسجد). فاصله تا مسجد النبی ۳٫۵ در برابر ۵ در برابر ۶ کیلومتر در منابع ناهماهنگ است.</p></section>
+<section class="card" data-card="5"><div class="top"><span class="num">۵</span><h3>مسجد قبلتین</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> شمال غرب مدینه، بر تپه‌ای از حرهٔ وبره، در تقاطع خیابان خالد بن ولید و خیابان سلطانه، مشرف به وادی عقیق؛ مسجد بنی‌سلمه هم نامیده می‌شود.</p>
+<p><b>معماری و قبله:</b> بنای کنونی بازسازی کامل ۱۹۸۷ م است؛ محراب نخست رو به بیت‌المقدس (شمال/شام) و محراب دوم رو به کعبه بود؛ در بازسازی، محراب رو به بیت‌المقدس برداشته شد، محراب رو به مکه حفظ شد و نشان کوچکی برای محراب پیشین، زیر گنبد کاذب دوم، نصب شد.</p>
+<p><b>اعمال:</b> نماز در مسجد قبلتین.</p>
+<p class="src">استناد: ویکی‌پدیای انگلیسی، مدخل Masjid al-Qiblatayn؛ دانشنامهٔ اسلامی، «مسجد ذوقبلتین». مختصات: ۲۴٫۴۸۴۰۸۶۱° شمالی، ۳۹٫۵۷۸۹۰۸۳° شرقی (ویکی‌پدیای انگلیسی؛ سطح خود مسجد)؛ دانشنامهٔ اسلامی عدد متفاوتی می‌دهد (۲۴°۲۸′۵۸٫۳″ شمالی، ۳۹°۳۴′۵۱٫۹″ شرقی) و هیچ‌کدام بر دیگری ترجیح داده نشده است.</p></section>
+<section class="card" data-card="6"><div class="top"><span class="num">۶</span><h3>مساجد فتح (مساجد سبعه) و منطقهٔ خندق</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> دامنهٔ غربی کوه سلع، شمال غرب مدینه، در نزدیکی خندقی که مسلمانان در سال پنجم هجرت برای دفاع از مدینه ایجاد کرده بودند. عدد واقعی شش مسجد است، نه هفت؛ نام «سبعه» از آن روست که قبلتین (حدود ۱ کیلومتر دورتر) را هم در همان گشت می‌بینند.</p>
+<p><b>قبله (مسجد فتح):</b> در مسجد فتح، شبستان در قسمت جنوبی (قبله) و صحن در قسمت شمالی است؛ برای تک‌مسجدهای دیگر این گروه تصریح جداگانهٔ قبله یافت نشد.</p>
+<p><b>ترتیب شمال‌به‌جنوب:</b> فتح، سلمان فارسی، ابوبکر صدیق، عمر بن خطاب، علی بن ابی‌طالب، فاطمهٔ زهرا. فاصله‌های درون‌گروهی: سلمان ۲۰ متر جنوب فتح در پای کوه سلع؛ ابوبکر ۱۵ متر جنوب غرب سلمان؛ عمر ۱۰ متر جنوب ابوبکر؛ علی در شرق فاطمه، بر تپه‌ای مستطیلی ۸٫۵×۶٫۵ متر.</p>
+<p><b>وضعیت کنونی:</b> چند مسجد ویران و با جامعی بزرگ جایگزین شده و ابوبکر برای بازسازی تخریب شده است؛ پس تصویر «شش مسجد کوچک برپا» ممکن است با وضعیت امروز نخواند.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مساجد ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «مساجد هفت‌گانه»؛ ویکی‌پدیای عربی، «المساجد السبعة»؛ سفر مجازی مساجد هفتگانه (لسان مبین): قسمت جنوبی (قبله) مسجد فتح دارای شبستان است. مختصات: ۲۴٫۴۷۶۸۲۷۸° شمالی، ۳۹٫۵۹۸۵۳۳۳° شرقی (ویکی‌پدیای عربی؛ سطح مجموعهٔ سبعه، نه تک‌مسجد)؛ مختصات جداگانهٔ هر یک از شش مسجد منتشر نشده است.</p></section>
+<section class="card" data-card="7"><div class="top"><span class="num">۷</span><h3>مسجد غمامه (مصلی)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> غرب/جنوب غرب مسجد النبی، منطقهٔ مناخه، مقابل باب‌السلام؛ نزدیک‌ترین مسجد به مسجد النبی در سمت غرب. محل نماز عید رسول خدا (ص)؛ نام‌های دیگر: مسجد المصلی، مسجد عیدین. فاصلهٔ آن تا باب‌السلام ۵۰۰ متر است.</p>
+<p><b>قبله:</b> محراب در میان دیوار جنوبی صحن نماز است.</p>
+<p><b>معماری:</b> مستطیلی، دو بخشی: ورودی با ۵ گنبد کروی بر طاق‌های نوک‌تیز، و صحن نماز در دو رواق با ۶ گنبد در دو صف موازی که بزرگ‌ترینشان گنبد محراب است؛ مصالح سنگ بازالت سیاه؛ مناره در گوشهٔ شمال غربی. مساحت بنا ۷۷۳ متر مربع در برابر ۵۹۶ متر مربع در منابع ناهماهنگ است.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مسجد ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای عربی، «مسجد الغمامة» (محراب در میان دیوار جنوبی؛ ۵۰۰ متر از باب‌السلام)؛ ویکی‌پدیای انگلیسی، Mosque of Al-Ghamama (۵۰۰ متر غرب باب‌السلام). مختصات: ۲۴٫۴۶۵۸۳۳۳۳° شمالی، ۳۹٫۶۰۶۹۴۴۴۴° شرقی (سطح خود مسجد). در برابر آن، دانشنامهٔ اسلامی حدود ۳۰۰ متر می‌گوید و نقطهٔ مرجع آن روشن نیست. هشدار: نسخهٔ آینه‌ای IPFS همان مقاله، مختصات قبلتین را به‌اشتباه زیر نام غمامه آورده است و آن عدد استفاده نشد.</p></section>
+<section class="card" data-card="8"><div class="top"><span class="num">۸</span><h3>مسجد مباهله (مسجد الاجابه / بنی‌معاویه)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> شمال بقیع، شمال شرق مسجد النبی، در خیابان ستین. مسجد الاجابه همان مسجد مباهله است. فاصلهٔ آن ۳۸۵ متر شمال بقیع و ۵۸۰ متر از مسجد النبی پس از توسعه است.</p>
+<p><b>قبله:</b> رواق قبله در جنوب مسجد است و دیوار جنوبیِ دارای قبله حدود ۲۵ متر طول دارد.</p>
+<p><b>معماری:</b> در منابع خوانده‌شده توصیف معماری دقیقی (گنبد، مناره، مصالح) برای بنای کنونی یافت نشد؛ فقط مساحت داخلی پس از توسعهٔ ملک فهد به ۵۰۰ متر رسیده است. پس بنا در نقشه به‌صورت ساده کشیده شده است، نه با جزئیات مستند.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مسجد ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای عربی، «مسجد الإجابة»؛ عتبهٔ علویه، «مسجد المباهلة»؛ موسوعهٔ معالم مدینه (mrsc): ۳۸۵ متر شمال بقیع و ۵۸۰ متر از مسجد النبی، رواق قبله در جنوب مسجد. مختصات: ۲۴٫۴۷۱۹۴۴۴۴° شمالی، ۳۹٫۶۱۸۳۳۳۳° شرقی (سطح خود مسجد).</p></section>
+<section class="card" data-card="9"><div class="top"><span class="num">۹</span><h3>مسجد فضیخ (مسجد الشمس / بنی‌نضیر)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> شرق مسجد قبا، منطقهٔ عوالی، در محلهٔ قربان؛ میان مسجد قبا و مشربهٔ ام‌ابراهیم.</p>
+<p><b>وضعیت کنونی:</b> بنای مسجد امروزه از میان رفته و تنها یک چهاردیواری از آن باقی مانده است؛ پس در نقشه به‌صورت محل/ویرانه (خط‌چین) نشان داده شده است، نه بنای کامل. هشدار: در مدینه به مسجد دیگری در نزدیکی آن، به‌اشتباه «فضیخ» می‌گویند که در اصل مسجد بنی‌قریظه است.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این محل ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای عربی، «مسجد الفضیخ»؛ wikibin.ir، «مسجد الشمس». مختصات: ۲۴٫۴۴۵۹۸۸۸۹° شمالی، ۳۹٫۶۳۷۶۶۶۶۷° شرقی (سطح محل مسجد؛ بنای کنونی ویران است، مختصات محل تاریخی است، نه بنای برپا).</p></section>
+</div>
+<footer>
+<h3>راهنمای زایرین عمار غزنه</h3>
+<a class="applink" href="../ziyarat-guide-app/index.html">باز کردن اپ (بخش عمره) ↗</a>
+<p>استنادها: ویکی‌پدیای انگلیسی و عربی و فارسی؛ ویکی حج؛ fa.al-shia.org؛ wikibin.ir؛ «راهنمای زائران عمرهٔ مفرده» (بعثه، ۱۳۸۱).</p>
+<p>به‌روزرسانی ۳ نوامبر (پژوهش عمیق مدینه): قبله اکنون برای شش ورودی مستند است — مسجد النبی (جنوب)، قبلتین (محراب کنونی رو به مکه، نشان محراب پیشین رو به بیت‌المقدس)، قبا (سمت قبله جنوب غربی، ویکی‌بین به نقل از جعفریان؛ یک راهنمای گردشگری فقط «جنوب» می‌گوید)، غمامه (محراب در میان دیوار جنوبی)، مباهله (رواق قبله در جنوب) و مسجد فتح (شبستان در قسمت جنوبی/قبله)؛ برای تک‌مسجدهای دیگر گروه فتح و مسجد ویرانهٔ فضیخ تصریح جداگانه یافت نشد و محاسبه نشد. فاصله‌های با نقطهٔ مرجع روشن: غمامه ۵۰۰ متر از باب‌السلام، مباهله ۳۸۵ متر شمال بقیع و ۵۸۰ متر از مسجد النبی پس از توسعه. فاصله‌های بدون نقطهٔ مرجع یکسان همچنان ناهماهنگ‌اند (قبا ۳٫۵/۵/۶، قبلتین ۳٫۵/۴/۵ با تأیید ۴ در سعودی‌پدیا، احد: کوه ۵٫۵ در ویکی حج در برابر مقبره نزدیک ۴ در موسوعهٔ معالم و ۵ در ویکی‌پدیای عربی، بقیع ۱۰۰ در ویکی حجِ کنونی در برابر ۲۰۰ و ۵۰۰ در منابع دیگر — گسترش حرم مرز را جابه‌جا کرده است)، پس عدد فاصلهٔ قطعیِ بدون مرجع در نقشه نیامده است. «روبه‌روی در کنونی، کمی سمت راست» برای حرم ائمهٔ بقیع همچنان با همین عبارت در منابع وب تأیید نشد و نزدیک‌ترین مستند همان «سمت غربی و منتهی‌الیه بقیع» است؛ پس فقط همان عبارت در کارت آمده است.</p>
+<p>تصاویر مکان‌ها بازنمایی سه‌بعدی شماتیک بر پایهٔ ویژگی‌های مستندشان‌اند، نه عکس واقعی؛ برای مدینه گالری رسمی یکپارچه‌ای مانند عتبه‌ها وجود ندارد و عکس معتبر همان مکان باید با همان نما تطبیق داده شود.</p>
+<p>بدون انسان، بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('[data-open]').forEach(function(el){
+  el.addEventListener('click',function(){
+    document.querySelectorAll('.card.open').forEach(function(c){c.classList.remove('open')});
+    var t=document.querySelector('.card[data-card="'+el.dataset.open+'"]');
+    if(t){t.classList.add('open');t.scrollIntoView({behavior:'smooth',block:'nearest'})}
+  });
+});
+document.querySelectorAll('.card .close').forEach(function(b){
+  b.addEventListener('click',function(){b.closest('.card').classList.remove('open')});
+});
+</script>
+</body>
+</html>

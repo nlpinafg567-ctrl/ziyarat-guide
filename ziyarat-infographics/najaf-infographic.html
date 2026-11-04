@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نجف — نقشهٔ حرم امیرالمؤمنین (ع) | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:17px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.notonmap{padding:20px 40px 4px}
+.notonmap h2{font-size:22px;color:#0D3B2E;text-align:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:2px solid #E3D9BE;border-right:7px solid #8A7A52;border-radius:16px;padding:11px 16px;cursor:pointer;box-shadow:0 4px 0 rgba(138,122,82,.25);transition:transform .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(0,0,0,.15)}
+.chip .cn{flex:0 0 40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chip .ct{font-size:17px;font-weight:700;color:#0D3B2E;line-height:1.6}
+.chip .cs{font-size:14px;color:#8A7A52;line-height:1.6}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot .applink{display:inline-block;margin-top:14px;background:#C5A46D;color:#0D3B2E;font-size:21px;font-weight:700;padding:12px 32px;border-radius:34px;text-decoration:none;box-shadow:0 6px 0 #8C7440}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot a{color:#C5A46D}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.notonmap{padding:16px 16px 4px}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+.foot .applink{font-size:18px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>نجف</h1>
+    <div class="sub">نقشهٔ صحن حرم امیرالمؤمنین (ع) و بزرگان آن</div>
+    <div class="intro">روی تصویر هر مقام بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.</div>
+    <div class="geo">مختصات مجموعهٔ حرم: ۳۱٫۹۹۵۹° شمالی، ۴۴٫۳۱۴۶° شرقی (ویکی‌پدیای انگلیسی، Imam Ali Shrine)؛ مختصات در سطح مقام منتشر نشده است.</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 980" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ صحن حرم امیرالمؤمنین با جای مقام‌ها"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نقشهٔ صحن حرم امیرالمؤمنین (ع) — شمال بالا</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<g class="mq" data-open="10" role="button" tabindex="0" aria-label="مسجد شیخ طوسی"><circle class="hit" cx="490" cy="102" r="62"/><line x1="490" y1="134" x2="490" y2="170" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/><g class="dep"><rect x="410" y="70" width="160" height="64" rx="10" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 470 134 L 470 104 Q 470 88 490 88 Q 510 88 510 104 L 510 134 Z" fill="#F7F3EA"/></g><circle class="bdg" cx="560" cy="78" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="560" y="85" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۰</text></g><text class="lbl" x="585" y="98" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">مسجد شیخ طوسی</text><text class="lbl" x="585" y="122" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">خارج حرم، شمال، روبه‌روی باب الطوسی</text>
+<rect x="190" y="170" width="600" height="642" fill="#F3EAD0" stroke="#C5A46D" stroke-width="4"/>
+<g><rect x="445" y="157" width="90" height="26" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text x="490" y="176" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" font-weight="700" fill="#0D3B2E">باب الطوسی</text></g>
+<g><rect x="777" y="436" width="26" height="110" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text class="lbl" x="815" y="480" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">باب السوق الکبیر</text><text class="lbl" x="815" y="504" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">باب امام رضا (ع)</text></g>
+<g><rect x="777" y="350" width="26" height="54" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text class="lbl" x="815" y="372" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">باب مسلم</text><text class="lbl" x="815" y="394" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">بن عقیل</text></g>
+<g><rect x="445" y="799" width="90" height="26" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text x="490" y="846" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">باب القبله</text><text x="490" y="870" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">سمت قبله ↓</text></g>
+<g><rect x="177" y="436" width="26" height="110" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/><text class="lbl" x="165" y="480" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">باب الفرج</text><text class="lbl" x="165" y="504" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">باب سلطانی</text></g>
+<g><line x1="150" y1="652" x2="182" y2="652" stroke="#C5A46D" stroke-width="3"/><polygon points="182,652 172,646 172,658" fill="#C5A46D"/><text class="lbl" x="165" y="634" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">صافی صفا</text><text class="lbl" x="165" y="676" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">حدود ۵۰۰ متری غرب</text></g>
+<rect x="397" y="398" width="186" height="186" fill="none" stroke="#C5A46D" stroke-width="3" stroke-dasharray="8 6"/>
+<g><rect x="250" y="440" width="84" height="60" rx="8" fill="#E8E0C8" stroke="#C5A46D" stroke-width="3"/><text class="lbl" x="292" y="522" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">مسجد الرأس</text></g>
+<g class="mq" data-open="1" role="button" tabindex="0" aria-label="ضریح حضرت علی"><circle class="hit" cx="490" cy="470" r="95"/><g class="dep"><rect x="437" y="438" width="106" height="106" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><path d="M 452 438 Q 452 388 490 388 Q 528 388 528 438 Z" fill="url(#gold)"/><rect x="486" y="360" width="8" height="28" rx="4" fill="url(#goldD)"/><circle cx="490" cy="357" r="8" fill="url(#gold)"/><rect x="543" y="458" width="30" height="46" fill="url(#goldD)" stroke="#C5A46D" stroke-width="3"/><rect x="573" y="408" width="12" height="52" fill="url(#goldD)"/><path d="M 567 408 Q 567 394 579 394 Q 591 394 591 408 Z" fill="url(#gold)"/><rect x="573" y="504" width="12" height="52" fill="url(#goldD)"/><path d="M 567 504 Q 567 490 579 490 Q 591 490 591 504 Z" fill="url(#gold)"/></g><circle class="bdg" cx="490" cy="438" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="490" y="445" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱</text></g><text class="lbl" x="515" y="446" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">ایوان طلا</text>
+<g class="mq" data-open="2" role="button" tabindex="0" aria-label="علامه حلی و سید مصطفی خمینی و شیخ محمد اصفهانی"><circle class="hit" cx="639" cy="420" r="44"/><g class="dep"><rect x="610" y="398" width="58" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><line x1="622" y1="404" x2="622" y2="436" stroke="#8C7440" stroke-width="2"/><line x1="634" y1="404" x2="634" y2="436" stroke="#8C7440" stroke-width="2"/><line x1="646" y1="404" x2="646" y2="436" stroke="#8C7440" stroke-width="2"/></g><circle class="bdg" cx="668" cy="398" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="668" y="405" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۲</text></g><text class="lbl" x="610" y="466" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">حلی، خمینی، کمپانی</text>
+<g class="mq" data-open="3" role="button" tabindex="0" aria-label="مقدس اردبیلی"><circle class="hit" cx="639" cy="570" r="44"/><g class="dep"><rect x="610" y="548" width="58" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 626 592 L 626 572 Q 626 562 639 562 Q 652 562 652 572 L 652 592 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="668" cy="548" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="668" y="555" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۳</text></g><text class="lbl" x="610" y="616" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">اردبیلی</text>
+<g><rect x="660" y="220" width="110" height="64" rx="8" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 700 284 L 700 262 Q 700 248 715 248 Q 730 248 730 262 L 730 284 Z" fill="#F7F3EA"/><text class="lbl" x="715" y="210" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">مسجد الخضراء</text></g>
+<g class="mq" data-open="12" role="button" tabindex="0" aria-label="آیت‌الله خویی"><circle class="hit" cx="696" cy="340" r="44"/><g class="dep"><rect x="660" y="318" width="72" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><line x1="676" y1="324" x2="676" y2="356" stroke="#8C7440" stroke-width="2"/><line x1="692" y1="324" x2="692" y2="356" stroke="#8C7440" stroke-width="2"/><line x1="708" y1="324" x2="708" y2="356" stroke="#8C7440" stroke-width="2"/><line x1="666" y1="340" x2="726" y2="340" stroke="#8C7440" stroke-width="2"/></g><circle class="bdg" cx="732" cy="318" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="732" y="325" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۲</text></g><text class="lbl" x="660" y="386" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">خویی (حجرهٔ ۳۱)</text>
+<g class="mq" data-open="8" role="button" tabindex="0" aria-label="سید ابوالحسن اصفهانی"><circle class="hit" cx="695" cy="644" r="40"/><g class="dep"><rect x="640" y="620" width="110" height="48" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 682 668 L 682 648 Q 682 636 695 636 Q 708 636 708 648 L 708 668 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="660" cy="612" r="16" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="660" y="619" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">۸</text></g>
+<g class="mq" data-open="9" role="button" tabindex="0" aria-label="آخوند خراسانی"><circle class="hit" cx="695" cy="612" r="16"/><circle class="bdg" cx="695" cy="612" r="16" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="695" y="619" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">۹</text></g>
+<g class="mq" data-open="13" role="button" tabindex="0" aria-label="میرزا حبیب‌الله رشتی"><circle class="hit" cx="730" cy="612" r="16"/><circle class="bdg" cx="730" cy="612" r="16" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="730" y="619" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">۱۳</text></g>
+<text class="lbl" x="640" y="692" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">حجرهٔ ۲۶</text>
+<g class="mq" data-open="7" role="button" tabindex="0" aria-label="آیت‌الله نائینی"><circle class="hit" cx="612" cy="650" r="28"/><g class="dep"><rect x="590" y="630" width="45" height="40" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 600 670 L 600 648 Q 600 638 612 638 Q 625 638 625 648 L 625 670 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="624" cy="640" r="15" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="624" y="647" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">۷</text></g><text class="lbl" x="575" y="690" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" font-weight="700" fill="#0D3B2E">نائینی (حجرهٔ ۲۱)</text>
+<g class="mq" data-open="15" role="button" tabindex="0" aria-label="محقق نراقی"><circle class="hit" cx="433" cy="321" r="42"/><g class="dep"><rect x="400" y="300" width="66" height="42" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 418 342 L 418 324 Q 418 312 433 312 Q 448 312 448 324 L 448 342 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="466" cy="300" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="466" y="307" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۵</text></g><text class="lbl" x="400" y="366" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">نراقی</text>
+<text class="lbl" x="560" y="388" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">ایوان العلما</text>
+<g class="mq" data-open="5" role="button" tabindex="0" aria-label="شیخ مرتضی انصاری"><circle class="hit" cx="362" cy="722" r="42"/><g class="dep"><rect x="330" y="700" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 348 744 L 348 724 Q 348 712 362 712 Q 376 712 376 724 L 376 744 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="394" cy="700" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="394" y="707" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۵</text></g><text class="lbl" x="330" y="768" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">انصاری (حجرهٔ ۱۱)</text>
+<g class="mq" data-open="6" role="button" tabindex="0" aria-label="سید اسدالله شفتی"><circle class="hit" cx="618" cy="722" r="42"/><g class="dep"><rect x="586" y="700" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 604 744 L 604 724 Q 604 712 618 712 Q 632 712 632 724 L 632 744 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="650" cy="700" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="650" y="707" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۶</text></g><text class="lbl" x="586" y="768" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">شفتی (حجرهٔ ۱۳)</text>
+<g class="mq" data-open="14" role="button" tabindex="0" aria-label="حاج میرزا حسین نوری"><circle class="hit" cx="695" cy="752" r="40"/><g class="dep"><rect x="640" y="730" width="110" height="44" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 682 774 L 682 754 Q 682 742 695 742 Q 708 742 708 754 L 708 774 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="660" cy="722" r="16" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="660" y="729" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">۱۴</text></g>
+<g class="mq" data-open="16" role="button" tabindex="0" aria-label="شیخ عباس قمی"><circle class="hit" cx="695" cy="722" r="16"/><circle class="bdg" cx="695" cy="722" r="16" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="695" y="729" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="18" font-weight="700" fill="#0D3B2E">۱۶</text></g>
+<text class="lbl" x="640" y="798" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">حجرهٔ ۱۵: نوری، قمی</text>
+<text class="lbl" x="490" y="600" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" fill="#3D4A44">حرم مطهر ۱۳×۱۳ متر — ضریح در مرکز</text>
+<text class="lbl" x="210" y="790" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">صحن قدیمی ۷۷×۷۲ متر</text>
+</svg>
+  </div>
+  <div class="maphint">روی تصویر هر مقام بزنید تا کارتش باز شود. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="notonmap">
+    <h2>روی نقشه نیامدند — چون سمت دقیقشان در منابع تأیید نشد</h2>
+    <div class="chips">
+      <div class="chip" data-open="4" role="button" tabindex="0"><div class="cn">۴</div><div><div class="ct">شیخ جعفر شوشتری</div><div class="cs">حجرهٔ ۵۴؛ سمت روی نقشه تأیید نشده</div></div></div>
+      <div class="chip" data-open="11" role="button" tabindex="0"><div class="cn">۱۱</div><div><div class="ct">سجاد، صافی، کاشف، صاحب جواهر</div><div class="cs">سه خوشهٔ بیرون حرم؛ جهت مسجد کاشف مستند نیست</div></div></div>
+    </div>
+  </div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>ضریح حضرت علی (ع) و مدفن حضرت آدم و نوح</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> مرکز حرم؛ حرم مربع ۱۳×۱۳ متر میان صحن و ضریح در مرکز آن است.</p><p>به‌نقل از فهرست رسمی عتبه، آدم و نوح «در ضریح مقدس»‌اند و دیدار آن‌ها را «کنار مرقد امیرالمومنین (ع)» می‌آورد.</p><p><b class="g">اعمال:</b> زیارت مخصوص امیرالمؤمنین (ع) در کتاب دیدار با عترت، فصل نجف آمده است.</p><p class="src">استناد: دیدار با عترت، راهنمای حرم؛ زیارتگاه‌های عراق ج۱؛ فهرست رسمی عتبه (ردیف ۱ و ۵۶۲).</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>علامه حلی، سید مصطفی خمینی، محمدحسین غروی اصفهانی (کمپانی)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> ناحیهٔ منارهٔ شمالی؛ در حجرهٔ سمت راست ایوان طلا هنگام ورود به رواق.</p><p>قبر علامه حلی ضریح مشبک چوبی دارد و قبر سید مصطفی خمینی در همین مقبره است. کمپانی همان محمدحسین غروی اصفهانی است که پیکرش در حجره‌ای متصل به منارهٔ شمالی ایوان طلا، نزدیک مقبرهٔ علامه حلی به خاک سپرده شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه (حلی ردیف ۱۳۳، خمینی ۵۲۰، کمپانی ۴۱۲)؛ زیارتگاه‌های عراق ج۱؛ دانشنامهٔ اسلامی (غروی اصفهانی، مدفن نجف نزدیک مقبرهٔ علامه حلی)؛ arbaeeni.</p></article>
+    <article class="card" data-card="3"><div class="chead"><div class="cnum">۳</div><h3>مقدس اردبیلی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ملاصق منارهٔ جنوبی (فهرست رسمی مبناست).</p><p>حجره ۴×۷ متر با راهروی میانی ۳ متری است. توجه: زیارتگاه‌های عراق ج۱ او را «کنار قبر علامه حلی در ایوان طلا» می‌آورد (حلی در شمال است)؛ این تعارض ظاهری ثبت شد و فهرست رسمی مبنا قرار گرفت.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۴۰؛ کتاب فتلاوی ص ۴۷؛ ensani.</p></article>
+    <article class="card" data-card="4"><div class="chead"><div class="cnum">۴</div><h3>شیخ جعفر شوشتری (تستری)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۵۴ (فهرست رسمی)؛ سمت حجره روی نقشه تأیید نشده است، پس روی نقشه کشیده نشد.</p><p>شاهدان سمت ناهم‌خوان‌اند: ملحقات تذکرهٔ شوشتری (به‌نقل از دانشنامهٔ اسلامی) او را در «رواق غربی، اولین حجرهٔ سمت راست راهرو پشت حرم، نزدیک تکیهٔ بکتاشیه» می‌آورد و تکیهٔ بکتاشیه در شمال‌غرب صحن است؛ در برابر آن، تبیان او را در «مقبرهٔ دالان شمالی صحن شریف» می‌آورد. به‌نقل از ج۱، میرزا محمدحسن آشتیانی در مقبرهٔ او به خاک سپرده شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۸۲؛ زیارتگاه‌های عراق ج۱؛ ملحقات تذکرهٔ شوشتری (به‌نقل از دانشنامهٔ اسلامی)؛ تبیان؛ موسسهٔ تحقیقات اهل‌بیت (تکیهٔ بکتاشیه، شمال‌غرب صحن).</p></article>
+    <article class="card" data-card="5"><div class="chead"><div class="cnum">۵</div><h3>شیخ مرتضی انصاری</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۱۱، سمت راست درگاه قبله؛ به‌نقل از ziarat.co در سمت غرب راهرو و دالان باب‌القبله، روبه‌روی قبر شفتی.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۵۱۲؛ زیارتگاه‌های عراق ج۱؛ ziarat.co.</p></article>
+    <article class="card" data-card="6"><div class="chead"><div class="cnum">۶</div><h3>سید اسدالله شفتی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۱۳، سمت چپ خروجی از صحن از باب قبلی، روبه‌روی قبر انصاری.</p><p>سید اسدالله شفتی، فرزند محمدباقر شفتی (حجة الاسلام شفتی) است؛ درگذشتهٔ ۱۲۹۰ ه.ق در راه نجف در کرند، و جنازه‌اش به نجف منتقل شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۵۴؛ موسوعة التراجم؛ رجال اصفهان (تذکرة القبور) و بیان المفاخر (فرزند محمدباقر شفتی؛ وفات ۱۲۹۰ در کرند، دفن در نجف روبه‌روی مقبرهٔ شیخ مرتضی انصاری).</p></article>
+    <article class="card" data-card="7"><div class="chead"><div class="cnum">۷</div><h3>آیت‌الله نائینی (میرزا محمدحسین نائینی)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۲۱، سمت جنوب‌شرقی صحن.</p><p>پژوهش اجتهاد (محاويلي) او را «حجرهٔ پنجم سمت جنوب‌شرقی صحن» می‌آورد؛ مامقانیِ مدفون در ربع جنوب‌شرقی صحن، در محاذات مقبرهٔ اوست؛ و شمارهٔ ۲۱ میان ۱۵ (باب قبله) و ۲۶ (شرق) نیز با همین سمت سازگار است. زیارتگاه‌های عراق ج۱ فقط می‌گوید «در یکی از حجرات صحن مطهر علوی به خاک سپرده شد».</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۱۴۵؛ زیارتگاه‌های عراق ج۱؛ اجتهاد (محاويلي، به‌نقل از المبانی الفکریه للحکم الدستوری ص ۱۳۲)؛ معارف الرجال/الذریعه به‌نقل از alkafeel (مامقانی، ربع جنوب‌شرقی، محاذات مقبرهٔ نائینی).</p></article>
+    <article class="card" data-card="8"><div class="chead"><div class="cnum">۸</div><h3>سید ابوالحسن اصفهانی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۲۶، مشترک با خراسانی و رشتی؛ شاهد ثانویه: سمت چپ ورودی از باب شرقی بزرگ.</p><p>در همین مقبره، پیش از وفات او در ۱۳۷۶ ه.ق، رشتی (درگذشتهٔ ۱۳۱۲)، آخوند خراسانی (۱۳۲۹) و سید حسین اصفهانی (۱۳۴۸) دفن شده‌اند.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۱۲؛ انجمن یاحسین (شاهد ثانویه).</p></article>
+    <article class="card" data-card="9"><div class="chead"><div class="cnum">۹</div><h3>آخوند خراسانی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۲۶، مشترک با ابوالحسن اصفهانی و رشتی.</p><p>به‌نقل از ج۱، جنازه‌اش در مقبرهٔ میرزای رشتی، در دالان سلطانی صحن به خاک سپرده شد. نام دالان در منابع دیگر متفاوت است (ziarat.co: دالان باب‌الذهب)؛ شمارهٔ حجره مبناست.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۴۷۹؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="10"><div class="chead"><div class="cnum">۱۰</div><h3>شیخ طوسی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> خارج از حرم، شمال آن؛ مسجد شیخ طوسی در محلهٔ عماره، اول شارع طوسی، روبه‌روی باب الطوسی.</p><p>قبر شیخ طوسی در وسط مسجد است و مساحت فعلی مسجد ۳۱×۱۷ متر است. فاصله‌ها در منابع ناسازگارند (۲۰، ۱۰۰ و ۲۰۰ متر) و عدد واحد انتخاب نشد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مسجد ذکر نشده است.</p><p class="src">استناد: سایت رسمی عتبه؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="11"><div class="chead"><div class="cnum">۱۱</div><h3>مقام سجاد (ع)، صافی صفا، کاشف الغطاء، صاحب جواهر</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> این یک مکان واحد نیست؛ سه خوشهٔ بیرون حرم است و روی نقشه کشیده نشد.</p><p>(الف) صافی صفا در خیابان کمربندی نجف قدیم، حدود ۵۰۰ متری غرب حرم، بر کرانهٔ بحر النجف است و مقام امام سجاد (ع) نزدیک مرقد اوست؛ همان مقام معروفی که محل توقف و نماز امام سجاد (ع) هنگام زیارت امیرالمومنین (ع) بوده است؛ مختصات نقشه‌ای صافی صفا (۳۱٫۹۹۵۷° شمالی، ۴۴٫۳۰۹۴° شرقی) حدود ۴۹۰ متری غرب حرم است و با «حدود ۵۰۰ متری» سازگار است. (ب) کاشف الغطاء در محلهٔ عماره است؛ مسجد او ۱۵۰ متری مرقد امیرالمومنین (ع) است و قبرش در اتاق ضلع شمالی صحن مسجد زیر گنبد زیباست؛ مسجد او در جنوب قبر شیخ اکبر است ولی جهت مسجد نسبت به حرم در منابع نیامده است؛ قبهٔ او در خوشهٔ قباب زرقاء محلهٔ عماره در کنار مسجد جواهری است. (ج) صاحب جواهر در محلهٔ عماره، کنار مسجد صاحب جواهر است و مسجد او «غرب حضرهٔ علویه تقریباً» است؛ فاصله‌اش از حرم یافت نشد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مکان‌ها ذکر نشده است.</p><p class="src">استناد: زیارتگاه‌های عراق ج۱؛ سایت رسمی عتبه؛ dorar-aliraq؛ ویکی‌فقه (مرقد صافی صفا: مقام امام زین‌العابدین در سمت جنوبی مرقد اوست)؛ تاریخ نجف حرزالدین ج۳ (مسجد کاشف در جنوب قبر شیخ اکبر)؛ موسوعة النجف (مسجد جواهری، غرب حضره؛ قباب زرقاء عماره)؛ نقشه (مختصات صافی صفا).</p></article>
+    <article class="card" data-card="12"><div class="chead"><div class="cnum">۱۲</div><h3>آیت‌الله خویی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۳۱، کنار مسجد الخضراء در ضلع شرقی صحن.</p><p>دیوار میان مقبره و مسجد برداشته و با پنجره‌ای مشبک پوشانده شده است؛ مسجد الخضراء محل تدریس آیت‌الله خویی بود. این قوی‌ترین تطابق سه‌منبعی پژوهش است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۱۷؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="13"><div class="chead"><div class="cnum">۱۳</div><h3>میرزا حبیب‌الله رشتی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۲۶، مشترک با ابوالحسن اصفهانی و خراسانی.</p><p>به‌نقل از ج۱ فقط «در صحن حرم امام علی (ع) به خاک سپرده شد»؛ مقبرهٔ او محل دفن خراسانی است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۱۰۲؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="14"><div class="chead"><div class="cnum">۱۴</div><h3>حاج میرزا حسین نوری طبرسی (محدث نوری)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۱۵، سومین ایوان شرقی باب‌القبله، مشترک با قمی.</p><p>به وصیت خود، در یکی از ایوان‌های صحن آستان به خاک سپرده شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۱۵۳؛ زیارتگاه‌های عراق ج۱.</p></article>
+    <article class="card" data-card="15"><div class="chead"><div class="cnum">۱۵</div><h3>محقق نراقی (ملا محمدمهدی بن ابی‌ذر نراقی)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> جنب ایوان العلما، در ضلع شمالی رواق.</p><p>«محقق نراقی» ملا محمدمهدی بن ابی‌ذر نراقی، صاحب جامع السعادات است (فهرست رسمی، ردیف ۴۹۳، جنب ایوان العلماء)؛ پسرش ملا احمد نراقی، صاحب معراج السعاده و مستند الشیعه، نیز در نجف در کنار او مدفون است و این دو به فاضلین نراقی معروف‌اند.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه؛ زیارتگاه‌های عراق ج۱؛ دانشنامهٔ اسلامی (محمدمهدی بن ابی‌ذر، معروف به «محقق نراقی»، مدفون در نجف در کنار فرزندش ملا احمد).</p></article>
+    <article class="card" data-card="16"><div class="chead"><div class="cnum">۱۶</div><h3>شیخ عباس قمی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> حجرهٔ ۱۵، مشترک با نوری، نزدیک درب باب قبله.</p><p>کنار استاد خود، حاج میرزا حسین نوری، به خاک سپرده شد.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این مقبره ذکر نشده است.</p><p class="src">استناد: فهرست رسمی عتبه ردیف ۲۰۸؛ زیارتگاه‌های عراق ج۱.</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <a class="applink" href="../ziyarat-guide-app/index.html#atabat-1">باز کردن مرحلهٔ نجف در اپ ↗</a>
+    <p>حرم و رواق‌ها: زیارتگاه‌های عراق ج۱؛ دیدار با عترت، فصل نجف؛ فهرست رسمی عتبهٔ علویه (مشاهیر المدفونین فی الصحن العلوی الشریف)؛ اجتهاد؛ موسوعة النجف؛ تاریخ نجف حرزالدین.</p>
+    <p>شکاف صادقانه: خریطهٔ رسمی صحن با جای حجره‌ها بازیابی نشد (کتاب فتلاوی می‌گوید خریطه ضمیمه است، ولی نسخهٔ متنی تصویر نقشه را ندارد)؛ پس جای نشان‌ها بر پایهٔ سمت‌های مستند در منابع مکتوب است (منارهٔ شمالی/جنوبی، باب قبله، باب شرقی، مسجد خضراء، ایوان العلما)، نه بر پایهٔ خریطهٔ رسمی. نشان نائینی (۷) بر پایهٔ متن صریح جهت‌دار (سمت جنوب‌شرقی) و تطابق شمارهٔ حجره است. شوشتری (۴) چون شاهد شمالی با شاهد غربی ناهم‌خوان است و خوشهٔ (۱۱) چون جهت مسجد کاشف مستند نیست، چیپ ماندند. پیکان شمالِ نقشهٔ رسمی هم راستی‌آزمایی نشده است؛ جهت‌ها همان جهت‌های دروازه‌ای منابع‌اند.</p>
+    <p>تصاویر مقام‌ها بازنمایی سه‌بعدی شماتیک بر پایهٔ ویژگی‌های مستندشان‌اند، نه عکس واقعی؛ عکس‌های اصلی در <a href="https://media.imamali.net/?part=267&id=322">گالری رسمی عتبهٔ علویه</a> دیده شود.</p>
+    <p class="note">بدون انسان، بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+})();
+</script>
+</body>
+</html>

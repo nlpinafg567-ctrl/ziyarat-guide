@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسجد حنانه — نمای جایگاه و دو ویژگی زیارتی | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:17px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.notonmap{padding:20px 40px 4px}
+.notonmap h2{font-size:22px;color:#0D3B2E;text-align:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:2px solid #E3D9BE;border-right:7px solid #8A7A52;border-radius:16px;padding:11px 16px;cursor:pointer;box-shadow:0 4px 0 rgba(138,122,82,.25);transition:transform .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(0,0,0,.15)}
+.chip .cn{flex:0 0 40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chip .ct{font-size:17px;font-weight:700;color:#0D3B2E;line-height:1.6}
+.chip .cs{font-size:14px;color:#8A7A52;line-height:1.6}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.notonmap{padding:16px 16px 4px}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>مسجد حنانه</h1>
+    <div class="sub">نمای جایگاه در راه نجف–کوفه و دو ویژگی زیارتی</div>
+    <div class="intro">حنانه یک مسجد با همین دو ویژگی است، نه فهرستی از مقام‌ها. روی چیپ زیر نقشه بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.</div>
+    <div class="geo">میانهٔ بزرگراه نجف–کوفه، محلهٔ حنانه، حدود ۲٫۵ کیلومتر شمال حرم (وب)؛ بین نجف و کوفه، نزدیک آرامگاه کمیل (ثویه) در شمال‌شرق. مختصات مجموعه: ۳۲٫۰۰۵۰۹° شمالی، ۴۴٫۳۳۴۶۸° شرقی (مکان‌ها؛ ویکی‌پدیا: ۳۲٫۰۰۵۰۰، ۴۴٫۳۳۴۴۴).</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نمای جایگاه مسجد حنانه در میانهٔ راه نجف و کوفه"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نمای جایگاه مسجد حنانه — شمال بالا</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<rect x="442" y="180" width="100" height="300" fill="#E8E0C8" stroke="#C5A46D" stroke-width="3"/>
+<line x1="492" y1="180" x2="492" y2="480" stroke="#C5A46D" stroke-width="3" stroke-dasharray="14 12"/>
+<g><rect x="392" y="108" width="200" height="72" rx="10" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><text x="492" y="152" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="24" font-weight="700" fill="#0D3B2E">کوفه</text></g>
+<text x="492" y="205" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">انتهای شمالی راه</text>
+<g><rect x="392" y="480" width="200" height="72" rx="10" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><text x="492" y="524" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="24" font-weight="700" fill="#0D3B2E">نجف</text></g>
+<text x="492" y="578" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">انتهای جنوبی راه</text>
+<g><rect x="402" y="282" width="180" height="104" rx="10" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><path d="M 442 386 L 442 322 Q 442 282 492 282 Q 542 282 542 322 L 542 386 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="3"/><path d="M 402 284 Q 402 212 492 212 Q 582 212 582 284 Z" fill="url(#gold)"/></g>
+<g><line x1="596" y1="306" x2="684" y2="232" stroke="#8C7440" stroke-width="4" stroke-linecap="round"/><polygon points="684,232 664,240 676,254" fill="#8C7440"/><text x="822" y="222" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">آرامگاه کمیل (ثویه)</text><text x="822" y="252" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">شمال‌شرق مسجد — پیکان جهت است، نه نقطه</text></g>
+<text class="lbl" x="492" y="422" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="26" font-weight="700" fill="#0D3B2E">مسجد حنانه</text>
+<text class="lbl" x="492" y="452" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" fill="#3D4A44">میانهٔ بزرگراه نجف–کوفه — حدود ۲٫۵ کیلومتر شمال حرم (وب)</text>
+<text x="492" y="620" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#8A7A52">این نقشه نمای جایگاه است، نه خریطهٔ داخلی مسجد</text>
+</svg>
+  </div>
+  <div class="maphint">نقشه فقط جایگاه مسجد را در میانهٔ راه نجف–کوفه نشان می‌دهد و مقیاس‌دار نیست. پیکان طلایی فقط جهت آرامگاه کمیل (شمال‌شرق) را نشان می‌دهد؛ نقطه‌ای برای کمیل کشیده نشده است. دو ویژگی مسجد با چیپ‌های زیر باز می‌شوند؛ هیچ نقطهٔ داخلی دیگری روی نقشه کشیده نشده است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="notonmap">
+    <h2>دو ویژگی زیارتی مسجد حنانه</h2>
+    <div class="chips">
+      <div class="chip" data-open="1" role="button" tabindex="0"><div class="cn">۱</div><div><div class="ct">ستون حنانه</div><div class="cs">ستونی که هنگام عبور جنازهٔ امیرالمومنین (ع) ناله زد</div></div></div>
+      <div class="chip" data-open="2" role="button" tabindex="0"><div class="cn">۲</div><div><div class="ct">سر امام حسین (ع)</div><div class="cs">سر امام حسین (ع) در این مسجد گذاشته شد</div></div></div>
+    </div>
+  </div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>ستون حنانه</h3><button class="close">× بستن</button></div><p><b>ویژگی:</b> ستونی در مسیر کوفه–نجف که هنگام عبور جنازهٔ امیرالمومنین (ع) از حزن خم شد و ناله زد؛ حنانه یعنی بسیار ناله‌کننده، و بعد در محلش مسجد ساخته شد.</p><p><b>موقعیت روی نقشه:</b> خود مسجد در میانهٔ بزرگراه نجف–کوفه است؛ موقعیت دقیق ستون داخل مسجد نسبت به شبستان در منابع خوانده‌شده نیامده است، پس جای ستون داخل بنا کشیده نشده است.</p><p><b>یافتهٔ تازه:</b> به گفتهٔ بخش دینی عتبهٔ علویه، دعامهٔ تاریخی (القائم المائل) پس از مدتی بر اثر بی‌توجهی از میان رفت؛ پس ستون برجای‌مانده‌ای در مسجد کنونی برای نقطه‌گذاری نیست و مسجد در جایگاه همان ستون بنا شده است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این ویژگی ذکر نشده است.</p><p class="src">استناد: دیدار با عترت، مدخل مسجد حنانه، فهرست ص ۴۸۵ + وب.</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>سر امام حسین (ع)</h3><button class="close">× بستن</button></div><p><b>ویژگی:</b> سر امام حسین (ع) در این مسجد گذاشته شد و بعد نزد عبیدالله بن زیاد برده شد.</p><p><b>موقعیت روی نقشه:</b> غرفهٔ نجف موضع رأس را «در میانهٔ مسجد» (یتوسطه) می‌داند و ویکی‌پدیای انگلیسی هم «in its middle» می‌گوید؛ اما چون نقشهٔ بالا خریطهٔ داخلی نیست و جای «میانه» نسبت به شبستان/ورودی در پلان نیامده است، نقطهٔ داخلی برای آن کشیده نشده است.</p><p><b class="g">اعمال:</b> در منابع خوانده‌شده، عمل مستندی ویژهٔ این ویژگی ذکر نشده است.</p><p class="src">استناد: دیدار با عترت، مدخل مسجد حنانه، فهرست ص ۴۸۵ + وب.</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <p>منبع: «دیدار با عترت — راهنمای زیارات عتبات عالیات»، مدخل مسجد حنانه، فهرست ص ۴۸۵ + منابع وب معتبر؛ پژوهش اصلی و نسخهٔ ۱ مسجد حنانه؛ بخش دینی عتبهٔ علویه (از میان رفتن دعامهٔ تاریخی)؛ غرفهٔ نجف (موضع رأس در میانهٔ مسجد).</p>
+    <p>در اپ راهنمای زایرین عمار غزنه، حنانه مرحلهٔ جداگانه ندارد؛ نزدیک‌ترین بخش، مرحلهٔ مسجد کوفه و مسجد سهله است.</p>
+    <p>شکاف صادقانه (به‌روز ۳ نوامبر ۲۰۲۶): مختصات مجموعه بسته شد — مکان‌ها: ۳۲٫۰۰۵۰۹° شمالی، ۴۴٫۳۳۴۶۸° شرقی (نام و شهر النجف تطبیق شد)؛ ویکی‌پدیا/اطلس اسلامی: ۳۲٫۰۰۵۰۰، ۴۴٫۳۳۴۴۴ (اختلاف فقط حدود ۲۵ متر، یعنی گردکردن پین)؛ این مختصاتِ مجموعه است و جای ستون داخل مسجد را ثابت نمی‌کند. چیدمان داخلی مسجد و موقعیت دقیق ستون نسبت به شبستان همچنان در پلان/متن صریح جهت‌دار نیامده است، پس نقطهٔ داخلی کشیده نشده است؛ افزون بر آن، ستون تاریخی طبق عتبهٔ علویه از میان رفته است. جهت آرامگاه کمیل (ثویه) از روی دو جفت مختصات منتشرشده (حنانه در برابر کمیل: ۳۲٫۰۰۶۸۱، ۴۴٫۳۳۸۸۳) شمال‌شرق به دست می‌آید (سمت حدود ۶۴ درجه از شمال، فاصلهٔ خط مستقیم حدود ۴۳۵ تا ۴۷۰ متر) و متن‌ها هم کمیل را «به‌سوی کوفه از نجف» می‌دانند؛ اما فاصلهٔ متنی حدود ۶۰۰ متر است — اختلاف، تفاوت فاصلهٔ راه با خط مستقیم/گردکردن است، نه اختلاف جهت؛ چون نقشه مقیاس‌دار نیست، برای کمیل فقط پیکان جهت کشیده شده، نه نقطه.</p>
+    <p>تصویر مسجد بازنمایی شماتیک است، نه عکس واقعی مسجد.</p>
+    <p class="note">بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وادی السلام — گسترهٔ قبرستان و زیارت‌های آن | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:17px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.notonmap{padding:20px 40px 4px}
+.notonmap h2{font-size:22px;color:#0D3B2E;text-align:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:2px solid #E3D9BE;border-right:7px solid #8A7A52;border-radius:16px;padding:11px 16px;cursor:pointer;box-shadow:0 4px 0 rgba(138,122,82,.25);transition:transform .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(0,0,0,.15)}
+.chip .cn{flex:0 0 40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chip .ct{font-size:17px;font-weight:700;color:#0D3B2E;line-height:1.6}
+.chip .cs{font-size:14px;color:#8A7A52;line-height:1.6}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.notonmap{padding:16px 16px 4px}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>وادی السلام</h1>
+    <div class="sub">گسترهٔ قبرستان و زیارت‌های آن</div>
+    <div class="intro">روی نشان‌های نقشه بزنید تا کارت همان جایگاه باز شود؛ جایگاهی که هنوز نشان ندارد با چیپ زیر نقشه باز می‌شود؛ هر بار فقط یک کارت باز است.</div>
+    <div class="geo">وادی السلام در جوار نجف است؛ در شمال نجف و شمال حرم مطهر امیرالمومنین (ع) قرار گرفته است (دیدار با عترت، ص ۸۱).</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نمای گسترهٔ قبرستان وادی السلام در شمال نجف و شمال حرم مطهر، با نشان‌های نوار آغازین"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نمای گستره و موقعیت وادی السلام — شمال بالا؛ نشان‌ها نوار آغازین‌اند</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<g class="mq" data-open="1" role="button" tabindex="0" aria-label="وادی السلام"><rect class="hit" x="140" y="170" width="704" height="330"/><g class="dep"><rect x="140" y="170" width="704" height="330" fill="#F3EAD0" stroke="#C5A46D" stroke-width="4" stroke-dasharray="14 8"/><g fill="#E8E0C8" stroke="#D8CBA6" stroke-width="2"><rect x="190" y="215" width="52" height="30" rx="6"/><rect x="270" y="215" width="52" height="30" rx="6"/><rect x="350" y="215" width="52" height="30" rx="6"/><rect x="590" y="215" width="52" height="30" rx="6"/><rect x="670" y="215" width="52" height="30" rx="6"/><rect x="750" y="215" width="52" height="30" rx="6"/></g></g><circle class="bdg" cx="492" cy="250" r="20" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="492" y="258" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="20" font-weight="700" fill="#0D3B2E">۱</text></g>
+<text class="lbl" x="492" y="292" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="30" font-weight="700" fill="#0D3B2E">وادی السلام</text>
+<text class="lbl" x="492" y="320" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" fill="#3D4A44">بزرگ‌ترین قبرستان جهان — در جوار نجف</text>
+<rect x="170" y="345" width="644" height="150" fill="#EDE3C8" stroke="#C5A46D" stroke-width="2" stroke-dasharray="10 6"/>
+<text class="lbl" x="492" y="372" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" font-weight="700" fill="#8A7A52">نوار آغازین قبرستان — سمت ورودی از باب طوسی</text>
+<g class="mq" data-open="3" role="button" tabindex="0" aria-label="مقام امام صادق"><circle class="hit" cx="430" cy="400" r="26"/><circle class="bdg" cx="430" cy="400" r="18" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="430" y="407" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۳</text></g>
+<g class="mq" data-open="4" role="button" tabindex="0" aria-label="مقام امام زمان"><circle class="hit" cx="554" cy="400" r="26"/><circle class="bdg" cx="554" cy="400" r="18" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="554" y="407" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۴</text></g>
+<text class="lbl" x="492" y="438" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">مقام صادق و زمان (ع) — یک ساختمان</text>
+<g class="mq" data-open="2" role="button" tabindex="0" aria-label="مرقد حضرت هود و حضرت صالح"><circle class="hit" cx="420" cy="458" r="26"/><circle class="bdg" cx="420" cy="458" r="18" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="420" y="465" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۲</text></g>
+<g class="mq" data-open="6" role="button" tabindex="0" aria-label="آرامگاه آیت‌الله سید علی قاضی"><circle class="hit" cx="564" cy="458" r="26"/><circle class="bdg" cx="564" cy="458" r="18" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="564" y="465" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۶</text></g>
+<text class="lbl" x="420" y="488" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="700" fill="#0D3B2E">هود و صالح</text>
+<text class="lbl" x="564" y="488" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" font-weight="700" fill="#0D3B2E">قاضی</text>
+<g><line x1="492" y1="500" x2="492" y2="552" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/><polygon points="492,552 484,540 500,540" fill="#C5A46D"/></g>
+<rect x="140" y="552" width="704" height="86" fill="#EFE6CC" stroke="#C5A46D" stroke-width="3"/>
+<text x="492" y="592" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">شهر نجف</text>
+<text x="492" y="622" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">قبرستان در شمال شهر و شمال حرم است</text>
+<g><rect x="342" y="656" width="300" height="44" rx="8" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><text x="492" y="686" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#F7F3EA">حرم مطهر امیرالمومنین (ع) — مرجع جهت</text></g>
+</svg>
+  </div>
+  <div class="maphint">روی نشان‌های نقشه یا گسترهٔ قبرستان بزنید تا کارت همان جایگاه باز شود. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="notonmap">
+    <h2>جایگاهی که در این نقشه نشان‌دار نشد</h2>
+    <div class="chips">
+      <div class="chip" data-open="5" role="button" tabindex="0"><div class="cn">۵</div><div><div class="ct">محل دو انگشت امام علی (ع)</div><div class="cs">در منابعِ بررسی‌شده، جای آن در ضریح حرم آمده، نه در قبرستان — نیازمند تصمیم مالک</div></div></div>
+    </div>
+  </div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>وادی السلام</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در جوار نجف؛ در شمال نجف و شمال حرم مطهر امیرالمومنین (ع) قرار گرفته است.</p><p>بزرگ‌ترین قبرستان جهان است. این نقشه فقط گستره و موقعیت قبرستان را نشان می‌دهد؛ چیدمان داخلی آن در منابع نیامده است.</p><p class="src">استناد: دیدار با عترت، فصل نجف، ص ۵۹ و ص ۸۱.</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>مرقد حضرت هود و حضرت صالح</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در نوار آغازین قبرستان، از سمت خیابان شیخ طوسی؛ با خروج از باب طوسی، چند قدم آن‌سوتر و در سمت راست راه است و حدود ۴۰۰ متر با مرقد امیرالمومنین (ع) فاصله دارد؛ پس روی نقشه در نوار آغازین نشان‌دار شد. نشان، جای تقریبی در نوار آغازین است، نه نقطهٔ نقشه‌برداری‌شده.</p><p>در قبرستان، ساختمانی کوچک با گنبدی متمایز از دیگر بناهای قبرستان، ضریح کوچکی را در خود جای داده است که داخل آن قبور مطهر حضرت هود و حضرت صالح قرار دارد؛ یعنی هود و صالح در یک ساختمان و یک ضریح‌اند، نه دو بقعهٔ جدا.</p><p class="src">استناد: دیدار با عترت، ص ۶۰ و ص ۶۱ و ص ۸۲؛ مجلهٔ الشبکهٔ العراقیه (به‌نقل از امین خاص مرقد) و AtlasIslamica ‏(32.000179, 44.316543).</p></article>
+    <article class="card" data-card="3"><div class="chead"><div class="cnum">۳</div><h3>مقام امام صادق (ع)</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در نوار آغازین قبرستان، از سمت خیابان شیخ طوسی، در یک ساختمان با مقام امام زمان (ع) و کمی آن‌سوتر از مرقد هود و صالح؛ پس روی نقشه در نوار آغازین نشان‌دار شد. نشان، جای تقریبی در نوار آغازین است، نه نقطهٔ نقشه‌برداری‌شده.</p><p>امام صادق (ع) در این مقام نماز گزارد و هنگام زیارت جدشان امیرالمومنین (ع) گاهی آن را مقر خود می‌گرفت.</p><p class="src">استناد: دیدار با عترت، ص ۶۴؛ پژوهش موقع السرائر (آغاز قبرستان از سمت خیابان شیخ طوسی)؛ کتاب تاریخ مقام صاحب العصر (حدود ۶۰۰ متر با مرقد امیرالمومنین (ع)).</p></article>
+    <article class="card" data-card="4"><div class="chead"><div class="cnum">۴</div><h3>مقام امام زمان (ع)</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در نوار آغازین قبرستان، در همان ساختمان مقام امام صادق (ع)؛ حدود ۶۰۰ متر با مرقد امیرالمومنین (ع) فاصله دارد؛ پس روی نقشه در نوار آغازین نشان‌دار شد. نشان، جای تقریبی در نوار آغازین است، نه نقطهٔ نقشه‌برداری‌شده.</p><p>در این ساختمان دو تابلو جای نماز دو بزرگوار را مشخص می‌کند، گنبدی آبی بر فراز آن است و چاهی معروف به «بئر امام مهدی (ع)» در داخل آن قرار دارد.</p><p class="src">استناد: دیدار با عترت، ص ۶۴؛ پژوهش موقع السرائر؛ دانشنامهٔ اسلامی و سیبطین (ساختمان قدیمی با دو تابلو و گنبد آبی).</p></article>
+    <article class="card" data-card="5"><div class="chead"><div class="cnum">۵</div><h3>محل دو انگشت امام علی (ع)</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در وادی السلام؛ جای دقیقش داخل قبرستان در منابع نیامده است، پس روی نقشه نشان‌دار نشد.</p><p>در منابع خوانده‌شده، توضیح بیشتری دربارهٔ این محل نیامده است.</p><p class="src">استناد: دیدار با عترت، ص ۷۹.</p></article>
+    <article class="card" data-card="6"><div class="chead"><div class="cnum">۶</div><h3>آرامگاه آیت‌الله سید علی قاضی</h3><button class="close">✕ بستن</button></div><p><b>موقعیت:</b> در قسمت جنوبی وادی السلام، نزدیک مرقد هود و صالح (و به‌نقل مستند القاضی، نزدیک مقام امام مهدی (ع))؛ پس روی نقشه در نوار آغازین، کنار مرقد هود و صالح، نشان‌دار شد. نشان، جای تقریبی در نوار آغازین است، نه نقطهٔ نقشه‌برداری‌شده.</p><p>آیت‌الله سید علی قاضی با وصف «کوه معنویت و صفا» یاد شده است.</p><p class="src">استناد: متن وادی السلام، ~ص ۷۶؛ همشهری آنلاین و دانشنامهٔ اسلامی (قسمت جنوبی، نزدیک هود و صالح)؛ مستند القاضی، شبکهٔ المعارف (نزدیک مقام امام مهدی (ع)).</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <p>در اپ راهنمای زایرین عمار غزنه، نزدیک‌ترین بخش به وادی السلام همان مرحلهٔ نجف است؛ داده‌های اپ بخش جداگانه‌ای برای وادی السلام ندارد.</p>
+    <p>منبع: «دیدار با عترت — راهنمای زیارات عتبات عالیات»، فصل نجف؛ پژوهش ساخت اینفوگرافیک‌های زیارت؛ منابع تازهٔ مکان‌یابی در کارت‌ها آمده است.</p>
+    <p>نشان‌های ۲، ۳، ۴ و ۶ نوار آغازین قبرستان را نشان می‌دهند (سمت ورودی از باب طوسی) و نقطهٔ نقشه‌برداری‌شده نیستند؛ ترتیب نسبی‌شان از فاصله‌ها می‌آید: هود و صالح حدود ۴۰۰ متر و مقام صادق و زمان حدود ۶۰۰ متر با مرقد امیرالمومنین (ع) فاصله دارند و آرامگاه قاضی نزدیک هود و صالح است. اختلاف منابع: برخی راهنماها مقام صادق و زمان را «قسمت شمال» خوانده‌اند، ولی لنگرهای آغاز قبرستان و ۶۰۰ متر آن را در نوار آغازین می‌نشانند؛ و در جهت شرقی/غربی هم «سمت راست راه» با «جانب غربی قبرستان» ناهم‌خوان است، پس نشان‌ها در میانهٔ نوار گذاشته شدند بی‌آنکه شرقی یا غربی بودن ادعا شود. موضع الاصبعین (۵) در منابعِ بررسی‌شده در ضریح مطهر حرم آمده است، نه داخل قبرستان؛ پس اینجا نشان نگرفت و تعیین تکلیفش با مالک است. مرقد حضرت آدم و حضرت نوح کنار مرقد امیرالمومنین‌اند و مقبرهٔ شیخ طوسی در مسجد شیخ طوسی و قبور علما در حرم‌اند؛ این موارد در اینفوگرافیک نجف آمده‌اند و اینجا تکرار نشده‌اند تا وادی السلام با حرم نجف قاطی نشود.</p>
+    <p>تصاویر و نشانه‌های نقشه بازنمایی شماتیک‌اند، نه عکس واقعی قبرستان و نه خریطهٔ رسمی آن.</p>
+    <p class="note">بدون انسان، بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();}});
+})();
+</script>
+</body>
+</html>

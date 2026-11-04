@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسجد کوفه — نقشهٔ مقام‌های داخل مسجد و چهار مقام بیرون آن | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 34px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:18px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{padding:30px 40px 6px}
+.mapnote{font-size:18px;color:#5A675F;text-align:center;line-height:1.9;margin-bottom:10px}
+.mapbox{background:#F7F3EA;border:2px solid #E3D9BE;border-radius:26px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.mapbox svg{display:block;width:100%;height:auto}
+.mq{cursor:pointer;outline:none}
+.mq:hover{filter:brightness(1.07)}
+.mq:focus-visible .mqframe{stroke:#0D3B2E;stroke-width:3}
+.mq.selected .mqframe{stroke:#0D3B2E;stroke-width:3}
+.mqdisc{font-family:Vazirmatn,Tahoma,sans-serif;font-weight:700}
+.maplabel{font-family:Vazirmatn,Tahoma,sans-serif;font-weight:700;fill:#0D3B2E}
+.mapdim{font-size:17px;color:#5A675F;text-align:center;line-height:1.9;margin-top:10px}
+.hint{font-size:18px;color:#8A7A52;text-align:center;line-height:1.9;margin:16px 0 4px}
+.detail{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:8px solid #C5A46D;border-radius:21px;box-shadow:0 10px 0 rgba(197,164,109,.35),0 20px 34px rgba(0,0,0,.14);margin:18px 40px 4px;overflow:hidden}
+.detail.show{display:block;animation:detailIn .3s ease}
+@keyframes detailIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.detail-head{display:flex;align-items:center;gap:18px;padding:20px 24px 14px}
+.detail-disc{flex:0 0 60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:26px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440,0 12px 18px rgba(0,0,0,.25),inset 0 2px 6px rgba(255,255,255,.7)}
+.detail-head h3{flex:1;font-size:27px;color:#0D3B2E;line-height:1.6}
+.detail-close{flex:0 0 46px;height:46px;border-radius:50%;border:2px solid #C5A46D;background:#FFFDF6;color:#0D3B2E;font-size:20px;font-weight:700;cursor:pointer;transition:transform .2s,background .2s}
+.detail-close:hover{background:#F2E3B6;transform:scale(1.06)}
+.detail-body{padding:0 24px 20px}
+.detail-body p{font-size:20px;color:#3D4A44;line-height:1.9;margin-top:8px}
+.detail-body p b{color:#0D3B2E}
+.detail-body .detail-src{font-size:16px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:10px;margin-top:12px}
+.list{padding:22px 40px 10px}
+.list h2{font-size:24px;color:#0D3B2E;margin-bottom:14px}
+.row{display:flex;align-items:center;gap:16px;width:100%;text-align:right;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-right:8px solid #C5A46D;border-radius:18px;padding:14px 18px;margin-bottom:12px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.row:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.14)}
+.row .rdisc{flex:0 0 52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 #8C7440}
+.row .rtxt{flex:1}
+.row .rtxt b{font-size:21px;color:#0D3B2E;line-height:1.6;display:block}
+.row .rtxt span{font-size:17px;color:#5A675F;line-height:1.7}
+.row .ropen{flex:0 0 auto;font-size:16px;font-weight:700;color:#8A7A52}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:30px 48px 38px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot .applink{display:inline-block;margin-top:16px;background:#C5A46D;color:#0D3B2E;font-size:22px;font-weight:700;padding:13px 34px;border-radius:34px;text-decoration:none;box-shadow:0 6px 0 #8C7440}
+.foot p{font-size:17px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:15px;color:#A9B3AC}
+@media (max-width:720px){
+body{padding:12px 0}
+.poster{width:auto;margin:0 12px;border-radius:26px}
+.head{padding:30px 20px 24px}
+.head h1{font-size:40px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.head .geo{font-size:15px}
+.mapwrap{padding:20px 14px 4px}
+.mapnote{font-size:15px}
+.mapdim{font-size:14px}
+.hint{font-size:15px}
+.detail{margin:14px 14px 4px}
+.detail-head{padding:16px 18px 10px}
+.detail-head h3{font-size:22px}
+.detail-body{padding:0 18px 16px}
+.detail-body p{font-size:17px}
+.list{padding:18px 14px 8px}
+.row{padding:12px 14px}
+.row .rtxt b{font-size:18px}
+.row .rtxt span{font-size:15px}
+.foot{padding:24px 20px 30px}
+.foot p{font-size:15px}
+.foot .applink{font-size:18px;padding:11px 24px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>مسجد کوفه</h1>
+    <div class="sub">نقشهٔ مقام‌های داخل مسجد + چهار مقام بیرون آن</div>
+    <div class="intro">شماره‌های ۱ تا ۱۱ مقام‌های داخل مسجد، به ترتیب اعمال مسجد؛ شماره‌های ۱۲ تا ۱۵ چهار مقام بیرون مسجد (مسلم، هانی، مختار، میثم) در جای دقیقشان نسبت به مسجد. روی هر مقام بزنید تا کارت جزئیاتش باز شود.</div>
+    <div class="geo">موقعیت جغرافیایی مسجد: ۳۲٫۰۲۸۶۱° شمالی، ۴۴٫۴۰۰۸۳° شرقی (کوفه، عراق)؛ مختصات چهار مقام بیرون در کارت‌های ۱۲ تا ۱۵ آمده است.</div>
+  </div>
+  <div class="mapwrap">
+    <div class="mapnote">نقشه با شمال بالا؛ دیوار قبله در جنوب است و ساختمان حدود ۲۱ درجه به سوی غرب (قبله) انحراف دارد. نشان‌های ۱۲ (مسلم) و ۱۳ (هانی) چسبیده به دیوار شرقی‌اند؛ مختار (۱۴) نشان جدای بیرونی ندارد چون درون حرم مسلم است؛ پیکان ۱۵ فقط جهت و فاصلهٔ میثم را نشان می‌دهد، نه جای چسبیده به دیوار.</div>
+    <div class="mapbox">
+    <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ شماتیک مسجد جامع کوفه با جای مقام‌ها"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+<linearGradient id="col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#EFE6CC"/><stop offset="1" stop-color="#C9B98C"/></linearGradient>
+<linearGradient id="marb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D8CBA6"/></linearGradient>
+</defs>
+<!-- دیوار و برج‌ها -->
+<rect x="110" y="60" width="860" height="860" fill="none" stroke="#0D3B2E" stroke-width="12"/>
+<g fill="url(#goldD)" stroke="#8C7440" stroke-width="2">
+<circle cx="110" cy="60" r="17"/><circle cx="233" cy="60" r="17"/><circle cx="356" cy="60" r="17"/><circle cx="479" cy="60" r="17"/><circle cx="602" cy="60" r="17"/><circle cx="725" cy="60" r="17"/><circle cx="848" cy="60" r="17"/><circle cx="970" cy="60" r="17"/>
+<circle cx="110" cy="920" r="17"/><circle cx="233" cy="920" r="17"/><circle cx="356" cy="920" r="17"/><circle cx="479" cy="920" r="17"/><circle cx="602" cy="920" r="17"/><circle cx="725" cy="920" r="17"/><circle cx="848" cy="920" r="17"/><circle cx="970" cy="920" r="17"/>
+<circle cx="110" cy="183" r="17"/><circle cx="110" cy="306" r="17"/><circle cx="110" cy="429" r="17"/><circle cx="110" cy="552" r="17"/><circle cx="110" cy="675" r="17"/><circle cx="110" cy="798" r="17"/>
+<circle cx="970" cy="183" r="17"/><circle cx="970" cy="306" r="17"/><circle cx="970" cy="429" r="17"/><circle cx="970" cy="552" r="17"/><circle cx="970" cy="675" r="17"/><circle cx="970" cy="798" r="17"/>
+</g>
+<!-- رواق‌های مسقف و صحن روباز -->
+<rect x="160" y="110" width="760" height="750" fill="#E7DCC0"/>
+<rect x="240" y="190" width="600" height="560" fill="#FFFEFB"/>
+<text x="560" y="140" font-size="18" fill="#8A7A52" text-anchor="middle">رواق‌های مسقف</text>
+<text x="540" y="230" font-size="18" fill="#8A7A52" text-anchor="middle">صحن روباز</text>
+<!-- دروازه‌ها -->
+<rect x="140" y="52" width="60" height="16" fill="#F7F3EA"/>
+<rect x="510" y="52" width="60" height="16" fill="#F7F3EA"/>
+<rect x="880" y="52" width="60" height="16" fill="#F7F3EA"/>
+<rect x="962" y="700" width="16" height="60" fill="#F7F3EA"/>
+<rect x="962" y="590" width="16" height="60" fill="#F7F3EA"/>
+<rect x="962" y="300" width="16" height="60" fill="#F7F3EA"/>
+<rect x="102" y="480" width="16" height="60" fill="#F7F3EA"/>
+<text x="170" y="40" font-size="20" font-weight="700" fill="#0D3B2E" text-anchor="middle">باب الثعبان (الفیل)</text>
+<text x="540" y="40" font-size="20" font-weight="700" fill="#0D3B2E" text-anchor="middle">باب الرحمة</text>
+<text x="910" y="40" font-size="20" font-weight="700" fill="#0D3B2E" text-anchor="middle">باب المراد</text>
+<text x="985" y="735" font-size="19" font-weight="700" fill="#0D3B2E">باب مسلم</text>
+<text x="985" y="625" font-size="19" font-weight="700" fill="#0D3B2E">باب ازدی</text>
+<text x="985" y="335" font-size="19" font-weight="700" fill="#0D3B2E">باب هانی</text>
+<text x="95" y="515" font-size="19" font-weight="700" fill="#0D3B2E" text-anchor="end">باب الحجة</text>
+<!-- شمال و قبله -->
+<g stroke="#0D3B2E" stroke-width="3" fill="none"><line x1="60" y1="48" x2="60" y2="18"/><polygon points="60,10 52,26 68,26" fill="#0D3B2E" stroke="none"/></g>
+<text x="60" y="70" font-size="20" font-weight="700" fill="#0D3B2E" text-anchor="middle">شمال</text>
+<g stroke="#0D3B2E" stroke-width="3" fill="none"><line x1="178" y1="948" x2="148" y2="978"/><polygon points="142,984 160,972 148,966" fill="#0D3B2E" stroke="none"/></g>
+<text x="270" y="982" font-size="20" font-weight="700" fill="#0D3B2E" text-anchor="end">سمت قبله</text>
+<!-- اتاق محراب -->
+<rect x="450" y="750" width="200" height="110" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/>
+<path d="M 515 850 L 515 800 Q 515 772 550 772 Q 585 772 585 800 L 585 850 Z" fill="#0A2E24" stroke="url(#gold)" stroke-width="4"/>
+<path d="M 530 850 L 530 805 Q 530 788 550 788 Q 570 788 570 805 L 570 850 Z" fill="#F7F3EA"/>
+<rect x="600" y="818" width="30" height="32" rx="4" fill="url(#goldD)" stroke="#8C7440" stroke-width="2"/>
+<!-- ناحیهٔ کلیک محراب (روی اتاق، زیر بقیهٔ نگاره‌ها) -->
+<g class="mq" data-maqam="9" role="button" tabindex="0" aria-label="محراب امیرمومنان علی (ع)"><rect x="450" y="750" width="200" height="110" fill="transparent"/></g>
+<!-- ۱ ستون ابراهیم -->
+<g class="mq" data-maqam="1" transform="translate(-584,0)" role="button" tabindex="0" aria-label="ستون چهارم یا ستون حضرت ابراهیم (ع)"><title>ستون چهارم یا ستون حضرت ابراهیم (ع)</title><rect class="mqframe" x="824" y="102" width="96" height="96" fill="transparent" rx="12"/>
+<path d="M 844 178 L 844 150 Q 844 132 872 132 Q 900 132 900 150 L 900 178 Z" fill="#FFFEFB" stroke="url(#gold)" stroke-width="3"/>
+<rect x="858" y="172" width="28" height="8" rx="2" fill="url(#goldD)"/><rect x="865" y="132" width="14" height="40" fill="url(#col)"/><rect x="859" y="126" width="26" height="8" rx="2" fill="url(#goldD)"/>
+<circle cx="910" cy="116" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="910" y="116" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۱</text>
+<text class="maplabel" x="872" y="218" font-size="20" text-anchor="middle">ستون ابراهیم (ع)</text></g>
+<!-- ۳ بیت الطشت -->
+<g class="mq" data-maqam="3" role="button" tabindex="0" aria-label="مقام بیت الطشت"><title>مقام بیت الطشت</title><rect class="mqframe" x="744" y="200" width="96" height="96" fill="transparent" rx="12"/>
+<rect x="770" y="231" width="44" height="26" rx="4" fill="url(#marb)" stroke="url(#gold)" stroke-width="2"/>
+<path d="M 784 257 L 784 243 Q 784 235 792 235 Q 800 235 800 243 L 800 257 Z" fill="#0D3B2E"/>
+<rect x="814" y="251" width="18" height="5" fill="#C9B98C"/><rect x="816" y="257" width="16" height="5" fill="#C9B98C"/><rect x="818" y="263" width="14" height="5" fill="#C9B98C"/>
+<circle cx="758" cy="214" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="758" y="214" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۳</text>
+<text class="maplabel" x="770" y="190" font-size="20" text-anchor="middle">بیت الطشت</text></g>
+<!-- ۲ دکه القضاء -->
+<g class="mq" data-maqam="2" role="button" tabindex="0" aria-label="دکه القضاء"><title>دکه القضاء</title><rect class="mqframe" x="744" y="310" width="96" height="96" fill="transparent" rx="12"/>
+<polygon points="792,330 826,346 792,362 758,346" fill="#EFE6CC" stroke="#8C7440" stroke-width="2"/>
+<polygon points="758,346 792,362 792,386 758,370" fill="#C9B98C" stroke="#8C7440" stroke-width="1"/>
+<polygon points="792,362 826,346 826,370 792,386" fill="#B3A276" stroke="#8C7440" stroke-width="1"/>
+<rect x="786" y="314" width="12" height="18" fill="url(#col)"/><ellipse cx="792" cy="314" rx="8" ry="3" fill="url(#goldD)"/>
+<circle cx="830" cy="324" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="830" y="324" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۲</text>
+<text class="maplabel" x="792" y="420" font-size="20" text-anchor="middle">دکه القضاء</text></g>
+<!-- ۴ دکه المعراج -->
+<g class="mq" data-maqam="4" role="button" tabindex="0" aria-label="دکه المعراج یا مقام النبی (ص)"><title>دکه المعراج یا مقام النبی (ص)</title><rect class="mqframe" x="452" y="372" width="96" height="96" fill="transparent" rx="12"/>
+<rect x="470" y="448" width="60" height="12" rx="3" fill="url(#goldD)" stroke="#8C7440" stroke-width="1"/>
+<path d="M 478 448 Q 478 414 500 414 Q 522 414 522 448 Z" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/>
+<rect x="498" y="404" width="4" height="12" fill="url(#goldD)"/><circle cx="500" cy="402" r="4" fill="url(#gold)"/>
+<circle cx="538" cy="386" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="538" y="386" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۴</text>
+<text class="maplabel" x="500" y="478" font-size="20" text-anchor="middle">دکه المعراج</text></g>
+<!-- المزولة -->
+<g><rect x="606" y="392" width="8" height="52" fill="url(#col)"/><ellipse cx="610" cy="392" rx="8" ry="3" fill="url(#goldD)"/><rect x="602" y="444" width="16" height="6" rx="2" fill="url(#goldD)"/>
+<text class="maplabel" x="610" y="478" font-size="20" text-anchor="middle">المزولة</text></g>
+<!-- جای کشتی نوح -->
+<g transform="translate(0,-90)"><polygon points="350,574 368,582 376,600 368,618 350,626 332,618 324,600 332,582" fill="none" stroke="#8C7440" stroke-width="3"/>
+<path d="M 334 600 Q 342 594 350 600 Q 358 606 366 600" fill="none" stroke="#4E7D94" stroke-width="2"/>
+<text class="maplabel" x="350" y="648" font-size="20" text-anchor="middle">جای کشتی نوح</text></g>
+<!-- ۵ آدم -->
+<g class="mq" data-maqam="5" role="button" tabindex="0" aria-label="مقام امیرمومنان (ع) یا مقام آدم (ع)"><title>مقام امیرمومنان (ع) یا مقام آدم (ع)</title><rect class="mqframe" x="562" y="632" width="96" height="96" fill="transparent" rx="12"/>
+<rect x="596" y="714" width="28" height="8" rx="2" fill="url(#goldD)"/><rect x="603" y="642" width="14" height="72" fill="url(#col)"/><rect x="597" y="636" width="26" height="8" rx="2" fill="url(#goldD)"/>
+<circle cx="648" cy="656" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="648" y="656" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۵</text>
+<text class="maplabel" x="610" y="618" font-size="20" text-anchor="middle">آدم (ع)</text></g>
+<!-- ۶ جبرائیل -->
+<g class="mq" data-maqam="6" role="button" tabindex="0" aria-label="مقام جبرائیل (ع) یا ستون پنجم"><title>مقام جبرائیل (ع) یا ستون پنجم</title><rect class="mqframe" x="432" y="632" width="96" height="96" fill="transparent" rx="12"/>
+<rect x="466" y="714" width="28" height="8" rx="2" fill="url(#goldD)"/><rect x="473" y="650" width="14" height="64" fill="url(#col)"/><rect x="467" y="644" width="26" height="8" rx="2" fill="url(#goldD)"/>
+<circle cx="518" cy="656" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="518" y="656" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۶</text>
+<text class="maplabel" x="480" y="618" font-size="20" text-anchor="middle">جبرائیل (ع)</text></g>
+<!-- ۷ سجاد -->
+<g class="mq" data-maqam="7" role="button" tabindex="0" aria-label="مقام امام سجاد (ع)"><title>مقام امام سجاد (ع)</title><rect class="mqframe" x="442" y="757" width="96" height="96" fill="transparent" rx="12"/>
+<path d="M 470 835 L 470 800 Q 470 780 490 780 Q 510 780 510 800 L 510 835 Z" fill="#0A2E24" stroke="url(#gold)" stroke-width="3"/>
+<path d="M 478 835 L 478 805 Q 478 792 490 792 Q 502 792 502 805 L 502 835 Z" fill="#F7F3EA"/>
+<circle cx="528" cy="771" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="528" y="771" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۷</text>
+<text class="maplabel" x="490" y="890" font-size="20" text-anchor="middle">سجاد (ع)</text></g>
+<!-- ۸ نوح -->
+<g class="mq" data-maqam="8" role="button" tabindex="0" aria-label="مقام نوح (ع)"><title>مقام نوح (ع)</title><rect class="mqframe" x="242" y="742" width="96" height="96" fill="transparent" rx="12"/>
+<rect x="268" y="782" width="44" height="28" rx="3" fill="url(#marb)" stroke="url(#gold)" stroke-width="2"/>
+<path d="M 268 782 Q 268 758 290 758 Q 312 758 312 782 Z" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/>
+<rect x="284" y="794" width="12" height="16" fill="#0D3B2E"/>
+<circle cx="328" cy="756" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="328" y="756" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۸</text>
+<text class="maplabel" x="290" y="848" font-size="20" text-anchor="middle">نوح (ع) — باب الفرج</text></g>
+<!-- ۹ دیسک و برچسب محراب -->
+<g class="mq" data-maqam="9" role="button" tabindex="0" aria-label="محراب امیرمومنان علی (ع)"><title>محراب امیرمومنان علی (ع)</title>
+<circle cx="620" cy="742" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="620" y="742" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۹</text>
+<text class="maplabel" x="470" y="744" font-size="20" text-anchor="middle">محراب امیرمومنان (ع)</text></g>
+<!-- ۱۰ صادق -->
+<g class="mq" data-maqam="10" role="button" tabindex="0" aria-label="مقام امام صادق (ع)"><title>مقام امام صادق (ع)</title><rect class="mqframe" x="752" y="652" width="96" height="96" fill="transparent" rx="12"/>
+<path d="M 782 730 L 782 700 Q 782 684 800 684 Q 818 684 818 700 L 818 730 Z" fill="#FFFFFF" stroke="url(#gold)" stroke-width="3"/>
+<path d="M 790 730 L 790 705 Q 790 694 800 694 Q 810 694 810 705 L 810 730 Z" fill="#E7DCC0"/>
+<rect x="822" y="700" width="6" height="30" fill="url(#col)"/>
+<circle cx="838" cy="666" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="838" y="666" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۱۰</text>
+<text class="maplabel" x="800" y="758" font-size="20" text-anchor="middle">صادق (ع)</text></g>
+<!-- ۱۳ هانی: بیرون دیوار شرقی، شمال حرم مسلم، کنار باب هانی -->
+<g class="mq" data-maqam="13" role="button" tabindex="0" aria-label="هانی بن عروه، شرق مسجد، شمال حرم مسلم"><title>هانی بن عروه</title><rect class="mqframe" x="990" y="198" width="80" height="96" fill="transparent" rx="12"/>
+<line x1="1010" y1="272" x2="978" y2="310" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<rect x="992" y="228" width="64" height="42" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/>
+<path d="M 1008 270 L 1008 254 Q 1008 242 1024 242 Q 1040 242 1040 254 L 1040 270 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<circle cx="1056" cy="228" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="1056" y="228" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۱۳</text>
+<text class="maplabel" x="1024" y="212" font-size="20" text-anchor="middle">هانی</text></g>
+<!-- ۱۲ مسلم: بیرون دیوار شرقی، جنوب شرقی، کنار باب مسلم؛ مختار (۱۴) درون همین حرم است -->
+<g class="mq" data-maqam="12" role="button" tabindex="0" aria-label="حرم مسلم بن عقیل، شرق مسجد؛ مختار درون همین حرم است"><title>حرم مسلم بن عقیل</title><rect class="mqframe" x="990" y="766" width="80" height="140" fill="transparent" rx="12"/>
+<line x1="1010" y1="782" x2="978" y2="740" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<rect x="992" y="782" width="64" height="42" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/>
+<path d="M 1008 824 L 1008 806 Q 1008 790 1024 790 Q 1040 790 1040 806 L 1040 824 Z" fill="url(#gold)" stroke="#C5A46D" stroke-width="2"/>
+<circle cx="1056" cy="782" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text class="mqdisc" x="1056" y="782" font-size="20" fill="#0D3B2E" text-anchor="middle" dy=".35em">۱۲</text>
+<text class="maplabel" x="1024" y="850" font-size="20" text-anchor="middle">مسلم</text>
+<text class="maplabel" x="1024" y="872" font-size="16" text-anchor="middle">مختار (۱۴) درون</text>
+<text class="maplabel" x="1024" y="894" font-size="16" text-anchor="middle">همین حرم است</text></g>
+<!-- ۱۵ میثم: فقط جهت و فاصله؛ حدود ۶۰۰ متر غرب‌جنوب‌غربی، بیرون مقیاس این نقشه -->
+<g class="mq" data-maqam="15" role="button" tabindex="0" aria-label="میثم تمار، حدود ۶۰۰ متر به غرب مسجد؛ پیکان فقط جهت و فاصله است"><title>میثم تمار — حدود ۶۰۰ متر به غرب</title><rect class="mqframe" x="4" y="820" width="100" height="82" fill="transparent" rx="12"/>
+<text class="maplabel" x="56" y="830" font-size="17" text-anchor="middle">غرب</text>
+<rect x="8" y="838" width="96" height="60" rx="10" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/>
+<line x1="52" y1="868" x2="20" y2="868" stroke="#0D3B2E" stroke-width="3"/><polygon points="20,868 36,858 36,878" fill="#0D3B2E"/>
+<text class="maplabel" x="76" y="862" font-size="18" text-anchor="middle">میثم</text>
+<text class="maplabel" x="76" y="884" font-size="15" text-anchor="middle">≈۶۰۰ م</text></g>
+</svg>
+    </div>
+    <div class="mapdim">مربع ~۱۱۰×۱۱۶ متر؛ دیوار با ۲۸ برج نیم‌دایره‌ای؛ ۱۸۷ ستون؛ ۴ مناره؛ دروازه‌های کشیده‌شده: ثعبان، رحمه، مراد، حجه، هانی، ازدی، مسلم؛ مساحت ۱۱٬۱۶۲ متر مربع. نشان‌های ۱۲ و ۱۳ در مقیاس همین نقشه چسبیده به دیوار شرقی‌اند؛ پیکان ۱۵ به مقیاس نیست، چون میثم حدود ۶۰۰ متر دورتر است و در این کادر نمی‌گنجد.</div>
+    <div class="hint">روی تصویر سه‌بعدی هر مقام در نقشه، یا روی ردیفش در فهرست زیر، بزنید تا کارت جزئیاتش باز شود. مختار (۱۴) روی نقشه نشان جدا ندارد؛ ردیفش در فهرست «بیرون مسجد» کارت او را باز می‌کند.</div>
+  </div>
+  <div class="detail" id="detailPanel" hidden>
+    <div class="detail-head"><div class="detail-disc" id="dDisc">۱</div><h3 id="dName"></h3><button class="detail-close" id="dClose" type="button" aria-label="بستن کارت">✕</button></div>
+    <div class="detail-body">
+      <p><b>جای روی نقشه: </b><span id="dPlace"></span></p>
+      <p><b>توضیح: </b><span id="dDesc"></span></p>
+      <p><b>اعمال: </b><span id="dRite"></span></p>
+      <p class="detail-src" id="dSrc"></p>
+    </div>
+  </div>
+  <div class="list">
+    <h2>فهرست مقام‌ها — به ترتیب اعمال مسجد</h2>
+    <button class="row" type="button" data-maqam="1"><span class="rdisc">۱</span><span class="rtxt"><b>ستون چهارم یا ستون حضرت ابراهیم (ع)</b><span>رواق شمالی، شرق باب الثعبان، نزدیک گوشهٔ شمال غربی</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="2"><span class="rdisc">۲</span><span class="rtxt"><b>دکه القضاء</b><span>شمال شرقی صحن، جنوب بیت الطشت</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="3"><span class="rdisc">۳</span><span class="rtxt"><b>مقام بیت الطشت</b><span>صحن، شمال دکه القضاء، متصل به آن</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="4"><span class="rdisc">۴</span><span class="rtxt"><b>دکه المعراج یا مقام النبی (ص)</b><span>وسط مسجد، نزدیک المزولة</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="5"><span class="rdisc">۵</span><span class="rtxt"><b>مقام امیرمومنان (ع) یا مقام آدم (ع)</b><span>ستون هفتم، جنوب صحن، روبه‌روی محراب</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="6"><span class="rdisc">۶</span><span class="rtxt"><b>مقام جبرائیل (ع) یا ستون پنجم</b><span>جنوب صحن، کنار مقام آدم</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="7"><span class="rdisc">۷</span><span class="rtxt"><b>مقام امام سجاد (ع)</b><span>درون محراب امیرمومنان، جنوب غربی</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="8"><span class="rdisc">۸</span><span class="rtxt"><b>مقام نوح (ع)</b><span>گوشهٔ غربی (باب الفرج)، نزدیک محراب</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="9"><span class="rdisc">۹</span><span class="rtxt"><b>محراب امیرمومنان علی (ع)</b><span>دیوار قبله، شبستان اصلی</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="10"><span class="rdisc">۱۰</span><span class="rtxt"><b>مقام امام صادق (ع)</b><span>جنوب شرقی، کنار ایوان حرم مسلم</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="11"><span class="rdisc">۱۱</span><span class="rtxt"><b>جایگاه امام زمان (عج)</b><span>روی نقشه نیست؛ موقعیت منتشر نشده است</span></span><span class="ropen">جزئیات</span></button>
+    <h2>بیرون مسجد — جای دقیق نسبت به مسجد</h2>
+    <button class="row" type="button" data-maqam="12"><span class="rdisc">۱۲</span><span class="rtxt"><b>حرم مسلم بن عقیل</b><span>شرق مسجد، چسبیده به رکن شرقی‌جنوبی، کنار باب مسلم</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="13"><span class="rdisc">۱۳</span><span class="rtxt"><b>هانی بن عروه</b><span>شرق مسجد، شمال حرم مسلم، کنار باب هانی</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="14"><span class="rdisc">۱۴</span><span class="rtxt"><b>مختار ثقفی</b><span>درون حرم مسلم؛ نشان جدای بیرونی ندارد</span></span><span class="ropen">جزئیات</span></button>
+    <button class="row" type="button" data-maqam="15"><span class="rdisc">۱۵</span><span class="rtxt"><b>میثم تمار</b><span>غرب مسجد، حدود ۶۰۰ متر؛ پیکان روی نقشه فقط جهت و فاصله است</span></span><span class="ropen">جزئیات</span></button>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <a class="applink" href="../ziyarat-guide-app/index.html#atabat-2">باز کردن صفحهٔ مسجد کوفه و مسجد سهله در اپ ↗</a>
+    <p>موارد این نقشه، جزئیات همان مرحلهٔ مسجد کوفه و مسجد سهله در اپ‌اند؛ با این دکمه همان صفحه باز می‌شود.</p>
+    <p>منابع: «دیدار با عترت — راهنمای زیارات عتبات عالیات»، فصل کوفه، به ترتیب اعمال مسجد؛ سایت رسمی مسجد کوفه (masjed-alkufa.com)؛ سرائر (تحقیق احمد الحسینی)؛ دانشنامهٔ اسلامی؛ غرفهٔ نجف؛ کربلاگشت؛ زیارتگاه‌های عراق (ج ۱). دروازه‌ها: نشریهٔ دانشگاه کوفه، کتابات (گفت‌وگو با دکتر کامل سلمان الجبوری)، سایت رسمی مسجد، نقشهٔ مرجع Take Me to Karbala. مختصات مسجد از ویکی‌پدیا و منابع نقشه.</p>
+    <p>یادداشت‌های صادقانه: نقشه شماتیک است، نه نقشهٔ رسمی منتشرشدهٔ مسجد؛ جای مقام‌ها بر پایهٔ توصیف‌های منابع بالا روی نقشه نشان داده شده و سانتی‌متری نیست. شمارهٔ ستون ابراهیم با قاعدهٔ شمارش از باب الرحمه (میانهٔ ضلع شمالی) چهارم است (دیدار)؛ «پنجم» در سایت رسمی و سرائر همان ستون از شمارش سمت دیگر است (روایت: چهارم روبه‌روی پنجم است). در نسخهٔ پیشین، ابراهیم غرب باب الثعبان، طشت در رواق شمالی و دکه در گوشهٔ صحن بود؛ اکنون ابراهیم شرق باب الثعبان، طشت در صحن و شمال دکه، و دکه در شمال شرقی صحن و جنوب طشت است. شمارهٔ ستون سجاد در منابع ۷ (سرائر) و ۳ (کربلاگشت) آمده است؛ جای روی نقشه (درون محراب، جنوب غربی، نزدیک نوح) همان توافق منابع است. جایگاه امام زمان (عج) در داخل مسجد کوفه در منابع بررسی‌شده موقعیت منتشرشده ندارد و روی نقشه گذاشته نشده است. چهار مقام بیرون (۱۲ تا ۱۵) در صفحهٔ «کوفه — بیرون مسجد» هم هستند؛ تفاوت این صفحه این است که جای دقیقشان نسبت به مسجد کوفه را نشان می‌دهد، نه فقط جهت کلی در شهر. دارالاماره در این صفحه نیامده است، چون دامنهٔ این کار فقط همین چهار مقام بود و دارالاماره همچنان فقط در صفحهٔ «بیرون مسجد» است. مختار نشان جدای بیرونی ندارد، چون قبرش درون حرم مسلم است و جای او همان نشان ۱۲ است. مختصات در سطح تک‌تک مقام‌های داخل مسجد منتشر نشده، پس برای آن‌ها مختصات همان مسجد آمده است؛ برای چهار مقام بیرون، مختصات در کارت‌هایشان آمده است.</p>
+    <p>اختلاف‌های گزارش‌شده دربارهٔ چهار مقام بیرون: عبارت «از سمت شمال» در منبع عربی زیارتگاه‌های عراق، اتصال ضریح هانی از سمت شمال به قبر مسلم را می‌گوید، نه سمت حرم مسلم نسبت به مسجد؛ پس با وصف مکرر «سمت شرقی» (ابن‌جبیر، سایت رسمی، رکن شرقی‌جنوبی) و مختصات شرقی‌تر ناهم‌خوان نیست و نشان مسلم بر پایهٔ شرق گذاشته شد. دربارهٔ مختار دو تعبیر آمده است: «درون حرم مسلم» و «پشت مسلم، چسبیده به مسجد»؛ هر دو به یک نقطه می‌رسند (مجموعهٔ حرم مسلم، سمت قبلهٔ ضریح مسلم) و هیچ‌کدام نقطهٔ جدای بیرونی نمی‌دهد. دربارهٔ میثم، مختصات صفحهٔ آرامگاه ویکی‌پدیا و AtlasIslamica حدود ۱۶ متر با هم فاصله دارند (هم‌خوان)؛ ولی مختصات صفحهٔ زندگی‌نامهٔ شخصی میثم در ویکی‌پدیا (۳۲٫۰۰۶۹۴، ۴۴٫۳۳۸۶۱) حدود ۶ کیلومتر جنوب‌غربی‌تر است و چون با «غرب مسجد» و دو منبع آرامگاه هم‌خوان نیست، استفاده نشد.</p>
+    <p>دروازه‌ها (اصلاح‌شده در این نسخه): باب الثعبان نزدیک گوشهٔ شمال غربی است (نه شمال شرقی) و باب الرحمه در میانهٔ ضلع شمالی است؛ در نسخهٔ پیشین ثعبان در شمال شرقی و رحمه غرب میانه کشیده شده بود. باب المراد در شمال شرقی، دروازهٔ فعلیِ مشرف به صحن مسلم است. باب الحجه در میانهٔ دیوار غربی، باب هانی در شمال دیوار شرقی (کنار مرقد هانی در گوشهٔ شمال شرقی) و باب مسلم در جنوب دیوار شرقی (کنار مرقد مسلم در گوشهٔ جنوب شرقی) است؛ باب عفیف ازدی دومین دهانهٔ پیوند به صحن مسلم، کنار باب مالک اشتر (دهانهٔ ورودی اصلی صحن مسلم با منارهٔ ساعت) است. باب الفرج دروازهٔ دیوار نیست؛ نام جای مقام نوح در گوشهٔ غربی است. باب السدهٔ تاریخی در ضلع قبله، روبه‌روی باب الثعبان، امروز مسدود است و کشیده نشده است. مناره‌ها (۴ عدد؛ منارهٔ قدیمی کنار باب الفیل) در این نقشهٔ تخت کشیده نشده‌اند. جای کشتی نوح از ربع جنوب غربی صحن به میانهٔ غربی صحن (نزدیک‌تر به «وسط صحن» منابع و نقشهٔ مرجع) جابه‌جا شد.</p>
+    <p class="note">تصویرهای سه‌بعدی مقام‌ها بازنمایی شماتیک‌اند، نه عکس مکان؛ بنای واقعی با بازسازی ساختگی نشان داده نشده است. هر مقام امروز به‌شکل ستون یا محراب کوچک مرمر در مسجد مشخص است.</p>
+  </div>
+</div>
+<script>
+var FA = ["", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹", "۱۰", "۱۱", "۱۲", "۱۳", "۱۴", "۱۵"];
+var RITE_NOTE = "عمل ویژهٔ این مقام در منابع بررسی‌شده (دیدار، گزارش پژوهش، داده‌های اپ) به‌صورت جداگانه نیامده است؛ این مقام یکی از ایستگاه‌های ترتیب اعمال مسجد است.";
+var DATA = {
+1: {name: "ستون چهارم یا ستون حضرت ابراهیم (ع)", place: "رواق شمالی، شرق باب الثعبان، نزدیک گوشهٔ شمال غربی (سمت چپ قبله)، روبه‌روی باب الثعبان؛ ستون چهارم از باب الرحمه.", desc: "ستونی که حضرت ابراهیم (ع) در آنجا نماز خوانده است. با شمارش ستون‌ها از باب الرحمه (میانهٔ ضلع شمالی)، این ستون چهارم است (دیدار)؛ «اسطوانهٔ پنجم» در سایت رسمی مسجد و سرائر همان ستون از شمارش سمت دیگر است — به روایت، ستون چهارم روبه‌روی پنجم است؛ پس یک ستون است، نه دو ستون.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، فصل کوفه، فهرست ص ۴۹۶. منبع جای: سایت رسمی مسجد کوفه، سرائر، کربلاگشت. مبدأ شمارش (باب الرحمه، میانهٔ ضلع شمالی): زیارتگاه‌های عراق، ج ۱."},
+2: {name: "دکه القضاء", place: "شمال شرقی صحن مسجد، جنوب بیت الطشت و متصل به آن؛ سکوی مربع مرتفع.", desc: "جایگاه قضاوت‌های عادلانهٔ حضرت علی (ع)؛ کنار آن ستون کوتاهی بود که آیهٔ «إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ» بر آن نوشته بود. ابن طاووس: دکه متصل به بیت الطشت است؛ بیت الطشت در صحن و شمال دکه است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۰۲. منبع جای و توضیح: دیدار، سایت رسمی مسجد کوفه، سرائر، زیارتگاه‌های عراق."},
+3: {name: "مقام بیت الطشت", place: "صحن مسجد، شمال دکه القضاء و متصل به آن.", desc: "محل معجزهٔ امیرمومنان (ع) در ماجرای دختر و علقه؛ سردابی پایین‌تر از سطح مسجد با دو راه‌پله. در صحن مسجد، شمال دکه القضاء و متصل به آن است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۰۴. منبع جای و توضیح: زیارتگاه‌های عراق، کربلاگشت، ابن طاووس به نقل سایت رسمی مسجد کوفه."},
+4: {name: "دکه المعراج یا مقام النبی (ص)", place: "وسط مسجد، نزدیک المزولة (ستون سنگی تعیین ظهر).", desc: "جایی که پیامبر (ص) در شب اسراء در آن فرود آمد و دو رکعت نماز خواند (به روایت امام صادق (ع))؛ دکه المعراج نزدیک مقام رسول است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۰۷. منبع جای و توضیح: سرائر، سایت رسمی مسجد کوفه."},
+5: {name: "مقام امیرمومنان (ع) یا مقام آدم (ع)", place: "ستون هفتم، قسمت جنوبی صحن، روبه‌روی محراب امیرمومنان، سمت چپ.", desc: "ستون هفتم مسجد معروف به مقام آدم (ع) است؛ جای قبول توبهٔ آدم. امیرمومنان (ع) نزدیک این ستون نماز می‌خواند، پس به مقام امیرمومنان هم معروف است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۰۸. منبع جای و توضیح: سایت رسمی مسجد کوفه، کربلاگشت، دانشنامهٔ اسلامی."},
+6: {name: "مقام جبرائیل (ع) یا ستون پنجم", place: "ستون پنجم، قسمت جنوبی صحن، سمت راست مقام آدم.", desc: "در شب معراج، جبرئیل به پیامبر (ص) گفت مقابل مسجد کوفه هستی و پیامبر در آنجا دو رکعت نماز خواند؛ امام حسن (ع) هم نزدیک این ستون نماز می‌خواند.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۲۰. منبع جای و توضیح: دانشنامهٔ اسلامی، سایت رسمی مسجد کوفه، کربلاگشت."},
+7: {name: "مقام امام سجاد (ع)", place: "درون محراب امیرمومنان (در حال حاضر بخش زنان)، جنوب غربی، نزدیک نوح.", desc: "جایگاه نماز امام سجاد (ع)؛ ابوحمزه ثمالی امام را در این مکان در حال نماز دید. شمارهٔ ستون در منابع ۷ (سرائر) و ۳ (کربلاگشت) آمده است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۲۴. منبع جای و توضیح: سایت رسمی مسجد کوفه، سرائر، کربلاگشت."},
+8: {name: "مقام نوح (ع)", place: "گوشهٔ غربی مسجد (باب الفرج)، جنوب غربی، نزدیک محراب و منبر امیرمومنان.", desc: "خانهٔ نوح و محل به‌گل نشستن کشتی؛ جای کشتی (حوض هشت‌ضلعی) در وسط صحن است و با پله به بنای روباز و حجرهٔ کوچک با محراب می‌رسد.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۳۱. منبع جای و توضیح: سایت رسمی مسجد کوفه، کربلاگشت، سرائر."},
+9: {name: "محراب امیرمومنان علی (ع)", place: "دیوار قبله (جنوب)، شبستان اصلی؛ اتاق وسیع با ۴۸ ستون.", desc: "محل ضربت خوردن و شهادت امیرمومنان (ع) در نماز صبح؛ بزرگ‌ترین و زیباترین محراب مسجد است و منبر کنار آن است؛ درِ قدیمی به دارالاماره از کنار محراب بود.", rite: "در داده‌های اپ، زیارت محراب شهادت علی (ع) آمده است؛ نماز ویژهٔ جداگانه در منابع بررسی‌شده نیامده است.", src: "استناد ترتیب: دیدار با عترت، ص ۵۳۹. منبع جای و توضیح: غرفهٔ نجف، سرائر، سایت رسمی مسجد کوفه؛ داده‌های اپ (مرحلهٔ کوفه و سهله)."},
+10: {name: "مقام امام صادق (ع)", place: "جنوب شرقی مسجد، کنار ایوان منتهی به حرم مسلم.", desc: "جایی که امام صادق (ع) هنگام اقامت در کوفه در ایام ابوالعباس سفاح در آن نماز می‌خواند. حرم مسلم بیرون مسجد است و اکنون با نشان ۱۲ در شرق مسجد آمده است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۴۰. منبع جای و توضیح: سایت رسمی مسجد کوفه، سرائر."},
+11: {name: "جایگاه امام زمان (عج)", place: "موقعیت دقیق داخلی در منابع بررسی‌شده منتشر نشده است و روی نقشه گذاشته نشده است.", desc: "این مقام در ترتیب اعمال مسجد کوفه آمده است؛ دربارهٔ جای دقیق آن در داخل مسجد، در منابع بررسی‌شده چیزی منتشر نشده است.", rite: RITE_NOTE, src: "استناد ترتیب: دیدار با عترت، ص ۵۴۲."},
+12: {name: "حرم مسلم بن عقیل", place: "شرق مسجد کوفه، چسبیده به رکن شرقی‌جنوبی آن و متصل به دیوار شرقی، کنار باب مسلم؛ نشان ۱۲ روی نقشه، بیرون دیوار شرقی و پایین‌تر از میانهٔ آن است.", desc: "سفیر امام حسین (ع) در کوفه. حرم از سمت جنوب شرقی به مسجد متصل است و صحن آن با مسجد پیوند دارد. مختار (۱۴) درون همین حرم است و نشان جدا ندارد.", rite: "در منابع بررسی‌شده، عمل مستندی ویژهٔ این حرم به‌صورت جداگانه ذکر نشده است.", src: "استناد جای: دانشنامهٔ اسلامی (شرق، کنار دارالاماره، متصل به دیوار)؛ ابن‌جبیر (۵۸۰ هـ، سمت شرقی جامع)؛ کتابچهٔ امانت مسجد کوفه (اتصال از سمت جنوب شرقی). مختصات OpenStreetMap: ۳۲٫۰۲۸۶۱° شمالی، ۴۴٫۴۰۱۵۳° شرقی — حدود ۶۶ متر شرق مرکز مسجد (۳۲٫۰۲۸۶۱°، ۴۴٫۴۰۰۸۳°). به‌علاوه دیدار با عترت، فصل کوفه."},
+13: {name: "هانی بن عروه", place: "شرق مسجد کوفه، در شمال حرم مسلم و در همان مجموعهٔ متصل به مسجد، کنار باب هانی؛ نشان ۱۳ روی نقشه، بیرون دیوار شرقی و بالاتر از نشان مسلم است.", desc: "پناه‌دهندهٔ مسلم بن عقیل. ضریح هانی از سمت شمال به قبر مسلم متصل است و هر دو یک صحن و بنای مشترک دارند؛ پس نشان هانی در بخش شمالی همان مجموعهٔ شرقی گذاشته شد، نه نقطه‌ای جدا و دور.", rite: "در منابع بررسی‌شده، عمل مستندی ویژهٔ این مکان به‌صورت جداگانه ذکر نشده است.", src: "استناد جای: ویکی‌حسین (شمال قبر مسلم؛ متصل از سمت شمال به قبر مسلم)؛ دانشنامهٔ اسلامی (داخل حرم مسلم، صحن مشترک). مختصات AtlasIslamica: ۳۲٫۰۲۹۱۶۷° شمالی، ۴۴٫۴۰۱۳۸۹° شرقی — حدود ۶۳ متر شمال حرم مسلم. به‌علاوه دیدار با عترت، فصل کوفه."},
+14: {name: "مختار ثقفی", place: "درون حرم مسلم بن عقیل، سمت قبلهٔ ضریح مسلم (چند متر جنوب‌تر از آن)؛ نشان جدای بیرونی ندارد و جای او همان نشان ۱۲ است.", desc: "مختار بن ابی‌عبید ثقفی، انتقام‌گیرندهٔ خون شهیدان کربلا. چون قبرش درون حرم مسلم است، روی نقشه نقطهٔ جدا برای او کشیده نشد؛ زیر نشان مسلم هم همین نکته نوشته شده است.", rite: "در منابع بررسی‌شده، عمل مستندی ویژهٔ این مکان به‌صورت جداگانه ذکر نشده است.", src: "استناد جای: دانشنامهٔ اسلامی (آستان مختار در حرم مسلم، بنای مشترک؛ چند متر سمت قبلهٔ مسلم)؛ زندگی‌نامهٔ مختار (مدفون پشت مسلم، چسبیده به مسجد کوفه)؛ ویکی‌پدیا (مدفن: مسجد جامع کوفه). به‌علاوه دیدار با عترت، فصل کوفه."},
+15: {name: "میثم تمار", place: "غرب مسجد کوفه، حدود ۶۰۰ متر به سمت غرب‌جنوب‌غربی مرکز مسجد؛ پیکان ۱۵ روی نقشه فقط جهت و فاصله است و در مقیاس نقشهٔ مسجد نمی‌گنجد.", desc: "میثم بن یحیی تمار، یار امیرمومنان (ع). چون فاصله‌اش حدود ۶۰۰ متر است، گذاشتن نشان چسبیده به دیوار غربی دروغ نقشه‌ای می‌شد؛ پس به‌جای نقطهٔ کاذب، پیکان جهت‌دار با فاصلهٔ صریح آمد.", rite: "در منابع بررسی‌شده، عمل مستندی ویژهٔ این مکان به‌صورت جداگانه ذکر نشده است.", src: "استناد جای: ویکی‌پدیا، صفحهٔ آرامگاه (غرب مسجد جامع کوفه؛ مختصات ۳۲٫۰۲۶۴۹۷۵° شمالی، ۴۴٫۳۹۴۹۹۲۵° شرقی — حدود ۵۵۱ متر غرب و ۲۳۴ متر جنوب مرکز مسجد، در مجموع حدود ۵۹۸ متر). AtlasIslamica با حدود ۱۶ متر اختلاف همان نقطه را می‌دهد (۳۲٫۰۲۶۴۱۷°، ۴۴٫۳۹۵۱۳۶°). به‌علاوه دیدار با عترت، فصل کوفه."}
+};
+var panel = document.getElementById("detailPanel");
+var dDisc = document.getElementById("dDisc");
+var dName = document.getElementById("dName");
+var dPlace = document.getElementById("dPlace");
+var dDesc = document.getElementById("dDesc");
+var dRite = document.getElementById("dRite");
+var dSrc = document.getElementById("dSrc");
+var current = 0;
+function setExpanded(n) {
+  var triggers = document.querySelectorAll("[data-maqam]");
+  for (var i = 0; i < triggers.length; i++) {
+    triggers[i].setAttribute("aria-expanded", triggers[i].getAttribute("data-maqam") == String(n) ? "true" : "false");
+  }
+  var groups = document.querySelectorAll(".mq");
+  for (var j = 0; j < groups.length; j++) {
+    if (groups[j].getAttribute("data-maqam") == String(n)) { groups[j].classList.add("selected"); }
+    else { groups[j].classList.remove("selected"); }
+  }
+}
+function openMaqam(n) {
+  var d = DATA[n];
+  if (!d) { return; }
+  if (current === n && !panel.hidden) { closePanel(); return; }
+  current = n;
+  dDisc.textContent = FA[n];
+  dName.textContent = d.name;
+  dPlace.textContent = d.place;
+  dDesc.textContent = d.desc;
+  dRite.textContent = d.rite;
+  dSrc.textContent = d.src;
+  panel.hidden = false;
+  panel.classList.remove("show");
+  void panel.offsetWidth;
+  panel.classList.add("show");
+  setExpanded(n);
+  panel.scrollIntoView({behavior: "smooth", block: "nearest"});
+}
+function closePanel() {
+  current = 0;
+  panel.hidden = true;
+  panel.classList.remove("show");
+  setExpanded(0);
+}
+document.getElementById("dClose").addEventListener("click", closePanel);
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closePanel(); } });
+var triggers = document.querySelectorAll("[data-maqam]");
+for (var k = 0; k < triggers.length; k++) {
+  (function (el) {
+    el.addEventListener("click", function () { openMaqam(parseInt(el.getAttribute("data-maqam"), 10)); });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openMaqam(parseInt(el.getAttribute("data-maqam"), 10)); }
+    });
+  })(triggers[k]);
+}
+</script>
+</body>
+</html>

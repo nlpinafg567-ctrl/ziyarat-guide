@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قم — نقشهٔ حرم معصومه و مکان‌های زیارتی شهر</title>
+<style>
+@font-face{font-family:Vazirmatn;src:url(../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url(../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2) format('woff2');font-weight:700}
+*{box-sizing:border-box}
+body{margin:0;background:#0D3B2E;font-family:Vazirmatn,Tahoma,sans-serif;color:#202823}
+.poster{max-width:1080px;margin:0 auto;background:#F7F3EA;border-radius:21px;overflow:hidden}
+header{background:linear-gradient(160deg,#0D3B2E,#123f31 55%,#0D3B2E);color:#FFFEFB;text-align:center;padding:34px 21px 21px}
+header img{width:104px}
+h1{font-size:52px;margin:13px 0 8px}
+header .sub{font-size:26px;color:#C5A46D;font-weight:700}
+header p{font-size:19px;line-height:1.9;margin:8px 0 0}
+.mapwrap{padding:21px}
+.mapwrap h2{text-align:center;font-size:26px;margin:0 0 8px}
+.mapscroll{overflow-x:auto}
+.mapscroll svg{min-width:984px;display:block}
+.mapscroll svg text{pointer-events:none}
+.mq{cursor:pointer}
+.mq .hit{fill:transparent;stroke:none}
+.mq .bd{fill:#C5A46D;stroke:#fff;stroke-width:3}
+.mq .bn{font-family:Vazirmatn,Tahoma,sans-serif;font-size:21px;font-weight:700;fill:#0D3B2E;pointer-events:none}
+.lbl{font-family:Vazirmatn,Tahoma,sans-serif;font-size:16px;fill:#3D4A44}
+.lblb{font-family:Vazirmatn,Tahoma,sans-serif;font-size:16px;font-weight:700;fill:#0D3B2E}
+.lbls{font-family:Vazirmatn,Tahoma,sans-serif;font-size:14px;fill:#3D4A44}
+.chiprow{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;padding:0 21px 21px}
+.chip{border:2px solid #C5A46D;border-radius:34px;background:#fff;padding:8px 16px;font-size:17px;cursor:pointer;font-family:inherit}
+.cards{padding:0 21px 21px}
+.card{display:none;background:#FFFEFB;border:1px solid #C5A46D;border-left:8px solid #C5A46D;border-radius:13px;padding:21px;animation:cardIn .38s ease}
+.card.open{display:block}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card .top{display:flex;align-items:center;justify-content:space-between;gap:13px}
+.card h3{font-size:26px;margin:0}
+.card .num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#E8D5A0,#C5A46D);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:21px;color:#0D3B2E;flex:none}
+.close{border:0;border-radius:34px;background:#0D3B2E;color:#FFFEFB;padding:8px 16px;font-family:inherit;font-size:16px;cursor:pointer}
+.card p{font-size:19px;line-height:2;margin:13px 0 0}
+.card .src{font-size:16px;color:#3D4A44;border-top:1px dashed #C5A46D;padding-top:8px}
+.maphint{text-align:center;font-size:17px;color:#3D4A44;padding:0 21px 13px}
+footer{background:#0D3B2E;color:#FFFEFB;text-align:center;padding:21px}
+footer h3{font-size:26px;margin:0 0 13px}
+footer a.applink{display:inline-block;background:linear-gradient(135deg,#E8D5A0,#C5A46D);color:#0D3B2E;text-decoration:none;font-weight:700;font-size:21px;padding:13px 26px;border-radius:34px}
+footer p{font-size:15px;line-height:2;color:#E8E0CC;margin:13px 0 0}
+footer a{color:#C5A46D}
+@media(max-width:480px){h1{font-size:34px}header .sub{font-size:21px}.card p{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="poster">
+<header>
+<img src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+<h1>قم</h1>
+<div class="sub">نقشهٔ حرم حضرت معصومه (س) و مکان‌های زیارتی شهر</div>
+<p>روی تصویر هر مکان در نقشه بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.<br>
+مختصات حرم: ۳۴٫۶۴۱۷° شمالی، ۵۰٫۸۷۹۰° شرقی (ویکی‌پدیای انگلیسی، سطح مجموعهٔ حرم)؛ مختصات هر مکان در کارتش با سطحش آمده است. زاویهٔ عددی قبله برای هیچ موردی محاسبه نشده است.</p>
+</header>
+<div class="mapwrap">
+<h2>نقشهٔ شهر قم — شمال بالا</h2>
+<div class="mapscroll">
+<svg viewBox="0 0 984 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ شهر قم و مکان‌های زیارتی">
+<rect x="172" y="170" width="640" height="600" fill="#EFE6CC" stroke="#C5A46D" stroke-width="2"/>
+<line x1="532" y1="470" x2="680" y2="560" stroke="#9A8F7A" stroke-width="3" stroke-dasharray="8 6"/>
+<circle cx="210" cy="200" r="18" fill="#0D3B2E"/><text x="210" y="207" fill="#C5A46D" text-anchor="middle" font-size="18">↑</text>
+<text class="lblb" x="210" y="230" text-anchor="middle">شمال</text>
+<!-- موسی مبرقع و چهل اختران -->
+<g class="mq" data-open="3"><circle class="hit" cx="335" cy="310" r="45"/><rect x="300" y="280" width="70" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 300 280 Q 300 250 335 250 Q 370 250 370 280 Z" fill="#7FA8C9" stroke="#5B7FA0" stroke-width="2"/><circle class="bd" cx="370" cy="275" r="16"/><text class="bn" x="370" y="282" text-anchor="middle">۳</text></g>
+<text class="lblb" x="335" y="365" text-anchor="middle">موسی مبرقع و چهل اختران</text>
+<text class="lbls" x="335" y="387" text-anchor="middle">خیابان آذر، کوچهٔ ۵۹</text>
+<!-- حرم حضرت معصومه (س)، مرکز -->
+<g class="mq" data-open="1"><circle class="hit" cx="492" cy="445" r="55"/><rect x="452" y="400" width="80" height="90" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><path d="M 452 400 Q 452 340 492 340 Q 532 340 532 400 Z" fill="url(#gold)" stroke="#C5A46D" stroke-width="2"/><ellipse cx="492" cy="370" rx="14" ry="22" fill="#FFFEFB" opacity=".35"/><rect x="488" y="315" width="8" height="25" fill="#C5A46D"/><circle cx="492" cy="312" r="7" fill="#C5A46D"/><rect x="440" y="360" width="8" height="130" fill="#C5A46D"/><rect x="536" y="360" width="8" height="130" fill="#C5A46D"/><circle class="bd" cx="492" cy="365" r="17"/><text class="bn" x="492" y="372" text-anchor="middle">۱</text></g>
+<text class="lblb" x="492" y="512" text-anchor="middle">حرم حضرت معصومه (س)</text>
+<!-- مسجد امام حسن عسکری (ع)، نزدیک حرم -->
+<g class="mq" data-open="5"><circle class="hit" cx="610" cy="440" r="45"/><rect x="580" y="410" width="60" height="60" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 580 410 Q 580 380 610 380 Q 640 380 640 410 Z" fill="url(#gold)" stroke="#C5A46D" stroke-width="2"/><circle class="bd" cx="640" cy="405" r="16"/><text class="bn" x="640" y="412" text-anchor="middle">۵</text></g>
+<text class="lblb" x="650" y="435" text-anchor="end">مسجد امام حسن</text>
+<text class="lblb" x="650" y="457" text-anchor="end">عسکری (ع)</text>
+<text class="lbls" x="610" y="500" text-anchor="end">بلوار پیامبر اعظم</text>
+<!-- مسجد جمکران، جنوب شرق -->
+<g class="mq" data-open="2"><circle class="hit" cx="720" cy="595" r="45"/><rect x="680" y="560" width="80" height="70" fill="#E8E0CC" stroke="#C5A46D" stroke-width="2"/><path d="M 680 560 Q 680 520 720 520 Q 760 520 760 560 Z" fill="#7FA8C9" stroke="#5B7FA0" stroke-width="2"/><rect x="665" y="530" width="8" height="100" fill="#7FA8C9"/><rect x="767" y="530" width="8" height="100" fill="#7FA8C9"/><circle class="bd" cx="760" cy="555" r="16"/><text class="bn" x="760" y="562" text-anchor="middle">۲</text></g>
+<text class="lblb" x="720" y="652" text-anchor="middle">مسجد مقدس جمکران</text>
+<text class="lbls" x="720" y="674" text-anchor="middle">جنوب شرق، انتهای بلوار پیامبر اعظم</text>
+<!-- کوه خضر نبی، جنوب -->
+<g class="mq" data-open="7"><circle class="hit" cx="492" cy="730" r="45"/><polygon points="442,770 492,700 542,770" fill="#D8CBAF" stroke="#C5A46D" stroke-width="2"/><path d="M 477 700 Q 477 680 492 680 Q 507 680 507 700 Z" fill="#5B8A6A" stroke="#3D6A4E" stroke-width="2"/><circle class="bd" cx="522" cy="695" r="16"/><text class="bn" x="522" y="702" text-anchor="middle">۷</text></g>
+<text class="lblb" x="552" y="735" text-anchor="end">کوه خضر نبی</text>
+<text class="lbls" x="552" y="757" text-anchor="end">جنوب قم، نزدیک جمکران</text>
+<text class="lbl" x="790" y="750" text-anchor="start">شهر قم</text>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8D5A0"/><stop offset="1" stop-color="#C5A46D"/></linearGradient></defs>
+</svg>
+</div>
+</div>
+<div class="chiprow"><span style="font-size:17px">روی نقشه نیامدند:</span>
+<button class="chip" data-open="4">۴ امامزادگان پراکنده — نشانی‌های خیابانی در کارت؛ نقطهٔ واحد ندارند</button>
+<button class="chip" data-open="6">۶ مرقد علما — داخل مجموعهٔ حرم و جنب کتابخانهٔ مرعشی؛ جای تک‌تک قبرها نسبت به ضریح مستند نیست</button>
+</div>
+<p class="maphint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</p>
+<div class="cards">
+<section class="card" data-card="1"><div class="top"><span class="num">۱</span><h3>حرم حضرت فاطمه معصومه (س)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> مرکز شهر قم، میدان آستانه؛ از شمال به میدان آستانه، از شرق به خیابان آیت‌الله مرعشی نجفی (ارم)، از جنوب به مسجد اعظم و خیابان موزه، از غرب به مدرسهٔ فیضیه. صحن عتیق در شمال روضه است و صحن نو (اتابکی) چهار ایوان دارد.</p>
+<p><b>معماری:</b> گنبد طلایی (۳۲ متر از سطح زمین)، ضریح مشبک نقره، ایوان طلا و ایوان آینه، چهار رواق و سه صحن.</p>
+<p><b>قبله:</b> ایوان جنوبی صحن نو «ورودی از طرف قبله» خوانده شده است؛ زاویهٔ عددی قبله محاسبه نشده است.</p>
+<p><b>اعمال:</b> زیارت حضرت معصومه (س) با زیارت‌نامهٔ مأثور انجام می‌شود.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «حرم فاطمه معصومه»؛ راسخون، «نگاهی به حرم حضرت معصومه (س)». مختصات: ۳۴٫۶۴۱۷° شمالی، ۵۰٫۸۷۹۰° شرقی (ویکی‌پدیای انگلیسی، مدخل Fatima Masumeh Shrine؛ سطح مجموعهٔ حرم).</p></section>
+<section class="card" data-card="2"><div class="top"><span class="num">۲</span><h3>مسجد مقدس جمکران</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> جنوب‌شرقی قم، خارج از هستهٔ مرکزی شهر، در انتهای بلوار پیامبر اعظم (ص). فاصلهٔ مسیر حرم تا جمکران در منابع ۶ تا ۸ کیلومتر گزارش شده است (بلوار اتصال‌دهنده ۷ کیلومتر)؛ عدد واحد در نقشه نیامده است.</p>
+<p><b>معماری:</b> گنبد اصلی فیروزه‌ای با ساقهٔ ۲۳ پنجرهٔ مشبک، شبستان اصلی هشت‌ضلعی، دو منارهٔ ۶۰ متری ایوان مقام و دو منارهٔ ۸۵ متری ورودی؛ شمار «۱۴ مناره» در یک منبع با این دو جفت ناهماهنگ است و قطعی گرفته نشده است. محراب‌ها در وسط ضلع جنوبی جای دارند.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مسجد ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «مسجد جمکران»؛ فلای‌تودی، راهنمای سفر قم. مختصات: ۳۴٫۵۸۳۸۸۹° شمالی، ۵۰٫۹۱۴۷۲۲° شرقی (ویکی‌پدیای فارسی، مدخل مسجد جمکران؛ سطح خود مسجد).</p></section>
+<section class="card" data-card="3"><div class="top"><span class="num">۳</span><h3>موسی مبرقع (ع) و مجموعهٔ چهل اختران</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> خیابان آذر (طالقانی)، کوچهٔ ۵۹، محلهٔ چهل اختران. چیدمان داخلی مجموعه: بقعهٔ موسی مبرقع در ضلع شرقی، امامزاده زید در ضلع غربی آن، و بقعهٔ چهل اختران در شمال بقعهٔ موسی است.</p>
+<p><b>معماری:</b> بناهای آجری چنددوره‌ای؛ گنبد کاشی‌کاری‌شده با نقش ستاره؛ گنبد چهل اختران با جدار آجری، بلندای ۱۴ متر، بنای ۹۵۰ ق به بانی‌گری شاه طهماسب؛ کتیبهٔ گچ‌بری امامزاده زید به تاریخ ۸۴۷ ق.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مجموعه ذکر نشده است.</p>
+<p class="src">استناد: پرتال آستان مقدس (amfm.ir)؛ شهرداری قم؛ ایرنا؛ ویکی‌پدیای فارسی، «مجموعه بناهای چهل اختران». مختصات: ۳۴°۳۸′۱۸٫۷″ شمالی، ۵۰°۵۳′۵۹٫۴″ شرقی (ردهٔ ویکی‌مدیا، مدخل Imamzadeh Musa al-Mubarqa؛ سطح بقعهٔ موسی، نه کل مجموعه). هشدار: مختصات مدخل انگلیسی «Chehel Akhtaran Mosque» به استان فارس می‌افتد و کنار گذاشته شد.</p></section>
+<section class="card" data-card="4"><div class="top"><span class="num">۴</span><h3>امامزادگان پراکندهٔ قم</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت (نشانی‌های خیابانی، نه نقطهٔ واحد):</b> زید و حمزه: خیابان آذر، کوچهٔ ۱۰۲؛ محمد و زینب و چهل اختران: خیابان آذر، کوچهٔ چهل اختران، در جوار موسی مبرقع؛ علی بن جعفر: انتهای خیابان انقلاب (چهارمردان)؛ سلطان محمد شریف: خیابان انقلاب، کوچهٔ ۱۷؛ سید معصوم: انتهای خیابان توحید، میدان نبوت؛ شاه سید علی: خیابان ۱۵ خرداد، میدان شهید صادقی؛ خاک فرج: انتهای خیابان امام موسی صدر، محلهٔ خاک فرج. برای «شاهزاده احمد» و «امامزاده ابراهیم» آدرس یکتا و مستند به‌دست نیامد.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این امامزادگان ذکر نشده است.</p>
+<p class="src">استناد: پرتال آستان مقدس (amfm.ir/emamzadegan-qom)؛ دانشنامهٔ اسلامی. مختصات در سطح تک‌تک این امامزادگان منتشر نشده است؛ برای زیرمجموعهٔ داخل چهل اختران همان مختصات ردیف ۳ با قید «سطح مجموعه»، و برای بقیه فقط مختصات شهر قم ۳۴٫۶۴° شمالی، ۵۰٫۸۷۶۳۸۹° شرقی (ویکی‌سفر انگلیسی؛ سطح شهر، نه هیچ‌یک از این امامزادگان).</p></section>
+<section class="card" data-card="5"><div class="top"><span class="num">۵</span><h3>مسجد امام حسن عسکری (ع)</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> ابتدای خیابان آستانه، نزدیک حرم (گنبد و گلدسته‌اش از صحن آستانه دیده می‌شود)؛ ورودی‌ها از خیابان شهید دل‌آذر (شمال)، خیابان آستانه (شرق و جنوب) و خیابان ساحلی (غرب).</p>
+<p><b>معماری (دو لایهٔ جدا):</b> بنای تاریخی: ایوان جنوبی صحن، کهن‌ترین بخش برجای‌مانده، ۱۴×۱۱×۱۲ متر، با کتیبهٔ قرآنی ۱۱۲۹ ق. بنای جدید (افتتاح ۱۳۹۴ ش / ۲۰۱۵ م): گنبد با دهانهٔ ۲۷ متر و ارتفاع ۳۵ متر، و دو منارهٔ ۵۹ متری.</p>
+<p><b>پیشینه:</b> بنای نخستین مسجد در قرن سوم هجری به دستور امام حسن عسکری (ع) به دست احمد بن اسحاق قمی، وکیل آن حضرت در قم، ساخته شد و مسجد از قدیمی‌ترین مساجد قم است.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مسجد ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «مسجد امام حسن عسکری (قم)»؛ ایسنا؛ ایرنا؛ qomgardi. مختصات: ۳۴٫۶۴۵۴۲۷۴° شمالی، ۵۰٫۸۸۳۴۸۰۵° شرقی (ویکی‌پدیای انگلیسی، مدخل Imam Hasan al-Askari Mosque؛ سطح خود مسجد).</p></section>
+<section class="card" data-card="6"><div class="top"><span class="num">۶</span><h3>مرقد علما در حرم و پیرامون آن</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> آیت‌الله بروجردی: در راهروی بین مسجد اعظم و مسجد بالاسر، زیر گنبد. شهید مطهری، علامه طباطبایی، آیت‌الله بهاءالدینی، آیت‌الله حائری و آیت‌الله بهجت: در مسجد بالاسر حرم. آیت‌الله مرعشی نجفی: مرقدش جنب کتابخانهٔ مرعشی است؛ کتابخانه در خیابان ارم، در جوار حرم است. دقیق‌تر، مرقد مرعشی در ورودی کتابخانه است (به وصیت خودش، زیر پای مراجعه‌کنندگان کتابخانه). جای تک‌تک قبرها نسبت به ضریح در منابع یافت نشد و به همین دلیل این مورد روی نقشه نقطه ندارد.</p>
+<p><b>قبله:</b> مسجد بالاسر «از سمت قبله» با مسجد شهید مطهری، «از سمت راست قبله» با مسجد اعظم، و «از سمت چپ» با روضهٔ ضریح محدود است؛ زاویهٔ عددی قبله محاسبه نشده است.</p>
+<p><b>اعمال:</b> در منابع این پژوهش، عمل ویژهٔ مستندی برای این مرقدها ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «مسجد بالاسر»؛ razavi.news؛ دانشنامهٔ اسلامی؛ محل دفن مرعشی در ورودی کتابخانه: aghigh.ir و وصیت‌نامه در psri.ir. مختصات: بروجردی و پنج تنِ مسجد بالاسر در سطح مرقد منتشر نشده است (فقط مختصات حرم با همان قید)؛ مرعشی نجفی: ۳۴٫۶۳۸۹۹۹° شمالی، ۵۰٫۸۷۷۲۲۲° شرقی (ویکی‌پدیای انگلیسی، مدخل کتابخانهٔ مرعشی؛ سطح کتابخانه، نه خود مرقد).</p></section>
+<section class="card" data-card="7"><div class="top"><span class="num">۷</span><h3>کوه خضر نبی</h3><button class="close">✕ بستن</button></div>
+<p><b>موقعیت:</b> ۶ کیلومتری مرکز قم به سمت جنوب، در کنار شهرک قدس (و در یک منبع: مجاور شهرک ایثار)، نزدیک مسجد جمکران؛ مسیر دسترسی به جمکران از دامنهٔ این کوه می‌گذرد.</p>
+<p><b>معماری:</b> مسجد کوچکِ چهارطاقی بر قله، بر جای غار نیایش خضر نبی؛ گنبد مدور با کاشی‌کاری سبز و فیروزه‌ای؛ پیاده‌راه سنگفرش با حدود ۲۱۱ پله در دو قسمت. ارتفاع کوه در منابع دو عدد دارد (۱۱۱۷ متر از سطح دریا در برابر «حدود ۳۰۰ متر» از پای کوه) و عدد بدون قید در نقشه نیامده است.</p>
+<p><b>اعمال:</b> این کوه محل نیایش حضرت خضر نبی است و قدمگاه خضر نبی خوانده می‌شود؛ در منابع این پژوهش، عمل ویژهٔ مستندی ذکر نشده است.</p>
+<p class="src">استناد: ویکی‌پدیای فارسی، «کوه خضر نبی»؛ بنیاد قم‌پژوهی؛ باشگاه خبرنگاران جوان، «دیدار با قدمگاه خضر نبی (ع)». مختصات: ۳۴٫۵۸۸۳۳° شمالی، ۵۰٫۸۶۶۹۴° شرقی (ویکی‌پدیای فارسی؛ سطح خود کوه).</p></section>
+</div>
+<footer>
+<h3>راهنمای زایرین عمار غزنه</h3>
+<a class="applink" href="../ziyarat-guide-app/index.html">باز کردن اپ (بخش ایران) ↗</a>
+<p>استنادها: ویکی‌پدیای فارسی و انگلیسی؛ پرتال آستان مقدس (amfm.ir)؛ شهرداری قم؛ ایرنا؛ ایسنا؛ راسخون؛ دانشنامهٔ اسلامی؛ بنیاد قم‌پژوهی.</p>
+<p>به‌روزرسانی پژوهش قم: جهت اعظم هنوز یکدست نیست — منابع فارسی متعدد آن را در غرب مجموعه می‌گذارند (خبر رسمی آستان: مسجد اعظم در ضلع شرقی صحن غربی جوادالائمه؛ پلان صحن عتیق: ایوان غربی صحن به مسجد اعظم می‌رسد)، در برابر «جنوب» در مدخل حرم ویکی‌پدیا و «شمال» در متن عربی؛ بالاسر فقط با همسایگی نسبی به قبله مستند است (از سمت قبله با مسجد شهید مطهری، از راست قبله با فاصلهٔ کوتاه با اعظم، از چپ با روضه)، نه با جهت قطبی نسبت به ضریح — پس جهت قطبی بالاسر/اعظم کشیده نشده است. فاصلهٔ مسیر حرم تا جمکران بسته به مسیر ۶ تا ۸ کیلومتر است؛ طول خود بلوار پیامبر اعظم در منابع مستقل ۷ کیلومتر آمده است (خبر افتتاح ۲۰۱۳، ایرنا و روزنامهٔ ایران در ۱۴۰۵)، ولی این طول بلوار است نه مسافت نقطه‌به‌نقطه. «۱۰۰ متر» (دانشنامهٔ اسلامی) در برابر «۱۰۰ یارد» (≈۹۱ متر، ویکی‌پدیای انگلیسی) هر دو گردکردهٔ «حدود ۱۰۰ متر»‌اند و عدد اندازه‌گیری‌شدهٔ واحد نیامده است. چیپ‌های ۴ و ۶ همچنان چیپ‌اند: برای امامزادگان پراکنده هیچ نقشهٔ معتبری با پهنه/مسیر واحد یافت نشد، و جای تک‌تک قبرهای علما نسبت به ضریح مستند نشد. چیدمان نقشه شماتیک بر پایهٔ نشانی‌های خیابانی است؛ فقط جمکران (جنوب شرق) و کوه خضر (جنوب) جهت مستند دارند.</p>
+<p>تصاویر مکان‌ها بازنمایی سه‌بعدی شماتیک بر پایهٔ ویژگی‌های مستندشان‌اند، نه عکس واقعی؛ عکس‌های اصلی از <a href="https://amfm.ir/photo/">سرویس عکس رسمی آستان مقدس</a> و <a href="https://www.jamkaran.ir">سایت رسمی مسجد جمکران</a> باز شود. برای کوه خضر هیچ گالری رسمی یافت نشد.</p>
+<p>بدون انسان، بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('[data-open]').forEach(function(el){
+  el.addEventListener('click',function(){
+    document.querySelectorAll('.card.open').forEach(function(c){c.classList.remove('open')});
+    var t=document.querySelector('.card[data-card="'+el.dataset.open+'"]');
+    if(t){t.classList.add('open');t.scrollIntoView({behavior:'smooth',block:'nearest'})}
+  });
+});
+document.querySelectorAll('.card .close').forEach(function(b){
+  b.addEventListener('click',function(){b.closest('.card').classList.remove('open')});
+});
+</script>
+</body>
+</html>

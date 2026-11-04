@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کربلا — نقشهٔ محوطهٔ دو حرم | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.notonmap{padding:20px 40px 4px}
+.notonmap h2{font-size:22px;color:#0D3B2E;text-align:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:2px solid #E3D9BE;border-right:7px solid #8A7A52;border-radius:16px;padding:11px 16px;cursor:pointer;box-shadow:0 4px 0 rgba(138,122,82,.25);transition:transform .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(0,0,0,.15)}
+.chip .cn{flex:0 0 40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chip .ct{font-size:17px;font-weight:700;color:#0D3B2E;line-height:1.6}
+.chip .cs{font-size:14px;color:#8A7A52;line-height:1.6}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.notonmap{padding:16px 16px 4px}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>کربلا</h1>
+    <div class="sub">نقشهٔ محوطهٔ دو حرم و جایگاه‌های پیرامونی آن — ۱۸ مرحله</div>
+    <div class="intro">روی تصویر هر جایگاه بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است. شماره‌ها به همان ترتیب مصوب ۱۸ مرحله است.</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 1090" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ محوطهٔ دو حرم کربلا با جای جایگاه‌ها"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نقشهٔ محوطهٔ دو حرم کربلا — شمال بالا</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<g class="mq" data-open="14" role="button" tabindex="0" aria-label="نهر علقمه"><rect class="hit" x="180" y="185" width="624" height="44"/><g class="dep"><rect x="180" y="185" width="624" height="44" fill="#D9E7DE" stroke="#0D3B2E" stroke-width="3"/><path d="M 192 207 Q 250 197 310 207 T 430 207 T 550 207 T 670 207 T 792 207" fill="none" stroke="#0D3B2E" stroke-width="2"/></g><circle class="bdg" cx="790" cy="185" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="790" y="192" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۴</text></g>
+<text class="lbl" x="492" y="172" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">نهر علقمه — شمال کربلا</text>
+<g class="mq" data-open="12" role="button" tabindex="0" aria-label="مقام امام صادق"><circle class="hit" cx="255" cy="115" r="52"/><g class="dep"><rect x="200" y="85" width="110" height="60" rx="8" fill="#D9E7DE" stroke="#0D3B2E" stroke-width="3"/><circle cx="228" cy="107" r="13" fill="#1A6B52"/><circle cx="258" cy="101" r="15" fill="#14543F"/><circle cx="288" cy="107" r="13" fill="#1A6B52"/></g><circle class="bdg" cx="310" cy="85" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="310" y="92" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۲</text></g>
+<text class="lbl" x="420" y="115" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">مقام امام صادق (ع)</text>
+<text class="lbl" x="420" y="138" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">آن طرف نهر علقمه</text>
+<g class="mq" data-open="13" role="button" tabindex="0" aria-label="مقام امام زمان"><circle class="hit" cx="255" cy="280" r="52"/><g class="dep"><rect x="200" y="250" width="110" height="60" rx="8" fill="url(#em)" stroke="#C5A46D" stroke-width="3"/><path d="M 232 310 L 232 282 Q 232 266 255 266 Q 278 266 278 282 L 278 310 Z" fill="url(#gold)"/></g><circle class="bdg" cx="310" cy="250" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="310" y="257" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۳</text></g>
+<text class="lbl" x="255" y="335" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">مقام امام زمان (عج)</text>
+<text class="lbl" x="255" y="358" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">باب السلالمه، کنار علقمه</text>
+<rect x="150" y="395" width="684" height="600" fill="#F3EAD0" stroke="#C5A46D" stroke-width="4"/>
+<line x1="470" y1="505" x2="540" y2="505" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<text class="lbl" x="350" y="505" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="20" font-weight="700" fill="#0D3B2E">حرم حضرت عباس (ع)</text>
+<g class="mq" data-open="1" role="button" tabindex="0" aria-label="حرم حضرت عباس"><circle class="hit" cx="650" cy="550" r="95"/><g class="dep"><rect x="540" y="480" width="220" height="140" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><path d="M 600 480 Q 600 440 650 440 Q 700 440 700 480 Z" fill="url(#gold)"/><rect x="646" y="413" width="8" height="28" rx="4" fill="url(#goldD)"/><circle cx="650" cy="410" r="8" fill="url(#gold)"/><rect x="560" y="515" width="14" height="80" fill="url(#goldD)"/><rect x="726" y="515" width="14" height="80" fill="url(#goldD)"/></g><circle class="bdg" cx="760" cy="480" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="760" y="487" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱</text></g>
+<g class="mq" data-open="2" role="button" tabindex="0" aria-label="بین الحرمین"><circle class="hit" cx="547" cy="720" r="70"/><g class="dep"><polygon points="575,640 630,685 520,800 465,755" fill="#FFFEFB" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="547" cy="720" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="547" y="727" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۲</text></g>
+<line x1="600" y1="805" x2="575" y2="742" stroke="#C5A46D" stroke-width="3" stroke-dasharray="6 5"/>
+<text class="lbl" x="650" y="830" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="20" font-weight="700" fill="#0D3B2E">بین الحرمین</text>
+<text class="lbl" x="650" y="855" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">میدان میان دو حرم</text>
+<g class="mq" data-open="16" role="button" tabindex="0" aria-label="مقام دست چپ"><circle class="hit" cx="800" cy="632" r="44"/><g class="dep"><rect x="770" y="610" width="60" height="46" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 788 656 L 788 640 Q 788 628 800 628 Q 812 628 812 640 L 812 656 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="830" cy="610" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="830" y="617" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۶</text></g>
+<text class="lbl" x="908" y="632" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">دست چپ</text>
+<text class="lbl" x="908" y="655" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">باب الخان</text>
+<g class="mq" data-open="15" role="button" tabindex="0" aria-label="مقام دست راست"><circle class="hit" cx="795" cy="543" r="40"/><g class="dep"><rect x="760" y="520" width="70" height="46" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 780 566 L 780 548 Q 780 536 795 536 Q 810 536 810 548 L 810 566 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="830" cy="520" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="830" y="527" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۵</text></g>
+<text class="lbl" x="908" y="528" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">دست راست</text>
+<text class="lbl" x="908" y="551" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">آن طرف دست چپ،</text>
+<text class="lbl" x="908" y="574" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">به سمت علقمه</text>
+<g class="mq" data-open="3" role="button" tabindex="0" aria-label="حرم امام حسین"><circle class="hit" cx="340" cy="842" r="95"/><g class="dep"><rect x="230" y="780" width="220" height="125" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><path d="M 290 780 Q 290 740 340 740 Q 390 740 390 780 Z" fill="url(#gold)"/><rect x="336" y="713" width="8" height="28" rx="4" fill="url(#goldD)"/><circle cx="340" cy="710" r="8" fill="url(#gold)"/><rect x="250" y="815" width="14" height="70" fill="url(#goldD)"/><rect x="416" y="815" width="14" height="70" fill="url(#goldD)"/></g><circle class="bdg" cx="450" cy="780" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="450" y="787" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۳</text></g>
+<text class="lbl" x="340" y="935" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="20" font-weight="700" fill="#0D3B2E">حرم امام حسین (ع)</text>
+<g class="mq" data-open="7" role="button" tabindex="0" aria-label="ابراهیم مجاب"><circle class="hit" cx="249" cy="842" r="44"/><g class="dep"><rect x="230" y="820" width="38" height="45" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="230" cy="820" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="230" y="827" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۷</text></g>
+<text class="lbl" x="80" y="840" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">ابراهیم مجاب</text>
+<text class="lbl" x="80" y="863" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">رواق غربی حرم</text>
+<g class="mq" data-open="4" role="button" tabindex="0" aria-label="قتلگاه"><circle class="hit" cx="257" cy="887" r="30"/><g class="dep"><rect x="240" y="872" width="34" height="30" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="240" cy="872" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="240" y="879" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۴</text></g>
+<g class="mq" data-open="6" role="button" tabindex="0" aria-label="حبیب بن مظاهر"><circle class="hit" cx="319" cy="887" r="30"/><g class="dep"><rect x="302" y="872" width="34" height="30" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="302" cy="872" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="302" y="879" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۶</text></g>
+<g class="mq" data-open="5" role="button" tabindex="0" aria-label="شهدای کربلا"><circle class="hit" cx="416" cy="887" r="30"/><g class="dep"><rect x="398" y="872" width="36" height="30" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="434" cy="872" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="434" y="879" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۵</text></g>
+<g class="mq" data-open="9" role="button" tabindex="0" aria-label="تل زینبیه"><circle class="hit" cx="210" cy="945" r="40"/><g class="dep"><rect x="192" y="932" width="36" height="26" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 201 958 L 201 944 Q 210 934 219 944 L 219 958 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="228" cy="932" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="228" y="939" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۹</text></g>
+<g class="mq" data-open="8" role="button" tabindex="0" aria-label="خیمه‌گاه"><circle class="hit" cx="160" cy="980" r="40"/><g class="dep"><path d="M 142 993 L 160 967 L 178 993 Z" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/></g><circle class="bdg" cx="178" cy="967" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="178" y="974" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۸</text></g>
+<g class="mq" data-open="10" role="button" tabindex="0" aria-label="علی اکبر"><circle class="hit" cx="298" cy="561" r="40"/><g class="dep"><rect x="280" y="546" width="36" height="30" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 289 576 L 289 562 Q 298 552 307 562 L 307 576 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="316" cy="546" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="316" y="553" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۰</text></g>
+<g class="mq" data-open="11" role="button" tabindex="0" aria-label="علی اصغر"><circle class="hit" cx="319" cy="702" r="40"/><g class="dep"><rect x="301" y="687" width="36" height="30" rx="6" fill="#FFFFFF" stroke="#C5A46D" stroke-width="3"/><path d="M 310 717 L 310 703 Q 319 693 328 703 L 328 717 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/></g><circle class="bdg" cx="337" cy="687" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="337" y="694" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱۱</text></g>
+<text class="lbl" x="85" y="900" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">قتلگاه</text>
+<text class="lbl" x="85" y="922" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="15" fill="#3D4A44">جنوب غربی حرم</text>
+<text class="lbl" x="300" y="960" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">حبیب بن مظاهر</text>
+<text class="lbl" x="480" y="960" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">شهدای کربلا</text>
+<text class="lbl" x="183" y="950" text-anchor="start" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">تل زینبیه</text>
+<text class="lbl" x="200" y="982" text-anchor="end" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">خیمه‌گاه</text>
+<text class="lbl" x="298" y="601" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">علی اکبر (ع)</text>
+<text class="lbl" x="319" y="742" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="17" font-weight="700" fill="#0D3B2E">علی اصغر (ع)</text>
+<text class="lbl" x="492" y="1010" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">نقشه شماتیک است؛ جای نشان‌ها بر پایهٔ سمت‌های مستند در منابع است، نه خریطهٔ رسمی.</text>
+<text class="lbl" x="492" y="1035" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">دو جایگاه بیرون گسترهٔ نقشه، زیر نقشه به‌صورت چیپ آمده‌اند؛ جای ۱۰، ۱۱، ۱۲، ۱۳ و ۱۵ به راهنمایی مالک است.</text>
+</svg>
+  </div>
+  <div class="maphint">روی تصویر هر جایگاه بزنید تا کارتش باز شود. شماره‌های روی نقشه با شماره‌های کارت‌ها یکی است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="notonmap">
+    <h2>بیرون گسترهٔ نقشه — چون کیلومترها بیرون محوطهٔ دو حرم‌اند</h2>
+    <div class="chips">
+      <div class="chip" data-open="17" role="button" tabindex="0"><div class="cn">۱۷</div><div><div class="ct">حر بن یزید ریاحی</div><div class="cs">ناحیهٔ حر، بیرون شهر کربلا به سمت غرب؛ بیرون محوطهٔ دو حرم</div></div></div>
+      <div class="chip" data-open="18" role="button" tabindex="0"><div class="cn">۱۸</div><div><div class="ct">طفلان مسلم</div><div class="cs">مسیب، حدود ۳۰ کیلومتری راه کربلا–بغداد؛ بیرون محوطهٔ دو حرم</div></div></div>
+    </div>
+  </div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>حرم حضرت عباس (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> یک سر میدان بین الحرمین؛ حرم قمر بنی‌هاشم، عباس (ع).</p><p>عباس (ع) نماد وفا و برادری است؛ برای آوردن آب به سوی علقمه رفت و در راه وفا به شهادت رسید.</p><p><b class="g">اعمال:</b> زیارت حضرت عباس (ع).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۸۰ «آستان مقدس حضرت عباس (ع)»، ص ۲۲۵؛ دیدار با عترت، ص ۱۳۰.</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>بین الحرمین</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> میدان میان حرم امام حسین (ع) و حرم حضرت عباس (ع).</p><p>در بین الحرمین، میان دو حرم قدم بزن و برای هر دو حرم سلام بده و دعا کن.</p><p><b class="g">اعمال:</b> زیارت امام حسین (ع) و زیارت حضرت عباس (ع).</p><p class="src">استناد: دیدار با عترت، نقشهٔ راهنمای میدان بین الحرمین، ص ۱۳۰؛ در زیارتگاه‌های عراق مدخل مستقلی برای بین الحرمین نیست.</p></article>
+    <article class="card" data-card="3"><div class="chead"><div class="cnum">۳</div><h3>حرم امام حسین (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> سر دیگر میدان بین الحرمین؛ حرم سیدالشهدا حسین (ع).</p><p>با خواندن اذن دخول وارد حرم شو؛ زیارت عاشورا بخوان و در حرم نماز و دعا کن.</p><p><b class="g">اعمال:</b> زیارت عاشورا و زیارت وارث.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۶۸ «آستان مقدس امام حسین (ع)»، ص ۱۵۸؛ دیدار با عترت؛ کتاب کربلا (محدثی، مشعر).</p></article>
+    <article class="card" data-card="4"><div class="chead"><div class="cnum">۴</div><h3>قتلگاه</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> جنوب غربی رواق حبیب بن مظاهر در حرم امام حسین (ع)، چند متری غرب ضریح حبیب.</p><p>قتلگاه جایی است که پیکر امام حسین (ع) روز عاشورا بر زمین افتاد.</p><p><b class="g">اعمال:</b> زیارت عاشورا؛ زیارت ناحیهٔ مقدسه.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۶۹ «قتلگاه»، ص ۱۸۶؛ دیدار با عترت، ص ۱۲۸؛ ویکی‌حج، مدخل «قتلگاه» (به‌نقل از زیارتگاه‌های عراق): جنوب غربی رواق حبیب بن مظاهر.</p></article>
+    <article class="card" data-card="5"><div class="chead"><div class="cnum">۵</div><h3>شهدای کربلا</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> ضریح شهدای کربلا در حرم امام حسین (ع)؛ زاویهٔ جنوب شرقی گنبد، دیوار شرقی رواق جنوبی، پایین پای ضریح.</p><p>یاران امام حسین (ع) در کربلا جانشان را در راه حق دادند و کنار امامشان به خاک سپرده شدند.</p><p><b class="g">اعمال:</b> زیارت شهدای کربلا.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۷۲ «ضریح شهدای کربلا»، ص ۱۹۰؛ دیدار با عترت، ص ۱۲۴؛ دانشنامهٔ اسلامی، «آرامگاه شهدای کربلا» (به‌نقل از زیارتگاه‌های عراق، جلد ۱، ص ۱۹۰): زاویهٔ جنوب شرقی گنبد، دیوار شرقی رواق جنوبی.</p></article>
+    <article class="card" data-card="6"><div class="chead"><div class="cnum">۶</div><h3>حبیب ابن مظاهر</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> قبر حبیب بن مظاهر اسدی در حرم امام حسین (ع)؛ رواق جنوبی، بخش غربی آن، نزدیک شهدای کربلا.</p><p>حبیب بن مظاهر اسدی از یاران والامقام امام حسین (ع) بود و روز عاشورا پس از نبردی سخت به شهادت رسید.</p><p><b class="g">اعمال:</b> زیارت حبیب بن مظاهر؛ نامش در زیارت رجبیه و زیارت ناحیهٔ مقدسه آمده است.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۷۳ «قبر حبیب بن مظاهر اسدی»، ص ۱۹۱؛ دیدار با عترت، ص ۱۲۷؛ دانشنامهٔ اسلامی، «مرقد مطهر حضرت امام حسین (ع)» (رواق جنوبی به نام رواق حبیب بن مظاهر)؛ زائرانه: بخش غربی رواق جنوبی.</p></article>
+    <article class="card" data-card="7"><div class="chead"><div class="cnum">۷</div><h3>ابراهیم مجاب</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> قبر ابراهیم مجاب در حرم امام حسین (ع)؛ رواق غربی حرم به نام اوست.</p><p>ابراهیم مجاب، فرزند محمد، فرزند امام کاظم (ع) است.</p><p><b class="g">اعمال:</b> زیارت ابراهیم مجاب.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۷۴ «قبر ابراهیم مجاب»، ص ۱۹۴؛ دیدار با عترت، ص ۱۲۹.</p></article>
+    <article class="card" data-card="8"><div class="chead"><div class="cnum">۸</div><h3>خیمه‌گاه</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> جنوب غربی حرم امام حسین (ع)، حدود ۲۵۰ تا ۳۰۰ متری آن، پس از تل زینبیه.</p><p>خیمه‌گاه جای خیمه‌های اهل‌بیت (ع) در روز عاشوراست؛ یاد تشنگی و صبر خیمه‌نشینان کربلاست.</p><p><b class="g">اعمال:</b> زیارت حضرت زینب (س).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۸۲ «خیمه‌گاه حسینی»، ص ۲۳۲؛ دیدار با عترت، ص ۱۴۹؛ ویکی‌پدیای عربی، «المخيم الحسيني» (۳۲٫۶۱۴۵۱۳، ۴۴٫۰۳۰۶۱۲)؛ کلیة العلوم السیاحیة، جامعة کربلاء: جنوب غربی روضهٔ حسینیه.</p></article>
+    <article class="card" data-card="9"><div class="chead"><div class="cnum">۹</div><h3>تل زینبیه</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> جنوب غربی حرم امام حسین (ع)، نزدیک باب الزینبیه، میان قتلگاه و خیمه‌گاه، حدود ۳۵ متری قتلگاه.</p><p>زینب (س) از بالای این تل میدان کربلا را می‌دید؛ صبر او پیام کربلا را زنده نگه داشت.</p><p><b class="g">اعمال:</b> زیارت حضرت زینب (س).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۸۱ «تل زینبیه»، ص ۲۳۲؛ دیدار با عترت، ص ۱۵۰؛ ویکی‌پدیای عربی، «التل الزینبي»: غرب حرم، نزدیک باب الزینبیه، ۲۰ متری حرم و ۳۵ متری مقتل؛ کلیة العلوم السیاحیة، جامعة کربلاء: غرب صحن حسینی، نزدیک باب الزینبیه.</p></article>
+    <article class="card" data-card="10"><div class="chead"><div class="cnum">۱۰</div><h3>مقام علی اکبر (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> بین حرم امام حسین (ع) و مقام امام زمان (عج) — روی خط حرم حسین تا زمان (به راهنمایی مالک).</p><p>علی اکبر (ع) فرزند بزرگ امام حسین (ع) بود که شبیه‌ترین مردم به پیامبر (ص) در خلق و خوی و سخن بود و روز عاشورا به شهادت رسید.</p><p><b class="g">اعمال:</b> زیارت علی اکبر (ع).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۹۳ «مقام علی اکبر (ع)»، ص ۲۴۸؛ دیدار با عترت، ص ۱۲۰؛ کلیة العلوم السیاحیة، جامعة کربلاء: محلهٔ باب السلالمه، زقاق السادة؛ منتدیات الکفیل: شارع السدرة، حدود ۲۰۰ متری عتبهٔ حسینیه.</p></article>
+    <article class="card" data-card="11"><div class="chead"><div class="cnum">۱۱</div><h3>مقام علی اصغر (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> بین حرم امام حسین (ع) و مقام امام زمان (عج)، نزدیک‌تر به حرم حسین (ع) نسبت به علی اکبر (ع) (به راهنمایی مالک).</p><p>علی اصغر (ع) کودک شیرخوار امام حسین (ع) بود که روز عاشورا با تیر سه‌شعبه به شهادت رسید.</p><p><b class="g">اعمال:</b> زیارت علی اصغر (ع).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۹۴ «مقام علی اصغر (ع)»، ص ۲۴۹؛ دیدار با عترت؛ خبر عتبهٔ حسینیه: زقاق مؤدی به مقام عبد الله الرضیع از شارع السدرة.</p></article>
+    <article class="card" data-card="12"><div class="chead"><div class="cnum">۱۲</div><h3>مقام امام صادق (ع)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> آن طرف نهر علقمه — سمت دور نهر، شمال نوار نهر (به راهنمایی مالک).</p><p>زائران آنجا برای دعا و توسل می‌ایستند.</p><p><b class="g">اعمال:</b> زیارت جامعه (زیارت امامان).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، «مقام امام جعفر صادق (ع)»، ص ۲۴۶.</p></article>
+    <article class="card" data-card="13"><div class="chead"><div class="cnum">۱۳</div><h3>مقام امام زمان (عج)</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> جای مقام صادق پیشین، روی علقمه — کنار نهر، سمت نزدیک (به راهنمایی مالک).</p><p>زائران آنجا برای دعا، توسل و تجدید بیعت می‌ایستند.</p><p><b class="g">اعمال:</b> دعای ندبه (صبح جمعه)؛ دعای فرج.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۸۹ «مقام حضرت مهدی (عج)»، ص ۲۴۷؛ دیدار با عترت، ص ۱۵۴.</p></article>
+    <article class="card" data-card="14"><div class="chead"><div class="cnum">۱۴</div><h3>علقمه</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> نهر علقمه در شمال کربلا.</p><p>علقمه شاخه‌ای از فرات بود که روز عاشورا آبش بر خیمه‌های حسین (ع) بسته شد و عباس (ع) برای آوردن آب به سوی آن رفت و به شهادت رسید.</p><p><b class="g">اعمال:</b> زیارت حضرت عباس (ع).</p><p class="src">استناد: دیدار با عترت، ص ۱۳۱ (روایت رفتن عباس (ع) برای آب)؛ اشاره در زیارتگاه‌های عراق، جلد ۱، ص ۲۳۰.</p></article>
+    <article class="card" data-card="15"><div class="chead"><div class="cnum">۱۵</div><h3>مقام دست راست</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> آن طرف دست چپ، به سمت علقمه (به راهنمایی مالک).</p><p>کنار نهر علقمه، جایی است که دست راست حضرت عباس (ع) هنگامی که برای آوردن آب رفته بود، جدا شد.</p><p><b class="g">اعمال:</b> زیارت حضرت عباس (ع).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۹۰ «مقام دست راست حضرت عباس (ع)»، ص ۲۴۷؛ دیدار با عترت، ص ۱۴۷.</p></article>
+    <article class="card" data-card="16"><div class="chead"><div class="cnum">۱۶</div><h3>مقام دست چپ</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> منطقهٔ باب الخان، در جنوب شرقی حرم حضرت عباس (ع).</p><p>مقام دست چپ حضرت عباس (ع) محل قطع شدن و بر زمین افتادن دست چپ آن حضرت به شمار می‌آید.</p><p><b class="g">اعمال:</b> زیارت حضرت عباس (ع).</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۹۱ «مقام دست چپ حضرت عباس (ع)»، ص ۲۴۸؛ دیدار با عترت، ص ۱۴۸.</p></article>
+    <article class="card" data-card="17"><div class="chead"><div class="cnum">۱۷</div><h3>حرم حر بن یزید ریاحی</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> مرقد حر در ناحیهٔ حر، بیرون شهر کربلا به سمت غرب؛ بیرون محوطهٔ دو حرم، پس روی نقشه کشیده نشد.</p><p>حر، فرمانده‌ای از سپاه کوفه بود که راه را بر امام حسین (ع) بست، ولی روز عاشورا توبه کرد، به سپاه امام پیوست و به شهادت رسید؛ زیارتش درس بازگشت است.</p><p><b class="g">اعمال:</b> زیارت حر بن یزید ریاحی.</p><p class="src">استناد: زیارتگاه‌های عراق، جلد ۱، مدخل ۸۳ «مرقد حر بن یزید ریاحی»، ص ۲۳۴؛ دیدار با عترت؛ ویکی‌پدیای عربی، «مسجد الحر الرياحي» (۳۲٫۶۵۱۳، ۴۳٫۹۸۵): غرب کربلا، ناحیهٔ حر.</p></article>
+    <article class="card" data-card="18"><div class="chead"><div class="cnum">۱۸</div><h3>طفلان مسلم</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> مرقد دو کودک مسلم بن عقیل، در مسیب، حدود ۳۰ کیلومتری راه کربلا–بغداد، کنار فرات؛ بیرون محوطهٔ دو حرم، پس روی نقشه کشیده نشد.</p><p>محمد و ابراهیم، دو فرزند خردسال مسلم بن عقیل بودند که پس از عاشورا به شهادت رسیدند.</p><p><b class="g">اعمال:</b> زیارت طفلان مسلم.</p><p class="src">استناد: دیدار با عترت، «مرقد مطهر طفلان مسلم»، ص ۱۵۶؛ زیارتگاه‌های عراق، جلد ۲، مدخل ۲۲۸ «آستان طفلان مسلم بن عقیل» در فهرست ص ۸۸ — متن آن مدخل در لایهٔ متنی در دسترس نیست؛ سایت رسمی عتبهٔ حسینیه: ۳۰ کیلومتری کربلا، شهر مسیب، کنار فرات.</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <p>در اپ راهنمای زایرین عمار غزنه، بخش کربلا همین ۱۸ مرحله به همین ترتیب آمده است.</p>
+    <p>منابع: «زیارتگاه‌های عراق» (پژوهشکدهٔ حج و زیارت)، «دیدار با عترت — راهنمای زیارات عتبات عالیات»، «کربلا» (جواد محدثی)، دانشنامهٔ اسلامی، ویکی‌حج، ویکی‌پدیای عربی، کلیة العلوم السیاحیة جامعة کربلاء، خبر عتبهٔ حسینیه. شمارهٔ صفحه‌ها، شمارهٔ چاپی همان مدخل‌هاست.</p>
+    <p>شکاف صادقانه: بین الحرمین فقط با نقشهٔ راهنمای دیدار با عترت، ص ۱۳۰ آمده است و در زیارتگاه‌های عراق مدخل مستقلی ندارد؛ علقمه فقط با روایت دیدار با عترت، ص ۱۳۱ و اشارهٔ جلد ۱، ص ۲۳۰ آمده است؛ طفلان مسلم فقط در دیدار با عترت، ص ۱۵۶ آمده است و متن مدخل جلد ۲ در دسترس نیست. از ۹ چیپ پیشین، ۷ تا با سمت مستند روی نقشه آمدند (قتلگاه: جنوب غربی رواق حبیب؛ شهدا: جنوب شرقی گنبد؛ حبیب: بخش غربی رواق جنوبی؛ خیمه‌گاه: جنوب غربی حرم؛ تل زینبیه: غرب حرم نزدیک باب الزینبیه؛ علی اکبر و علی اصغر: شمال شرقی حرم، خیابان سدره)؛ حر و طفلان مسلم بیرون گسترهٔ این نقشه‌اند و چیپ ماندند. خریطهٔ رسمی محوطهٔ دو حرم بازیابی نشد؛ پس جای نشان‌ها بر پایهٔ سمت‌های مستند در منابع مکتوب است (میان دو حرم، رواق غربی، جنوب غربی رواق حبیب، جنوب شرقی گنبد، بخش غربی رواق جنوبی، شمال شرقی حرم، غرب حرم، جنوب غربی حرم، کنار علقمه، جنوب شرقی حرم عباس)، نه بر پایهٔ خریطهٔ رسمی.</p>
+    <p>جای نشان‌های ۱۰، ۱۱، ۱۲، ۱۳ و ۱۵ روی این نقشه به راهنمایی مالک تعیین شده است، نه بر پایهٔ منابع مکتوب.</p>
+    <p>تصاویر جایگاه‌ها بازنمایی سه‌بعدی شماتیک بر پایهٔ ویژگی‌های مستندشان‌اند، نه عکس واقعی.</p>
+    <p class="note">بدون قیمت و شماره تماس؛ متن‌ها از منابع راستی‌آزمایی‌شده‌اند و مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();}});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسجد سهله — اینفوگرافیک نقشهٔ مقام‌ها | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 30px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .coords{position:relative;font-size:19px;color:#C5A46D;margin-top:10px;font-weight:700}
+.mapwrap{background:#FFFEFB;padding:30px 48px 10px}
+.mapwrap h2{font-size:30px;color:#0D3B2E;text-align:center}
+.mapwrap .mapnote{font-size:19px;color:#3D4A44;text-align:center;margin-top:8px;line-height:1.9}
+.mapwrap .hint{font-size:19px;color:#8C7440;text-align:center;margin-top:6px;font-weight:700}
+.mapwrap svg{display:block;width:100%;height:auto;margin-top:14px}
+.legend{padding:26px 48px 10px}
+.legend h2{font-size:26px;color:#0D3B2E;text-align:center;margin-bottom:16px}
+.lrow{display:flex;gap:16px;align-items:flex-start;padding:13px 4px;border-bottom:1px solid #EDE4C8}
+.lrow:last-child{border-bottom:none}
+.lnum{flex:0 0 44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 #8C7440}
+.lrow h3{font-size:22px;color:#0D3B2E;line-height:1.6}
+.lrow p{font-size:18px;color:#3D4A44;line-height:1.8;margin-top:2px}
+.lrow .src{font-size:15px;color:#8A7A52}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:30px 48px 38px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot .applink{display:inline-block;margin-top:16px;background:#C5A46D;color:#0D3B2E;font-size:22px;font-weight:700;padding:13px 34px;border-radius:34px;text-decoration:none;box-shadow:0 6px 0 #8C7440}
+.foot p{font-size:18px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:16px;color:#A9B3AC}
+[data-maqam]{cursor:pointer}
+[data-maqam]:hover{filter:drop-shadow(0 0 10px rgba(197,164,109,.95))}
+[data-maqam]:focus-visible{outline:3px solid #C5A46D;outline-offset:3px}
+#cardBack{position:fixed;inset:0;background:rgba(6,26,20,.55);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:50}
+#cardBack.open{opacity:1;pointer-events:auto}
+#maqamCard{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);width:min(640px,92vw);max-height:86vh;overflow:auto;background:#FFFEFB;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease;z-index:51}
+#maqamCard.open{opacity:1;transform:translate(-50%,-50%) scale(1);pointer-events:auto}
+.ch{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,#0A2E24,#0D3B2E);color:#FFFEFB;padding:20px 24px;border-radius:26px 26px 0 0;position:sticky;top:0;z-index:2}
+.cnum{flex:0 0 52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:26px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 #8C7440}
+.ct{flex:1;font-size:24px;font-weight:700;line-height:1.6}
+#cardClose{flex:0 0 46px;height:46px;border-radius:50%;border:2px solid #C5A46D;background:transparent;color:#C5A46D;font-size:30px;line-height:1;cursor:pointer}
+.cb{padding:22px 26px 28px}
+.cl{font-size:16px;font-weight:700;color:#8A7A52;margin-top:16px}
+.cl:first-child{margin-top:0}
+.cb p{font-size:20px;line-height:2;color:#202823;margin-top:4px}
+.cs{margin-top:18px;padding-top:12px;border-top:1px dashed #D8CBA6;font-size:16px;color:#8A7A52;line-height:1.9}
+@media(max-width:640px){
+#maqamCard{left:12px;right:12px;top:auto;bottom:12px;transform:translateY(24px);width:auto;max-height:82vh;border-radius:24px}
+#maqamCard.open{transform:translateY(0)}
+.ch{padding:16px 18px;border-radius:24px 24px 0 0}.ct{font-size:21px}.cb{padding:18px 20px 22px}.cb p{font-size:18px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>مسجد سهله</h1>
+    <div class="sub">اینفوگرافیک نقشهٔ مقام‌ها</div>
+    <div class="intro">به ترتیب اعمال مسجد؛ مکان استجابت دعا، جایگاه انبیا، خانهٔ حضرت خضر، منزل امام زمان (عج) هنگام قیام.</div>
+    <div class="coords">موقعیت جغرافیایی مسجد: ۳۲٫۰۳۸۸۹° شمالی، ۴۴٫۳۷۹۷۲° شرقی (کوفه، عراق)</div>
+  </div>
+  <div class="mapwrap">
+    <h2>نقشهٔ مسجد سهله — ۱۴۰ × ۱۲۵ متر</h2>
+    <div class="mapnote">شمال نقشه بالاست؛ در اصلی و مناره در میانهٔ ضلع شرقی، شبستان در ضلع جنوبی (قبله). جای مقام‌ها بر پایهٔ گفتهٔ امین عام مسجد سهله، غرفهٔ نجف و متن مسیر زیارت است.</div>
+    <div class="hint">برای دیدن توضیح و اعمال هر مقام، روی تصویر سه‌بعدی آن روی نقشه بزنید.</div>
+    <svg viewBox="0 0 1020 880" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقشهٔ مسجد سهله با تصاویر سه‌بعدی مقام‌ها"><defs>
+<linearGradient id="mgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+<radialGradient id="dgold" cx="0.35" cy="0.3" r="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".55" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></radialGradient>
+</defs><text x="482" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#0D3B2E">شمال ↑</text><text x="50" y="411" text-anchor="middle" font-size="22" font-weight="700" fill="#0D3B2E">غرب</text><text x="930" y="240" text-anchor="middle" font-size="22" font-weight="700" fill="#0D3B2E">شرق</text><text x="482" y="800" text-anchor="middle" font-size="22" font-weight="700" fill="#0D3B2E">جنوب (قبله)</text><rect x="100" y="70" width="764" height="682" rx="6" fill="#FBF6E9" stroke="#0D3B2E" stroke-width="12"/><rect x="100" y="632" width="764" height="120" fill="#E9D5A3" opacity="0.55"/><text x="130" y="695" text-anchor="end" font-size="20" font-weight="700" fill="#5A4A26">شبستان (قبله)</text><text x="130" y="719" text-anchor="end" font-size="18" fill="#5A4A26">۱۲۰ × ۵٫۵ متر</text><rect x="856" y="378" width="16" height="76" fill="#FFFEFB"/><rect x="862" y="384" width="30" height="64" rx="8" fill="#0D3B2E" stroke="#C5A46D" stroke-width="3"/><path d="M 872 448 L 872 410 Q 872 396 877 396 Q 882 396 882 410 L 882 448 Z" fill="#F7F3EA"/><text x="930" y="420" text-anchor="middle" font-size="20" font-weight="700" fill="#0D3B2E">در اصلی</text><rect x="874" y="280" width="16" height="80" rx="4" fill="url(#mgold)"/><rect x="866" y="266" width="32" height="14" rx="5" fill="url(#mgold)"/><rect x="880" y="246" width="4" height="22" rx="2" fill="#8C7440"/><text x="930" y="318" text-anchor="middle" font-size="20" font-weight="700" fill="#0D3B2E">مناره</text><text x="930" y="340" text-anchor="middle" font-size="18" fill="#5A4A26">۳۰ متر</text><g data-maqam="2" tabindex="0" role="button" aria-label="مقام ابراهیم"><title>مقام ابراهیم — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="185" cy="265" rx="64" ry="10" fill="#000" opacity=".15"/>
+<polygon points="225,177 241,165 241,237 225,249" fill="#0A2E24"/>
+<polygon points="145,177 161,165 241,165 225,177" fill="#1A6B52"/>
+<rect x="145" y="177" width="80" height="72" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 151 177 Q 151 129 185 129 Q 219 129 219 177 Z" fill="url(#mgold)"/>
+<rect x="183" y="115" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="185" cy="113" r="5" fill="url(#mgold)"/>
+<path d="M 171 249 L 171 209 Q 171 189 185 189 Q 199 189 199 209 L 199 249 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="137" y="249" width="96" height="10" fill="#C9B98C"/>
+<circle cx="185" cy="97" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="185" y="106" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۲</text>
+</g><g data-maqam="5" tabindex="0" role="button" aria-label="مقام صالحین"><title>مقام صالحین — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="779" cy="265" rx="64" ry="10" fill="#000" opacity=".15"/>
+<polygon points="819,177 835,165 835,237 819,249" fill="#0A2E24"/>
+<polygon points="739,177 755,165 835,165 819,177" fill="#1A6B52"/>
+<rect x="739" y="177" width="80" height="72" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 745 177 Q 745 129 779 129 Q 813 129 813 177 Z" fill="url(#mgold)"/>
+<rect x="777" y="115" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="779" cy="113" r="5" fill="url(#mgold)"/>
+<path d="M 765 249 L 765 209 Q 765 189 779 189 Q 793 189 793 209 L 793 249 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="731" y="249" width="96" height="10" fill="#C9B98C"/>
+<circle cx="779" cy="97" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="779" y="106" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۵</text>
+</g><g data-maqam="3" tabindex="0" role="button" aria-label="مقام ادریس"><title>مقام ادریس — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="185" cy="615" rx="64" ry="10" fill="#000" opacity=".15"/>
+<polygon points="225,527 241,515 241,587 225,599" fill="#0A2E24"/>
+<polygon points="145,527 161,515 241,515 225,527" fill="#1A6B52"/>
+<rect x="145" y="527" width="80" height="72" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 151 527 Q 151 479 185 479 Q 219 479 219 527 Z" fill="url(#mgold)"/>
+<rect x="183" y="465" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="185" cy="463" r="5" fill="url(#mgold)"/>
+<path d="M 171 599 L 171 559 Q 171 539 185 539 Q 199 539 199 559 L 199 599 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="137" y="599" width="96" height="10" fill="#C9B98C"/>
+<circle cx="185" cy="447" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="185" y="456" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۳</text>
+</g><g data-maqam="4" tabindex="0" role="button" aria-label="مقام خضر"><title>مقام خضر — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="760" cy="620" rx="64" ry="10" fill="#000" opacity=".15"/>
+<polygon points="800,532 816,520 816,592 800,604" fill="#0A2E24"/>
+<polygon points="720,532 736,520 816,520 800,532" fill="#1A6B52"/>
+<rect x="720" y="532" width="80" height="72" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 726 532 Q 726 484 760 484 Q 794 484 794 532 Z" fill="url(#mgold)"/>
+<rect x="758" y="470" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="760" cy="468" r="5" fill="url(#mgold)"/>
+<path d="M 746 604 L 746 564 Q 746 544 760 544 Q 774 544 774 564 L 774 604 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="712" y="604" width="96" height="10" fill="#C9B98C"/>
+<circle cx="760" cy="452" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="760" y="461" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۴</text>
+</g><g data-maqam="1" tabindex="0" role="button" aria-label="مقام امام صادق"><title>مقام امام صادق — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="482" cy="479.0" rx="76.8" ry="12.0" fill="#000" opacity=".15"/>
+<polygon points="530.0,373.4 549.2,359.0 549.2,445.4 530.0,459.8" fill="#0A2E24"/>
+<polygon points="434.0,373.4 453.2,359.0 549.2,359.0 530.0,373.4" fill="#1A6B52"/>
+<rect x="434.0" y="373.4" width="96.0" height="86.4" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 441.2 373.4 Q 441.2 315.8 482 315.8 Q 522.8 315.8 522.8 373.4 Z" fill="url(#mgold)"/>
+<rect x="479.6" y="299.0" width="4.8" height="16.8" rx="2" fill="#8C7440"/>
+<circle cx="482" cy="296.6" r="6.0" fill="url(#mgold)"/>
+<path d="M 465.2 459.8 L 465.2 411.8 Q 465.2 387.8 482 387.8 Q 498.8 387.8 498.8 411.8 L 498.8 459.8 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="424.4" y="459.8" width="115.2" height="12.0" fill="#C9B98C"/>
+<circle cx="482" cy="277.4" r="25.2" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="482" y="288.2" text-anchor="middle" font-size="33.6" font-weight="700" fill="#0D3B2E">۱</text>
+</g><g data-maqam="6" tabindex="0" role="button" aria-label="مقام سجاد"><title>مقام سجاد — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="640" cy="540" rx="64" ry="10" fill="#000" opacity=".15"/>
+<polygon points="680,452 696,440 696,512 680,524" fill="#0A2E24"/>
+<polygon points="600,452 616,440 696,440 680,452" fill="#1A6B52"/>
+<rect x="600" y="452" width="80" height="72" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 606 452 Q 606 404 640 404 Q 674 404 674 452 Z" fill="url(#mgold)"/>
+<rect x="638" y="390" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="640" cy="388" r="5" fill="url(#mgold)"/>
+<path d="M 626 524 L 626 484 Q 626 464 640 464 Q 654 464 654 484 L 654 524 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<rect x="592" y="524" width="96" height="10" fill="#C9B98C"/>
+<circle cx="640" cy="372" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="640" y="381" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۶</text>
+</g><g data-maqam="7" tabindex="0" role="button" aria-label="مقام امام زمان"><title>مقام امام زمان (عج) — برای دیدن توضیح و اعمال بزنید</title>
+<ellipse cx="482" cy="722" rx="180" ry="10" fill="#000" opacity=".15"/>
+<polygon points="332,660 352,648 652,648 632,660" fill="#1A6B52"/>
+<polygon points="632,660 652,648 652,704 632,716" fill="#0A2E24"/>
+<rect x="332" y="660" width="300" height="56" fill="url(#em)" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 452 652 Q 452 612 482 612 Q 512 612 512 652 Z" fill="url(#mgold)"/>
+<rect x="480" y="600" width="4" height="14" rx="2" fill="#8C7440"/>
+<circle cx="482" cy="598" r="5" fill="url(#mgold)"/>
+<path d="M 362 716 L 362 682 Q 362 662 380 662 Q 398 662 398 682 L 398 716 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 464 716 L 464 682 Q 464 662 482 662 Q 500 662 500 682 L 500 716 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<path d="M 566 716 L 566 682 Q 566 662 584 662 Q 602 662 602 682 L 602 716 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="2"/>
+<circle cx="482" cy="585" r="21" fill="url(#dgold)" stroke="#8C7440" stroke-width="2"/>
+<text x="482" y="594" text-anchor="middle" font-size="28" font-weight="700" fill="#0D3B2E">۷</text>
+</g><g font-weight="700" fill="#0D3B2E"><text x="255" y="195" text-anchor="end" font-size="22">ابراهیم (ع)</text><text x="255" y="217" text-anchor="end" font-size="18" font-weight="400" fill="#5A4A26">گوشهٔ شمال غربی</text><text x="709" y="195" text-anchor="start" font-size="22">صالحین</text><text x="709" y="217" text-anchor="start" font-size="18" font-weight="400" fill="#5A4A26">گوشهٔ شمال شرقی</text><text x="255" y="545" text-anchor="end" font-size="22">ادریس (ع)</text><text x="255" y="567" text-anchor="end" font-size="18" font-weight="400" fill="#5A4A26">گوشهٔ جنوب غربی</text><text x="760" y="398" text-anchor="middle" font-size="22">خضر (ع)</text><text x="760" y="420" text-anchor="middle" font-size="18" font-weight="400" fill="#5A4A26">گوشهٔ جنوب شرقی</text><text x="482" y="520" text-anchor="middle" font-size="22">امام صادق (ع)</text><text x="482" y="544" text-anchor="middle" font-size="18" font-weight="400" fill="#5A4A26">درست وسط مسجد</text><text x="615" y="580" text-anchor="middle" font-size="22">سجاد (ع)</text><text x="615" y="604" text-anchor="middle" font-size="18" font-weight="400" fill="#5A4A26">میان صحن، مایل به شرق</text><text x="670" y="690" text-anchor="end" font-size="22">امام زمان (عج)</text><text x="670" y="712" text-anchor="end" font-size="18" font-weight="400" fill="#5A4A26">میانهٔ ضلع جنوبی</text></g></svg>
+  </div>
+  <div class="legend">
+    <h2>مقام‌ها به ترتیب اعمال</h2>
+    <div class="lrow"><div class="lnum">۱</div><div><h3>مقام امام صادق (ع)</h3><p>درست وسط مسجد؛ دکهٔ مستطیل، محل نماز جماعت.</p><p class="src">دیدار با عترت، ص ۵۵۰</p></div></div><div class="lrow"><div class="lnum">۲</div><div><h3>مقام حضرت ابراهیم (ع)</h3><p>گوشهٔ شمال غربی؛ خانهٔ حضرت ابراهیم بود.</p><p class="src">دیدار با عترت، ص ۵۵۵</p></div></div><div class="lrow"><div class="lnum">۳</div><div><h3>مقام حضرت ادریس (ع)</h3><p>گوشهٔ جنوب غربی؛ خانه و جای خیاطی حضرت ادریس.</p><p class="src">دیدار با عترت، ص ۵۵۷</p></div></div><div class="lrow"><div class="lnum">۴</div><div><h3>مقام حضرت خضر (ع)</h3><p>گوشهٔ جنوب شرقی؛ بیت‌الخضر، اقامتگاه حضرت خضر.</p><p class="src">دیدار با عترت، ص ۵۵۸</p></div></div><div class="lrow"><div class="lnum">۵</div><div><h3>مقام انبیای صالحین</h3><p>گوشهٔ شمال شرقی؛ جایگاه عبادت پیامبران الهی.</p><p class="src">دیدار با عترت، ص ۵۶۰</p></div></div><div class="lrow"><div class="lnum">۶</div><div><h3>مقام حضرت زین‌العابدین (ع)</h3><p>میان صحن، مایل به شرق؛ جایگاه عبادت امام سجاد (ع).</p><p class="src">دیدار با عترت، ص ۵۶۲</p></div></div><div class="lrow"><div class="lnum">۷</div><div><h3>مقام امام زمان (عج)</h3><p>میانهٔ ضلع جنوبی؛ ساختمان ۸۰ × ۵٫۵ متر، بنای سید بحرالعلوم.</p><p class="src">دیدار با عترت، ص ۵۶۳</p></div></div>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <a class="applink" href="../ziyarat-guide-app/index.html#atabat-2">باز کردن صفحهٔ مسجد کوفه و مسجد سهله در اپ ↗</a>
+    <p>منابع: «دیدار با عترت — راهنمای زیارات عتبات عالیات»، اعمال مسجد سهله (ص ۵۵۰ تا ۵۶۳)؛ جای مقام‌ها: گفت‌وگوی مجلهٔ آستان حسینی با دکتر مهندس مضر عبدالهادی المدنی، امین عام مسجد سهلهٔ معظم، و غرفهٔ نجف اشرف، و متن مسیر زیارت در کتب مزار.</p>
+    <p>یادداشت صادقانه: در برخی منابع (ویکی‌پدیای عربی بر پایهٔ عتبة علویه) گوشه‌های چهار مقام ابراهیم، ادریس، خضر و صالحین به‌صورت آینه‌ای (شرق ↔ غرب) آمده است؛ نقشهٔ بالا بر پایهٔ گفتهٔ امین عام مسجد و متن مسیر زیارت است. کتاب دیدار، نقشهٔ راهنمای مسجد سهله (ص ۵۳۸) را دارد ولی تصویر نقشه در نسخهٔ در دسترس ما نیامده است. مختصات جغرافیایی در سطح مقام‌ها منتشر نشده است، پس مختصات همان مسجد آمده است.</p>
+    <p class="note">نقشه بر پایهٔ ابعاد مستند (۱۴۰ × ۱۲۵ متر، دیوار ۲۲ متر، مناره ۳۰ متر، شبستان ۱۲۰ × ۵٫۵ متر) بازسازی شده است. ساختارهای سه‌بعدی مقام‌ها شماتیک‌اند؛ عکس تکی هر مقام منتشر نشده است. این تصویر شماتیک است، نه عکس مکان.</p>
+  </div>
+</div>
+<div id="cardBack" aria-hidden="true"></div>
+<div id="maqamCard" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="ch"><div class="cnum" id="cNum">۱</div><div class="ct" id="cTitle"></div><button id="cardClose" aria-label="بستن">×</button></div>
+  <div class="cb">
+    <div class="cl">موقعیت روی نقشه</div><p id="cPos"></p>
+    <div class="cl">دربارهٔ مقام</div><p id="cAbout"></p>
+    <div class="cl">اعمال</div><p id="cAct"></p>
+    <div class="cs" id="cSrc"></div>
+  </div>
+</div>
+<script>var CARDS={1:{t:"مقام امام صادق (ع)",pos:"درست وسط مسجد؛ دکهٔ مستطیل، محل نماز جماعت.",about:"جایگاهی که امام صادق (ع) در آن عبادت فرمود؛ با دو رکعت نماز و مناجات ایشان در همین مسجد، زن زندانی آزاد شد.",act:"دو رکعت نماز؛ سپس دست‌ها به سوی آسمان و دعای «أنت الله لا إله إلا أنت…»؛ پس از نماز به سجده برو و هرچه می‌خواهی از خدا بخواه.",src:"دیدار با عترت، اعمال مسجد سهله، ص ۵۵۰؛ جای روی نقشه: امین عام مسجد سهله + غرفهٔ نجف"},
+2:{t:"مقام حضرت ابراهیم (ع)",pos:"گوشهٔ شمال غربی مسجد.",about:"مسجد سهله خانهٔ حضرت ابراهیم بود و از آنجا برای هدایت قوم عمالقه به یمن می‌رفت.",act:"دو رکعت نماز و پس از تسبیح حضرت زهرا (س)، دعای «اللهم بحق هذه البقعة الشریفة…».",src:"دیدار با عترت، ص ۵۵۵؛ جای روی نقشه: امین عام مسجد + غرفهٔ نجف"},
+3:{t:"مقام حضرت ادریس (ع)",pos:"گوشهٔ جنوب غربی مسجد.",about:"خانه و جایگاه عبادت حضرت ادریس بود و در آنجا خیاطی می‌کرد و تسبیح خدا می‌گفت؛ هر که در مسجد سهله دعا کند، خداوند حاجتش را برآورده می‌کند.",act:"دو رکعت نماز و دعای «اللهم إنی صلیت هذه الصلوة ابتغاء مرضاتک…».",src:"دیدار با عترت، ص ۵۵۷؛ جای روی نقشه: امین عام مسجد + غرفهٔ نجف"},
+4:{t:"مقام حضرت خضر (ع)",pos:"گوشهٔ جنوب شرقی مسجد؛ بیت‌الخضر.",about:"اقامتگاه حضرت خضر؛ خداوند او را در زمان غیبت، مونس امام زمان (عج) قرار داده است.",act:"دو رکعت نماز و دعای «اللهم إن کانت الذنوب والخطایا…».",src:"دیدار با عترت، ص ۵۵۸؛ جای روی نقشه: امین عام مسجد + غرفهٔ نجف"},
+5:{t:"مقام انبیای صالحین",pos:"گوشهٔ شمال شرقی مسجد.",about:"جایگاه عبادت پیامبران الهی؛ مقام انبیا هود و صالح و مرسلین.",act:"دو رکعت نماز و دعای «اللهم إنی أسئلک باسمک یا الله…».",src:"دیدار با عترت، ص ۵۶۰؛ جای روی نقشه: امین عام مسجد + غرفهٔ نجف"},
+6:{t:"مقام حضرت زین‌العابدین (ع)",pos:"میان صحن، مایل به شرق.",about:"جایگاه عبادت امام زین‌العابدین (ع).",act:"دو رکعت نماز و دعای «یا من هو أقرب إلی من حبل الورید…».",src:"دیدار با عترت، ص ۵۶۲؛ جای روی نقشه: امین عام مسجد"},
+7:{t:"مقام امام زمان (عج)",pos:"میانهٔ ضلع جنوبی (قبله)؛ ساختمان ۸۰ × ۵٫۵ متر.",about:"بنایش را نخست سید بحرالعلوم ساخت؛ همان‌جایی که او به محضر حضرت ولی عصر (عج) شرفیاب شد.",act:"زیارت امام زمان (عج) با آغاز «سلام الله الکامل الشامل العام…»؛ برای توسل می‌توان از نماز امام زمان (عج)، نماز استغاثه، زیارت آل یس و زیارت جامعه استفاده کرد.",src:"دیدار با عترت، ص ۵۶۳؛ جای روی نقشه: امین عام مسجد"}};
+var panel=document.getElementById('maqamCard'),back=document.getElementById('cardBack');
+function openCard(n){var c=CARDS[n];if(!c)return;document.getElementById('cNum').textContent='۰۱۲۳۴۵۶۷۸۹'[n];document.getElementById('cTitle').textContent=c.t;document.getElementById('cPos').textContent=c.pos;document.getElementById('cAbout').textContent=c.about;document.getElementById('cAct').textContent=c.act;document.getElementById('cSrc').textContent=c.src;panel.classList.add('open');back.classList.add('open');panel.setAttribute('aria-hidden','false');}
+function closeCard(){panel.classList.remove('open');back.classList.remove('open');panel.setAttribute('aria-hidden','true');}
+document.addEventListener('click',function(e){var h=e.target.closest?e.target.closest('[data-maqam]'):null;if(h){openCard(h.getAttribute('data-maqam'));return;}if(e.target===back||(e.target.closest&&e.target.closest('#cardClose')))closeCard();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCard();});</script>
+</body>
+</html>

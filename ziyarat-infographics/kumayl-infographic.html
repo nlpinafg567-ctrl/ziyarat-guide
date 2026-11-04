@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آرامگاه کمیل — کمیل بن زیاد نخعی | راهنمای زایرین عمار غزنه</title>
+<style>@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:Vazirmatn;src:url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.woff2') format('woff2'),url('../ziyarat-guide-app/assets/fonts/Vazirmatn-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#0D3B2E;padding:34px 0;color:#202823}
+.poster{width:1080px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#F7F3EA 0%,#FFFEFB 55%,#F7F3EA 100%);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.head{position:relative;background:linear-gradient(180deg,#0A2E24 0%,#0D3B2E 55%,#14543F 100%);color:#F7F3EA;text-align:center;padding:40px 48px 28px;overflow:hidden}
+.head:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 520px 220px at 50% -60px,rgba(197,164,109,.5),transparent 70%)}
+.logo{position:relative;width:104px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.head h1{position:relative;font-size:58px;font-weight:700;margin-top:12px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+.head .sub{position:relative;font-size:28px;color:#C5A46D;margin-top:8px;font-weight:700}
+.head .intro{position:relative;font-size:20px;color:#E9E2D0;margin-top:14px;line-height:1.9}
+.head .geo{position:relative;font-size:17px;color:#CFC8B4;margin-top:8px;line-height:1.9}
+.mapwrap{position:relative;padding:28px 40px 8px;overflow-x:auto}
+.mapwrap svg{display:block;width:100%;min-width:760px;height:auto}
+.maphint{text-align:center;font-size:17px;color:#8A7A52;line-height:1.9;padding:0 40px 6px}
+.zoomhint{display:none;text-align:center;font-size:15px;color:#8A7A52;padding:0 20px 10px}
+.mq{cursor:pointer;outline:none}
+.mq text{pointer-events:none}
+svg text{pointer-events:none}
+.mq .hit{fill:transparent;pointer-events:all}
+.mq .dep{transition:filter .25s ease}
+.mq:hover .dep,.mq:focus .dep{filter:drop-shadow(0 6px 10px rgba(13,59,46,.45))}
+.mq.active .bdg{stroke:#0D3B2E;stroke-width:4}
+.mq .lbl{paint-order:stroke;stroke:#FFFEFB;stroke-width:5px;stroke-linejoin:round}
+.notonmap{padding:20px 40px 4px}
+.notonmap h2{font-size:22px;color:#0D3B2E;text-align:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:2px solid #E3D9BE;border-right:7px solid #8A7A52;border-radius:16px;padding:11px 16px;cursor:pointer;box-shadow:0 4px 0 rgba(138,122,82,.25);transition:transform .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(0,0,0,.15)}
+.chip .cn{flex:0 0 40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chip .ct{font-size:17px;font-weight:700;color:#0D3B2E;line-height:1.6}
+.chip .cs{font-size:14px;color:#8A7A52;line-height:1.6}
+.cards{padding:16px 40px 8px}
+.card{display:none;background:linear-gradient(180deg,#FFFFFF,#F7F3EA);border:2px solid #E3D9BE;border-top:7px solid #C5A46D;border-radius:21px;padding:22px 24px;box-shadow:0 10px 0 rgba(197,164,109,.3),0 18px 34px rgba(0,0,0,.12);margin-bottom:16px}
+.card.open{display:block;animation:cardIn .38s ease}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.chead{display:flex;align-items:center;gap:14px}
+.cnum{flex:0 0 54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3B6,#C5A46D 55%,#8C7440);color:#0D3B2E;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #8C7440}
+.chead h3{font-size:24px;color:#0D3B2E;line-height:1.6;flex:1}
+.close{flex:0 0 auto;background:#0D3B2E;color:#F7F3EA;border:none;border-radius:34px;padding:9px 18px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.close:hover{background:#14543F}
+.card p{font-size:18px;line-height:2;color:#3D4A44;margin-top:10px}
+.card p b{color:#0D3B2E}
+.card p b.g{color:#8A7A52}
+.card .src{font-size:15px;color:#8A7A52;border-top:1px dashed #D8CBA6;padding-top:8px}
+.foot{background:#0D3B2E;color:#E9E2D0;padding:26px 48px 34px;text-align:center}
+.foot .brand{font-size:26px;font-weight:700;color:#C5A46D}
+.foot .appnote{display:inline-block;margin-top:14px;background:#C5A46D;color:#0D3B2E;font-size:19px;font-weight:700;padding:12px 32px;border-radius:34px;line-height:1.9}
+.foot p{font-size:16px;line-height:2;margin-top:10px;color:#CFC8B4}
+.foot .note{font-size:14px;color:#A9B3AC}
+@media (max-width:640px){
+body{padding:0}
+.poster{border-radius:0}
+.head{padding:28px 20px 22px}
+.head h1{font-size:44px}
+.head .sub{font-size:22px}
+.head .intro{font-size:17px}
+.mapwrap{padding:18px 12px 6px}
+.maphint{padding:0 16px 6px;font-size:15px}
+.zoomhint{display:block}
+.notonmap{padding:16px 16px 4px}
+.cards{padding:12px 16px 6px}
+.card{padding:18px}
+.chead h3{font-size:20px}
+.card p{font-size:17px}
+.foot{padding:22px 20px 28px}
+.foot .appnote{font-size:17px}
+}</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <img class="logo" src="../visa-ad-video/work/logo-real.png" alt="عمار غزنه">
+    <h1>آرامگاه کمیل</h1>
+    <div class="sub">کمیل بن زیاد نخعی</div>
+    <div class="intro">روی نشان روی نقشه یا چیپ‌ها بزنید تا کارتش باز شود؛ هر بار فقط یک کارت باز است.</div>
+    <div class="geo">میانهٔ بزرگراه نجف–کوفه، منطقهٔ ثویه، نزدیک مسجد حنانه؛ مختصات آرامگاه: ۳۲٫۰۰۶۸۱° شمالی، ۴۴٫۳۳۸۷۸° شرقی (مکان‌ها + ویکی‌پدیا، تطبیق در چند متر).</div>
+  </div>
+  <div class="mapwrap">
+  <svg viewBox="0 0 984 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نمای جایگاه آرامگاه کمیل در میانهٔ بزرگراه نجف–کوفه"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E3B6"/><stop offset=".5" stop-color="#C5A46D"/><stop offset="1" stop-color="#8C7440"/></linearGradient>
+<linearGradient id="goldD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D5A3"/><stop offset="1" stop-color="#9A7F45"/></linearGradient>
+<linearGradient id="em" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6B52"/><stop offset="1" stop-color="#0D3B2E"/></linearGradient>
+</defs>
+<text x="492" y="48" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="22" font-weight="700" fill="#0D3B2E">نمای جایگاه آرامگاه کمیل — شمال بالا</text>
+<g><circle cx="110" cy="90" r="26" fill="#0D3B2E" stroke="#C5A46D" stroke-width="2"/><text x="110" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="28" font-weight="700" fill="#C5A46D">↑</text><text x="110" y="140" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">شمال</text></g>
+<text x="492" y="100" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">کوفه</text>
+<text x="492" y="126" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">انتهای شمالی بزرگراه</text>
+<rect x="402" y="140" width="180" height="360" fill="#EFE6CC" stroke="#C5A46D" stroke-width="4"/>
+<line x1="492" y1="140" x2="492" y2="230" stroke="#C5A46D" stroke-width="3" stroke-dasharray="10 8"/>
+<line x1="492" y1="410" x2="492" y2="500" stroke="#C5A46D" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="730" y="320" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">بزرگراه نجف–کوفه</text>
+<text x="730" y="346" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">منطقهٔ ثویه</text>
+<g class="mq" data-open="1" role="button" tabindex="0" aria-label="آرامگاه کمیل بن زیاد نخعی"><circle class="hit" cx="492" cy="320" r="110"/><g class="dep"><rect x="422" y="280" width="140" height="110" rx="10" fill="url(#em)" stroke="#C5A46D" stroke-width="4"/><path d="M 452 390 L 452 330 Q 452 300 492 300 Q 532 300 532 330 L 532 390 Z" fill="#F7F3EA" stroke="#C5A46D" stroke-width="3"/><path d="M 432 282 Q 432 216 492 216 Q 552 216 552 282 Z" fill="url(#gold)"/><ellipse cx="492" cy="282" rx="60" ry="9" fill="#8C7440"/><rect x="488" y="196" width="8" height="22" rx="4" fill="url(#goldD)"/><circle cx="492" cy="193" r="8" fill="url(#gold)"/></g><circle class="bdg" cx="576" cy="232" r="17" fill="url(#gold)" stroke="#8C7440" stroke-width="2"/><text x="576" y="239" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="19" font-weight="700" fill="#0D3B2E">۱</text></g>
+<text class="lbl" x="492" y="420" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">آرامگاه کمیل</text>
+<text class="lbl" x="492" y="446" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">ثویه، میانهٔ بزرگراه نجف–کوفه</text>
+<text x="492" y="540" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="21" font-weight="700" fill="#0D3B2E">نجف</text>
+<text x="492" y="566" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">انتهای جنوبی بزرگراه</text>
+<text x="492" y="610" text-anchor="middle" font-family="Vazirmatn,Tahoma,sans-serif" font-size="16" fill="#3D4A44">این نقشه نمای جایگاه است، نه پلان داخلی بقعه</text>
+</svg>
+  </div>
+  <div class="maphint">روی نشان آرامگاه بزنید تا کارتش باز شود. شمارهٔ روی نقشه با شمارهٔ کارتش یکی است.</div>
+  <div class="zoomhint">برای دیدن جزئیات نقشه، آن را به چپ و راست بکشید یا با دو انگشت بزرگ‌نمایی کنید.</div>
+  <div class="notonmap">
+    <h2>نشان جداگانه ندارند — چون مکان دومی نیستند</h2>
+    <div class="chips">
+      <div class="chip" data-open="2" role="button" tabindex="0"><div class="cn">۲</div><div><div class="ct">موقعیت و بنای بقعه</div><div class="cs">همان جایگاه روی نقشه؛ صحن وسیع و گنبد بزرگ</div></div></div>
+      <div class="chip" data-open="3" role="button" tabindex="0"><div class="cn">۳</div><div><div class="ct">عنوان درست و مرز این نقشه</div><div class="cs">«مسجد کمیل» به‌عنوان مسجد مستقل تأیید نشد</div></div></div>
+    </div>
+  </div>
+  <div class="cards">
+    <article class="card" data-card="1"><div class="chead"><div class="cnum">۱</div><h3>آرامگاه کمیل بن زیاد نخعی</h3><button class="close">× بستن</button></div><p><b>که بود:</b> از اصحاب خاص امیرالمومنین (ع)؛ دعای کمیل (دعای خضر) را حضرت علی (ع) به او آموخت.</p><p><b>موقعیت:</b> میانهٔ بزرگراه نجف–کوفه، منطقهٔ ثویه، نزدیک مسجد حنانه.</p><p><b>مختصات:</b> ۳۲٫۰۰۶۸۱° شمالی، ۴۴٫۳۳۸۷۸° شرقی — مکان‌ها (نام و نشانی النجف تطبیق شد) و ویکی‌پدیای عربی/انگلیسی در چند متر هم‌خوان‌اند؛ مپ‌کارتا و ویکی‌مپیا هم همین نقطه‌اند.</p><p><b>مسجد حنانه:</b> حدود ۴۳۰ متر (فاصلهٔ هوایی بر پایهٔ مختصات) در سمت غرب‌جنوب‌غربی آرامگاه است؛ منابع متنی فاصله را «حدود ۶۰۰ متر» می‌آورند (احتمالاً مسیر جاده) و متن کهن هم ثویه را «شرق مسجد حنانه» می‌داند — جهت غربی از هر دو مسیر تأیید می‌شود.</p><p class="src">استناد: دیدار با عترت، مدخل کمیل بن زیاد نخعی، فهرست ص ۴۸۰ + منابع وب معتبر؛ مختصات و فاصله: مکان‌ها + ویکی‌پدیا.</p></article>
+    <article class="card" data-card="2"><div class="chead"><div class="cnum">۲</div><h3>موقعیت و بنای بقعه</h3><button class="close">× بستن</button></div><p><b>موقعیت:</b> میانهٔ بزرگراه نجف–کوفه، منطقهٔ ثویه، نزدیک مسجد حنانه.</p><p><b>بنا:</b> صحن وسیع و گنبد بزرگ.</p><p><b>چیدمان داخلی (مستند، نه پلان اندازه‌دار):</b> حرم در میانهٔ صحن مدور وسیع است و با پلکان ثابت به آن می‌رسند؛ قبر کمیل در میانهٔ حجره/حرم، زیر گنبد، روی دکهٔ مربع با کاشی سبز است. دور صحن غرفه‌ها و ایوان‌هایی است که خانواده‌های نجفی آن‌ها را مقبرهٔ خود و خانواده‌شان کرده‌اند؛ پس قبر کناریِ نام‌دارِ همراه کمیل در این منابع نیامده است و پلان اندازه‌دار داخلی هم در دست نیست — به همین دلیل نشان داخلی کشیده نشده است.</p><p>این کارت همان جایگاه نشان ۱ روی نقشه را شرح می‌دهد؛ مکان دومی نیست، پس نشان جداگانه ندارد.</p><p class="src">استناد: منابع وب معتبر؛ پژوهش زیارت، بخش کمیل؛ چیدمان: وثائق الحکمه، «مرقد کمیل بن زیاد» (نقل از مجلهٔ ینابیع، با ارجاع به تاریخ النجف حرزالدین و کتاب کمیل بن زیاد).</p></article>
+    <article class="card" data-card="3"><div class="chead"><div class="cnum">۳</div><h3>عنوان درست و مرز این نقشه</h3><button class="close">× بستن</button></div><p><b>عنوان درست «آرامگاه کمیل» است؛</b> «مسجد کمیل» به‌عنوان مسجد مستقل در دیدار با عترت و منابع وب معتبر تأیید نشد.</p><p><b>مرز نقشه:</b> چیدمان داخلی بقعه اکنون به‌صورت توصیفی مستند است (کارت ۲) ولی پلان اندازه‌دار داخلی در دست نیست؛ نقشهٔ بالا نمای جایگاه آرامگاه در میانهٔ بزرگراه است، نه پلان داخلی بقعه و نه به‌مقیاس.</p><p class="src">استناد: دیدار با عترت، مدخل کمیل بن زیاد نخعی، فهرست ص ۴۸۰؛ پژوهش زیارت، بخش کمیل.</p></article>
+  </div>
+  <div class="foot">
+    <div class="brand">راهنمای زایرین عمار غزنه</div>
+    <div class="appnote">در اپ راهنمای زایرین عمار غزنه، آرامگاه کمیل مرحلهٔ جداگانه ندارد؛ نزدیک‌ترین بخش، مرحلهٔ «مسجد کوفه و مسجد سهله» است.</div>
+    <p>منابع: «دیدار با عترت — راهنمای زیارات عتبات عالیات»، مدخل کمیل بن زیاد نخعی، فهرست ص ۴۸۰؛ منابع وب معتبر برای موقعیت و بنا؛ مختصات و فاصلهٔ حنانه: مکان‌ها + ویکی‌پدیا (عربی/انگلیسی) + مپ‌کارتا؛ چیدمان داخلی و قبور ثویه: وثائق الحکمه، «مرقد کمیل بن زیاد» (نقل از مجلهٔ ینابیع).</p>
+    <p>شکاف صادقانه (پس از پژوهش تازه): چیدمان داخلی بقعه اکنون به‌صورت توصیفی مستند شد (کارت ۲) ولی پلان اندازه‌دار داخلی هنوز در دست نیست، پس نشان داخلی کشیده نشد. سمت و فاصلهٔ حنانه بسته شد: حدود ۴۳۰ متر هوایی در غرب‌جنوب‌غربی (بر پایهٔ مختصات) در برابر «حدود ۶۰۰ متر» منابع متنی — اختلافِ مسیر هوایی و جاده‌ای گزارش شد؛ چون نقشه به‌مقیاس نیست، حنانه نشان‌دار نشد. بودن رشید هجری و احنف بن قیس در کنار کمیل همچنان قطعی نشد و برعکس، سند می‌گوید قبور بزرگان ثویه جز قبر کمیل شناخته‌شده نیست و مرقد شناخته‌شدهٔ رشید در الکفل است، پس در نقشه نیامده‌اند. مختصات عددی آرامگاه بسته شد (بالا). سمت جاده (نجف در جنوب، کوفه در شمال) بر پایهٔ سند مسیر نجف–کوفه است که حنانه را در شمال حرم می‌آورد.</p>
+    <p>تصویر بقعه بازنمایی شماتیک بر پایهٔ ویژگی‌های مستندش (صحن وسیع و گنبد بزرگ) است، نه عکس واقعی.</p>
+    <p class="note">بدون انسان، بدون قیمت و شماره تماس؛ مورد بدون سند، حدسی کشیده نشده است.</p>
+  </div>
+</div>
+<script>
+(function(){
+var cards=document.querySelectorAll('.card');
+function closeAll(){cards.forEach(function(c){c.classList.remove('open')});document.querySelectorAll('.mq.active').forEach(function(m){m.classList.remove('active')});}
+function openCard(id){
+var target=document.querySelector('.card[data-card="'+id+'"]');
+var already=target&&target.classList.contains('open');
+closeAll();
+if(!already&&target){target.classList.add('open');document.querySelectorAll('.mq[data-open="'+id+'"]').forEach(function(m){m.classList.add('active')});target.scrollIntoView({behavior:'smooth',block:'center'});}
+}
+document.querySelectorAll('[data-open]').forEach(function(el){
+el.addEventListener('click',function(){openCard(el.getAttribute('data-open'));});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(el.getAttribute('data-open'));}});
+});
+document.querySelectorAll('.card .close').forEach(function(b){b.addEventListener('click',closeAll);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();}});
+})();
+</script>
+</body>
+</html>
