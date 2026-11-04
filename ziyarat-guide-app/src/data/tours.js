@@ -45,26 +45,49 @@
    قابل پیوندی ندارند (ادعای Illuminating Hearts پوستهٔ جاوااسکریپت
    بدون پخش‌کننده است؛ masajediraq فقط فهرست است) و مجموعه‌تصویرشان
    ماند؛ جمرات و سعی هم پانورامای همان مکان ندارند؛ سید محمد با
-   جست‌وجوی سوم هم چیزی ندارد. */
+   جست‌وجوی سوم هم چیزی ندارد.
+   به‌روز ۴ نوامبر ۲۰۲۶ (لینک فرستاده‌شدهٔ مالک): تور مجازی مسجد الحرام IRpano
+   (لینک share.google مالک به irpano.ir/ap/masjed/Mecca رسید و نمایشگر
+   پانورامای واقعی حیاط مسجدالحرام در مرورگر دیده شد) در صدر mecca و tawaf
+   نشست و تور غیررسمی 3dmekanlar همان مکان از هر دو کلید برداشته شد.
+   به‌روز ۴ نوامبر ۲۰۲۶ (فهرست itcz عراق، تک‌تک راستی‌آزمایی شد): فقط
+   لینک‌های با محتوای درست نشستند — کوفه، دو نجف، سامرا، و دو لینک
+   با برچسب نادرست که محتوایشان حر و سید محمد بود (به کلیدهای تازهٔ
+   hor و sayyid-mohammad رفتند). ۶ لینک ۴۰۴ و ۲ لینک با محتوای
+   زنجان (عباس و بین‌الحرمینِ برچسب‌خورده) ننشستند. */
+/* پاک‌سازی ۴ نوامبر ۲۰۲۶ (دستور مالک: ویکی‌پدیا و صفحهٔ متنی به‌جای
+   تصویر، کلا پاک شود): ۹ ورودی حذف شد — بقیع (ویکی‌پدیا)، طواف
+   (دستهٔ کامانز)، سعی (دستهٔ کامانز — کلید خالی شد)، جمرات (دستهٔ
+   کامانز — کلید خالی شد)، کوفه (دستهٔ کامانز)، سهله (ویکی‌پدیا)،
+   کاظمین (دستهٔ کامانز — کلید خالی شد)، سامرا (ویکی‌پدیا)، ری
+   (ویکی‌پدیا). جایگزینِ واجدِ شرایط یافت نشد: نامزدها یا فهرست
+   عکس‌های پولی (Getty و مانندش)، یا مقالهٔ متنی (نه خودِ تور/تصویرها)،
+   یا تک‌عکس بودند؛ پس به‌جای لینک ساختگی، مرحله‌های سعی، جمرات و
+   کاظمین tours:null گرفتند و کارتشان صادقانه خالی می‌ماند. کلیدهای
+   مدینه، طواف، کوفه و سهله، سامرا و ری تور/پانورامای خودشان را دارند
+   و کارت‌شان تصویری می‌ماند. نگارخانهٔ رسمی قم (amfm.ir) از جنس
+   حذف نیست و مانده است؛ راستی‌آزمایی متنی‌اش با خطای دریافت روبه‌رو
+   شد (نه اثبات خرابی صفحه) و با مرورگر زنده باید جداگانه چک شود. */
 const VIRTUAL_TOURS = {
   mecca: [
-    { type: "تور", title: "مسجد الحرام — تور سه‌بعدی (غیررسمی)", url: "https://www.3dmekanlar.com/en/masjid-al-haram.html" },
+    { type: "تور", title: "مسجد الحرام — تور مجازی کعبه (IRpano)", url: "https://irpano.ir/ap/masjed/Mecca/" },
     { type: "پانوراما", title: "مسجد الحرام — پانورامای ۳۶۰ (عکس ۳۶۰Riyadh)", url: "https://www.360cities.net/tr/image/al-masjid-al-haram-al-haram-mosque-1" }
   ],
+  /* مدینه: لینک پانومن مالک (حرم رسول الله و بقیع) در صدر نشست — از
+     این محیط سه بار با خطای DNS باز نشد (میزبان ایرانی) و نشستنش بر
+     اساس تأیید صریح خود مالک است («لینک‌ها همه درست است؛ شاید مرورگر
+     تو باز نمی‌کند چون از ایران است»)، نه راستی‌آزمایی مرورگر؛ نگهبان
+     لینک‌ها از همین محیط آن را FAIL گزارش می‌کند. */
   madina: [
+    { type: "تور", title: "حرم رسول الله و بقیع — زیارت مجازی (پانومن)", url: "https://www.panoman.ir/projects/rasolallah/1.html" },
     { type: "تور", title: "مسجد النبی — تور رسمی مجمع طبع قرآن ملک فهد", url: "https://vr.qurancomplex.gov.sa/msq/" },
     { type: "تور", title: "مسجد النبی — تور سه‌بعدی (غیررسمی)", url: "https://www.3dmekanlar.com/en/prophets-mosque.html" },
-    { type: "تصاویر", title: "بقیع — مجموعه‌تصویرهای بقیع", url: "https://en.wikipedia.org/wiki/Al-Baqi_Cemetery" }
   ],
   miqat: [
     { type: "تور", title: "میقات ذوالحلیفه — تور سه‌بعدی مسجد میقات (فقط میقات مدینه)", url: "https://www.3dmekanlar.com/en/dhul-hulayfah-masjid.html" }
   ],
   tawaf: [
-    { type: "تور", title: "طواف — تور سه‌بعدی مسجد الحرام، محل طواف (غیررسمی)", url: "https://www.3dmekanlar.com/en/masjid-al-haram.html" },
-    { type: "تصاویر", title: "طواف — مجموعه‌تصویرهای طواف", url: "https://commons.wikimedia.org/wiki/Category:Tawaf" }
-  ],
-  sai: [
-    { type: "تصاویر", title: "سعی — مجموعه‌تصویرهای سعی", url: "https://commons.wikimedia.org/wiki/Category:Sa%27yee" }
+    { type: "تور", title: "طواف — تور مجازی مسجد الحرام و کعبه (IRpano)", url: "https://irpano.ir/ap/masjed/Mecca/" },
   ],
   mina: [
     { type: "تور", title: "منا — تور سه‌بعدی", url: "https://www.3dmekanlar.com/en/mina.html" }
@@ -75,11 +98,10 @@ const VIRTUAL_TOURS = {
   muzdalifah: [
     { type: "تور", title: "مزدلفه — تور سه‌بعدی", url: "https://www.3dmekanlar.com/en/muzdalifah-1.html" }
   ],
-  jamarat: [
-    { type: "تصاویر", title: "جمرات — مجموعه‌تصویرهای پل جمرات", url: "https://commons.wikimedia.org/wiki/Category:Jamarat_Bridge" }
-  ],
   najaf: [
-    { type: "پانوراما", title: "حرم امام علی (ع) — پانورامای رسمی عتبهٔ علویه", url: "https://www.imamali.net/vtour" }
+    { type: "پانوراما", title: "حرم امام علی (ع) — پانورامای رسمی عتبهٔ علویه", url: "https://www.imamali.net/vtour" },
+    { type: "تور", title: "ایوان طلای حرم امام علی (ع) — تور مجازی (شب)", url: "https://vr-ma.itcz.ir/bp-44-1592-najaf.html" },
+    { type: "تور", title: "داخل حرم امام علی (ع) — تور مجازی", url: "https://vr-ma.itcz.ir/bp-44-1593-najaf.html" }
   ],
   karbala: [
     { type: "تور", title: "حرم امام حسین (ع) — تور مجازی رسمی", url: "https://app.imamhussain.org/tour/" },
@@ -89,27 +111,31 @@ const VIRTUAL_TOURS = {
     { type: "پانوراما", title: "حرم حضرت عباس (ع) — پانورامای رسمی الکفیل", url: "https://alkafeel.net/panorama/?lang=en" }
   ],
   "kufa-sahla": [
-    { type: "تصاویر", title: "مسجد کوفه — مجموعه‌تصویرهای مسجد جامع کوفه", url: "https://commons.wikimedia.org/wiki/Category:Great_Mosque_of_Kufa" },
-    { type: "تصاویر", title: "مسجد سهله — نگارخانهٔ مسجد سهله", url: "https://en.wikipedia.org/wiki/Al-Sahlah_Mosque" }
-  ],
-  kazimayn: [
-    { type: "تصاویر", title: "کاظمین — مجموعه‌تصویرهای حرم کاظمین", url: "https://commons.wikimedia.org/wiki/Category:Al-Kadhimiya_Mosque" }
+    { type: "تور", title: "مسجد کوفه — تور مجازی (مرقد مسلم و مختار)", url: "https://vr-ma.itcz.ir/bp-44-1591-kufa.html" },
   ],
   samarra: [
-    { type: "تصاویر", title: "سامرا — نگارخانهٔ حرم عسکریین", url: "https://en.wikipedia.org/wiki/Al-Askari_Shrine" }
+    { type: "تور", title: "حرمین عسکریین — تور مجازی (صحن در شب)", url: "https://vr-ma.itcz.ir/bp-44-1590-samera.html" },
+  ],
+  hor: [
+    { type: "تور", title: "مرقد حر بن ریاحی — تور مجازی (ضریح سبز)", url: "https://vr-ma.itcz.ir/bp-44-1588-khaimegah.html" }
+  ],
+  "sayyid-mohammad": [
+    { type: "تور", title: "مرقد سید محمد بن هادی (ع) — تور مجازی (شب)", url: "https://vr-ma.itcz.ir/bp-44-1589-khaimegah.html" }
   ],
   mashhad: [
-    { type: "پانوراما", title: "حرم امام رضا (ع) — پانورامای صحن‌های حرم", url: "https://omid360.com/iran/mashhad/emem-reza/" },
-    { type: "تصاویر", title: "حرم امام رضا (ع) — نگارخانهٔ حرم", url: "https://en.wikipedia.org/wiki/Shrine_of_Imam_Reza" }
+    { type: "تور", title: "حرم امام رضا (ع) — زیارت مجازی (نسخهٔ جدید IRpano)", url: "https://irpano.ir/VR/" },
+    { type: "پانوراما", title: "حرم امام رضا (ع) — پانورامای صحن‌های حرم", url: "https://omid360.com/iran/mashhad/emem-reza/" }
   ],
   qom: [
     { type: "تصاویر", title: "نگارخانهٔ رسمی حرم حضرت معصومه (س) — مجموعه تصاویر آستان", url: "https://amfm.ir/photo/" }
+  ],
+  jamkaran: [
+    { type: "تور", title: "مسجد مقدس جمکران — تور مجازی (سایت رسمی جمکران)", url: "https://jamkaran.ir/files/1/vtour/vtour/index.html" }
   ],
   shiraz: [
     { type: "پانوراما", title: "شاهچراغ — پانورامای ۳۶۰ صحن حرم", url: "https://www.360cities.net/es/image/shah-cheragh-mosque-shiraz-iran" }
   ],
   rayy: [
     { type: "پانوراما", title: "حرم عبدالعظیم حسنی (ع) — پانورامای ۳۶۰ صحن حرم (عکس: امید جعفرنژاد)", url: "https://www.360cities.net/image/abdol-azim-holy-shrine" },
-    { type: "تصاویر", title: "حرم عبدالعظیم حسنی (ع) — نگارخانهٔ حرم", url: "https://en.wikipedia.org/wiki/Shah_Abdol-Azim_Shrine" }
   ]
 };

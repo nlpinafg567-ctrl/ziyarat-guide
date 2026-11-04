@@ -26,6 +26,6 @@ const BANNERS = {
   "atabat-19": "husayn", "atabat-20": "husayn",
   "atabat-21": "kazimayn", "atabat-22": "askari",
   "iran-1": "reza", "iran-2": "masumeh", "iran-3": "shahcheragh",
-  "iran-4": "abdolazim"
+  "iran-4": "abdolazim", "iran-5": "jamkaran"
 };
 const SECTION_BANNERS = { umrah: "kaaba", hajj: "kaaba", atabat: "ali", iran: "reza" };
