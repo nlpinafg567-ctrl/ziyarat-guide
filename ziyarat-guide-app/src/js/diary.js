@@ -1,7 +1,7 @@
 /* راهنمای زیارت — diary
    خاطره و عکس: فقط در تلفن خود زائر می‌ماند؛ با دکمهٔ اشتراک‌گذاری قابل ارسال است. */
 function memoryHTML() {
-  return `<div class="box mem"><h3>📝 خاطرهٔ شخصی و عکس در این مکان</h3>
+  return `<div class="box mem"><h3>۵. 📝 خاطرهٔ شخصی و عکس در این مکان</h3>
     <textarea id="mem-text" placeholder="خاطره‌ات را اینجا بنویس..."></textarea>
     <input type="file" id="mem-photo" accept="image/*" style="margin-top:8px">
     <button class="btn small gold" style="margin-top:8px" onclick="saveMemory()">ثبت در کتابچهٔ خاطرات</button>

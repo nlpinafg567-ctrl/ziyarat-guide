@@ -23,7 +23,7 @@ function saiSVG() {
     <text x="20" y="40" text-anchor="middle" fill="#0D3B2E" font-weight="bold">صفا</text>
     <text x="180" y="40" text-anchor="middle" fill="#0D3B2E" font-weight="bold">مروه</text>
     <line x1="20" y1="100" x2="180" y2="100" stroke="#C5A46D" stroke-width="3"/>${segs}
-    <text x="100" y="150" text-anchor="middle" fill="#555" font-size="12">هر بار رفت‌وبرگشت = یک دور کامل</text></svg>`;
+    <text x="100" y="150" text-anchor="middle" fill="#555" font-size="13">هر بار رفت‌وبرگشت = یک دور کامل</text></svg>`;
 }
 function ramiSVG() {
   let out = `<svg viewBox="0 0 200 120" class="schema" role="img" aria-label="شماتیک رمی جمرات">`;
@@ -31,7 +31,7 @@ function ramiSVG() {
   for (let p = 0; p < 3; p++) {
     const x = 30 + p * 60;
     out += `<rect x="${x}" y="20" width="18" height="50" rx="4" fill="#0D3B2E" stroke="#C5A46D"/>`;
-    out += `<text x="${x + 9}" y="88" text-anchor="middle" fill="#555" font-size="11">${names[p]}</text>`;
+    out += `<text x="${x + 9}" y="88" text-anchor="middle" fill="#555" font-size="13">${names[p]}</text>`;
     for (let i = 0; i < 7; i++) {
       const idx = p * 7 + i;
       const sx = x - 8 + (i % 4) * 12, sy = i < 4 ? 100 : 112;

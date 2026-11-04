@@ -96,6 +96,9 @@ const SECTION_ICONS = {
    هایلایت چندلایه. عمره: کعبه و مدار طواف؛ حج: خیمه‌های منا و ستون‌های جمرات؛
    عتبات: گنبد زرین و موج نهر علقمه؛ ایران: ایوان و گنبد و ستاره. */
 function sectionScene(key) {
+  if (typeof SECTION_BANNERS !== "undefined" && SECTION_BANNERS[key]) {
+    return `<div class="photobanner section"><img src="assets/banners/${SECTION_BANNERS[key]}.jpg" alt="بنر عکسی این زیارت" loading="lazy"><p class="photocredit">عکس: ویکی‌مدیا کامانز</p></div>`;
+  }
   if (key === "umrah") return `<svg viewBox="0 0 320 120" class="scene" role="img" aria-label="صحنهٔ عمره">
     <defs>
       <linearGradient id="su-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf4"/><stop offset=".6" stop-color="#fdf3d7"/><stop offset="1" stop-color="#F7F3EA"/></linearGradient>

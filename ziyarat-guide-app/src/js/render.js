@@ -45,6 +45,41 @@ function openSection(key) {
   renderSection();
   go("section");
 }
+/* ---------- مسیر بخش: گرهٔ مرحله + گروه‌بندی شهرهای عتبات ----------
+   مورد ۲۱ بستهٔ ۴ نوامبر: نمای عتبات اول آیکون شهرها را نشان می‌دهد
+   (نجف و کوفه با هم، کربلا، کاظمین، سامرا) و با زدن هر شهر، مقام‌های
+   همان شهر مرحله‌وار می‌آیند. همهٔ گره‌ها در DOM می‌مانند (شهرهای بسته
+   با CSS پنهان‌اند) تا شمارش و ترتیب آزمون‌ها به‌هم نخورد؛ قفل ترتیبی
+   مرحله‌ها دقیقاً مثل قبل است و فقط نما گروه‌بندی شده است. */
+let expandedCity = null;
+function stageNodeHTML(key, s, cur) {
+  const st = isDone(key, s.id) ? "done" : (s.id === cur ? "current" : "locked");
+  const mark = isDone(key, s.id) ? "✓" : (s.id === cur ? "◉" : "🔒");
+  return `<button class="node ${st}" ${st === "locked" ? "disabled" : ""} onclick="openStep(${s.id})">
+      <span class="num">${fa(s.id)}</span>
+      <span><b>${mark} ${s.title}</b><span>${s.place}</span></span></button>`;
+}
+function sectionPathHTML(key, sec, cur) {
+  if (key !== "atabat" || typeof ATABAT_CITIES === "undefined") {
+    return sec.steps.map(s => stageNodeHTML(key, s, cur)).join("");
+  }
+  const byId = new Map(sec.steps.map(s => [s.id, s]));
+  let open = expandedCity;
+  if (open === null || open === undefined || open < 0 || open >= ATABAT_CITIES.length) {
+    open = ATABAT_CITIES.findIndex(c => c.ids.includes(cur));
+    if (open < 0) open = 0;
+  }
+  return ATABAT_CITIES.map((c, i) => {
+    const done = c.ids.filter(id => isDone(key, id)).length;
+    const arrow = i === open ? "▴" : "▾";
+    const nodes = c.ids.map(id => stageNodeHTML(key, byId.get(id), cur)).join("");
+    return `<div class="citycard"><button class="cityhead" onclick="toggleCity(${i})">` +
+      `<span><b>${c.title}</b><span>${fa(c.ids.length)} مقام، ${fa(done)} تمام شده</span></span>` +
+      `<span class="cityarrow">${arrow}</span></button>` +
+      `<div class="citybody${i === open ? " open" : ""}">${nodes}</div></div>`;
+  }).join("");
+}
+function toggleCity(i) { expandedCity = i; renderSection(); }
 function renderSection() {
   const key = currentSection, sec = SECTIONS[key], cur = currentId(key);
   const done = getProgress(key).length, total = sec.steps.length;
@@ -61,19 +96,7 @@ function renderSection() {
   $("section-scene").innerHTML = sectionScene(key);
   $("section-progress").style.width = (total ? Math.round(done * 100 / total) : 0) + "%";
   $("section-progress-text").textContent = done > 0 ? `${fa(done)} از ${fa(total)} مرحله تمام شده` : `${fa(total)} مرحله در پیش است`;
-  $("section-path").innerHTML = sec.steps.map(s => {
-    const st = isDone(key, s.id) ? "done" : (s.id === cur ? "current" : "locked");
-    const mark = isDone(key, s.id) ? "✓" : (s.id === cur ? "◉" : "🔒");
-    return `<button class="node ${st}" ${st === "locked" ? "disabled" : ""} onclick="openStep(${s.id})">
-      <span class="num">${fa(s.id)}</span>
-      <span><b>${mark} ${s.title}</b><span>${s.place}</span></span></button>`;
-  }).join("");
-  $("section-list").innerHTML = sec.steps.map(s => {
-    const st = isDone(key, s.id) ? "done" : (s.id === cur ? "current" : "locked");
-    const mark = isDone(key, s.id) ? "✓ تکمیل شده" : (s.id === cur ? "در حال انجام" : "🔒 هنوز فعال نیست");
-    return `<button class="stepcard ${st}" ${st === "locked" ? "disabled" : ""} onclick="openStep(${s.id})">
-      <span class="st">${fa(s.id)}</span><span><b>${s.title}</b><span>${mark} — ${s.place}</span></span></button>`;
-  }).join("");
+  $("section-path").innerHTML = sectionPathHTML(key, sec, cur);
   $("section-reports").innerHTML = sectionReportsHTML(key);
 }
 
@@ -85,29 +108,40 @@ function openStep(id) {
   counter = 0;
   const s = SECTIONS[key].steps.find(x => x.id === id);
   let html = `<div class="stepbanner">${fa(s.id)}. ${s.title}</div>`;
+  if (typeof BANNERS !== "undefined" && BANNERS[key + "-" + s.id]) {
+    html += `<div class="photobanner"><img src="assets/banners/${BANNERS[key + "-" + s.id]}.jpg" alt="بنر عکسی این مرحلهٔ زیارتی" loading="lazy"><p class="photocredit">عکس: ویکی‌مدیا کامانز</p></div>`;
+  }
   html += `<p class="small">📍 ${s.place}</p>`;
+  if (typeof LITERARY_INTRO !== "undefined" && LITERARY_INTRO[key + "-" + s.id]) {
+    html += `<div class="box literary"><p>${LITERARY_INTRO[key + "-" + s.id]}</p></div>`;
+  }
   html += `<div class="box"><h3>تو چه باید بکنی؟</h3><p><b>${s.action}</b></p><ol>`;
   s.steps.forEach(t => html += `<li>${t}</li>`);
   html += `</ol><p><b>چرا؟</b> ${s.reason}</p></div>`;
   if (s.duas.length) {
-    html += `<div class="box gold"><h3>مراحل عبادی و ادعیهٔ این مرحله</h3>`;
-    s.duas.forEach(d => html += `<p><b>${d.title}</b><br><span class="small">${d.note}</span></p>`);
+    html += `<div class="box gold"><h3>۱. مراحل عبادی و اعمال</h3>`;
+    s.duas.forEach(d => {
+      const ai = (typeof AMAL_LIST !== "undefined") ? AMAL_LIST.findIndex(x => x.title === d.title) : -1;
+      if (ai >= 0) html += `<p><a class="external" href="#" onclick="event.preventDefault();openAmal(${ai})">${d.title} ↗</a><br><span class="small">${d.note}</span></p>`;
+      else html += `<p><b>${d.title}</b><br><span class="small">${d.note}</span></p>`;
+    });
     html += `<p class="small">📖 منبع: ${s.source}</p></div>`;
     html += hajatHTML();
   } else {
     html += `<div class="box"><h3>منبع</h3><p class="small">📖 ${s.source}</p></div>`;
   }
-  html += driveHTML(key);
   html += niyabaReminderHTML();
   html += toursHTML(s);
   html += infographicHTML(key, s);
   html += reportsHTML(s);
   html += toolHTML(s);
-  html += `<div class="quiz" id="quizbox"><h3>خودت را بسنج</h3><p>${s.quiz.q}</p>
-    <button class="btn small gold" onclick="document.getElementById('quizbox').classList.toggle('open')">دیدن جواب</button>
-    <p class="answer">✅ ${s.quiz.a}</p></div>`;
+  const qs = Array.isArray(s.quiz) ? s.quiz : [s.quiz];
+  html += `<div class="quiz"><h3>۴. خودت را بسنج</h3>` + qs.map((qq, i) =>
+    `<div class="qitem"><p>${fa(i + 1)}. ${qq.q}</p>
+    <button class="btn small gold" onclick="this.parentElement.classList.toggle('open')">دیدن جواب</button>
+    <p class="answer">✅ ${qq.a}</p></div>`).join("") + `</div>`;
   html += memoryHTML();
-  html += summaryHTML(s);
+  html += summaryHTML(s, key + "-" + s.id);
   html += `<button class="btn" onclick="completeStep()">✓ این مرحلهٔ زیارتی را به اتمام رساندم</button>`;
   $("step-detail").innerHTML = html;
   accordifyStep();
@@ -116,17 +150,16 @@ function openStep(id) {
 
 /* ---------- آکاردئون کارت‌های فرعی صفحهٔ مرحله ----------
    بنر و بلوک اصلی «تو چه باید بکنی؟ / چرا؟» همیشه باز می‌مانند؛
-   ۷ کارت فرعی بسته شروع می‌شوند و هر بار فقط یکی باز است؛
+   ۶ کارت فرعی شماره‌دار بسته شروع می‌شوند و هر بار فقط یکی باز است؛
    زدن سربرگ کارت باز، همان را می‌بندد.
    در محیط آزمونِ بدون DOM واقعی، تابع بی‌صدا برمی‌گردد. */
 const ACC_TITLES = [
-  "مراحل عبادی و ادعیهٔ این مرحله",
-  "📖 کتاب‌های این زیارت",
-  "تورهای مجازی و پانوراما",
-  "📣 گزارش‌های سفر",
-  "خودت را بسنج",
-  "📝 خاطرهٔ شخصی و عکس در این مکان",
-  "🖼 اینفوگرافیک کلی این مرحله"
+  "۱. مراحل عبادی و اعمال",
+  "۲. تورهای مجازی و پانوراما",
+  "۳. 📣 گزارش‌های سفر",
+  "۴. خودت را بسنج",
+  "۵. 📝 خاطرهٔ شخصی و عکس در این مکان",
+  "۶. 🖼 اینفوگرافیک کلی این مرحله"
 ];
 function accordifyStep() {
   const detail = $("step-detail");
