@@ -1,0 +1,32 @@
+/* راهنمای زیارت — چت‌بات هوشمند
+   دکمهٔ شناور + پنل گفت‌وگو؛ هماهنگ با پالت و تناسبات اپ.
+   دکمه در پایین صفحه است و با نوار بازگشت (بالای صفحه) کاری ندارد. */
+.chat-fab{position:fixed;left:16px;bottom:16px;z-index:90;width:52px;height:52px;
+  border:none;border-radius:50%;background:linear-gradient(180deg,#1a5c49,var(--emerald));
+  color:#fff;font-size:26px;box-shadow:0 8px 21px rgba(0,0,0,.35);cursor:pointer}
+.chat-fab:active{transform:translateY(2px)}
+.chat-panel{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:90;
+  width:min(440px,calc(100% - 26px));max-height:70vh;display:flex;flex-direction:column;
+  background:var(--cream);border:1px solid var(--gold);border-radius:var(--r-21);
+  box-shadow:0 13px 34px rgba(0,0,0,.35);overflow:hidden}
+.chat-panel[hidden]{display:none}
+.chat-head{display:flex;justify-content:space-between;align-items:center;
+  background:var(--emerald);color:#fff;padding:13px 16px;font-size:var(--fs-16)}
+.chat-x{background:none;border:none;color:#fff;font-size:21px;cursor:pointer}
+.chat-status{margin:0;padding:8px 13px;background:var(--cream-deep);color:var(--charcoal);
+  font-size:var(--fs-13);line-height:1.6}
+.chat-msgs{overflow-y:auto;padding:13px;display:grid;gap:8px;min-height:120px}
+.chat-msg{border-radius:var(--r-13);padding:8px 13px;font-size:var(--fs-16);line-height:1.7}
+.chat-msg.me{background:var(--emerald);color:#fff}
+.chat-msg.bot{background:var(--white);border:1px solid var(--gold-light);color:var(--charcoal)}
+.chat-msg p{margin:5px 0}
+.chat-src{font-size:var(--fs-13);color:var(--emerald-light)}
+.chat-link{display:block;margin:5px 0;color:var(--emerald-light)}
+.chat-quick{display:flex;flex-wrap:wrap;gap:5px;padding:0 13px 8px}
+.chat-chip{border:1px solid var(--gold);background:var(--white);color:var(--charcoal);
+  border-radius:21px;padding:5px 13px;font-size:var(--fs-13);cursor:pointer}
+.chat-form{display:flex;gap:8px;padding:8px 13px 13px}
+.chat-form input{flex:1;height:34px;border:1px solid var(--gold);border-radius:var(--r-8);
+  padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
+.chat-form button{height:34px;border:none;border-radius:var(--r-8);padding:0 21px;
+  background:var(--emerald);color:#fff;font-size:var(--fs-16);cursor:pointer}

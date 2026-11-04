@@ -1,0 +1,42 @@
+/* راهنمای زیارت — base
+   پایه، چوکات اپ، دکمهٔ بازگشت (یک جای ثابت در همهٔ صفحه‌ها: بالای صفحه)
+   و دکمه‌های اصلی. بازخورد لمس: ۱۸۰ تا ۳۰۰ میلی‌ثانیه (استاندارد حرکت غزنی ما). */
+*{box-sizing:border-box}
+html{font-size:calc(16px * var(--font-scale))}
+body{margin:0;background:var(--cream);color:var(--charcoal);
+  font-family:Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.62;direction:rtl}
+button{font-family:inherit;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+a{color:var(--emerald)}
+.app{max-width:560px;margin:0 auto;min-height:100vh;background:var(--white);
+  box-shadow:0 0 34px rgba(13,59,46,.12);position:relative;padding-bottom:var(--sp-34)}
+.view{display:none;padding:var(--sp-21)}
+.view.active{display:block;animation:viewIn .4s ease both}
+/* گذر نما فقط محوی است (بدون جابه‌جایی عمودی) تا جای دکمهٔ بازگشت
+   در همهٔ صفحه‌ها و در همهٔ لحظه‌ها ثابت بماند (رفع پرش ۸ پیکسلی). */
+@keyframes viewIn{from{opacity:0}to{opacity:1}}
+h1{font-size:var(--fs-26);color:var(--emerald);margin:var(--sp-13) 0;font-weight:900}
+h2{font-size:var(--fs-21);color:var(--emerald);margin:var(--sp-13) 0;font-weight:900}
+p{font-size:var(--fs-16);margin:var(--sp-8) 0}
+/* دکمهٔ بازگشت — یک جای ثابت در همهٔ صفحه‌ها: بالای صفحه، سمت راست */
+.backbar{position:sticky;top:0;z-index:10;background:var(--white);padding:var(--sp-8) 0;
+  border-bottom:1px solid #e8e0cf}
+.backbtn{height:var(--btn-sm);padding:0 var(--sp-13);border-radius:var(--r-8);
+  border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-size:var(--fs-16)}
+.backbtn:active{transform:translateY(2px)}
+.fontctl{float:left;display:flex;gap:var(--sp-5)}
+.fontctl button{width:var(--btn-sm);height:var(--btn-sm);border-radius:var(--r-8);
+  border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-weight:bold}
+.btn{display:block;width:100%;height:var(--btn);border:none;border-radius:var(--r-13);
+  background:linear-gradient(180deg,#1a5c49,var(--emerald));color:#fff;
+  font-size:var(--fs-21);font-weight:bold;
+  box-shadow:0 4px 0 #083028,inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #083028}
+.btn.gold{background:linear-gradient(180deg,#d8bc82,var(--gold));color:var(--charcoal)}
+.btn.small{height:var(--btn-sm);font-size:var(--fs-16)}
+.small{font-size:var(--fs-13);color:#777}
+.external::after{content:" ↗";font-size:var(--fs-13)}
+/* کاهش حرکت: همهٔ جلوه‌های غیرضروری خاموش می‌شوند */
+@media (prefers-reduced-motion:reduce){
+  .view.active,.luminous,.about-banner::after,.stepbanner::after,.stepcard.current .st{animation:none!important}
+  .about-banner::after,.stepbanner::after{display:none}
+}

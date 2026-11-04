@@ -1,0 +1,10 @@
+/* راهنمای زیارت — print
+   چاپ: فقط کارت خلاصهٔ مرحله چاپ می‌شود؛ برای چاپ کارت زائر، بدنه
+   کلاس print-card می‌گیرد تا فقط همان کارت دیده شود. */
+@media print{body *{display:none!important}.summary-card,.summary-card *{display:block!important}
+  .summary-card{position:static;box-shadow:none}
+  body.print-card *{display:none!important}
+  body.print-card .summary-card{display:none!important}
+  body.print-card #card-print-area,body.print-card #card-print-area *{display:block!important}
+  body.print-card #card-print-area{position:static;box-shadow:none}
+  body.print-card #card-print-area img{max-width:100%}}

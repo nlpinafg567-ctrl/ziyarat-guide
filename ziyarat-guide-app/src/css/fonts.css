@@ -1,0 +1,41 @@
+/* راهنمای زیارت — فونت خودمیزبانی‌شدهٔ وزیرمتن
+   کپی‌شده از سورس مالک (ghazni-ma/vendor/fonts)؛ هیچ فونتی از وب
+   دانلود نشده است. مسیرها نسبی‌اند تا اپ هم با file:// و هم با http
+   و هم آفلاین (پس از کش ورکر) کار کند.
+   فونت فقط روی صفحهٔ «دربارهٔ ما» اعمال می‌شود تا بقیهٔ viewها
+   عیناً بی‌تغییر بمانند. */
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../../assets/fonts/vazirmatn-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../../assets/fonts/vazirmatn-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---------- تایپوگرافی زیبا — فقط #view-about ---------- */
+#view-about{
+  font-family:'Vazirmatn',Tahoma,"Noto Naskh Arabic",sans-serif;
+  line-height:1.9}
+#view-about h1{
+  font-size:var(--fs-34);font-weight:900;color:var(--emerald);
+  padding-bottom:var(--sp-8);
+  border-bottom:3px solid var(--gold);
+  text-shadow:0 1px 0 rgba(255,255,255,.7)}
+#view-about .box h3{
+  font-size:var(--fs-21);font-weight:900;color:var(--emerald);
+  margin:0 0 var(--sp-8)}
+#view-about .box p{
+  font-size:var(--fs-16);line-height:2;color:var(--charcoal)}
+#view-about .visa-only h3{color:#8a6d2f}
+#view-about .visa-only p{font-size:var(--fs-16)}
+#view-about .visa-only .visa-note{
+  font-size:var(--fs-13);color:#777;line-height:1.9}

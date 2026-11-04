@@ -1,0 +1,13 @@
+/* راهنمای زیارت — variables
+   پالت برند «غزنی ما» + تناسبات طلایی (φ ≈ ۱٫۶۱۸).
+   فاصله ۵/۸/۱۳/۲۱/۳۴؛ گردی ۸/۱۳/۲۱؛ تایپ ۱۳/۱۶/۲۱/۲۶/۳۴؛ دکمه ۵۲/۳۴. */
+:root{
+  --cream:#F7F3EA; --emerald:#0D3B2E; --gold:#C5A46D; --charcoal:#202823; --white:#FFFEFB;
+  --green:#12805C; --emerald-light:#1a5c49;
+  --gold-light:#e8cf9a; --gold-deep:#a8873f; --cream-deep:#f3e6c0;
+  --sp-5:5px; --sp-8:8px; --sp-13:13px; --sp-21:21px; --sp-34:34px;
+  --r-8:8px; --r-13:13px; --r-21:21px;
+  --fs-13:13px; --fs-16:16px; --fs-21:21px; --fs-26:26px; --fs-34:34px;
+  --btn:52px; --btn-sm:34px;
+  --font-scale:1;
+}

@@ -1,0 +1,35 @@
+/* راهنمای زیارت — home
+   کارت‌های صفحهٔ اصلی: سه‌بعدی عمیق به سبک صفحهٔ اصلی آینهٔ «غزنی ما» —
+   گرادیان چندلایه (سفید → کرم روشن → طلایی کم‌رنگ)، لبهٔ طلایی زیرین،
+   سایهٔ نرم بیرونی + سایهٔ داخلی روشن از بالا و طلایی از پایین.
+   آیکون SVG به‌تنهایی روی سطح کارت می‌نشیند (بدون بستر مربعی/کاشی)، با
+   عمق سه‌بعدی و سایهٔ ملایم — نسخهٔ موقت تا آیکون‌های سه‌بعدی نهایی جی‌پی‌تی.
+   تنها عنصر متحرک شاخص این صفحه، نوار نوری روان بنر «دربارهٔ ما» است
+   (چرخه ۴٫۵ ثانیه، قانون ۱+۱+۱)؛ کارت‌ها برق متحرک ندارند. */
+.cards{display:grid;gap:var(--sp-13)}
+.zcard{display:flex;align-items:center;gap:var(--sp-13);padding:var(--sp-21);
+  border-radius:var(--r-21);border:1px solid #d9c896;border-bottom:3px solid var(--gold);
+  background:linear-gradient(160deg,#ffffff 0%,var(--white) 38%,#fdf3d7 78%,var(--cream-deep) 100%);
+  box-shadow:0 10px 22px rgba(13,59,46,.16),0 3px 8px rgba(13,59,46,.10),
+    inset 0 1px 0 rgba(255,255,255,1),inset 0 -8px 16px rgba(197,164,109,.22),
+    inset 0 -2px 0 rgba(197,164,109,.35);
+  text-align:right;width:100%}
+.zcard .icon{width:60px;height:60px;flex:none;display:grid;place-items:center}
+.zcard .icon svg{width:60px;height:60px;filter:drop-shadow(0 6px 10px rgba(13,59,46,.35)) drop-shadow(0 2px 3px rgba(197,164,109,.45))}
+.zcard:active{transform:scale(.98)}
+.zcard.locked{opacity:.6}
+.zcard .tag{font-size:var(--fs-13);color:#967f3f;font-weight:bold}
+.zcard b{font-size:var(--fs-21);color:var(--emerald);display:block;font-weight:900;
+  text-shadow:0 1px 0 rgba(255,255,255,.8)}
+.zcard span{font-size:var(--fs-13);color:#555}
+/* بنر باریک لبه‌تیز دربارهٔ ما — گرادیان زمردی چندلایه، قاب طلایی زیرین و
+   سایهٔ عمیق؛ با نوار نوری مورب متحرک (تنها عنصر متحرک شاخص این صفحه) */
+.about-banner{position:relative;overflow:hidden;display:block;width:100%;margin-top:var(--sp-21);padding:var(--sp-13);
+  background:linear-gradient(180deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);color:#fff;font-size:var(--fs-21);font-weight:900;
+  border:none;border-bottom:3px solid var(--gold);border-radius:0;text-align:center;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  box-shadow:0 8px 18px rgba(13,59,46,.30),inset 0 1px 0 rgba(255,255,255,.30),inset 0 -6px 12px rgba(0,0,0,.20)}
+.about-banner::after{content:"";position:absolute;top:0;bottom:0;width:34%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);
+  animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%{right:-34%}55%,100%{right:110%}}

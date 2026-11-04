@@ -1,0 +1,4 @@
+/* راهنمای زیارت — diary
+   کتابچهٔ خاطرات: فرم ثبت خاطره و نمایش عکس. */
+.mem textarea{width:100%;min-height:84px;border:1px solid #ddd;border-radius:var(--r-8);padding:var(--sp-8);font-family:inherit}
+.mem img{max-width:100%;border-radius:var(--r-13);margin-top:var(--sp-8)}

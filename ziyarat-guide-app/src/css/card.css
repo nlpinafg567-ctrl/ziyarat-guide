@@ -1,0 +1,26 @@
+/* راهنمای زیارت — card
+   کارت شناسایی زائر؛ سه مدل با هویت بصری متفاوت ولی پالت یکسان.
+   لوگوی واقعی عمار غزنه (فایل شفاف) همیشه مستقل است: بدون قاب، بدون
+   بستر رنگی و بدون تصویر زیر آن — فقط خود <img> روی سطح کارت. */
+.card-tabs{display:flex;flex-wrap:wrap;gap:var(--sp-8);margin-bottom:var(--sp-13)}
+.pcard{border-radius:var(--r-21);padding:var(--sp-21);text-align:center;position:relative;
+  border:3px solid var(--gold);box-shadow:0 12px 26px rgba(13,59,46,.25)}
+.pcard-atabat{background:linear-gradient(165deg,#1d332b,#0D3B2E 55%,#081f18);color:#F7F3EA}
+.pcard-umrah{background:linear-gradient(165deg,#FFFEFB,#F7F3EA 55%,#f3e6c0);color:#0D3B2E}
+.pcard-hajj{background:linear-gradient(165deg,#1a5c49,#0D3B2E 55%,#083028);color:#F7F3EA}
+.pcard-logo{display:block;width:150px;max-width:55%;height:auto;margin:0 auto;
+  background:none;border:none;box-shadow:none}
+.pcard-brand{color:var(--gold);font-weight:900;margin-top:var(--sp-8)}
+.pcard-model{font-size:var(--fs-26);font-weight:900;margin-top:var(--sp-8)}
+.pcard-greet{color:var(--gold);font-weight:bold;margin-top:var(--sp-5)}
+.pcard-mid{display:flex;gap:var(--sp-13);align-items:center;margin-top:var(--sp-21);text-align:right}
+.pcard-photo{width:110px;height:110px;flex:none;object-fit:cover;border-radius:var(--r-13);
+  border:3px solid var(--gold)}
+.pcard-motif{width:110px;height:110px;flex:none;display:grid;place-items:center}
+.pcard-info{flex:1}
+.pcard-name{font-size:var(--fs-21);font-weight:900}
+.pcard-slot{font-size:var(--fs-13);opacity:.85}
+.pcard-qr{margin:var(--sp-21) auto 0;width:140px;text-align:center;color:var(--gold)}
+.pcard-qr img{width:130px;height:130px;border-radius:var(--r-13);background:#fff;padding:5px}
+.pcard-qr span{display:block;font-size:var(--fs-13);margin-top:5px}
+.pcard-privacy{margin-top:var(--sp-13);font-size:var(--fs-13);opacity:.85}

@@ -1,0 +1,10 @@
+/* راهنمای زیارت — checklist
+   چک‌لیست وسایل پیش از سفر؛ تیک‌ها فقط در گوشی زائر می‌مانند. */
+.check-group h3{color:var(--emerald)}
+.check-warn{border:2px solid #b98a2f;background:linear-gradient(160deg,#fff8e1,#fdf3d7)}
+.check-warn h3{color:#7a5a12}
+.check-item{display:flex;gap:var(--sp-8);align-items:flex-start;padding:var(--sp-8) 0;
+  border-bottom:1px solid #eee6cf;cursor:pointer}
+.check-item:last-child{border-bottom:none}
+.check-item input{width:20px;height:20px;flex:none;accent-color:var(--green);margin-top:2px}
+.check-item.done{color:#777;text-decoration:line-through}

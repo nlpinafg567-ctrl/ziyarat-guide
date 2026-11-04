@@ -1,0 +1,54 @@
+/* راهنمای زیارت — about-banner
+   بنر تبلیغاتی «عمار غزنه» در صفحهٔ دربارهٔ ما: اینفوگرافیک کلی خدمات
+   ویزا فقط با HTML/CSS (بدون تصویر هوش مصنوعی تا متن حرف‌به‌حرف سالم
+   بماند). فقط خدمات ویزا؛ بدون نام کشور، بدون قیمت، بدون ادعا.
+   جای شماره تماس و لینک‌های واتساپ و فیسبوک عمداً خالی است و فقط با
+   تأیید مالک در زمان انتشار پر می‌شود — هیچ مقداری ساخته نشده است.
+   بنر عنصر شاخص صفحهٔ دربارهٔ ماست، پس برق نوری فقط روی همین بنر است. */
+.visa-banner{
+  position:relative;overflow:hidden;border-radius:var(--r-21);
+  border:2px solid var(--gold);
+  background:linear-gradient(160deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);
+  color:#fff;padding:var(--sp-21);margin:0 0 var(--sp-21);
+  box-shadow:0 12px 28px rgba(13,59,46,.38),
+    inset 0 1px 0 rgba(255,255,255,.35),inset 0 -8px 18px rgba(0,0,0,.28)}
+.visa-banner::after{
+  content:"";position:absolute;top:-60%;bottom:-60%;width:90px;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:rotate(20deg);animation:visaSheen 4.5s ease-in-out infinite}
+@keyframes visaSheen{0%{right:-30%}55%,100%{right:110%}}
+.visa-brand{
+  text-align:center;font-size:var(--fs-34);font-weight:900;color:var(--gold-light);
+  margin:0 0 var(--sp-5);text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.visa-tag{text-align:center;color:#e9e2cf;margin:0 0 var(--sp-21);font-size:var(--fs-16)}
+.visa-flow{list-style:none;margin:0;padding:0}
+.visa-flow li{
+  position:relative;display:flex;gap:var(--sp-13);align-items:flex-start;
+  padding-bottom:var(--sp-13)}
+.visa-flow li:last-child{padding-bottom:0}
+.visa-flow li:not(:last-child)::before{
+  content:"";position:absolute;top:38px;right:16px;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--gold),rgba(197,164,109,.15))}
+.visa-num{
+  flex:0 0 auto;width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold-deep));
+  color:var(--charcoal);font-weight:900;font-size:var(--fs-21);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 0 rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.6);
+  position:relative;z-index:1}
+.visa-flow li b{display:block;font-size:var(--fs-16);color:#fff}
+.visa-flow li span{font-size:var(--fs-13);color:#d8d2bd}
+.visa-address{
+  text-align:center;margin:var(--sp-21) 0 0;padding:var(--sp-13);
+  border:1px solid rgba(197,164,109,.6);border-radius:var(--r-13);
+  background:rgba(197,164,109,.14);color:#fff;font-weight:bold}
+.visa-contacts{margin-top:var(--sp-13)}
+.visa-contacts p{font-size:var(--fs-16);margin:var(--sp-8) 0;color:#fff}
+/* لینک‌های روی بنر تیره باید روشن باشند (رنگ سراسری a سبز تیره است و خوانا نیست) */
+.visa-contacts a{color:var(--gold-light);text-decoration:underline}
+.visa-slot{
+  display:inline-block;border:1px dashed rgba(232,207,154,.8);border-radius:var(--r-8);
+  padding:2px var(--sp-8);font-size:var(--fs-13);color:var(--gold-light)}
+@media (prefers-reduced-motion:reduce){
+  .visa-banner::after{animation:none!important;display:none}
+}
