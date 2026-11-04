@@ -29,29 +29,6 @@ function sectionReportsHTML(key) {
   return html;
 }
 
-/* پیوندهای بیشترِ همین بخش (دستور مالک ۴ نوامبر: لینک‌های فرستاده‌شده
-   در مسیر اصلی خودشان به‌عنوان لینک می‌آیند؛ این‌جا فقط لینک است،
-   نه تبلیغ و نه شمارهٔ تماس آن شرکت‌ها). */
-const SECTION_LINKS = {
-  atabat: [
-    { title: "تور گردشگری جاذبه‌های تاریخی کربلا (مقالهٔ گروه زیارتی مدائن)", url: "https://share.google/hvKgOl1EsxsOqjCrj", type: "مقاله" },
-    { title: "اماکن زیارتی شهرهای عراق (پست اینستاگرام)", url: "https://www.instagram.com/p/DaGP6u2CspP", type: "اینستاگرام" },
-    { title: "اماکن زیارتی شهرهای عراق — کربلا، کاظمین، بغداد و حله (پست اینستاگرام)", url: "https://www.instagram.com/p/DaLNiEcj5V4", type: "اینستاگرام" },
-    { title: "۱۸ مکان زیارتی نجف با جزئیات و نقشه (ویکی پرواز)", url: "https://share.google/qVFVrATXZYPghfZCM", type: "مقاله" }
-  ],
-  umrah: [
-    { title: "زیارت مجازی قبرستان بقیع (پانورامای ۳۶۰)", url: "https://gahar.ir/%d8%b2%db%8c%d8%a7%d8%b1%d8%aa-%d9%85%d8%ac%d8%a7%d8%b2%db%8c-%d9%82%d8%a8%d8%b1%d8%b3%d8%aa%d8%a7%d9%86-%d8%a8%d9%82%db%8c%d8%b9/", type: "مقاله" }
-  ]
-};
-function sectionLinksHTML(key) {
-  const list = (typeof SECTION_LINKS !== "undefined" && SECTION_LINKS[key]) || [];
-  if (!list.length) return "";
-  let html = `<div class="box gold"><h3>🔗 پیوندهای بیشتر</h3><p class="small">لینک بیرونی؛ با لمس، در مرورگر باز می‌شود:</p><ul>`;
-  list.forEach(l => html += `<li><a class="external" href="${l.url}" target="_blank" rel="noopener">${l.title}<span class="ttype">${l.type || "پیوند"}</span></a></li>`);
-  html += `</ul></div>`;
-  return html;
-}
-
 /* کارت لینک کتاب‌های گوگل درایوِ همین زیارت (لینک‌ها عیناً از خودِ درایو).
    بخش ایران کتاب اختصاصی ندارد؛ فقط لینک پوشهٔ منابع نشان داده می‌شود. */
 function driveHTML(key) {
@@ -91,6 +68,36 @@ const STEP_INFOGRAPHICS = {
   "iran-1": [{ file: "mashhad-infographic.html", label: "نقشهٔ مشهد — کارت ۱: حرم امام رضا (ع)" }],
   "iran-2": [{ file: "qom-infographic.html", label: "نقشهٔ قم — کارت ۱: حرم حضرت معصومه (س)" }],
   "umrah-2": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه و بقیع" }],
+  /* فاز ۱ب: مکان‌های مکه و مدینه — هر مرحله، کارت هم‌نام خودش را در
+     اینفوگرافیک می‌گیرد؛ شمارهٔ کارت مدینه = شمارهٔ مرحلهٔ اپ + ۲
+     (چون کارت‌های ۱ و ۲ اینفوگرافیک، مسجد النبی و بقیع‌اند و در
+     umrah-2 هستند، نه در بخش مدینه). */
+  /* بازسازی مکه (۴ نوامبر ۲۰۲۶): شمارهٔ مرحله‌های تازه با کارت‌های
+     اینفوگرافیک هم‌خوان نیست؛ نگاشت زیر بر پایهٔ هم‌نام بودن کارت است:
+     کعبه و حرم هر دو کارت ۱، خیف و منا هر دو کارت ۴ را می‌گیرند؛
+     حجر، مقام، صفا و مروه، زمزم، حمزه و فخ کارتی ندارند و کادر نمی‌گیرند. */
+  "makka-1": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و کعبه (کعبه)" }],
+  "makka-2": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و کعبه (مسجدالحرام)" }],
+  "makka-6": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۷: غار ثور" }],
+  "makka-7": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۶: غار حرا" }],
+  "makka-9": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۲: عرفات" }],
+  "makka-10": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۳: مزدلفه" }],
+  "makka-11": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۴: منا (مسجد خیف)" }],
+  "makka-13": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۴: منا" }],
+  "makka-14": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۹: شعب ابی طالب" }],
+  "makka-15": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۵: قبرستان ابوطالب" }],
+  "makka-17": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۸: محل ولادت پیامبر (ص)" }],
+  "makka-18": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱۰: مسجد تنعیم" }],
+  "makka-19": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱۱: مساجد مکه" }],
+  "makka-20": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱۲: جعرانه و حدیبیه" }],
+  "makka-21": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱۳: کوه ابوقبیس" }],
+  "madina-1": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۳: احد" }],
+  "madina-2": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۴: مسجد قبا" }],
+  "madina-3": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۵: مسجد قبلتین" }],
+  "madina-4": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۶: مساجد فتح" }],
+  "madina-5": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۷: مسجد غمامه" }],
+  "madina-6": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۸: مسجد مباهله" }],
+  "madina-7": [{ file: "madina-infographic.html", label: "نقشهٔ مدینه — کارت ۹: مسجد فضیخ" }],
   "umrah-4": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و کعبه (طواف)" }],
   "umrah-5": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و کعبه (نماز طواف)" }],
   "umrah-6": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و مسعی (سعی)" }],
@@ -107,30 +114,10 @@ const STEP_INFOGRAPHICS = {
   "hajj-18": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۴: منا، جمرات سه‌گانه (رمی دوباره)" }],
   "hajj-19": [{ file: "makka-infographic.html", label: "نقشهٔ مکه — کارت ۱: مسجدالحرام و کعبه (طواف وداع)" }]
 };
-/* جلد عکس‌مرجع هر اینفوگرافیک (۴ نوامبر ۲۰۲۶، فقط ویرایش محلی، بدون انتشار):
-   کلید = نام فایل اینفوگرافیک، مقدار = نام فایل جلد در پوشهٔ هم‌جوار
-   ziyarat-infographics. هر ۱۵ جلد با چشم‌خوانی قبول شده‌اند؛ فقط یک مورد
-   جلد ندارد و عمداً بدون تصویر می‌ماند تا شکاف دیده شود: کوفه-بیرون مسجد
-   (جلد جداگانه‌ای برایش ساخته نشده). صافی صفا جلد جداگانه دارد
-   (safi-safa-photo-3d.png) ولی هنوز صفحهٔ اینفوگرافیک جداگانه ندارد
-   (تصمیم باز مالک)؛ پس در این نگاشت نیست. مجموعهٔ چهارتایی حنانه/کمیل/
-   صعصعه/صافی صفا در بستهٔ تحویل کنار هم آمده است. */
-const INFOGRAPHIC_COVERS = {
-  "najaf-infographic.html": "najaf-photo-3d.png",
-  "wadi-salam-infographic.html": "wadi-salam-photo-3d.png",
-  "hanana-infographic.html": "hanana-photo-3d.png",
-  "kumayl-infographic.html": "kumayl-photo-3d.png",
-  "kufa-infographic.html": "kufa-photo-3d.png",
-  "sahla-infographic.html": "sahla-photo-3d.png",
-  "sasa-infographic.html": "sasa-photo-3d.png",
-  "kazimayn-infographic.html": "kazimayn-photo-3d.png",
-  "samarra-infographic.html": "samarra-photo-3d.png",
-  "mashhad-infographic.html": "mashhad-photo-3d.png",
-  "qom-infographic.html": "qom-photo-3d.png",
-  "madina-infographic.html": "madina-photo-3d.png",
-  "makka-infographic.html": "makka-photo-3d.png",
-  "karbala-infographic.html": "karbala-photo-3d.png"
-};
+/* S7 (۲۵ پیشنهاد): پیوند جلدِ اینفوگرافیک از جعبهٔ مرحله حذف شد و فقط
+   پیوند متنیِ همان فایل ماند تا یک فایل، دو پیوند نداشته باشد. جلدهای
+   تأییدشدهٔ صفحه‌های اینفوگرافیک، در خودِ پوشهٔ ziyarat-infographics
+   سر جایشان‌اند و با یک کلمه برمی‌گردند. */
 /* اینفوگرافیک تصویری هر مرحله برای کارت ۶ (خلاصهٔ مرحله) — ۴ نوامبر ۲۰۲۶،
    فقط محلی، بدون انتشار: کلید = همان stepKey خلاصه (مثل atabat-1)،
    مقدار = فایل تصویر در assets/infographics. هر مرحله فقط پس از تأیید
@@ -158,13 +145,21 @@ const STEP_EXTRA_IMAGES = {
   "atabat-2": ["assets/ahlolbait-koofeh.jpg", "assets/ahlolbait-sahleh.jpg"],
   "atabat-3": ["assets/ahlolbait-abbas.jpg"],
   "atabat-5": ["assets/hussain-ziyarat-blessings.jpg", "assets/ahlolbait-hossein.jpg"],
+  "atabat-15": ["assets/maqam-imam-zaman-hawzah.jpg"],
+  "atabat-16": ["assets/alqama-stream-hawzah.jpg"],
   "atabat-21": ["assets/ahlolbait-kazemaiyn.jpg"],
   "atabat-22": ["assets/ahlolbait-asqareiean.jpg"],
   "iran-1": ["assets/reza-ziyarat-blessings.jpg", "assets/reza-ziyarat-etiquettes.jpg"],
   "iran-2": ["assets/masoumeh-virtues-tebyan.jpg", "assets/masoumeh-greatness-tebyan.jpg"],
   "iran-4": ["assets/abdolazim-bio-tasnim.jpg", "assets/abdolazim-letter-ahlolbait.jpg", "assets/abdolazim-1000years-iqna.jpg"],
   "umrah-2": ["assets/nabawi-map.jpg", "assets/baghi-map.jpg"],
-  "umrah-3": ["assets/muharramat-umrah.png"]
+  "umrah-3": ["assets/muharramat-umrah.png"],
+  "umrah-4": ["assets/kaaba-rukn-setareh.jpg", "assets/kaaba-parts-namasha.jpg", "assets/kiswa-colors-nourtv.webp", "assets/tawaf-dua-rahaye.jpg"],
+  "hajj-3": ["assets/kaaba-rukn-setareh.jpg", "assets/kaaba-parts-namasha.jpg", "assets/kiswa-colors-nourtv.webp", "assets/tawaf-dua-rahaye.jpg"],
+  "umrah-6": ["assets/sai-corridor-setareh.jpg", "assets/safa-hill-iqna.jpg", "assets/sai-crowd-iqna-1.jpg", "assets/sai-crowd-iqna-2.jpg"],
+  "hajj-4": ["assets/sai-corridor-setareh.jpg", "assets/safa-hill-iqna.jpg", "assets/sai-crowd-iqna-1.jpg", "assets/sai-crowd-iqna-2.jpg"],
+  "hajj-1": ["assets/hajj-checklist-ammar.png"],
+  "madina-4": ["assets/banners/madina-khandaq.jpg"]
 };
 /* اعتبار تصاویر افزودهٔ کارت ۶ — کلید = همان مسیر تصویر. */
 const STEP_EXTRA_CREDITS = {
@@ -185,7 +180,20 @@ const STEP_EXTRA_CREDITS = {
   "assets/ahlolbait-abbas.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
   "assets/ahlolbait-hossein.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
   "assets/ahlolbait-kazemaiyn.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
-  "assets/ahlolbait-asqareiean.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت"
+  "assets/ahlolbait-asqareiean.jpg": "منبع تصویر: مؤسسهٔ اهل‌البیت",
+  "assets/kaaba-rukn-setareh.jpg": "منبع تصویر: مجلهٔ ستاره",
+  "assets/kaaba-parts-namasha.jpg": "منبع تصویر: نماشا",
+  "assets/kiswa-colors-nourtv.webp": "منبع تصویر: نور تی‌وی",
+  "assets/tawaf-dua-rahaye.jpg": "منبع تصویر: راه‌آیه",
+  "assets/sai-corridor-setareh.jpg": "منبع تصویر: مجلهٔ ستاره",
+  "assets/safa-hill-iqna.jpg": "منبع تصویر: ایقنا (عکس: حسین حاجیلری)",
+  "assets/sai-crowd-iqna-1.jpg": "منبع تصویر: ایقنا (عکس: حسین حاجیلری)",
+  "assets/sai-crowd-iqna-2.jpg": "منبع تصویر: ایقنا (عکس: حسین حاجیلری)",
+  "assets/hajj-13-setareh.jpg": "منبع تصویر: مجلهٔ ستاره",
+  "assets/hajj-checklist-ammar.png": "اینفوگرافیک عمار غزنه",
+  "assets/maqam-imam-zaman-hawzah.jpg": "منبع تصویر: خبرگزاری حوزه",
+  "assets/alqama-stream-hawzah.jpg": "منبع تصویر: خبرگزاری حوزه",
+  "assets/banners/madina-khandaq.jpg": "منبع تصویر: ویکی‌مدیا کامانز"
 };
 function infographicHTML(key, s) {
   let links = (typeof STEP_INFOGRAPHICS !== "undefined" && STEP_INFOGRAPHICS[key + "-" + s.id]) || [];
@@ -198,10 +206,8 @@ function infographicHTML(key, s) {
   if (!links.length) return "";
   let html = `<div class="box gold"><h3>🗺 اینفوگرافیک نقشه‌ای این مکان</h3><p class="small">در برگهٔ تازه باز می‌شود؛ در اینفوگرافیک، کارت هم‌نام را بزن تا توضیح و استنادش باز شود:</p><ul>`;
   links.forEach(l => {
-    const cover = (typeof INFOGRAPHIC_COVERS !== "undefined" && INFOGRAPHIC_COVERS[l.file]) || "";
     let item = `<li>`;
-    if (cover) item += `<a class="infocover" href="../ziyarat-infographics/${l.file}" target="_blank" rel="noopener"><img src="../ziyarat-infographics/${cover}" alt="جلد ${l.label}" loading="lazy"></a>`;
-    item += `<a class="external" href="../ziyarat-infographics/${l.file}" target="_blank" rel="noopener">${l.label} ↗</a></li>`;
+    item += `<a class="external" href="../ziyarat-infographics/${l.file}" target="_blank" rel="noopener">${l.label}</a></li>`;
     html += item;
   });
   html += `</ul></div>`;

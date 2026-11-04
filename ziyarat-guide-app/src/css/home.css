@@ -6,7 +6,7 @@
    عمق سه‌بعدی و سایهٔ ملایم — نسخهٔ موقت تا آیکون‌های سه‌بعدی نهایی جی‌پی‌تی.
    تنها عنصر متحرک شاخص این صفحه، نوار نوری روان بنر «دربارهٔ ما» است
    (چرخه ۴٫۵ ثانیه، قانون ۱+۱+۱)؛ کارت‌ها برق متحرک ندارند. */
-.cards{display:grid;gap:var(--sp-13)}
+.cards{display:grid;gap:var(--sp-8)}
 .zcard{display:flex;align-items:center;gap:var(--sp-13);padding:var(--sp-21);
   border-radius:var(--r-21);border:1px solid #d9c896;border-bottom:3px solid var(--gold);
   background:linear-gradient(160deg,#ffffff 0%,var(--white) 38%,#fdf3d7 78%,var(--cream-deep) 100%);
@@ -37,9 +37,38 @@
 /* ---------- دکمهٔ نصب اپ (مورد ۲۸) ---------- */
 .install-btn{width:100%}
 
-/* کارت ادامهٔ سفر، شمارش معکوس و جست‌وجو (۴ نوامبر ۲۰۲۶) */
-.continue-card{width:100%;text-align:right;padding:var(--sp-13);border:1px solid var(--gold);border-radius:var(--r-13);background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
+/* ---------- ناوبری کشوری (ساختار تازهٔ صفحهٔ اصلی) ----------
+   دکمهٔ کشوری مثل کارت‌های پیشین است ولی به‌جای آیکون، پرچم دارد؛
+   پرچم با ارتفاع ثابت و عرض خودکار می‌آید تا نسبت درستش هرگز کشیده نشود. */
+.country-btn{display:flex;align-items:center;gap:var(--sp-13);padding:var(--sp-13);
+  border-radius:var(--r-21);border:1px solid #d9c896;border-bottom:3px solid var(--gold);
+  background:linear-gradient(160deg,#ffffff 0%,var(--white) 38%,#fdf3d7 78%,var(--cream-deep) 100%);
+  box-shadow:0 10px 22px rgba(13,59,46,.16),0 3px 8px rgba(13,59,46,.10),
+    inset 0 1px 0 rgba(255,255,255,1),inset 0 -8px 16px rgba(197,164,109,.22);
+  text-align:right;width:100%}
+.country-btn:active{transform:scale(.98)}
+.country-flag{height:44px;width:auto;max-width:88px;flex:none;object-fit:contain;
+  border-radius:var(--r-8);box-shadow:0 2px 6px rgba(13,59,46,.25)}
+.country-btn b{font-size:var(--fs-21);color:var(--emerald);display:block;font-weight:900}
+.country-btn span{font-size:var(--fs-13);color:#555}
+/* صفحهٔ کشور: دو خانوادهٔ دکمه — مکان‌ها (زمردی) و مناسک (طلایی)؛
+   دکمه‌های شهر هم با همان کارت سفید و زیرنویس شمار مرحله/به‌زودی‌اند. */
+.country-group{margin-top:var(--sp-8)}
+.country-group h3{color:var(--emerald);font-size:var(--fs-16)}
+.place-btn,.ritual-btn,.city-btn{display:block;width:100%;text-align:right;margin-top:5px;
+  padding:var(--sp-13);border-radius:var(--r-13);font-family:inherit;font-size:var(--fs-16);
+  font-weight:900;cursor:pointer}
+.place-btn{background:linear-gradient(180deg,#eef6f1,#dcebe2);border:1px solid var(--emerald);color:var(--emerald)}
+.ritual-btn{background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));border:1px solid var(--gold);color:var(--charcoal)}
+.city-btn{background:var(--white);border:1px solid var(--gold-light);color:var(--charcoal)}
+.city-btn span{font-size:var(--fs-13);color:#555;display:block;font-weight:400}
+.place-btn:active,.ritual-btn:active,.city-btn:active{transform:scale(.98)}
+
+/* کارت ادامهٔ سفر، شمارش معکوس و جست‌وجو (۴ نوامبر ۲۰۲۶) —
+   کارت ادامه تک‌خطی است (متن کامل در DOM می‌ماند؛ بلندیِ اضافه با
+   … بریده می‌شود) تا در خانه جای کمتری بگیرد و همچنان کار کند. */
+.continue-card{width:100%;text-align:right;padding:var(--sp-8) var(--sp-13);border:1px solid var(--gold);border-radius:var(--r-13);background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .countdown{font-weight:bold;color:var(--emerald)}
-.search-box{margin-top:var(--sp-13)}
-.search-box input{width:100%;height:34px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
+.search-box{margin-top:var(--sp-8)}
+.search-box input{width:100%;height:30px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
 .search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:8px 13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}

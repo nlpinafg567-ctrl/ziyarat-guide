@@ -48,7 +48,7 @@
       </span>
     </div>
     <h1>راهنمای زایرین عمار غزنه</h1>
-    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.</p></div>
+    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم.</p></div>
     <div id="home-continue"></div>
     <div class="search-box">
       <input id="home-search-input" placeholder="جست‌وجوی مرحله… (مثلاً کربلا، طواف نساء)" aria-label="جست‌وجوی مرحله" oninput="renderHomeSearch()">
@@ -57,7 +57,7 @@
     <div class="cards" id="home-cards"></div>
     <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
     <div style="display:grid;gap:13px;margin-top:13px">
-      <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (فقط اعمال و دعا، با متن بزرگ)</button>
+      <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (متن بزرگ)</button>
       <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
       <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
       <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
@@ -202,11 +202,42 @@
     <div class="progress-wrap"><div class="progress-bar" id="section-progress"></div></div>
     <p class="small" id="section-progress-text"></p>
     <p>مسیر این زیارت، قدم‌به‌قدم؛ روی هر مرحله بزن تا باز شود.</p>
-    <button class="btn small gold" style="margin-bottom:13px" onclick="openChecklist()">🎒 چک‌لیست وسایل پیش از سفر</button>
     <div id="section-congrats"></div>
     <div class="path" id="section-path"></div>
     <div id="section-reports"></div>
     <button class="btn gold" onclick="go('booklet')">📖 کتابچهٔ خاطرات من</button>
+  </section>
+
+  <!-- صفحهٔ کشور (ساختار تازهٔ ناوبری) -->
+  <section id="view-country" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <span class="fontlabel">متن</span>
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1 id="country-title"></h1>
+    <div id="country-buttons"></div>
+  </section>
+
+  <!-- صفحهٔ شهر (مسیر مرحله‌وار، مثل عتبات) -->
+  <section id="view-city" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <span class="fontlabel">متن</span>
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1 id="city-title"></h1>
+    <div id="city-scene"></div>
+    <div class="progress-wrap"><div class="progress-bar" id="city-progress"></div></div>
+    <p class="small" id="city-progress-text"></p>
+    <p class="small" id="city-note"></p>
+    <div id="city-path"></div>
   </section>
 
   <!-- جزئیات مرحله -->
@@ -289,6 +320,8 @@ const CONTACTS = {
 <script src="src/data/hajj.js"></script>
 <script src="src/data/atabat.js"></script>
 <script src="src/data/iran.js"></script>
+<script src="src/data/makka.js"></script>
+<script src="src/data/madina.js"></script>
 <script src="src/data/tours.js"></script>
 <script src="src/data/sources.js"></script>
 <script src="src/data/chatbot-kb.js"></script>
