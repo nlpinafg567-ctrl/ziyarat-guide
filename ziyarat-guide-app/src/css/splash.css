@@ -1,19 +1,26 @@
-/* راهنمای زیارت — splash
-   اسپلش: تنها عنصر متحرک شاخص این صفحه، قاب نورانی با تپش آرام است.
-   قاب پرداخت‌شده‌تر: گرادیان چندلایه، قاب طلایی دوتایی (لبه + هالهٔ داخلی)،
-   سایهٔ عمیق بیرونی + سایهٔ داخلی طلایی. تیترها پررنگ و زمردی. */
-.splash{text-align:center;padding:var(--sp-34) var(--sp-21)}
-.luminous{border:2px solid var(--gold);border-radius:var(--r-21);padding:var(--sp-34) var(--sp-21);
-  background:radial-gradient(circle at 50% 25%,#ffffff 0%,#fff8e6 45%,var(--cream) 75%,#f3e6c0 100%);
-  box-shadow:0 0 34px rgba(197,164,109,.55),0 16px 30px rgba(13,59,46,.16),
-    inset 0 0 21px rgba(197,164,109,.35),inset 0 0 0 6px rgba(255,255,255,.55),
-    inset 0 1px 0 rgba(255,255,255,1);
-  animation:glow 2.4s ease-in-out infinite alternate}
-@keyframes glow{from{box-shadow:0 0 21px rgba(197,164,109,.4),0 16px 30px rgba(13,59,46,.16),inset 0 0 21px rgba(197,164,109,.35),inset 0 0 0 6px rgba(255,255,255,.55)}to{box-shadow:0 0 44px rgba(197,164,109,.75),0 16px 30px rgba(13,59,46,.16),inset 0 0 21px rgba(197,164,109,.35),inset 0 0 0 6px rgba(255,255,255,.55)}}
-.basmala{font-size:var(--fs-34);color:var(--emerald);font-weight:900;
-  text-shadow:0 1px 0 rgba(255,255,255,.9),0 2px 6px rgba(197,164,109,.35);
-  animation:fadeup 1s ease both}
-.verse{font-size:var(--fs-26);color:var(--emerald);font-weight:900;
-  text-shadow:0 1px 0 rgba(255,255,255,.9);
-  animation:fadeup 1s .5s ease both}
-@keyframes fadeup{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+/* راهنمای زیارت — splash (مورد ۲۷، ۴ نوامبر ۲۰۲۶)
+   دروازهٔ ورود به سبک اسکرین‌شات مالک: زمینهٔ زمردی تیره، کادر کرم با
+   قاب طلایی دوتایی (حاشیه + خط داخلی با فاصله) و جرقه‌های طلایی چهار
+   گوشه؛ هزینهٔ ورود یک صلوات، هدیه به روح حضرت نرجس خاتون
+   سلام‌الله علیها. */
+.splash{min-height:calc(100vh - 34px);display:flex;align-items:center;justify-content:center;
+  margin:calc(var(--sp-21) * -1);padding:var(--sp-34) var(--sp-21);
+  background:linear-gradient(180deg,#14543f 0%,#0d3b2e 55%,#083028 100%)}
+.salawat-card{position:relative;width:100%;max-width:480px;text-align:center;
+  background:linear-gradient(180deg,#fffefb 0%,#f7f3ea 100%);
+  border:3px solid var(--gold);border-radius:var(--r-21);
+  outline:1px solid rgba(197,164,109,.7);outline-offset:-13px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  padding:var(--sp-34) var(--sp-21)}
+.spark{position:absolute;color:var(--gold);font-size:var(--fs-21);line-height:1}
+.spark.tl{top:8px;right:12px}.spark.tr{top:8px;left:12px}
+.spark.bl{bottom:8px;right:12px}.spark.br{bottom:8px;left:12px}
+.salawat-rose{font-size:var(--fs-34);margin:0 0 var(--sp-8)}
+.salawat-cost{font-size:var(--fs-21);color:var(--emerald);font-weight:900;line-height:1.9;margin:0 0 var(--sp-8)}
+.salawat-cost b{display:block;font-size:var(--fs-26);color:var(--gold-deep)}
+.salawat-gift{font-size:var(--fs-16);color:#5a5a5a;line-height:2;margin:0 0 var(--sp-13)}
+.salawat-arabic{font-size:var(--fs-21);color:var(--gold-deep);font-weight:700;line-height:2;margin:0 0 var(--sp-21)}
+.salawat-btn{width:100%;height:auto;min-height:var(--btn);padding:var(--sp-13) var(--sp-21);
+  background:linear-gradient(160deg,#1a5c49,var(--emerald));color:#fff;border:none;
+  font-size:var(--fs-21);font-weight:900;line-height:1.9;
+  box-shadow:0 8px 21px rgba(13,59,46,.45)}

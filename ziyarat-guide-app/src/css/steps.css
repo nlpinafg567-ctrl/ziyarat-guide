@@ -32,26 +32,20 @@
 .path .node.locked{opacity:.55}
 .path .node b{color:var(--emerald);font-size:var(--fs-16);display:block;font-weight:900}
 .path .node span{font-size:var(--fs-13);color:#555}
-/* فهرست مرحله‌ها */
-.steplist{display:grid;gap:var(--sp-13)}
-.stepcard{display:flex;gap:var(--sp-13);align-items:center;width:100%;text-align:right;
-  padding:var(--sp-13);border-radius:var(--r-13);border:1px solid #d9c896;
-  background:linear-gradient(160deg,#ffffff 0%,var(--white) 55%,#fdf3d7 100%);
-  box-shadow:0 6px 14px rgba(13,59,46,.12),0 2px 5px rgba(13,59,46,.08),
-    inset 0 1px 0 rgba(255,255,255,1),inset 0 -6px 12px rgba(197,164,109,.18)}
-.stepcard:active{transform:scale(.98)}
-.stepcard .st{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;
-  font-weight:900;font-size:var(--fs-21);
-  box-shadow:0 3px 8px rgba(13,59,46,.16),inset 0 1px 0 rgba(255,255,255,.6)}
-.stepcard.done .st{background:linear-gradient(180deg,#1a8a64,var(--green));color:#fff}
-.stepcard.current .st{background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--charcoal)}
-.stepcard.current{border-bottom:3px solid var(--gold);
-  background:linear-gradient(160deg,#ffffff 0%,#fff8e6 55%,#fbefc2 100%);
-  animation:softPulse 2.4s ease-in-out infinite alternate}
-@keyframes softPulse{from{box-shadow:0 6px 14px rgba(13,59,46,.12),inset 0 1px 0 rgba(255,255,255,1)}to{box-shadow:0 6px 22px rgba(197,164,109,.70),inset 0 1px 0 rgba(255,255,255,1)}}
-.stepcard.locked .st{background:#ddd;color:#777;box-shadow:inset 0 1px 3px rgba(0,0,0,.15)}
-.stepcard b{color:var(--emerald);display:block;font-weight:900}
-.stepcard span{font-size:var(--fs-13);color:#555}
+/* آیکون شهرهای عتبات (مورد ۲۱): کارت شهر با بدنهٔ تاشو؛ گره‌های داخل
+   بدنه همان گره‌های مسیر‌اند و خط نقطه‌چین از پشت کارت‌ها می‌گذرد. */
+.citycard{position:relative;background:var(--cream);border:1px solid var(--gold);
+  border-radius:var(--r-13);margin-bottom:var(--sp-13);overflow:hidden}
+.cityhead{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-13);
+  width:100%;padding:var(--sp-13);background:linear-gradient(180deg,#fffdf4,#fff6d8);
+  border:none;cursor:pointer;text-align:right}
+.cityhead b{color:var(--emerald);font-size:var(--fs-16);font-weight:900;display:block}
+.cityhead span span{font-size:var(--fs-13);color:#555;display:block}
+.cityarrow{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--gold);color:#fff;font-weight:900}
+.citybody{display:none;padding:var(--sp-13) 0 0}
+.citybody.open{display:block}
+.citybody .node:last-child{margin-bottom:0}
 /* جزئیات مرحله */
 .stepbanner{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);color:#fff;
   padding:var(--sp-13) var(--sp-21);font-size:var(--fs-21);font-weight:900;
@@ -61,6 +55,13 @@
 .stepbanner::after{content:"";position:absolute;top:0;bottom:0;width:34%;
   background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),transparent);
   animation:shine 4.5s ease-in-out infinite}
+/* بنر عکسی (مورد ۲۲): عکس واقعی، نسبت یکدست ۱۶:۹ با برش cover؛
+   قاب طلایی و گوشهٔ r-13 هماهنگ با کارت‌ها؛ زیرنویس ذکر منبع. */
+.photobanner{margin:var(--sp-13) 0}
+.photobanner img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
+  border-radius:var(--r-13);border:1px solid var(--gold);
+  box-shadow:0 6px 14px rgba(13,59,46,.18)}
+.photocredit{margin:var(--sp-5) 0 0;font-size:var(--fs-13);color:#8a8378;text-align:end}
 .box{border:1px solid #e8e0cf;border-radius:var(--r-13);padding:var(--sp-13);
   margin-bottom:var(--sp-13);background:linear-gradient(180deg,#ffffff,var(--white) 70%,#fdf8ea);
   box-shadow:0 4px 10px rgba(13,59,46,.08),inset 0 1px 0 rgba(255,255,255,1)}
@@ -82,7 +83,9 @@
 .quiz{border:1px dashed var(--gold);border-radius:var(--r-13);padding:var(--sp-13);margin-bottom:var(--sp-13);
   background:linear-gradient(180deg,#ffffff,var(--white) 70%,#fdf8ea)}
 .quiz .answer{display:none;margin-top:var(--sp-8);color:var(--emerald);font-weight:bold}
-.quiz.open .answer{display:block}
+.quiz .qitem{margin-top:var(--sp-13)}
+.quiz .qitem:first-child{margin-top:0}
+.quiz .qitem.open .answer{display:block}
 .placeholder{border:2px dashed var(--gold);border-radius:var(--r-13);padding:var(--sp-21);
   text-align:center;color:#8a7a52;background:linear-gradient(180deg,#fffdf4,#fff6d8)}
 .summary-card{border:2px solid var(--gold);border-radius:var(--r-13);padding:var(--sp-21);
@@ -134,3 +137,10 @@
 .acc-inner{overflow:hidden;min-height:0}
 .acc-body > .acc-inner > :first-child{margin-top:var(--sp-13)}
 @media (prefers-reduced-motion:reduce){.acc-body,.acc-head .acc-arrow{transition:none}}
+
+/* ---------- گذر ادبی بالای صفحهٔ مرحله (مورد ۱۶) + متن عرفانی خلاصه
+   (مورد ۲۰) + متن عمل معروف (مورد ۱۵) — بستهٔ ۴ نوامبر ۲۰۲۶ ---------- */
+.box.literary{background:linear-gradient(160deg,#eef5f0,var(--cream-deep));border:1px solid var(--emerald);border-inline-start:4px solid var(--gold)}
+.box.literary p{font-size:var(--fs-16);line-height:2;text-align:justify}
+.irfani{font-size:var(--fs-16);line-height:2;text-align:justify}
+.amal-text{font-size:var(--fs-21);line-height:2;text-align:justify;white-space:pre-line}

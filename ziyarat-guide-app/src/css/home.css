@@ -33,3 +33,6 @@
   background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);
   animation:shine 4.5s ease-in-out infinite}
 @keyframes shine{0%{right:-34%}55%,100%{right:110%}}
+
+/* ---------- دکمهٔ نصب اپ (مورد ۲۸) ---------- */
+.install-btn{width:100%}

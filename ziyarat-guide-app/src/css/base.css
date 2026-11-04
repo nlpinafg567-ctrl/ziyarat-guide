@@ -4,7 +4,7 @@
 *{box-sizing:border-box}
 html{font-size:calc(16px * var(--font-scale))}
 body{margin:0;background:var(--cream);color:var(--charcoal);
-  font-family:Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.62;direction:rtl}
+  font-family:'Vazirmatn',Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.62;direction:rtl}
 button{font-family:inherit;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
 a{color:var(--emerald)}
 .app{max-width:560px;margin:0 auto;min-height:100vh;background:var(--white);
@@ -37,6 +37,6 @@ p{font-size:var(--fs-16);margin:var(--sp-8) 0}
 .external::after{content:" ↗";font-size:var(--fs-13)}
 /* کاهش حرکت: همهٔ جلوه‌های غیرضروری خاموش می‌شوند */
 @media (prefers-reduced-motion:reduce){
-  .view.active,.luminous,.about-banner::after,.stepbanner::after,.stepcard.current .st{animation:none!important}
+  .view.active,.salawat-card,.about-banner::after,.stepbanner::after{animation:none!important}
   .about-banner::after,.stepbanner::after{display:none}
 }

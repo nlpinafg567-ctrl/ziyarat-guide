@@ -52,3 +52,12 @@
 @media (prefers-reduced-motion:reduce){
   .visa-banner::after{animation:none!important;display:none}
 }
+/* ---------- دکمه‌های پلتفرم در صفحهٔ «دربارهٔ ما» (مورد ۲۶) ----------
+   هر دکمه رنگ و گرادیان پلتفرم مقصد خودش را دارد (واتساپ سبز، فیسبوک
+   آبی)؛ ارتفاع دکمهٔ اصلی ۵۲ و متن ۲۱ طبق مقیاس طلایی. */
+#view-about .socbtns{display:flex;flex-direction:column;gap:var(--sp-13);margin-top:var(--sp-13)}
+#view-about .socbtn{display:flex;align-items:center;justify-content:center;min-height:var(--btn);
+  border-radius:var(--r-13);color:#fff;font-weight:900;font-size:var(--fs-21);
+  text-decoration:none;box-shadow:0 8px 21px rgba(0,0,0,.25)}
+#view-about .socbtn.wa{background:linear-gradient(160deg,#25D366,#128C7E)}
+#view-about .socbtn.fb{background:linear-gradient(160deg,#1877F2,#0d5cb6)}
