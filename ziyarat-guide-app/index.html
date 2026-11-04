@@ -33,7 +33,7 @@
         <h1 class="salawat-cost">هزینهٔ استفاده از این اپلیکیشن:<b>یک صلوات</b></h1>
         <p class="salawat-gift">هدیه به روح ملکوتی حضرت نرجس خاتون<br>سلام‌الله علیها</p>
         <p class="salawat-arabic">اللهم صل علی محمد و آل محمد و عجل فرجهم</p>
-        <button class="btn salawat-btn" onclick="go('welcome')">🌹 صلوات فرستادم؛ ورود به راهنما</button>
+        <button class="btn salawat-btn" onclick="passGate()">🌹 صلوات فرستادم؛ ورود به راهنما</button>
       </div>
     </div>
   </section>
@@ -41,17 +41,23 @@
   <!-- صفحهٔ اصلی -->
   <section id="view-home" class="view">
     <div class="backbar">
-      <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
         <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1>راهنمای زایرین عمار غزنه</h1>
-    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.</p></div>
+    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.</p></div>
+    <div id="home-continue"></div>
+    <div class="search-box">
+      <input id="home-search-input" placeholder="جست‌وجوی مرحله… (مثلاً کربلا، طواف نساء)" aria-label="جست‌وجوی مرحله" oninput="renderHomeSearch()">
+      <div id="home-search-results"></div>
+    </div>
     <div class="cards" id="home-cards"></div>
     <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
     <div style="display:grid;gap:13px;margin-top:13px">
+      <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (فقط اعمال و دعا، با متن بزرگ)</button>
       <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
       <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
       <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
@@ -67,6 +73,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -83,6 +90,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -96,6 +104,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -109,6 +118,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -126,6 +136,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -181,6 +192,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -202,6 +214,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -209,11 +222,27 @@
     <div id="step-detail"></div>
   </section>
 
+  <!-- حالت حرم -->
+  <section id="view-haram" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <span class="fontlabel">متن</span>
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>🕌 حالت حرم</h1>
+    <p class="small">فقط اعمال و دعای همین مرحله، با متن بزرگ؛ بدون تور و نقشه، برای خواندن در حرم.</p>
+    <div id="haram-body"></div>
+  </section>
+
   <!-- جزئیات عمل معروف -->
   <section id="view-amal" class="view">
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -226,6 +255,7 @@
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
+        <span class="fontlabel">متن</span>
         <button onclick="fontSize(-1)">الف−</button>
         <button onclick="fontSize(1)">الف+</button>
       </span>
@@ -240,7 +270,7 @@
 <!-- چت‌بات هوشمند: دکمهٔ شناور + پنل گفت‌وگو (گفت‌وگو ذخیره نمی‌شود) -->
 <button id="chat-fab" class="chat-fab" onclick="toggleChat()">💬</button>
 <div id="chat-panel" class="chat-panel" hidden>
-  <div class="chat-head"><b>راهنمای هوشمند</b><button class="chat-x" onclick="toggleChat()" aria-label="بستن گفت‌وگو">✕</button></div>
+  <div class="chat-head"><b id="chat-title">پاسخ‌های آماده</b><button class="chat-x" onclick="toggleChat()" aria-label="بستن گفت‌وگو">✕</button></div>
   <p id="chat-status" class="chat-status"></p>
   <div id="chat-msgs" class="chat-msgs"></div>
   <div class="chat-quick" id="chat-quick"></div>
