@@ -7,12 +7,12 @@
 const SOURCES = {
   umrah: [
     "راهنمای زائران عمره مفرده (معاونت آموزش و تحقیقات بعثه، مشعر ۱۳۸۱) — بخش‌های مدینه (ص ۱۱)، بقیع (ص ۱۲)، میقات (ص ۱۵)، مسجد الحرام (ص ۱۶)، صفا و مروه (ص ۱۹)",
-    "مناسک حج (آیت‌الله فیاض؛ مناسک حج سیستانی)",
+    "مناسک حج (آیت‌الله العظمی فیاض؛ مناسک حج آیت‌الله العظمی سیستانی)",
     "مفاتیح‌الجنان (متن ادعیه و زیارات)"
   ],
   hajj: [
-    "مناسک حج (آیت‌الله فیاض)",
-    "مناسک حج (سیستانی)",
+    "مناسک حج (آیت‌الله العظمی فیاض)",
+    "مناسک حج (آیت‌الله العظمی سیستانی)",
     "مفاتیح‌الجنان (دعای عرفه، دعای وداع، دعاهای طواف)"
   ],
   atabat: [
@@ -40,7 +40,7 @@ const DRIVE_BOOKS = {
     { title: "راهنمای زائران عمره مفرده (بعثه، مشعر ۱۳۸۱)",
       view: "https://drive.google.com/file/d/1AnCSnnqereY1GskpZWIUraHfb1eP9bRl/view?usp=drivesdk",
       download: "https://drive.google.com/uc?id=1AnCSnnqereY1GskpZWIUraHfb1eP9bRl&export=download" },
-    { title: "مناسک حج (سیستانی)",
+    { title: "مناسک حج (آیت‌الله العظمی سیستانی)",
       view: "https://drive.google.com/file/d/1dSyuXZy3i4_ljUowYHiGwOI8oNJwBo0v/view?usp=drivesdk",
       download: "https://drive.google.com/uc?id=1dSyuXZy3i4_ljUowYHiGwOI8oNJwBo0v&export=download" },
     { title: "مناسک عمره مفرده — ویژهٔ بانوان",
@@ -48,7 +48,7 @@ const DRIVE_BOOKS = {
       download: "https://drive.google.com/uc?id=1mAR4CCFUvJXoYbe3l6sMNroZA9v4M2k1&export=download" }
   ],
   hajj: [
-    { title: "مناسک حج (سیستانی)",
+    { title: "مناسک حج (آیت‌الله العظمی سیستانی)",
       view: "https://drive.google.com/file/d/1dSyuXZy3i4_ljUowYHiGwOI8oNJwBo0v/view?usp=drivesdk",
       download: "https://drive.google.com/uc?id=1dSyuXZy3i4_ljUowYHiGwOI8oNJwBo0v&export=download" },
     { title: "ملحقات مناسک حج",
