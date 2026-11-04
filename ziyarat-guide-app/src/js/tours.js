@@ -71,9 +71,8 @@ function driveHTML(key) {
    با `../ziyarat-guide-app/index.html#بخش-مرحله`)؛ پیش از هر انتشار،
    بسته‌بندی انتشار باید پوشهٔ اینفوگرافیک‌ها را هم شامل شود یا مسیرها
    بازنویسی شوند — این پیوندها به‌تنهایی مجوز انتشار نیستند.
-   قفل ترتیبی: این تابع فقط از openStep صدا زده می‌شود و openStep
-   خودش با isUnlocked مرحلهٔ قفل را رد می‌کند؛ پس لینک مرحلهٔ قفل
-   هرگز رندر نمی‌شود. مرحله‌های بدون اینفوگرافیک کادر نمی‌گیرند. */
+   خواندن آزاد است؛ این تابع فقط از openStep صدا زده می‌شود.
+   مرحله‌های بدون اینفوگرافیک کادر نمی‌گیرند. */
 const STEP_INFOGRAPHICS = {
   "atabat-1": [
     { file: "najaf-infographic.html", label: "نقشهٔ نجف اشرف" },
@@ -144,7 +143,13 @@ const STEP_IMAGES = {
   "atabat-4": "assets/infographics/atabat-4.png",
   "atabat-5": "assets/infographics/atabat-5.png",
   "atabat-6": "assets/infographics/atabat-6.png",
-  "atabat-7": "assets/infographics/atabat-7.png"
+  "atabat-7": "assets/infographics/atabat-7.png",
+  "atabat-8": "assets/infographics/atabat-8.png",
+  "atabat-9": "assets/infographics/atabat-9.png",
+  "atabat-10": "assets/infographics/atabat-10.png",
+  "atabat-11": "assets/infographics/atabat-11.png",
+  "atabat-12": "assets/infographics/atabat-12.png",
+  "atabat-13": "assets/infographics/atabat-13.png"
 };
 /* تصاویر افزودهٔ کارت ۶ (پس از تصویر مرحله می‌آیند) — مثل اینفوگرافیک
    «آثار و برکات زیارت امام حسین (ع)» که مالک ۴ نوامبر فرستاد. */

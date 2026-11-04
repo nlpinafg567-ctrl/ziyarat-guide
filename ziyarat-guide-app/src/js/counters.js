@@ -67,7 +67,7 @@ function toolHTML(s) {
       <label><input type="checkbox"> نیت کردم</label>
       <label><input type="checkbox"> تلبیه گفتم</label>
     </div></div>`;
-  return `<div class="placeholder">🖼 جای تصویر/اینفوگرافیک این مرحله — پس از تأیید محتوا با جی‌پی‌تی ساخته می‌شود</div>`;
+  return "";
 }
 function countStep(d, max) {
   counter = Math.min(max, Math.max(0, counter + d));

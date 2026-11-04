@@ -12,13 +12,14 @@ function esc(s) {
 function cleanName(s) { return String(s || "").trim().slice(0, 60); }
 function defaultProfile() {
   return { name: "", family: "", gender: "", city: "", caravan: "", photo: null,
-           showPhotoOnCard: false, niyabaPast: [], niyabaAlive: [], hajat: [], introduced: false };
+           showPhotoOnCard: false, niyabaPast: [], niyabaAlive: [], hajat: [], introduced: false,
+           travelDate: "" };
 }
 function loadProfile() {
   const p = store.get("zg-profile", null);
   if (!p || typeof p !== "object") return defaultProfile();
   const d = defaultProfile();
-  ["name", "family", "gender", "city", "caravan"].forEach(k => { if (typeof p[k] === "string") d[k] = p[k]; });
+  ["name", "family", "gender", "city", "caravan", "travelDate"].forEach(k => { if (typeof p[k] === "string") d[k] = p[k]; });
   if (typeof p.photo === "string" && p.photo.startsWith("data:image")) d.photo = p.photo;
   if (p.showPhotoOnCard === true) d.showPhotoOnCard = true;
   ["niyabaPast", "niyabaAlive", "hajat"].forEach(k => {
@@ -39,11 +40,11 @@ function fullName(p) { return [p.name, p.family].map(s => (s || "").trim()).filt
 function greetText(p) {
   const lk = lastJourneyKey();
   const tn = lk ? journeyTitleFor(lk, p) : "";
-  if (tn) return tn + " عزیز! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.";
+  if (tn) return tn + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
   const t = addressTitle(p);
-  if (t) return t + " عزیز! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.";
-  if (p.name) return p.name + " عزیز! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.";
-  return "زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.";
+  if (t) return t + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
+  if (p.name) return p.name + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
+  return "زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
 }
 function avatarHTML(p, cls) {
   if (!p.photo) return "";
@@ -102,6 +103,7 @@ function syncDraftFromForm() {
   profileDraft.family = cleanName(g("pf-family"));
   profileDraft.city = cleanName(g("pf-city"));
   profileDraft.caravan = cleanName(g("pf-caravan"));
+  profileDraft.travelDate = g("pf-travel-date");
   const cb = $("pf-show-photo");
   if (cb) profileDraft.showPhotoOnCard = !!cb.checked;
 }
@@ -128,7 +130,8 @@ function renderProfile() {
     `<option value="خانم"${p.gender === "خانم" ? " selected" : ""}>خانم</option>` +
     `<option value="آقا"${p.gender === "آقا" ? " selected" : ""}>آقا</option></select></label>` +
     `<label class="pf-label">شهر (اختیاری)<input class="pf-input" id="pf-city" value="${esc(p.city)}" placeholder="مثلاً غزنی"></label>` +
-    `<label class="pf-label">کاروان (اختیاری)<input class="pf-input" id="pf-caravan" value="${esc(p.caravan)}" placeholder="نام کاروان، اگر داری"></label>`;
+    `<label class="pf-label">کاروان (اختیاری)<input class="pf-input" id="pf-caravan" value="${esc(p.caravan)}" placeholder="نام کاروان، اگر داری"></label>` +
+    `<label class="pf-label">تاریخ سفر (اختیاری، برای شمارش معکوس در خانه)<input class="pf-input" id="pf-travel-date" type="date" value="${esc(p.travelDate || "")}"></label>`;
   html += `<div class="pf-photo-row">${p.photo ? `<img class="pf-photo" src="${p.photo}" alt="عکس زائر">` : `<div class="pf-photo-empty">📷 هنوز عکسی نیست</div>`}` +
     `<div><label class="btn small gold file-btn">📷 عکس گرفتن<input type="file" accept="image/*" capture="user" onchange="handlePhotoFile(this)" hidden></label> ` +
     `<label class="btn small gold file-btn">🖼 انتخاب از گالری<input type="file" accept="image/*" onchange="handlePhotoFile(this)" hidden></label>` +
@@ -153,6 +156,11 @@ function renderProfile() {
   html += `<button class="btn" onclick="saveProfileForm()">${profileIntroMode ? "شروع سفر من" : "ذخیرهٔ تغییرات"}</button> ` +
     `<button class="btn gold" onclick="openCardView()">🪪 مشاهدهٔ کارت شناسایی</button>`;
   if (profileIntroMode) html += ` <button class="btn small" onclick="skipProfile()">بعداً تکمیل می‌کنم</button>`;
+  html += `<div class="box"><h3>💾 خروجی و ورودی با یک کد</h3><p class="small">پیشرفت و مشخصاتت را با یک کد سادهٔ JSON به گوشی دیگر ببر؛ کد فقط در گوشی خودت می‌ماند و به هیچ سروری فرستاده نمی‌شود.</p>` +
+    `<button class="btn small gold" onclick="exportBackup()">ساختن کد خروجی</button>` +
+    `<textarea class="pf-input" id="pf-export" rows="4" readonly placeholder="کد خروجی اینجا می‌آید؛ آن را کپی کن"></textarea>` +
+    `<label class="pf-label">کد ورودی از گوشی دیگر<textarea class="pf-input" id="pf-import" rows="4" placeholder="کد را اینجا بچسبان"></textarea></label>` +
+    `<button class="btn small gold" onclick="importBackup()">بازیابی از روی کد</button></div>`;
   html += `<div style="margin-top:21px"><button class="btn small danger" onclick="clearProfileData()">پاک کردن اطلاعات من</button>` +
     `<p class="small">پاک کردن، فقط مشخصات، نیابت‌ها و حاجات را پاک می‌کند؛ پیشرفت مرحله‌ها و خاطره‌ها سر جایشان می‌مانند.</p></div>`;
   $("profile-body").innerHTML = html;
@@ -207,7 +215,7 @@ function saveProfileForm() {
   profileDraft.introduced = true;
   saveProfileData(profileDraft);
   renderHome();
-  if (profileIntroMode) { stack.pop(); go("home"); }
+  if (profileIntroMode) { enterHome(); }
   else back();
 }
 function skipProfile() {
@@ -215,8 +223,7 @@ function skipProfile() {
   p.introduced = true;
   saveProfileData(p);
   renderHome();
-  stack.pop();
-  go("home");
+  enterHome();
 }
 function clearProfileData() {
   if (!confirm("همهٔ مشخصات، نیابت‌ها و حاجاتت پاک شود؟ پیشرفت مرحله‌ها و خاطره‌ها پاک نمی‌شوند.")) return;
@@ -227,15 +234,61 @@ function clearProfileData() {
 }
 function goStart() { go("welcome"); }
 function enterApp() {
-  if (loadProfile().introduced) go("home");
+  if (loadProfile().introduced) enterHome();
   else openProfile(true);
+}
+
+/* ---------- شمارش معکوس سفر ---------- */
+function countdownDays(target, today) {
+  const t = (today || new Date().toISOString().slice(0, 10));
+  const pd = (s) => { const p = String(s).split("-"); return Date.UTC(+p[0], +p[1] - 1, +p[2]); };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(target))) return null;
+  return Math.round((pd(target) - pd(t)) / (24 * 60 * 60 * 1000));
+}
+function countdownHTML() {
+  const p = loadProfile();
+  if (!p.travelDate) return "";
+  const d = countdownDays(p.travelDate);
+  if (d === null) return "";
+  if (d > 0) return `⏳ ${fa(d)} روز تا سفر`;
+  if (d === 0) return "🎒 امروز روز سفر است";
+  return "📅 تاریخ سفر گذشته است؛ تاریخ تازه را در مشخصات بزن";
+}
+
+/* ---------- خروجی و ورودی با کد JSON ساده ----------
+   بدون base64 (در سندباکس آزمون Buffer نیست و در مرورگر هم لازم نیست)؛
+   فقط JSON خوانا. ورودی فقط وقتی می‌نشیند که ساختارش درست باشد. */
+function exportBackup() {
+  const data = { profile: loadProfile(), titles: getJourneyCompletions() };
+  ["umrah", "hajj", "atabat", "iran"].forEach(k => { data[k] = getProgress(k); });
+  const code = JSON.stringify(data);
+  const el = $("pf-export");
+  if (el) el.value = code;
+  return code;
+}
+function importBackup() {
+  const el = $("pf-import");
+  const code = el ? el.value : "";
+  let data;
+  try { data = JSON.parse(code); } catch (e) { return false; }
+  if (!data || typeof data !== "object" || !data.profile || typeof data.profile !== "object") return false;
+  const okProgress = ["umrah", "hajj", "atabat", "iran"].every(k =>
+    data[k] === undefined || (Array.isArray(data[k]) && data[k].every(x => Number.isInteger(x))));
+  if (!okProgress) return false;
+  saveProfileData(Object.assign(defaultProfile(), data.profile));
+  ["umrah", "hajj", "atabat", "iran"].forEach(k => {
+    if (Array.isArray(data[k])) store.set(progressKey(k), data[k]);
+  });
+  if (data.titles && typeof data.titles === "object") store.set("zg-titles", data.titles);
+  renderHome();
+  return true;
 }
 
 /* ---------- عنوان بر اساس سفر ----------
    عنوان فقط وقتی داده می‌شود که همهٔ مرحله‌های آن بخش کامل شده باشد.
    مرد: کربلایی / حاجی / مشهدی؛ زن: کربلاییه خانم / حاجیه خانم / مشهدیه خانم.
    «حاجیه خانم» صورت درست ادبی است، نه «حاجی خانم». اگر جنسیت انتخاب نشده
-   باشد، صورت مردانه (شکل بی‌نشان) به کار می‌رود. زمان تکمیل هر بخش در
+   باشد، پیش‌فرض خنثی «زائر» می‌آید، نه صورت مردانه. زمان تکمیل هر بخش در
    zg-titles ذخیره می‌شود تا «آخرین سفر کامل‌شده» مشخص باشد. */
 const JOURNEY_TITLES = {
   atabat: { m: "کربلایی", f: "کربلاییه خانم" },
@@ -275,11 +328,16 @@ function lastJourneyKey() {
 }
 function journeyTitleFor(key, p) {
   if (!key || !JOURNEY_TITLES[key]) return "";
-  const fem = p.gender === "خانم";
-  const base = fem ? JOURNEY_TITLES[key].f : JOURNEY_TITLES[key].m;
   const nm = fullName(p);
-  if (fem) return p.family ? base + " " + p.family : (nm ? base + " " + nm : base);
-  return nm ? base + " " + nm : base;
+  if (p.gender === "خانم") {
+    const base = JOURNEY_TITLES[key].f;
+    return p.family ? base + " " + p.family : (nm ? base + " " + nm : base);
+  }
+  if (p.gender === "آقا") {
+    const base = JOURNEY_TITLES[key].m;
+    return nm ? base + " " + nm : base;
+  }
+  return nm ? "زائر " + nm : "زائر";
 }
 function cardTitleName(model, p) {
   return isSectionComplete(model) ? journeyTitleFor(model, p) : fullName(p);

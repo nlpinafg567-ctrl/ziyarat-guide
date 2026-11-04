@@ -22,7 +22,7 @@ const CHATBOT_PROXY_URL = ""; /* خالی = پاسخ‌سازی هوشمند غ�
 
 const CHATBOT_STOPWORDS = ["از", "به", "در", "با", "که", "را", "و", "یا", "این", "آن", "است", "هست", "می", "برای", "تا", "هم", "نیز", "چه", "چطور", "چگونه", "کجا", "کجاست", "کی", "چرا", "آیا", "چند", "چقدر", "چیست", "کدام", "یک", "را"];
 const CHATBOT_CITY_FA = { mecca: "مکه", madina: "مدینه", najaf: "نجف", karbala: "کربلا", mashhad: "مشهد", qom: "قم" };
-const CHATBOT_SECTION_TITLES = { umrah: "حج عمره", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران" };
+const CHATBOT_SECTION_TITLES = { umrah: "عمرهٔ مفرده", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران" };
 
 function chatbotNormalize(s) {
   return (s || "").replace(/[\u064B-\u0655\u0670]/g, "").replace(/ـ/g, "")
@@ -144,7 +144,7 @@ if (typeof document !== "undefined") {
   function chatbotOpenStep(section, id) {
     try {
       openSection(section);
-      if (typeof isUnlocked === "function" && isUnlocked(section, id) && typeof openStep === "function") openStep(id);
+      if (typeof openStep === "function") openStep(id);
     } catch (err) {}
   }
   function chatbotNoMatch() {
@@ -197,6 +197,9 @@ if (typeof document !== "undefined") {
   (function chatbotInit() {
     const status = chatbotEl("chat-status");
     if (status) status.textContent = chatbotStatusText();
+    /* برچسب صادقانه: تا وقتی واسط هوشمند وصل نیست، «پاسخ‌های آماده» است. */
+    const title = chatbotEl("chat-title");
+    if (title) title.textContent = chatbotStatus() === "proxy" ? "راهنمای هوشمند" : "پاسخ‌های آماده";
     const quick = chatbotEl("chat-quick");
     if (quick) {
       CHATBOT_QUICK.forEach(function (q) {
@@ -213,7 +216,7 @@ if (typeof document !== "undefined") {
       if (e.key === "Escape" && !chatbotEl("chat-panel").hasAttribute("hidden")) toggleChat();
     });
     const fab = chatbotEl("chat-fab");
-    if (fab) fab.setAttribute("aria-label", "گفت‌وگو با راهنمای هوشمند");
+    if (fab) fab.setAttribute("aria-label", chatbotStatus() === "proxy" ? "گفت‌وگو با راهنمای هوشمند" : "پاسخ‌های آماده");
     /* صدور سراسری برای onclickهای index.html (اسکریپت‌ها کلاسیک‌اند). */
     window.toggleChat = toggleChat;
     window.sendChat = sendChat;

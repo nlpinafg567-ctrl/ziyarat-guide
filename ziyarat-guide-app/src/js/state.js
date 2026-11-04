@@ -19,8 +19,9 @@ function progressKey(key) { return "zg-progress-" + key; }
 function getProgress(key) { return store.get(progressKey(key), []); }
 function isDone(key, id) { return getProgress(key).includes(id); }
 function isUnlocked(key, id) {
-  if (id === 1) return true;
-  return getProgress(key).includes(id - 1);
+  /* خواندن آزاد (۴ نوامبر ۲۰۲۶): همهٔ مرحله‌ها همیشه بازند؛ تیک اتمام
+     فقط پیشرفت را نشان می‌دهد و دیگر قفل نیست. */
+  return true;
 }
 function currentId(key) {
   const steps = SECTIONS[key].steps;
