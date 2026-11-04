@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0D3B2E">
+<title>راهنمای زایرین عمار غزنه</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="src/css/variables.css">
+<link rel="stylesheet" href="src/css/fonts.css">
+<link rel="stylesheet" href="src/css/base.css">
+<link rel="stylesheet" href="src/css/splash.css">
+<link rel="stylesheet" href="src/css/home.css">
+<link rel="stylesheet" href="src/css/steps.css">
+<link rel="stylesheet" href="src/css/diary.css">
+<link rel="stylesheet" href="src/css/about-banner.css">
+<link rel="stylesheet" href="src/css/profile.css">
+<link rel="stylesheet" href="src/css/card.css">
+<link rel="stylesheet" href="src/css/checklist.css">
+<link rel="stylesheet" href="src/css/chatbot.css">
+<link rel="stylesheet" href="src/css/print.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- اسپلش -->
+  <section id="view-splash" class="view active">
+    <div class="splash">
+      <div class="luminous">
+        <p class="basmala">بسم الله الرحمن الرحیم</p>
+        <p class="verse">ادْخُلُوهَا بِسَلَامٍ آمِنِينَ</p>
+        <p class="small">به سلامت و امنیت وارد شوید</p>
+      </div>
+      <p>راهنمای زایرین عمار غزنه</p>
+      <button class="btn" onclick="go('welcome')">ورود به راهنما</button>
+    </div>
+  </section>
+
+  <!-- صفحهٔ اصلی -->
+  <section id="view-home" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
+      </span>
+    </div>
+    <h1>راهنمای زایرین عمار غزنه</h1>
+    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ هر مرحله را که تمام کردی، مرحلهٔ بعد باز می‌شود.</p></div>
+    <div class="cards" id="home-cards"></div>
+    <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
+    <div style="display:grid;gap:13px;margin-top:13px">
+      <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
+      <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
+      <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
+    </div>
+  </section>
+
+  <!-- کادر توضیحی آغاز (پس از اسپلش، پیش از گزینه‌ها) -->
+  <section id="view-welcome" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <div class="welcome-box">
+      <p class="welcome-text">آموزش قبل از سفرهای معنوی برای زائرین محترم شیعهٔ افغانستانی</p>
+      <p class="welcome-sig">توسط محمد مهدی عرفانی، مسئول شرکت سیاحتی و زیارتی عمار غزنه</p>
+    </div>
+    <button class="btn" style="margin-top:21px" onclick="enterApp()">ورود به اپ</button>
+  </section>
+
+  <!-- مشخصات و نیابت -->
+  <section id="view-profile" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>مشخصات زائر</h1>
+    <div id="profile-body"></div>
+  </section>
+
+  <!-- کارت شناسایی زائر -->
+  <section id="view-card" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>🪪 کارت شناسایی زائر</h1>
+    <div id="card-body"></div>
+  </section>
+
+  <!-- چک‌لیست وسایل سفر -->
+  <section id="view-checklist" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>🎒 چک‌لیست وسایل سفر</h1>
+    <p>پیش از سفر، وسایلت را با این فهرست آماده کن؛ تیک‌ها فقط در گوشی خودت می‌مانند.</p>
+    <div class="progress-wrap"><div class="progress-bar" id="checklist-progress"></div></div>
+    <p class="small" id="checklist-progress-text"></p>
+    <div id="checklist-body"></div>
+    <button class="btn small" style="margin-top:13px" onclick="resetChecklist()">بازنشانی تیک‌ها</button>
+  </section>
+
+  <!-- دربارهٔ ما -->
+  <section id="view-about" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>دربارهٔ ما</h1>
+    <section class="visa-banner" aria-label="تبلیغ خدمات ویزای عمار غزنه">
+      <p class="visa-brand">عمار غزنه</p>
+      <p class="visa-tag">خدمات ویزا — همراه شما از مشاوره تا دریافت ویزا</p>
+      <ol class="visa-flow">
+        <li><span class="visa-num">۱</span><div><b>مشاوره</b><span>راهنمایی دربارهٔ روند و اسناد لازم</span></div></li>
+        <li><span class="visa-num">۲</span><div><b>آماده‌سازی اسناد</b><span>بررسی و تکمیل مدارک موردنیاز</span></div></li>
+        <li><span class="visa-num">۳</span><div><b>ثبت درخواست</b><span>ارائهٔ درخواست ویزا</span></div></li>
+        <li><span class="visa-num">۴</span><div><b>پیگیری</b><span>دنبال‌کردن وضعیت درخواست</span></div></li>
+        <li><span class="visa-num">۵</span><div><b>دریافت ویزا</b><span>تحویل نتیجهٔ درخواست</span></div></li>
+      </ol>
+      <p class="visa-address">📍 نوآباد، روبروی ادهٔ موترها</p>
+      <div class="visa-contacts">
+        <p>شماره تماس: <a href="tel:+93799854321" dir="ltr">+93799854321</a></p>
+        <p>واتساپ: <a href="https://wa.me/93799854321" target="_blank" rel="noopener">واتساپ عمار غزنه</a></p>
+        <p>تلگرام: <a href="https://t.me/+93799854321" target="_blank" rel="noopener">تلگرام عمار غزنه</a></p>
+        <p>فیسبوک: <span class="visa-slot">[لینک در زمان انتشار درج می‌شود]</span></p>
+      </div>
+    </section>
+    <div class="box visa-only">
+      <h3>فقط خدمات ویزا</h3>
+      <p>در این صفحه فقط خدمات ویزای عمار غزنه معرفی می‌شود: همراهی شما از مشاوره تا دریافت ویزا — راهنمایی دربارهٔ روند و اسناد لازم، بررسی و تکمیل مدارک موردنیاز، ثبت درخواست و پیگیری آن تا تحویل نتیجه.</p>
+      <p class="visa-note">جزئیات هر درخواست پس از مشاوره روشن می‌شود؛ در این صفحه هیچ خدمتی جز ویزا معرفی نمی‌شود.</p>
+    </div>
+    <div class="box">
+      <h3>نشانی</h3>
+      <p>نوآباد، روبروی ادهٔ موترها</p>
+    </div>
+    <div class="box">
+      <h3>ارتباط با ما</h3>
+      <p>شماره تلفن: <a href="tel:+93799854321" dir="ltr">+93799854321</a></p>
+      <p>واتساپ: <a href="https://wa.me/93799854321" target="_blank" rel="noopener">واتساپ عمار غزنه</a></p>
+      <p>تلگرام: <a href="https://t.me/+93799854321" target="_blank" rel="noopener">تلگرام عمار غزنه</a></p>
+      <p>فیسبوک: <span class="small">[لینک در زمان انتشار درج می‌شود]</span></p>
+    </div>
+    <p class="small">این اپ هم خدماتی است و هم تبلیغات موقّر؛ بدون فشار و فریب.</p>
+  </section>
+
+  <!-- نمای کلی زیارت (اینفوگرافیک مسیر) -->
+  <section id="view-section" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1 id="section-title"></h1>
+    <div id="section-scene"></div>
+    <div class="progress-wrap"><div class="progress-bar" id="section-progress"></div></div>
+    <p class="small" id="section-progress-text"></p>
+    <p>مسیر این زیارت، قدم‌به‌قدم؛ روی هر مرحله بزن تا باز شود.</p>
+    <button class="btn small gold" style="margin-bottom:13px" onclick="openChecklist()">🎒 چک‌لیست وسایل پیش از سفر</button>
+    <div id="section-congrats"></div>
+    <div class="path" id="section-path"></div>
+    <div class="steplist" id="section-list"></div>
+    <div id="section-reports"></div>
+    <button class="btn gold" onclick="go('booklet')">📖 کتابچهٔ خاطرات من</button>
+  </section>
+
+  <!-- جزئیات مرحله -->
+  <section id="view-step" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <div id="step-detail"></div>
+  </section>
+
+  <!-- کتابچهٔ خاطرات -->
+  <section id="view-booklet" class="view">
+    <div class="backbar">
+      <button class="backbtn" onclick="back()">→ بازگشت</button>
+      <span class="fontctl">
+        <button onclick="fontSize(-1)">الف−</button>
+        <button onclick="fontSize(1)">الف+</button>
+      </span>
+    </div>
+    <h1>📖 کتابچهٔ خاطرات من</h1>
+    <p>خاطره‌ها و عکس‌هایی که در هر مکان ثبت کرده‌ای، اینجا در تلفن خودت می‌ماند.</p>
+    <div id="booklet-list"></div>
+  </section>
+
+</div>
+
+<!-- چت‌بات هوشمند: دکمهٔ شناور + پنل گفت‌وگو (گفت‌وگو ذخیره نمی‌شود) -->
+<button id="chat-fab" class="chat-fab" onclick="toggleChat()">💬</button>
+<div id="chat-panel" class="chat-panel" hidden>
+  <div class="chat-head"><b>راهنمای هوشمند</b><button class="chat-x" onclick="toggleChat()" aria-label="بستن گفت‌وگو">✕</button></div>
+  <p id="chat-status" class="chat-status"></p>
+  <div id="chat-msgs" class="chat-msgs"></div>
+  <div class="chat-quick" id="chat-quick"></div>
+  <div class="chat-form"><input id="chat-input" placeholder="سؤالت را بپرس…" aria-label="سؤال"><button onclick="sendChat()">ارسال</button></div>
+</div>
+
+<script>
+/* تماس‌های تأییدشدهٔ مالک — فقط برای ساخت لینک؛ هیچ مقداری در کد ساخته نشده است */
+const CONTACTS = {
+  tel: "tel:+93799854321",
+  whatsapp: "https://wa.me/93799854321",
+  telegram: "https://t.me/+93799854321"
+};
+</script>
+<script src="src/data/umrah.js"></script>
+<script src="src/data/hajj.js"></script>
+<script src="src/data/atabat.js"></script>
+<script src="src/data/iran.js"></script>
+<script src="src/data/tours.js"></script>
+<script src="src/data/sources.js"></script>
+<script src="src/data/chatbot-kb.js"></script>
+<script src="src/js/utils.js"></script>
+<script src="src/js/state.js"></script>
+<script src="src/js/router.js"></script>
+<script src="src/js/font.js"></script>
+<script src="src/js/counters.js"></script>
+<script src="src/js/diary.js"></script>
+<script src="src/js/profile.js"></script>
+<script src="src/js/checklist.js"></script>
+<script src="src/js/card.js"></script>
+<script src="src/js/share.js"></script>
+<script src="src/js/tours.js"></script>
+<script src="src/js/icons.js"></script>
+<script src="src/js/render.js"></script>
+<script src="src/js/main.js"></script>
+<script src="src/js/chatbot.js"></script>
+</body>
+</html>
