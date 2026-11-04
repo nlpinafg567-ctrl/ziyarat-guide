@@ -40,11 +40,11 @@ function fullName(p) { return [p.name, p.family].map(s => (s || "").trim()).filt
 function greetText(p) {
   const lk = lastJourneyKey();
   const tn = lk ? journeyTitleFor(lk, p) : "";
-  if (tn) return tn + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
+  if (tn) return tn + " عزیز! قدم‌به‌قدم همراهت هستیم.";
   const t = addressTitle(p);
-  if (t) return t + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
-  if (p.name) return p.name + " عزیز! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
-  return "زائر گرامی! قدم‌به‌قدم همراهت هستیم؛ همهٔ مرحله‌ها را آزادانه بخوان.";
+  if (t) return t + " عزیز! قدم‌به‌قدم همراهت هستیم.";
+  if (p.name) return p.name + " عزیز! قدم‌به‌قدم همراهت هستیم.";
+  return "زائر گرامی! قدم‌به‌قدم همراهت هستیم.";
 }
 function avatarHTML(p, cls) {
   if (!p.photo) return "";
@@ -260,7 +260,8 @@ function countdownHTML() {
    فقط JSON خوانا. ورودی فقط وقتی می‌نشیند که ساختارش درست باشد. */
 function exportBackup() {
   const data = { profile: loadProfile(), titles: getJourneyCompletions() };
-  ["umrah", "hajj", "atabat", "iran"].forEach(k => { data[k] = getProgress(k); });
+  /* بکاپ، پیشرفت مکه و مدینه را هم دارد تا بی‌صدا نیفتد. */
+  ["umrah", "hajj", "atabat", "iran", "makka", "madina"].forEach(k => { data[k] = getProgress(k); });
   const code = JSON.stringify(data);
   const el = $("pf-export");
   if (el) el.value = code;
@@ -272,11 +273,12 @@ function importBackup() {
   let data;
   try { data = JSON.parse(code); } catch (e) { return false; }
   if (!data || typeof data !== "object" || !data.profile || typeof data.profile !== "object") return false;
-  const okProgress = ["umrah", "hajj", "atabat", "iran"].every(k =>
+  /* کدهای قدیمیِ بی‌مکه و مدینه هم تمیز وارد می‌شوند (undefined مجاز است). */
+  const okProgress = ["umrah", "hajj", "atabat", "iran", "makka", "madina"].every(k =>
     data[k] === undefined || (Array.isArray(data[k]) && data[k].every(x => Number.isInteger(x))));
   if (!okProgress) return false;
   saveProfileData(Object.assign(defaultProfile(), data.profile));
-  ["umrah", "hajj", "atabat", "iran"].forEach(k => {
+  ["umrah", "hajj", "atabat", "iran", "makka", "madina"].forEach(k => {
     if (Array.isArray(data[k])) store.set(progressKey(k), data[k]);
   });
   if (data.titles && typeof data.titles === "object") store.set("zg-titles", data.titles);
@@ -289,7 +291,10 @@ function importBackup() {
    مرد: کربلایی / حاجی / مشهدی؛ زن: کربلاییه خانم / حاجیه خانم / مشهدیه خانم.
    «حاجیه خانم» صورت درست ادبی است، نه «حاجی خانم». اگر جنسیت انتخاب نشده
    باشد، پیش‌فرض خنثی «زائر» می‌آید، نه صورت مردانه. زمان تکمیل هر بخش در
-   zg-titles ذخیره می‌شود تا «آخرین سفر کامل‌شده» مشخص باشد. */
+   zg-titles ذخیره می‌شود تا «آخرین سفر کامل‌شده» مشخص باشد.
+   C11: اعطای خودکار عنوان مشهدی/مشهدیه تا تأیید مالک متوقف است؛ برای
+   ایران فقط نام خنثی برمی‌گردد (ورودی JOURNEY_TITLES سر جایش می‌ماند تا
+   با یک خط برگردد). */
 const JOURNEY_TITLES = {
   atabat: { m: "کربلایی", f: "کربلاییه خانم" },
   umrah:  { m: "حاجی", f: "حاجیه خانم" },
@@ -328,6 +333,8 @@ function lastJourneyKey() {
 }
 function journeyTitleFor(key, p) {
   if (!key || !JOURNEY_TITLES[key]) return "";
+  /* C11: برای ایران عنوان اعطا نمی‌شود؛ فقط نام خنثی. */
+  if (key === "iran") return fullName(p);
   const nm = fullName(p);
   if (p.gender === "خانم") {
     const base = JOURNEY_TITLES[key].f;
