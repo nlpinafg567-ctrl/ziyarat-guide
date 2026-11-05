@@ -48,23 +48,26 @@
       </span>
     </div>
     <h1>راهنمای زایرین عمار غزنه</h1>
-    <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم.</p></div>
-    <div id="home-continue"></div>
-    <div class="search-box">
-      <input id="home-search-input" placeholder="جست‌وجوی مرحله… (مثلاً کربلا، طواف نساء)" aria-label="جست‌وجوی مرحله" oninput="renderHomeSearch()">
-      <div id="home-search-results"></div>
-    </div>
     <div class="cards" id="home-cards"></div>
-    <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
-    <div style="display:grid;gap:13px;margin-top:13px">
-      <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (متن بزرگ)</button>
-      <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
-      <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
-      <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
-    </div>
-    <button class="btn install-btn" id="install-btn" style="margin-top:13px">📲 نصب اپ (دانلود و کار آفلاین)</button>
-    <div class="box small" id="install-help" style="display:none">
-      <p>برای نصب دستی: در مرورگر اندروید از منوی ⋮ گزینهٔ «افزودن به صفحهٔ اصلی» را بزن؛ در آیفون از دکمهٔ اشتراک Safari گزینهٔ «Add to Home Screen» را انتخاب کن. پس از نصب، اپ بدون اینترنت هم باز می‌شود.</p>
+    <button class="more-bar" id="home-more-btn" onclick="toggleHomeMore()" aria-expanded="false" aria-controls="home-more">☰ سایر بخش‌ها ▾</button>
+    <div id="home-more" hidden>
+      <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم.</p></div>
+      <div id="home-continue"></div>
+      <div class="search-box">
+        <input id="home-search-input" placeholder="جست‌وجوی مرحله… (مثلاً کربلا، طواف نساء)" aria-label="جست‌وجوی مرحله" oninput="renderHomeSearch()">
+        <div id="home-search-results"></div>
+      </div>
+      <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
+      <div style="display:grid;gap:13px;margin-top:13px">
+        <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (متن بزرگ)</button>
+        <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
+        <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
+        <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
+      </div>
+      <button class="btn install-btn" id="install-btn" style="margin-top:13px">📲 نصب اپ (دانلود و کار آفلاین)</button>
+      <div class="box small" id="install-help" style="display:none">
+        <p>برای نصب دستی: در مرورگر اندروید از منوی ⋮ گزینهٔ «افزودن به صفحهٔ اصلی» را بزن؛ در آیفون از دکمهٔ اشتراک Safari گزینهٔ «Add to Home Screen» را انتخاب کن. پس از نصب، اپ بدون اینترنت هم باز می‌شود.</p>
+      </div>
     </div>
   </section>
 
