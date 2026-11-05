@@ -40,6 +40,11 @@
 
   <!-- صفحهٔ اصلی -->
   <section id="view-home" class="view">
+    <div class="home-header">
+      <button class="hamburger-btn" id="home-more-btn" onclick="toggleHomeMore()" aria-expanded="false" aria-controls="home-more" aria-label="بخش‌های بیشتر">☰</button>
+      <img class="home-logo" src="assets/logo-ammar.png" alt="نماد عمار غزنه">
+      <h1>راهنمای زایرین عمار غزنه</h1>
+    </div>
     <div class="backbar">
       <span class="fontctl">
         <span class="fontlabel">متن</span>
@@ -47,9 +52,6 @@
         <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
-    <h1>راهنمای زایرین عمار غزنه</h1>
-    <div class="cards" id="home-cards"></div>
-    <button class="more-bar" id="home-more-btn" onclick="toggleHomeMore()" aria-expanded="false" aria-controls="home-more">☰ سایر بخش‌ها ▾</button>
     <div id="home-more" hidden>
       <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم.</p></div>
       <div id="home-continue"></div>
@@ -69,6 +71,7 @@
         <p>برای نصب دستی: در مرورگر اندروید از منوی ⋮ گزینهٔ «افزودن به صفحهٔ اصلی» را بزن؛ در آیفون از دکمهٔ اشتراک Safari گزینهٔ «Add to Home Screen» را انتخاب کن. پس از نصب، اپ بدون اینترنت هم باز می‌شود.</p>
       </div>
     </div>
+    <div class="cards" id="home-cards"></div>
   </section>
 
   <!-- کادر توضیحی آغاز (پس از اسپلش، پیش از گزینه‌ها) -->
@@ -325,6 +328,7 @@ const CONTACTS = {
 <script src="src/data/iran.js"></script>
 <script src="src/data/makka.js"></script>
 <script src="src/data/madina.js"></script>
+<script src="src/data/syria.js"></script>
 <script src="src/data/tours.js"></script>
 <script src="src/data/sources.js"></script>
 <script src="src/data/chatbot-kb.js"></script>
