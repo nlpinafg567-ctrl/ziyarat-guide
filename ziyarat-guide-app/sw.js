@@ -2,7 +2,7 @@
    کش پوستهٔ اپ برای کارکرد آفلاین. بدون وابستگی خارجی در زمان اجرا؛
    فقط لینک‌های تور مجازی بیرونی‌اند و آفلاین باز نمی‌شوند.
    با هر انتشار، نسخهٔ کش (CACHE) بالا می‌رود. */
-const CACHE = "zg-v12";
+const CACHE = "zg-v13";
 const FILES = [
   "./index.html",
   "./manifest.json",
@@ -77,6 +77,7 @@ const FILES = [
   "./src/data/iran.js",
   "./src/data/makka.js",
   "./src/data/madina.js",
+  "./src/data/syria.js",
   "./src/data/tours.js",
   "./src/data/sources.js",
   "./src/data/chatbot-kb.js",

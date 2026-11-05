@@ -13,7 +13,8 @@ const SECTIONS = {
      همان آیکون کعبهٔ عمره است (بدون تصویر تازه) و کارت «ادامهٔ سفر
      من» این دو بخش را نمی‌بیند تا رفتار چهار سفر موجود دست نخورد. */
   makka:  { title: "مکان‌های مکه",   icon: SECTION_ICONS.umrah, steps: MAKKA_STEPS },
-  madina: { title: "مکان‌های مدینه", icon: SECTION_ICONS.umrah, steps: MADINA_STEPS }
+  madina: { title: "مکان‌های مدینه", icon: SECTION_ICONS.umrah, steps: MADINA_STEPS },
+  syria:  { title: "زیارات سوریه", icon: SECTION_ICONS.umrah, steps: SYRIA_STEPS }
 };
 
 /* گزارش‌های فیسبوکیِ سطح بخش (نشانی‌ها عیناً از مالک).
@@ -58,19 +59,19 @@ function renderHome() {
   const cd = countdownHTML();
   $("home-continue").innerHTML = (cd ? `<p class="countdown">${cd}</p>` : "") +
     (t ? `<button class="continue-card" onclick="continueJourney()">▶ ادامهٔ سفر من: ${SECTIONS[t.key].title} — مرحلهٔ ${fa(t.id)}</button>` : `<p class="small">🎉 هر چهار سفر اصلی کامل شده است.</p>`);
-  /* ورود به خانه همیشه خلوت است: سطر «سایر بخش‌ها» بسته می‌شود. */
+  /* ورود به خانه همیشه خلوت است: فهرست سه‌خط بسته می‌شود. */
   const mx = $("home-more"), mb = $("home-more-btn");
   if (mx) mx.hidden = true;
-  if (mb) { mb.textContent = "☰ سایر بخش‌ها ▾"; if (mb.setAttribute) mb.setAttribute("aria-expanded", "false"); }
+  if (mb) { if (mb.setAttribute) mb.setAttribute("aria-expanded", "false"); if (mb.classList) mb.classList.remove("open"); }
 }
-/* سطر «سایر بخش‌ها» (۵ نوامبر ۲۰۲۶): خانه فقط چهار کشور را نشان می‌دهد؛
-   بقیه در یک سطر جمع‌اند که با زدن باز و بسته می‌شود. */
+/* فهرست سه‌خط خانه (۵ نوامبر ۲۰۲۶): خانه فقط چهار کشور را نشان می‌دهد؛
+   بقیه با دکمهٔ سه‌خط در بالای سمت راست باز و بسته می‌شوند. */
 function toggleHomeMore() {
   const box = $("home-more"), btn = $("home-more-btn");
   const willOpen = box.hidden !== false;
   box.hidden = !willOpen;
-  btn.textContent = willOpen ? "☰ سایر بخش‌ها ▴" : "☰ سایر بخش‌ها ▾";
   if (btn.setAttribute) btn.setAttribute("aria-expanded", String(willOpen));
+  if (btn.classList) { if (willOpen) btn.classList.add("open"); else btn.classList.remove("open"); }
 }
 /* ---------- ناوبری کشوری (ساختار تازهٔ صفحهٔ اصلی) ----------
    خانه فقط چهار دکمهٔ کشوری دارد؛ هر کشور شهرهایش را نشان می‌دهد و
@@ -82,13 +83,13 @@ function toggleHomeMore() {
 const COUNTRIES = {
   arabia: { title: "زیارات عربستان", flag: "assets/flags/saudi.svg" },
   iraq:   { title: "زیارات عراق",     flag: "assets/flags/iraq.svg" },
-  syria:  { title: "زیارت سوریه",     flag: "assets/flags/syria.svg" },
+  syria:  { title: "زیارات سوریه",     flag: "assets/flags/syria.svg" },
   iran:   { title: "زیارات ایران",     flag: "assets/flags/iran.svg" }
 };
 function countrySub(key) {
   return key === "arabia" ? "مدینه و مکه؛ عمره و تمتع"
     : key === "iraq" ? "نجف، کوفه، کربلا، کاظمین، سامرا"
-    : key === "syria" ? "دمشق و حلب — به‌زودی"
+    : key === "syria" ? "دمشق و حلب"
     : "مشهد، قم، شیراز، تهران";
 }
 const COUNTRY_CITIES = {
@@ -106,8 +107,8 @@ const COUNTRY_CITIES = {
     { id: "tehran",  title: "تهران",      section: "iran", ids: [4] }
   ],
   syria: [
-    { id: "damascus", title: "دمشق", section: null, ids: [] },
-    { id: "aleppo",   title: "حلب",  section: null, ids: [] }
+    { id: "damascus", title: "دمشق", section: "syria", ids: [1, 2, 3, 4, 5] },
+    { id: "aleppo",   title: "حلب",  section: "syria", ids: [6, 7] }
   ],
   arabia: [
     /* فاز ۱ب: مدینه ۷ گرهٔ تازه دارد (کارت‌های ۳ تا ۹ اینفوگرافیک مدینه)؛
@@ -253,8 +254,8 @@ function renderSection() {
     const p = loadProfile();
     const tn = journeyTitleFor(key, p);
     const photo = p.photo ? `<img class="cover-photo" src="${p.photo}" alt="عکس زائر">` : motifSVG(96);
-    /* C11: پیام خنثی تکمیل ایران، به‌جای عنوان مشهدی/مشهدیه. */
-    const h3 = key === "iran" ? "زیارت ایران تکمیل شد" : (tn ? "تبریک " + esc(tn) + "!" : "آفرین!");
+    /* C11: پیام خنثی تکمیل ایران و سوریه، به‌جای عنوان؛ عنوان سفر سوریه هم تا تصمیم مالک اعطا نمی‌شود. */
+    const h3 = key === "iran" ? "زیارت ایران تکمیل شد" : key === "syria" ? "زیارت سوریه تکمیل شد" : (tn ? "تبریک " + esc(tn) + "!" : "آفرین!");
     $("section-congrats").innerHTML = `<div class="box congrats">${photo}` +
       `<h3>🎉 ${h3}</h3>` +
       `<p>بخش «${sec.title}» را کامل کردی؛ این سفر در کارنامهٔ زیارتی‌ات ثبت شد.</p></div>`;
