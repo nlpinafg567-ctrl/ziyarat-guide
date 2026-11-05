@@ -7,7 +7,7 @@
    داخلی، بدون وابستگی خارجی. */
 const CARD_MODELS = {
   atabat: { title: "کارت زائر عتبات عالیات", greet: "السلام علیک یا أباعبدالله الحسین (ع)" },
-  umrah:  { title: "کارت زائر عمرهٔ مفرده", greet: "بسم الله الرحمن الرحیم" },
+  umrah:  { title: "کارت زائر عمرهٔ مفرده", greet: "" },
   hajj:   { title: "کارت زائر حج تمتع", greet: "لبیک اللهم لبیک" }
 };
 let currentCardModel = "atabat";
@@ -44,7 +44,7 @@ function renderCard(model) {
       `<img class="pcard-logo" src="assets/logo-ammar.png" alt="لوگوی عمار غزنه">` +
       `<p class="pcard-brand">شرکت سیاحتی و زیارتی عمار غزنه</p>` +
       `<p class="pcard-model">${m.title}</p>` +
-      `<p class="pcard-greet">${m.greet}</p>` +
+      (m.greet ? `<p class="pcard-greet">${m.greet}</p>` : "") +
       `<div class="pcard-mid">${cardPhotoArea(p)}` +
       `<div class="pcard-info"><p class="pcard-name">${esc(name)}</p>${cardSpecsHTML(p)}` +
       `<p><b>شماره تماس:</b> <a href="${CONTACTS.tel}">تماس مستقیم</a> · <a href="${CONTACTS.whatsapp}" target="_blank" rel="noopener">واتساپ</a></p></div></div>` +
@@ -118,7 +118,7 @@ async function downloadCard() {
   x.textAlign = "center";
   try {
     const logo = await loadImage("assets/logo-ammar.png");
-    const lw = 300, lh = Math.round(300 * logo.height / logo.width);
+    const lw = 240, lh = Math.round(240 * logo.height / logo.width);
     x.drawImage(logo, (W - lw) / 2, 30, lw, lh);
   } catch (e) { /* لوگو لود نشد: فقط متن برند می‌ماند */ }
   x.fillStyle = gold;
@@ -129,9 +129,9 @@ async function downloadCard() {
   x.fillText(m.title, W / 2, 392);
   x.fillStyle = gold;
   x.font = "28px Vazirmatn, Tahoma";
-  x.fillText(m.greet, W / 2, 432);
+  if (m.greet) x.fillText(m.greet, W / 2, 432);
   const photo = cardPhoto(p);
-  const px = 70, py = 455, pw = 150, ph = 150;
+  const px = 70, py = 435, pw = 170, ph = 170;
   if (photo) {
     try {
       const img = await loadImage(photo);
@@ -146,17 +146,22 @@ async function downloadCard() {
   } else {
     drawMotifCanvas(x, px + pw / 2, py + ph / 2, 52);
   }
-  x.textAlign = "right";
+  /* ناحیهٔ متن میانی: بین عکس (تا ۲۴۰) و QR (از ۷۶۰)؛ وسط آن ۵۰۰ است.
+     نام و مشخصات وسط‌چین در همین ناحیه‌اند تا هرگز زیر عکس یا QR نروند. */
+  const tx = 500, tw = 460;
+  x.textAlign = "center";
   x.fillStyle = ink;
-  x.font = "900 40px Vazirmatn, Tahoma";
-  x.fillText(name, W - 70, 500);
+  let fs = 40;
+  x.font = "900 " + fs + "px Vazirmatn, Tahoma";
+  while (fs > 24 && x.measureText(name).width > tw) { fs -= 2; x.font = "900 " + fs + "px Vazirmatn, Tahoma"; }
+  x.fillText(name, tx, 500);
   x.font = "26px Vazirmatn, Tahoma";
   let ty = 540;
-  if (p.city) { x.fillText("شهر: " + p.city, W - 70, ty); ty += 36; }
-  if (p.caravan) { x.fillText("کاروان: " + p.caravan, W - 70, ty); ty += 36; }
+  if (p.city) { x.fillText("شهر: " + p.city, tx, ty); ty += 36; }
+  if (p.caravan) { x.fillText("کاروان: " + p.caravan, tx, ty); ty += 36; }
   x.fillStyle = gold;
   x.font = "22px Vazirmatn, Tahoma";
-  x.fillText("فقط در گوشی خودت می‌ماند", W - 70, 620);
+  x.fillText("فقط در گوشی خودت می‌ماند", tx, 620);
   x.textAlign = "center";
   x.fillStyle = ink; x.font = "22px Vazirmatn, Tahoma";
   x.fillText("واتساپ عمار غزنه", W - 165, 448);

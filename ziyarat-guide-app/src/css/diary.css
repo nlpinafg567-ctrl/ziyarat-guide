@@ -2,3 +2,7 @@
    کتابچهٔ خاطرات: فرم ثبت خاطره و نمایش عکس. */
 .mem textarea{width:100%;min-height:84px;border:1px solid #ddd;border-radius:var(--r-8);padding:var(--sp-8);font-family:inherit}
 .mem img{max-width:100%;border-radius:var(--r-13);margin-top:var(--sp-8)}
+/* عکس خاطره در کتابچه (تصمیم مالک ۵ نوامبر): کامل و بدون برش، با عرض کامل ورودی
+   و ارتفاع بر اساس نسبت خود عکس؛ قاب طلایی و گوشهٔ گرد، هم‌زبان با بنرهای اپ. */
+.booklet-photo{width:100%;height:auto;display:block;
+  border-radius:var(--r-13);border:3px solid var(--gold);margin-top:var(--sp-8)}

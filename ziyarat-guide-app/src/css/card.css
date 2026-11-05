@@ -8,15 +8,15 @@
 .pcard-atabat{background:linear-gradient(165deg,#1d332b,#0D3B2E 55%,#081f18);color:#F7F3EA}
 .pcard-umrah{background:linear-gradient(165deg,#FFFEFB,#F7F3EA 55%,#f3e6c0);color:#0D3B2E}
 .pcard-hajj{background:linear-gradient(165deg,#1a5c49,#0D3B2E 55%,#083028);color:#F7F3EA}
-.pcard-logo{display:block;width:150px;max-width:55%;height:auto;margin:0 auto;
+.pcard-logo{display:block;width:120px;max-width:55%;height:auto;margin:0 auto;
   background:none;border:none;box-shadow:none}
 .pcard-brand{color:var(--gold);font-weight:900;margin-top:var(--sp-8)}
 .pcard-model{font-size:var(--fs-26);font-weight:900;margin-top:var(--sp-8)}
 .pcard-greet{color:var(--gold);font-weight:bold;margin-top:var(--sp-5)}
-.pcard-mid{display:flex;gap:var(--sp-13);align-items:center;margin-top:var(--sp-21);text-align:right}
-.pcard-photo{width:110px;height:110px;flex:none;object-fit:cover;border-radius:var(--r-13);
+.pcard-mid{display:flex;gap:var(--sp-13);align-items:center;margin-top:var(--sp-21);text-align:center}
+.pcard-photo{width:130px;height:130px;flex:none;object-fit:cover;border-radius:var(--r-13);
   border:3px solid var(--gold)}
-.pcard-motif{width:110px;height:110px;flex:none;display:grid;place-items:center}
+.pcard-motif{width:130px;height:130px;flex:none;display:grid;place-items:center}
 .pcard-info{flex:1}
 .pcard-name{font-size:var(--fs-21);font-weight:900}
 .pcard-slot{font-size:var(--fs-13);opacity:.85}

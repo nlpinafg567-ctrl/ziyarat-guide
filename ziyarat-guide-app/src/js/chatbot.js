@@ -17,8 +17,8 @@
    حریم خصوصی: گفت‌وگو فقط در حافظهٔ همین صفحه می‌ماند و ذخیره نمی‌شود.
    این فایل در Node هم بار می‌شود (برای آزمون بازیابی)؛ پس دسترسی به
    document فقط زیر نگهبان typeof است. */
-const CHATBOT_PROXY_URL = ""; /* خالی = پاسخ‌سازی هوشمند غیرفعال تا اتصال کلید.
-  فقط نشانی واسط سروری خود مالک اینجا می‌نشیند؛ هرگز کلید اینجا ننویسید. */
+const CHATBOT_PROXY_URL = "/api/chat"; /* واسط ورسل اپ؛ کلید فقط در Environment Variables
+  ورسل (GEMINI_API_KEY) است و از ۵ نوامبر ۲۰۲۶ آنجاست. هرگز کلید اینجا ننویسید. */
 
 const CHATBOT_STOPWORDS = ["از", "به", "در", "با", "که", "را", "و", "یا", "این", "آن", "است", "هست", "می", "برای", "تا", "هم", "نیز", "چه", "چطور", "چگونه", "کجا", "کجاست", "کی", "چرا", "آیا", "چند", "چقدر", "چیست", "کدام", "یک", "را"];
 const CHATBOT_CITY_FA = { mecca: "مکه", madina: "مدینه", najaf: "نجف", karbala: "کربلا", mashhad: "مشهد", qom: "قم" };
@@ -121,6 +121,7 @@ if (typeof document !== "undefined") {
     div.innerHTML = html;
     box.appendChild(div);
     box.scrollTop = box.scrollHeight;
+    return div;
   }
   function chatbotRenderEntry(e) {
     let html = "<b>" + chatbotEscape(e.title) + "</b><p>" + chatbotEscape(e.text) + "</p>" +
@@ -155,7 +156,7 @@ if (typeof document !== "undefined") {
     const input = chatbotEl("chat-input");
     const question = (q !== undefined ? q : (input ? input.value : "")).trim();
     if (!question) return;
-    chatbotAddMsg(chatbotEscape(question), "me");
+    const qEl = chatbotAddMsg(chatbotEscape(question), "me");
     if (input) input.value = "";
     const chunks = chatbotRetrieve(question, 3);
     if (!chunks.length) { chatbotAddMsg(chatbotNoMatch(), "bot"); return; }
@@ -173,14 +174,17 @@ if (typeof document !== "undefined") {
         } else {
           chunks.forEach(function (c) { chatbotAddMsg(chatbotRenderEntry(c), "bot"); });
         }
+        if (qEl && qEl.scrollIntoView) qEl.scrollIntoView({ block: "start" });
       }).catch(function () {
         const wait = document.querySelector("#chat-msgs .wait");
         if (wait) wait.remove();
         chunks.forEach(function (c) { chatbotAddMsg(chatbotRenderEntry(c), "bot"); });
+        if (qEl && qEl.scrollIntoView) qEl.scrollIntoView({ block: "start" });
       });
       return;
     }
     chunks.forEach(function (c) { chatbotAddMsg(chatbotRenderEntry(c), "bot"); });
+    if (qEl && qEl.scrollIntoView) qEl.scrollIntoView({ block: "start" });
   }
   function toggleChat() {
     const panel = chatbotEl("chat-panel");
@@ -190,6 +194,8 @@ if (typeof document !== "undefined") {
       chatbotEl("chat-status").textContent = chatbotStatusText();
       const input = chatbotEl("chat-input");
       if (input) input.focus();
+      const box = chatbotEl("chat-msgs");
+      if (box) box.scrollTop = box.scrollHeight;
     } else {
       panel.setAttribute("hidden", "");
     }
