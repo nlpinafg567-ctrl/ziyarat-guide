@@ -15,7 +15,28 @@ go = function (view) { if (view === "booklet") renderBooklet(); _go(view); };
 /* PWA: ثبت سرویس‌ورکر فقط روی http(s)؛ روی file:// بی‌صدا رد می‌شود. */
 if (typeof navigator !== "undefined" && "serviceWorker" in navigator &&
     typeof location !== "undefined" && (location.protocol === "http:" || location.protocol === "https:")) {
-  navigator.serviceWorker.register("sw.js").catch(function () {});
+  navigator.serviceWorker.register("sw.js").then(function (reg) {
+    /* P8: اگر ورکر تازه رسید (پس از انتشار)، اعلان «نسخهٔ تازه» بده تا
+       بازدیدکنندهٔ برگشتی نسخهٔ کهنه را نسخهٔ تازه نپندارد. */
+    function showUpdate() {
+      if (typeof document === "undefined" || document.getElementById("sw-update")) return;
+      var bar = document.createElement("div");
+      bar.id = "sw-update";
+      bar.innerHTML = "نسخهٔ تازهٔ راهنما رسید. <button id=\"sw-reload\">بارگذاری دوباره</button> <button id=\"sw-dismiss\" aria-label=\"بستن\">×</button>";
+      document.body.appendChild(bar);
+      var r = document.getElementById("sw-reload");
+      if (r) r.onclick = function () { location.reload(); };
+      var d = document.getElementById("sw-dismiss");
+      if (d) d.onclick = function () { bar.remove(); };
+    }
+    if (reg.waiting) showUpdate();
+    reg.addEventListener("updatefound", function () {
+      var nw = reg.installing;
+      if (nw) nw.addEventListener("statechange", function () {
+        if (nw.state === "installed" && navigator.serviceWorker.controller) showUpdate();
+      });
+    });
+  }).catch(function () {});
 }
 
 /* پیوند عمیق از اینفوگرافیک‌ها: #بخش-شمارهٔ مرحله، مثل #atabat-6.
