@@ -293,7 +293,7 @@ function importBackup() {
    باشد، پیش‌فرض خنثی «زائر» می‌آید، نه صورت مردانه. زمان تکمیل هر بخش در
    zg-titles ذخیره می‌شود تا «آخرین سفر کامل‌شده» مشخص باشد.
    C11: اعطای خودکار عنوان مشهدی/مشهدیه تا تأیید مالک متوقف است؛ برای
-   ایران فقط نام خنثی برمی‌گردد (ورودی JOURNEY_TITLES سر جایش می‌ماند تا
+   ایران و سوریه فقط نام خنثی برمی‌گردد (ورودی JOURNEY_TITLES سر جایش می‌ماند تا
    با یک خط برگردد). */
 const JOURNEY_TITLES = {
   atabat: { m: "کربلایی", f: "کربلاییه خانم" },
@@ -332,9 +332,10 @@ function lastJourneyKey() {
   return best;
 }
 function journeyTitleFor(key, p) {
-  if (!key || !JOURNEY_TITLES[key]) return "";
-  /* C11: برای ایران عنوان اعطا نمی‌شود؛ فقط نام خنثی. */
-  if (key === "iran") return fullName(p);
+  if (!key) return "";
+  /* C11: برای ایران و سوریه عنوان اعطا نمی‌شود؛ فقط نام خنثی (تا تصمیم مالک). */
+  if (key === "iran" || key === "syria") return fullName(p);
+  if (!JOURNEY_TITLES[key]) return "";
   const nm = fullName(p);
   if (p.gender === "خانم") {
     const base = JOURNEY_TITLES[key].f;
