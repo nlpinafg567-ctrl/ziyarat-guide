@@ -24,14 +24,12 @@
 .zcard span{font-size:var(--fs-13);color:#555}
 /* بنر باریک لبه‌تیز دربارهٔ ما — گرادیان زمردی چندلایه، قاب طلایی زیرین و
    سایهٔ عمیق؛ با نوار نوری مورب متحرک (تنها عنصر متحرک شاخص این صفحه) */
-.about-banner{position:relative;overflow:hidden;display:block;width:100%;margin-top:var(--sp-21);padding:var(--sp-13);
-  background:linear-gradient(180deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);color:#fff;font-size:var(--fs-21);font-weight:900;
-  border:none;border-bottom:3px solid var(--gold);border-radius:0;text-align:center;
+.about-banner{position:relative;overflow:hidden;display:block;width:100%;margin-top:var(--sp-13);padding:var(--sp-8) var(--sp-13);
+  background:linear-gradient(180deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);color:#fff;font-size:var(--fs-16);font-weight:900;
+  border:none;border-bottom:2px solid var(--gold);border-radius:var(--r-8);text-align:center;
   text-shadow:0 1px 2px rgba(0,0,0,.35);
-  box-shadow:0 8px 18px rgba(13,59,46,.30),inset 0 1px 0 rgba(255,255,255,.30),inset 0 -6px 12px rgba(0,0,0,.20)}
-.about-banner::after{content:"";position:absolute;top:0;bottom:0;width:34%;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);
-  animation:shine 4.5s ease-in-out infinite}
+  box-shadow:0 4px 10px rgba(13,59,46,.25)}
+.about-banner::after{display:none}
 @keyframes shine{0%{right:-34%}55%,100%{right:110%}}
 
 /* ---------- دکمهٔ نصب اپ (مورد ۲۸) ---------- */
@@ -40,7 +38,7 @@
 /* ---------- ناوبری کشوری (ساختار تازهٔ صفحهٔ اصلی) ----------
    دکمهٔ کشوری مثل کارت‌های پیشین است ولی به‌جای آیکون، پرچم دارد؛
    پرچم با ارتفاع ثابت و عرض خودکار می‌آید تا نسبت درستش هرگز کشیده نشود. */
-.country-btn{display:flex;align-items:center;gap:var(--sp-13);padding:var(--sp-13);
+.country-btn{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-13);padding:var(--sp-13);
   border-radius:var(--r-21);border:1px solid #d9c896;border-bottom:3px solid var(--gold);
   background:linear-gradient(160deg,#ffffff 0%,var(--white) 38%,#fdf3d7 78%,var(--cream-deep) 100%);
   box-shadow:0 10px 22px rgba(13,59,46,.16),0 3px 8px rgba(13,59,46,.10),
@@ -78,9 +76,9 @@
    بقیه (سلام، ادامهٔ سفر، جست‌وجو، دربارهٔ ما، حالت حرم، مشخصات، کارت،
    چک‌لیست، نصب) با دکمهٔ سه‌خط در بالای سمت راست باز می‌شوند و در
    ورود به خانه بسته‌اند. */
-.home-header{position:relative;text-align:center;padding-top:var(--sp-5)}
-.home-logo{height:72px;width:auto;display:block;margin:0 auto var(--sp-5)}
-.hamburger-btn{position:absolute;top:var(--sp-5);right:0;width:44px;height:44px;
+.home-header{position:relative;text-align:center;padding-top:var(--sp-13)}
+.home-logo{height:56px;width:auto;display:block;margin:0 auto var(--sp-8)}
+.hamburger-btn{position:absolute;top:var(--sp-5);right:0;width:auto;min-width:44px;height:44px;padding:0 var(--sp-13);display:flex;align-items:center;justify-content:center;gap:var(--sp-5);
   border:1px solid var(--gold);border-radius:var(--r-13);
   background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--emerald);
   font-size:var(--fs-21);font-weight:900;cursor:pointer}
@@ -88,3 +86,7 @@
 .hamburger-btn:active{transform:scale(.98)}
 #home-more{margin-top:var(--sp-8)}
 #home-more[hidden]{display:none}
+
+/* P9: نوار نازک طلایی پیشرفت زیر کارت کشور (بدون عدد/کلمه). */
+.country-progress{flex:1 1 100%;display:block;height:4px;border-radius:2px;background:#e8e0cf;overflow:hidden;margin-top:var(--sp-5)}
+.country-progress i{display:block;height:100%;background:var(--gold);border-radius:2px}
