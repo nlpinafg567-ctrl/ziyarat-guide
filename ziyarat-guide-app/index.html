@@ -54,19 +54,20 @@
     </div>
     <div id="home-more" hidden>
       <div class="greet-wrap" id="home-greet-wrap"><p>زائر گرامی! قدم‌به‌قدم همراهت هستیم.</p></div>
-      <div id="home-continue"></div>
       <div class="search-box">
         <input id="home-search-input" placeholder="جست‌وجوی مرحله… (مثلاً کربلا، طواف نساء)" aria-label="جست‌وجوی مرحله" oninput="renderHomeSearch()">
         <div id="home-search-results"></div>
       </div>
-      <button class="about-banner" onclick="go('about')">دربارهٔ ما</button>
-      <div style="display:grid;gap:13px;margin-top:13px">
-        <button class="btn gold" onclick="openHaram()">🕌 حالت حرم (متن بزرگ)</button>
-        <button class="btn" onclick="openProfile(false)">👤 مشخصات و نیابت من</button>
-        <button class="btn" onclick="openCardView()">🪪 کارت شناسایی من</button>
-        <button class="btn" onclick="openChecklist()">🎒 چک‌لیست وسایل سفر</button>
+      <p class="more-label">ابزار سفر من</p>
+      <button class="more-row" onclick="openHaram()"><span class="more-ic">🕌</span><span class="more-tx"><b>نمای سادهٔ حرم</b><small>متن بزرگ؛ فقط اعمال و دعا</small></span><span class="more-chev">‹</span></button>
+      <div class="more-grid">
+        <button class="more-card" onclick="openProfile(false)"><span class="more-ic">👤</span><span>مشخصات و نیابت من</span></button>
+        <button class="more-card" onclick="openCardView()"><span class="more-ic">🪪</span><span>کارت شناسایی من</span></button>
+        <button class="more-card" onclick="openChecklist()"><span class="more-ic">🎒</span><span>چک‌لیست وسایل سفر</span></button>
+        <button class="more-card install-btn" id="install-btn"><span class="more-ic">📲</span><span>نصب اپ</span></button>
       </div>
-      <button class="btn install-btn" id="install-btn" style="margin-top:13px">📲 نصب اپ (دانلود و کار آفلاین)</button>
+      <p class="more-label">دربارهٔ اپ</p>
+      <button class="about-banner more-row" onclick="go('about')"><span class="more-ic">ℹ️</span><span class="more-tx"><b>دربارهٔ ما</b><small>خدمات ویزا و ارتباط با عمار غزنه</small></span><span class="more-chev">‹</span></button>
       <div class="box small" id="install-help" style="display:none">
         <p>برای نصب دستی: در مرورگر اندروید از منوی ⋮ گزینهٔ «افزودن به صفحهٔ اصلی» را بزن؛ در آیفون از دکمهٔ اشتراک Safari گزینهٔ «Add to Home Screen» را انتخاب کن. پس از نصب، اپ بدون اینترنت هم باز می‌شود.</p>
       </div>
@@ -80,8 +81,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <div class="welcome-box">
@@ -97,25 +98,25 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
-    <h1>مشخصات زائر</h1>
+    <h1>مشخصات و نیابت من</h1>
     <div id="profile-body"></div>
   </section>
 
-  <!-- کارت شناسایی زائر -->
+  <!-- کارت شناسایی من -->
   <section id="view-card" class="view">
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
-    <h1>🪪 کارت شناسایی زائر</h1>
+    <h1>🪪 کارت شناسایی من</h1>
     <div id="card-body"></div>
   </section>
 
@@ -125,8 +126,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1>🎒 چک‌لیست وسایل سفر</h1>
@@ -143,8 +144,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1>دربارهٔ ما</h1>
@@ -203,8 +204,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1 id="section-title"></h1>
@@ -224,8 +225,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1 id="country-title"></h1>
@@ -238,8 +239,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1 id="city-title"></h1>
@@ -257,24 +258,24 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <div id="step-detail"></div>
   </section>
 
-  <!-- حالت حرم -->
+  <!-- نمای سادهٔ حرم -->
   <section id="view-haram" class="view">
     <div class="backbar">
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
-    <h1>🕌 حالت حرم</h1>
+    <h1>🕌 نمای سادهٔ حرم</h1>
     <p class="small">فقط اعمال و دعای همین مرحله، با متن بزرگ؛ بدون تور و نقشه، برای خواندن در حرم.</p>
     <div id="haram-body"></div>
   </section>
@@ -285,8 +286,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <div id="amal-detail"></div>
@@ -298,8 +299,8 @@
       <button class="backbtn" onclick="back()">→ بازگشت</button>
       <span class="fontctl">
         <span class="fontlabel">متن</span>
-        <button onclick="fontSize(-1)">الف−</button>
-        <button onclick="fontSize(1)">الف+</button>
+        <button onclick="fontSize(-1)" title="کوچک‌تر">الف−</button>
+        <button onclick="fontSize(1)" title="بزرگ‌تر">الف+</button>
       </span>
     </div>
     <h1>📖 کتابچهٔ خاطرات من</h1>
@@ -310,7 +311,7 @@
 </div>
 
 <!-- چت‌بات هوشمند: دکمهٔ شناور + پنل گفت‌وگو (گفت‌وگو ذخیره نمی‌شود) -->
-<button id="chat-fab" class="chat-fab" onclick="toggleChat()">💬</button>
+<button id="chat-fab" class="chat-fab" onclick="toggleChat()" aria-label="گفت‌وگو با راهنما">💬</button>
 <div id="chat-panel" class="chat-panel" hidden>
   <div class="chat-head"><b id="chat-title">پاسخ‌های آماده</b><button class="chat-x" onclick="toggleChat()" aria-label="بستن گفت‌وگو">✕</button></div>
   <p id="chat-status" class="chat-status"></p>

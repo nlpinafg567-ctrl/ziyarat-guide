@@ -20,11 +20,11 @@ p{font-size:var(--fs-16);margin:var(--sp-5) 0}
 /* دکمهٔ بازگشت — یک جای ثابت در همهٔ صفحه‌ها: بالای صفحه، سمت راست */
 .backbar{position:sticky;top:0;z-index:10;background:var(--white);padding:var(--sp-8) var(--sp-13);
   border-bottom:1px solid #e8e0cf;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--sp-8)}
-.backbtn{height:var(--btn-sm);padding:0 var(--sp-13);border-radius:var(--r-8);
+.backbtn{height:44px;padding:0 var(--sp-13);border-radius:var(--r-8);
   border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-size:var(--fs-16)}
 .backbtn:active{transform:translateY(2px)}
 .fontctl{display:flex;gap:var(--sp-5);flex:none;min-width:0;margin-inline-start:auto}
-.fontctl button{width:var(--btn-sm);height:var(--btn-sm);border-radius:var(--r-8);
+.fontctl button{width:44px;height:44px;border-radius:var(--r-8);
   border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-weight:bold}
 .btn{display:block;width:100%;height:var(--btn);border:none;border-radius:var(--r-13);
   background:linear-gradient(180deg,#1a5c49,var(--emerald));color:#fff;

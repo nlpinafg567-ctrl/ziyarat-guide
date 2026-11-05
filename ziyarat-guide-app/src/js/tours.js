@@ -4,7 +4,7 @@
    مرحله‌ای که تور معتبر ندارد، کادر نمی‌گیرد (صادقانه خالی می‌ماند). */
 function toursHTML(s) {
   if (!s.tours || !VIRTUAL_TOURS[s.tours]) return "";
-  let html = `<div class="box gold"><h3>۲. تورهای مجازی و پانوراما</h3><p class="small">لینک بیرونی؛ با لمس، مستقیم همان تور/پانوراما/تصویرها در مرورگر باز می‌شود:</p><ul>`;
+  let html = `<div class="box gold"><h3>تورهای مجازی و پانوراما</h3><p class="small">لینک بیرونی؛ با لمس، مستقیم همان تور/پانوراما/تصویرها در مرورگر باز می‌شود:</p><ul>`;
   VIRTUAL_TOURS[s.tours].forEach(t => html += `<li><a class="external" href="${t.url}" target="_blank" rel="noopener">${t.title}<span class="ttype">${t.type || "تور"}</span></a></li>`);
   html += `</ul></div>`;
   return html;
@@ -13,7 +13,7 @@ function toursHTML(s) {
 /* کارت لینک گزارش‌های فیسبوکیِ همین مرحله/مکان (نشانی‌ها عیناً از مالک). */
 function reportsHTML(s) {
   if (!s.reports || !s.reports.length) return "";
-  let html = `<div class="box gold"><h3>۳. 📣 گزارش کاروان‌های عمار غزنه</h3><p class="small">لینک بیرونی؛ با لمس، در فیسبوک باز می‌شود:</p><ul>`;
+  let html = `<div class="box gold"><h3>📣 گزارش کاروان‌های عمار غزنه</h3><p class="small">لینک بیرونی؛ با لمس، در فیسبوک باز می‌شود:</p><ul>`;
   s.reports.forEach(r => html += `<li><a class="external" href="${r.url}" target="_blank" rel="noopener">${r.title}</a></li>`);
   html += `</ul></div>`;
   return html;

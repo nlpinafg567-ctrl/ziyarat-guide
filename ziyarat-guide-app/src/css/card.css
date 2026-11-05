@@ -24,3 +24,7 @@
 .pcard-qr img{width:130px;height:130px;border-radius:var(--r-13);background:#fff;padding:5px}
 .pcard-qr span{display:block;font-size:var(--fs-13);margin-top:5px}
 .pcard-privacy{margin-top:var(--sp-13);font-size:var(--fs-13);opacity:.85}
+
+/* P1-07: در مدل روشن عمره، متن طلایی روی کرم خوانا نیست؛ برند و سلام
+   و QR در آن مدل زمردی‌اند (در دو مدل تیره، طلایی سر جایش می‌ماند). */
+.pcard-umrah .pcard-brand,.pcard-umrah .pcard-greet,.pcard-umrah .pcard-qr{color:var(--emerald)}
