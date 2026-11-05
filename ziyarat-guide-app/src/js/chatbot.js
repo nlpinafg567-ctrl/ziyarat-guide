@@ -13,7 +13,7 @@
      → { answer: string }
      راهنمای پرامپت سرور: فقط از روی همین قطعه‌ها جواب کوتاه و گرم
      به دری بده، منبع هر جمله را بگو، بیرون از قطعه‌ها چیزی نساز،
-     و حکم شرعی نامطمئن را به تماس انسانی ارجاع بده.
+     و حکم شرعی نامطمئن را به تماس با مسئول ارجاع بده.
    حریم خصوصی: گفت‌وگو فقط در حافظهٔ همین صفحه می‌ماند و ذخیره نمی‌شود.
    این فایل در Node هم بار می‌شود (برای آزمون بازیابی)؛ پس دسترسی به
    document فقط زیر نگهبان typeof است. */
@@ -23,6 +23,12 @@ const CHATBOT_PROXY_URL = "/api/chat"; /* واسط ورسل اپ؛ کلید فق
 const CHATBOT_STOPWORDS = ["از", "به", "در", "با", "که", "را", "و", "یا", "این", "آن", "است", "هست", "می", "برای", "تا", "هم", "نیز", "چه", "چطور", "چگونه", "کجا", "کجاست", "کی", "چرا", "آیا", "چند", "چقدر", "چیست", "کدام", "یک", "را"];
 const CHATBOT_CITY_FA = { mecca: "مکه", madina: "مدینه", najaf: "نجف", karbala: "کربلا", mashhad: "مشهد", qom: "قم" };
 const CHATBOT_SECTION_TITLES = { umrah: "عمرهٔ مفرده", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران" };
+
+/* سلام‌ها: فقط تطبیق دقیق پس از نرمال‌سازی — «سلام، طواف نساء چیست؟» سؤال واقعی است، نه سلام خالی. */
+const CHATBOT_GREETINGS = ["سلام", "سلام علیکم", "سلام و علیکم", "سلام علیکم و رحمه الله", "صبح بخیر", "شب بخیر", "خوبی", "چطوری"];
+function chatbotIsGreeting(s) {
+  return CHATBOT_GREETINGS.indexOf(chatbotNormalize(s)) !== -1;
+}
 
 function chatbotNormalize(s) {
   return (s || "").replace(/[\u064B-\u0655\u0670]/g, "").replace(/ـ/g, "")
@@ -140,7 +146,7 @@ if (typeof document !== "undefined") {
       html += "<button class=\"btn small\" onclick=\"go('" + e.goView + "')\">رفتن به صفحهٔ تماس</button>";
     }
     if (e.refer) {
-      html += "<p class=\"chat-src\">برای مورد شخصی خودت، با تماس انسانی اپ (صفحهٔ دربارهٔ ما) هماهنگ کن.</p>";
+      html += "<p class=\"chat-src\">برای مورد شخصی خودت، با مسئول اپ (صفحهٔ دربارهٔ ما) هماهنگ کن.</p>";
     }
     return html;
   }
@@ -151,7 +157,7 @@ if (typeof document !== "undefined") {
     } catch (err) {}
   }
   function chatbotNoMatch() {
-    return "<b>در منابع اپ چیزی برای این سؤال پیدا نشد.</b><p>جواب ساخته‌شده نمی‌دهم. اگر سؤالت شرعی یا شخصی است، از صفحهٔ «دربارهٔ ما» با انسان در تماس شو.</p>" +
+    return "<b>در منابع اپ چیزی برای این سؤال پیدا نشد.</b><p>فقط دربارهٔ زیارت‌های عربستان، ایران و عراق از من بپرس — مثلاً اعمال عمره و حج، زیارت کربلا و نجف، یا زیارت مشهد و قم.</p><p>اگر سؤالت شرعی یا شخصی است، از صفحهٔ «دربارهٔ ما» با مسئول در تماس شو.</p>" +
       "<button class=\"btn small\" onclick=\"go('about')\">رفتن به صفحهٔ تماس</button>";
   }
   /* زمینهٔ زائر برای واسط: فقط ساختارِ مجاز — خطاب محترمانه، قدم بعدی سفر و
@@ -195,6 +201,17 @@ if (typeof document !== "undefined") {
     if (!question) return;
     const qEl = chatbotAddMsg(chatbotEscape(question), "me");
     if (input) input.value = "";
+    /* سلام: جواب درست محلی، بدون واسط و بدون سهمیه؛ بار اول سلام ثابت + دعوت به سؤال، بعد کوتاه. */
+    if (chatbotIsGreeting(question)) {
+      if (!chatbotGreeted) {
+        chatbotAddMsg("<p>" + chatbotEscape(CHATBOT_GREETING) + "</p><p>سؤالت را بپرس؛ مثلاً اعمال عمره چیست یا ترتیب زیارت کربلا چگونه است؟</p>", "bot");
+        chatbotGreeted = true;
+      } else {
+        chatbotAddMsg("<p>سلام! در خدمتم؛ سؤالت را بپرس.</p>", "bot");
+      }
+      if (qEl && qEl.scrollIntoView) qEl.scrollIntoView({ block: "start" });
+      return;
+    }
     const chunks = chatbotRetrieve(question, 3);
     if (!chunks.length) { chatbotAddMsg(chatbotNoMatch(), "bot"); return; }
     if (chatbotStatus() === "proxy" && typeof fetch !== "undefined") {
