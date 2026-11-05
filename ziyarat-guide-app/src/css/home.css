@@ -73,14 +73,18 @@
 .search-box input{width:100%;height:30px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
 .search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:8px 13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
 
-/* ---------- سطر «سایر بخش‌ها» (۵ نوامبر ۲۰۲۶) ----------
-   خانه فقط چهار دکمهٔ کشوری را نشان می‌دهد؛ بقیه (سلام، ادامهٔ سفر،
-   جست‌وجو، دربارهٔ ما، حالت حرم، مشخصات، کارت، چک‌لیست، نصب) در یک
-   سطر جمع می‌شوند که با زدن باز می‌شود و در ورود به خانه بسته است. */
-.more-bar{display:block;width:100%;margin-top:var(--sp-13);padding:var(--sp-13);
+/* ---------- سربرگ خانه: نماد + دکمهٔ سه‌خط (۵ نوامبر ۲۰۲۶) ----------
+   خانه فقط چهار دکمهٔ کشوری دارد؛ نماد عمار غزنه در بالای صفحه است و
+   بقیه (سلام، ادامهٔ سفر، جست‌وجو، دربارهٔ ما، حالت حرم، مشخصات، کارت،
+   چک‌لیست، نصب) با دکمهٔ سه‌خط در بالای سمت راست باز می‌شوند و در
+   ورود به خانه بسته‌اند. */
+.home-header{position:relative;text-align:center;padding-top:var(--sp-5)}
+.home-logo{height:72px;width:auto;display:block;margin:0 auto var(--sp-5)}
+.hamburger-btn{position:absolute;top:var(--sp-5);right:0;width:44px;height:44px;
   border:1px solid var(--gold);border-radius:var(--r-13);
   background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--emerald);
-  font-family:inherit;font-size:var(--fs-16);font-weight:900;text-align:center;cursor:pointer}
-.more-bar:active{transform:scale(.98)}
+  font-size:var(--fs-21);font-weight:900;cursor:pointer}
+.hamburger-btn.open{background:var(--emerald);color:var(--white)}
+.hamburger-btn:active{transform:scale(.98)}
 #home-more{margin-top:var(--sp-8)}
 #home-more[hidden]{display:none}
