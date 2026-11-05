@@ -45,7 +45,7 @@ function renderBooklet() {
     const s = sec ? sec.steps.find(x => x.id === m.step) : null;
     return `<div class="box"><h3>${sec ? sec.title : ""} — ${s ? s.title : "مرحله"} — ${m.date}</h3>
       <p>${m.text || ""}</p>
-      ${m.photo ? `<img src="${m.photo}">` : ""}
+      ${m.photo ? `<img class="booklet-photo" src="${m.photo}" alt="عکس خاطره">` : ""}
       <button class="btn small gold" onclick="shareMemory(${i})">اشتراک‌گذاری</button></div>`;
   }).join("");
 }
