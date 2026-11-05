@@ -29,7 +29,7 @@
    بدون وابستگی؛ فقط fetch داخلی نود ۱۸ به بالا. */
 "use strict";
 
-const MODEL = "gemini-2.5-flash-lite"; /* فلش‌لایت: سهمیهٔ رایگان روزانه‌اش طبق گزارش‌ها بسیار بالاتر از فلش است (فلش برای کلید تازه حدود ۲۰/روز)؛ اگر گوگل نام مدل را عوض کرد، فقط همین سطر عوض می‌شود. */
+const MODEL = "gemini-3.5-flash-lite"; /* فلش‌لایت ۳٫۵: جایگزین ۲٫۵ که برای کاربران تازه بازنشسته شد (گوگل ۴۰۴ می‌دهد)؛ اگر گوگل نام مدل را عوض کرد، فقط همین سطر عوض می‌شود. */
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent";
 const MAX_QUESTION = 500;
 const MAX_CHUNK_TEXT = 2000;
