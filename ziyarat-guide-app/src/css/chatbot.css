@@ -15,16 +15,16 @@
 .chat-x{background:none;border:none;color:#fff;font-size:var(--fs-21);cursor:pointer}
 .chat-status{margin:0;padding:8px 13px;background:var(--cream-deep);color:var(--charcoal);
   font-size:var(--fs-13);line-height:1.6}
-.chat-msgs{overflow-y:auto;padding:13px;display:grid;gap:8px;min-height:120px}
+.chat-msgs{overflow-y:auto;padding:13px;display:grid;gap:8px;flex:1;min-height:0}
 .chat-msg{border-radius:var(--r-13);padding:8px 13px;font-size:var(--fs-16);line-height:1.7}
 .chat-msg.me{background:var(--emerald);color:#fff}
 .chat-msg.bot{background:var(--white);border:1px solid var(--gold-light);color:var(--charcoal)}
 .chat-msg p{margin:5px 0}
 .chat-src{font-size:var(--fs-13);color:var(--emerald-light)}
 .chat-link{display:block;margin:5px 0;color:var(--emerald-light)}
-.chat-quick{display:flex;flex-wrap:wrap;gap:5px;padding:0 13px 8px}
+.chat-quick{display:flex;flex-wrap:nowrap;gap:5px;padding:0 13px 8px;overflow-x:auto}
 .chat-chip{border:1px solid var(--gold);background:var(--white);color:var(--charcoal);
-  border-radius:21px;padding:5px 13px;font-size:var(--fs-13);cursor:pointer}
+  border-radius:21px;padding:5px 13px;font-size:var(--fs-13);cursor:pointer;flex:none}
 .chat-form{display:flex;gap:8px;padding:8px 13px 13px}
 .chat-form input{flex:1;height:34px;border:1px solid var(--gold);border-radius:var(--r-8);
   padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
