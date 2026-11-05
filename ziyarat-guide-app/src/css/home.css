@@ -72,3 +72,15 @@
 .search-box{margin-top:var(--sp-8)}
 .search-box input{width:100%;height:30px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
 .search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:8px 13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
+
+/* ---------- سطر «سایر بخش‌ها» (۵ نوامبر ۲۰۲۶) ----------
+   خانه فقط چهار دکمهٔ کشوری را نشان می‌دهد؛ بقیه (سلام، ادامهٔ سفر،
+   جست‌وجو، دربارهٔ ما، حالت حرم، مشخصات، کارت، چک‌لیست، نصب) در یک
+   سطر جمع می‌شوند که با زدن باز می‌شود و در ورود به خانه بسته است. */
+.more-bar{display:block;width:100%;margin-top:var(--sp-13);padding:var(--sp-13);
+  border:1px solid var(--gold);border-radius:var(--r-13);
+  background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--emerald);
+  font-family:inherit;font-size:var(--fs-16);font-weight:900;text-align:center;cursor:pointer}
+.more-bar:active{transform:scale(.98)}
+#home-more{margin-top:var(--sp-8)}
+#home-more[hidden]{display:none}

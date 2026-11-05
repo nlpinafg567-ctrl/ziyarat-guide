@@ -58,6 +58,19 @@ function renderHome() {
   const cd = countdownHTML();
   $("home-continue").innerHTML = (cd ? `<p class="countdown">${cd}</p>` : "") +
     (t ? `<button class="continue-card" onclick="continueJourney()">▶ ادامهٔ سفر من: ${SECTIONS[t.key].title} — مرحلهٔ ${fa(t.id)}</button>` : `<p class="small">🎉 هر چهار سفر اصلی کامل شده است.</p>`);
+  /* ورود به خانه همیشه خلوت است: سطر «سایر بخش‌ها» بسته می‌شود. */
+  const mx = $("home-more"), mb = $("home-more-btn");
+  if (mx) mx.hidden = true;
+  if (mb) { mb.textContent = "☰ سایر بخش‌ها ▾"; if (mb.setAttribute) mb.setAttribute("aria-expanded", "false"); }
+}
+/* سطر «سایر بخش‌ها» (۵ نوامبر ۲۰۲۶): خانه فقط چهار کشور را نشان می‌دهد؛
+   بقیه در یک سطر جمع‌اند که با زدن باز و بسته می‌شود. */
+function toggleHomeMore() {
+  const box = $("home-more"), btn = $("home-more-btn");
+  const willOpen = box.hidden !== false;
+  box.hidden = !willOpen;
+  btn.textContent = willOpen ? "☰ سایر بخش‌ها ▴" : "☰ سایر بخش‌ها ▾";
+  if (btn.setAttribute) btn.setAttribute("aria-expanded", String(willOpen));
 }
 /* ---------- ناوبری کشوری (ساختار تازهٔ صفحهٔ اصلی) ----------
    خانه فقط چهار دکمهٔ کشوری دارد؛ هر کشور شهرهایش را نشان می‌دهد و
@@ -82,7 +95,7 @@ const COUNTRY_CITIES = {
   iraq: [
     { id: "najaf",    title: "نجف",    section: "atabat", ids: [1] },
     { id: "kufa",     title: "کوفه",   section: "atabat", ids: [2] },
-    { id: "karbala",  title: "کربلا",  section: "atabat", ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] },
+    { id: "karbala",  title: "کربلا",  section: "atabat", ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24] },
     { id: "kazimayn", title: "کاظمین", section: "atabat", ids: [21] },
     { id: "samarra",  title: "سامرا",  section: "atabat", ids: [22, 23] }
   ],
@@ -169,7 +182,7 @@ function renderCity() {
   $("city-progress").style.width = (total ? Math.round(done * 100 / total) : 0) + "%";
   $("city-progress-text").textContent = total ? (done > 0 ? `${fa(done)} از ${fa(total)} مرحله تمام شده` : `${fa(total)} مرحله در پیش است`) : "";
   /* G2: زیرنویس یک‌سطره برای هر صفحهٔ شهری که شمارهٔ اولش ۱ نیست
-     (کربلا ۳–۲۰، سامرا ۲۲–۲۳، کوفه ۲، کاظمین ۲۱): شماره‌ها ترتیب کلی
+     (کربلا ۳–۲۰ و ۲۴، سامرا ۲۲–۲۳، کوفه ۲، کاظمین ۲۱): شماره‌ها ترتیب کلی
      سفر عتبات‌اند؛ نجف (شروع از ۱) زیرنویس ندارد. */
   const nonFirst = city.section === "atabat" && city.ids.length > 0 && Math.min(...city.ids) !== 1;
   $("city-note").textContent = nonFirst ? "شماره‌ها براساس ترتیب کلی مراحل سفر عتبات است." : "";
@@ -268,7 +281,7 @@ function renderSection() {
    آخر دکمهٔ بعدِ غیرفعال دارد.
    C12: ترتیب سراسری بخش در قبل/بعد حفظ شده است (طراحی عمدی)؛ نام شهر
    از نگاشت شهرهای کشور (COUNTRY_CITIES — همان دادهٔ مسیر شهر) در سربرگ
-   می‌آید («کربلا — مرحلهٔ ۳ از ۲۳») و هنگام عبور از شهر، در برچسب دکمهٔ
+   می‌آید («کربلا — مرحلهٔ ۳ از ۲۴») و هنگام عبور از شهر، در برچسب دکمهٔ
    قبل/بعد هم می‌آید؛ بخش‌های بی‌شهر (عمره/حج) بی‌تغییر می‌مانند. */
 function stepCityName(key, stepId) {
   if (typeof COUNTRY_CITIES === "undefined") return "";
