@@ -105,6 +105,8 @@ function chatbotStatus() { return CHATBOT_PROXY_URL ? "proxy" : "no-proxy"; }
 /* ---------- رابط کاربری (فقط در مرورگر) ---------- */
 if (typeof document !== "undefined") {
   const CHATBOT_QUICK = ["طواف نساء چیست؟", "ترتیب زیارت کربلا چگونه است؟", "میقات‌های عمره کدام‌اند؟", "محرمات احرام چند مورد است؟", "اعمال عمرهٔ مفرده چیست؟", "اعمال حج تمتع چیست؟", "دعای طواف چیست؟", "از جده چگونه محرم شوم؟", "تور مجازی نجف را بده", "آداب زیارت چیست؟"];
+  const CHATBOT_GREETING = "زایر محترم شرکت سیاحتی و زیارتی عمار غزنه، خوش آمدید! ما در خدمت شما هستیم تا سفری آسان و با معنویت و ارزان را تجربه کنید.";
+  let chatbotGreeted = false; /* سلام فقط پیام اول گفت‌وگو: اولین جواب ساخته‌شدهٔ همین بازدید. */
   function chatbotEl(id) { return document.getElementById(id); }
   function chatbotEscape(s) {
     return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -152,6 +154,41 @@ if (typeof document !== "undefined") {
     return "<b>در منابع اپ چیزی برای این سؤال پیدا نشد.</b><p>جواب ساخته‌شده نمی‌دهم. اگر سؤالت شرعی یا شخصی است، از صفحهٔ «دربارهٔ ما» با انسان در تماس شو.</p>" +
       "<button class=\"btn small\" onclick=\"go('about')\">رفتن به صفحهٔ تماس</button>";
   }
+  /* زمینهٔ زائر برای واسط: فقط ساختارِ مجاز — خطاب محترمانه، قدم بعدی سفر و
+     شمارش خاطره‌ها. متن و عکس خاطره‌ها و گفت‌وگوهای قبلی هرگز فرستاده
+     نمی‌شوند (قول حریم خصوصی اپ)؛ واسط فقط شمارش را می‌بیند. */
+  function chatbotContext() {
+    const ctx = {};
+    try {
+      if (typeof loadProfile === "function" && typeof fullName === "function") {
+        const p = loadProfile();
+        let address = "";
+        if (typeof addressTitle === "function") address = addressTitle(p) || "";
+        if (!address) address = fullName(p) || "";
+        if (address) ctx.address = address.slice(0, 100);
+      }
+      if (typeof nextJourneyTarget === "function" && typeof SECTIONS !== "undefined") {
+        const t = nextJourneyTarget();
+        if (t && SECTIONS[t.key]) {
+          const sec = SECTIONS[t.key];
+          const step = (sec.steps || []).find(function (s) { return s.id === t.id; });
+          ctx.nextJourney = (CHATBOT_SECTION_TITLES[t.key] || sec.title || t.key);
+          if (step) ctx.nextStep = step.title;
+          if (typeof getProgress === "function") {
+            ctx.done = getProgress(t.key).length;
+            ctx.total = (sec.steps || []).length;
+          }
+        }
+      }
+      if (typeof memories !== "undefined" && Array.isArray(memories) && memories.length) {
+        const counts = {};
+        memories.forEach(function (m) { if (m && m.section) counts[m.section] = (counts[m.section] || 0) + 1; });
+        ctx.memoryCounts = counts;
+        ctx.totalMemories = memories.length;
+      }
+    } catch (e) {}
+    return ctx;
+  }
   function sendChat(q) {
     const input = chatbotEl("chat-input");
     const question = (q !== undefined ? q : (input ? input.value : "")).trim();
@@ -164,12 +201,14 @@ if (typeof document !== "undefined") {
       chatbotAddMsg("<p>در حال ساختن پاسخ از روی منابع…</p>", "bot wait");
       fetch(CHATBOT_PROXY_URL, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: question, chunks: chunks.map(function (c) { return { title: c.title, source: c.source, text: c.text }; }) })
+        body: JSON.stringify({ question: question, chunks: chunks.map(function (c) { return { title: c.title, source: c.source, text: c.text }; }), context: chatbotContext() })
       }).then(function (r) { return r.json(); }).then(function (data) {
         const wait = document.querySelector("#chat-msgs .wait");
         if (wait) wait.remove();
         if (data && data.answer) {
-          chatbotAddMsg("<p>" + chatbotEscape(data.answer) + "</p>" +
+          let answer = data.answer;
+          if (!chatbotGreeted) { answer = CHATBOT_GREETING + "\n\n" + answer; chatbotGreeted = true; }
+          chatbotAddMsg("<p>" + chatbotEscape(answer) + "</p>" +
             "<p class=\"chat-src\">منبع‌ها: " + chunks.map(function (c) { return chatbotEscape(c.source); }).join("؛ ") + "</p>", "bot");
         } else {
           chunks.forEach(function (c) { chatbotAddMsg(chatbotRenderEntry(c), "bot"); });
