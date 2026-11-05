@@ -36,7 +36,7 @@ function renderCard(model) {
     `<button class="btn small${k === currentCardModel ? " gold" : ""}" onclick="renderCard('${k}')">${v.title.replace("کارت زائر ", "")}</button>`).join(" ");
   let html = `<div class="card-tabs">${tabs}</div>`;
   if (!name) {
-    html += `<div class="box"><h3>🪪 کارت شناسایی زائر</h3>` +
+    html += `<div class="box"><h3>🪪 کارت شناسایی من</h3>` +
       `<p>برای ساخت کارت، نخست نامت را در بخش مشخصات وارد کن.</p>` +
       `<button class="btn gold" onclick="openProfile(false)">رفتن به مشخصات</button></div>`;
   } else {

@@ -1,7 +1,7 @@
 /* راهنمای زیارت — diary
    خاطره و عکس: فقط در تلفن خود زائر می‌ماند؛ با دکمهٔ اشتراک‌گذاری قابل ارسال است. */
 function memoryHTML() {
-  return `<div class="box mem"><h3>۵. 📝 خاطرهٔ شخصی و عکس در این مکان</h3>
+  return `<div class="box mem"><h3>📝 خاطرهٔ شخصی و عکس در این مکان</h3>
     <textarea id="mem-text" placeholder="خاطره‌ات را اینجا بنویس..."></textarea>
     <input type="file" id="mem-photo" accept="image/*" style="margin-top:8px">
     <button class="btn small gold" style="margin-top:8px" onclick="saveMemory()">ثبت در کتابچهٔ خاطرات</button>
@@ -33,7 +33,7 @@ function renderBooklet() {
   const lk = lastJourneyKey();
   const tn = lk ? journeyTitleFor(lk, p) : "";
   const coverTitle = tn ? `سفرنامهٔ ${esc(tn)}` : (fullName(p) ? `سفرنامهٔ ${esc(fullName(p))}` : "سفرنامهٔ من");
-  const coverPhoto = p.photo ? `<img class="cover-photo" src="${p.photo}" alt="عکس زائر">` : motifSVG(120);
+  const coverPhoto = p.photo ? `<img class="cover-photo" src="${p.photo}" alt="عکس زائر" loading="lazy">` : motifSVG(120);
   let cover = `<div class="booklet-cover">${coverPhoto}<h2>📖 ${coverTitle}</h2>` +
     `<p class="small">${memories.length > 0 ? `${fa(memories.length)} خاطره در این سفرنامه است` : "هنوز خاطره‌ای در این سفرنامه نیست"}</p></div>`;
   if (!memories.length) { $("booklet-list").innerHTML = cover + `<p>هنوز خاطره‌ای ثبت نشده است.</p>`; return; }
@@ -45,7 +45,7 @@ function renderBooklet() {
     const s = sec ? sec.steps.find(x => x.id === m.step) : null;
     return `<div class="box"><h3>${sec ? sec.title : ""} — ${s ? s.title : "مرحله"} — ${m.date}</h3>
       <p>${m.text || ""}</p>
-      ${m.photo ? `<img class="booklet-photo" src="${m.photo}" alt="عکس خاطره">` : ""}
+      ${m.photo ? `<img class="booklet-photo" src="${m.photo}" alt="عکس خاطره" loading="lazy">` : ""}
       <button class="btn small gold" onclick="shareMemory(${i})">اشتراک‌گذاری</button></div>`;
   }).join("");
 }

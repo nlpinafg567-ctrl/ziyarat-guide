@@ -22,7 +22,7 @@ const CHATBOT_PROXY_URL = "/api/chat"; /* واسط ورسل اپ؛ کلید فق
 
 const CHATBOT_STOPWORDS = ["از", "به", "در", "با", "که", "را", "و", "یا", "این", "آن", "است", "هست", "می", "برای", "تا", "هم", "نیز", "چه", "چطور", "چگونه", "کجا", "کجاست", "کی", "چرا", "آیا", "چند", "چقدر", "چیست", "کدام", "یک", "را"];
 const CHATBOT_CITY_FA = { mecca: "مکه", madina: "مدینه", najaf: "نجف", karbala: "کربلا", mashhad: "مشهد", qom: "قم", mukhayam: "خیمه‌گاه", bayn: "بین الحرمین", museum: "موزهٔ حرم امام حسین (ع)", alqama: "علقمه", tiflan: "طفلان مسلم" };
-const CHATBOT_SECTION_TITLES = { umrah: "عمرهٔ مفرده", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران" };
+const CHATBOT_SECTION_TITLES = { umrah: "عمرهٔ مفرده", hajj: "حج تمتع", atabat: "عتبات عالیات", iran: "زیارات ایران", makka: "زیارات مکه", madina: "زیارات مدینه", syria: "زیارات سوریه" };
 
 /* سلام‌ها: فقط تطبیق دقیق پس از نرمال‌سازی — «سلام، طواف نساء چیست؟» سؤال واقعی است، نه سلام خالی. */
 const CHATBOT_GREETINGS = ["سلام", "سلام علیکم", "سلام و علیکم", "سلام علیکم و رحمه الله", "صبح بخیر", "شب بخیر", "خوبی", "چطوری"];
@@ -53,6 +53,9 @@ function chatbotBuildIndex() {
   if (typeof HAJJ_STEPS !== "undefined") sections.push(["hajj", HAJJ_STEPS]);
   if (typeof ATABAT_STEPS !== "undefined") sections.push(["atabat", ATABAT_STEPS]);
   if (typeof IRAN_STEPS !== "undefined") sections.push(["iran", IRAN_STEPS]);
+  if (typeof MAKKA_STEPS !== "undefined") sections.push(["makka", MAKKA_STEPS]);
+  if (typeof MADINA_STEPS !== "undefined") sections.push(["madina", MADINA_STEPS]);
+  if (typeof SYRIA_STEPS !== "undefined") sections.push(["syria", SYRIA_STEPS]);
   sections.forEach(function (pair) {
     const key = pair[0];
     (pair[1] || []).forEach(function (st) {
