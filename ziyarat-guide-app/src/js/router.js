@@ -7,6 +7,7 @@ const stack = ["splash"];
 function show(view) {
   document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
   $("view-" + view).classList.add("active");
+  if (view === "home") renderHome();
   window.scrollTo(0, 0);
 }
 function go(view) { stack.push(view); show(view); }
