@@ -35,7 +35,7 @@ const SECTION_REPORTS = {
 
 /* ---------- صفحهٔ اصلی ---------- */
 function nextJourneyTarget() {
-  for (const key of ["umrah", "hajj", "atabat", "iran"]) {
+  for (const key of ["umrah", "hajj", "atabat", "iran", "makka", "madina", "syria"]) {
     const sec = SECTIONS[key];
     if (getProgress(key).length < sec.steps.length) {
       return { key, id: currentId(key) };
@@ -48,21 +48,28 @@ function continueJourney() {
   if (t) { openSection(t.key); openStep(t.id); }
 }
 function openSectionAndStep(key, id) { openSection(key); openStep(id); }
+/* P9: پیشرفت هر کشور (مجموع بخش‌هایش) برای نوار طلایی زیر کارت کشور. */
+function countryProgress(key) {
+  const secs = key === "arabia" ? ["umrah", "hajj", "madina", "makka"] : key === "iraq" ? ["atabat"] : key === "iran" ? ["iran"] : ["syria"];
+  let done = 0, total = 0;
+  secs.forEach(k => { const sec = SECTIONS[k]; if (!sec) return; total += sec.steps.length; done += getProgress(k).length; });
+  return total ? Math.round(done * 100 / total) : 0;
+}
 function renderHome() {
   const p = loadProfile();
   $("home-greet-wrap").innerHTML = avatarHTML(p) + `<p>${greetText(p)}</p>`;
   $("home-cards").innerHTML = Object.entries(COUNTRIES).map(([key, c]) =>
     `<button class="country-btn" onclick="openCountry('${key}')">
       <img class="country-flag" src="${c.flag}" alt="پرچم ${c.title}" loading="lazy">
-      <div><b>${c.title}</b><span>${countrySub(key)}</span></div></button>`).join("");
+      <div><b>${c.title}</b><span>${countrySub(key)}</span></div><span class="country-progress"><i style="width:${countryProgress(key)}%"></i></span></button>`).join("");
   const t = nextJourneyTarget();
   const cd = countdownHTML();
   $("home-continue").innerHTML = (cd ? `<p class="countdown">${cd}</p>` : "") +
-    (t ? `<button class="continue-card" onclick="continueJourney()">▶ ادامهٔ سفر من: ${SECTIONS[t.key].title} — مرحلهٔ ${fa(t.id)}</button>` : `<p class="small">🎉 هر چهار سفر اصلی کامل شده است.</p>`);
+    (t ? `<button class="continue-card" onclick="continueJourney()">▶ ادامهٔ سفر من: ${SECTIONS[t.key].title} — مرحلهٔ ${fa(t.id)}</button>` : `<p class="small">🎉 همهٔ سفرها کامل شده است.</p>`);
   /* ورود به خانه همیشه خلوت است: فهرست سه‌خط بسته می‌شود. */
   const mx = $("home-more"), mb = $("home-more-btn");
   if (mx) mx.hidden = true;
-  if (mb) { if (mb.setAttribute) mb.setAttribute("aria-expanded", "false"); if (mb.classList) mb.classList.remove("open"); }
+  if (mb) { if (mb.setAttribute) mb.setAttribute("aria-expanded", "false"); if (mb.classList) mb.classList.remove("open"); const lb = (mb.querySelector ? mb.querySelector(".hamburger-label") : null); if (lb) lb.textContent = "بیشتر"; }
 }
 /* فهرست سه‌خط خانه (۵ نوامبر ۲۰۲۶): خانه فقط چهار کشور را نشان می‌دهد؛
    بقیه با دکمهٔ سه‌خط در بالای سمت راست باز و بسته می‌شوند. */
@@ -72,6 +79,8 @@ function toggleHomeMore() {
   box.hidden = !willOpen;
   if (btn.setAttribute) btn.setAttribute("aria-expanded", String(willOpen));
   if (btn.classList) { if (willOpen) btn.classList.add("open"); else btn.classList.remove("open"); }
+  const lb = (btn.querySelector ? btn.querySelector(".hamburger-label") : null);
+  if (lb) lb.textContent = willOpen ? "بستن" : "بیشتر";
 }
 /* ---------- ناوبری کشوری (ساختار تازهٔ صفحهٔ اصلی) ----------
    خانه فقط چهار دکمهٔ کشوری دارد؛ هر کشور شهرهایش را نشان می‌دهد و
@@ -129,7 +138,7 @@ function countryButtonsHTML(key) {
       `<button class="ritual-btn" onclick="openSection('umrah')">عمره</button>` +
       `<button class="ritual-btn" onclick="openSection('hajj')">تمتع</button></div>`;
   }
-  return `<div class="country-group">` + COUNTRY_CITIES[key].map(c => {
+  return (key === "syria" ? `<div class="box"><p>دمشق: حرم حضرت زینب (س)، آستانهٔ حضرت رقیه (س)، مقام رأس الحسین (ع)، مقام امام سجاد (ع)، قبرستان باب الصغیر؛ حلب: مشهد الحسین (ع) و مشهد محسن السقط.</p></div>` : "") + `<div class="country-group">` + COUNTRY_CITIES[key].map(c => {
     const sub = c.ids.length ? `${fa(c.ids.length)} مرحله` : "به‌زودی";
     return `<button class="city-btn" onclick="openCity('${key}','${c.id}')">${c.title}<span>${sub}</span></button>`;
   }).join("") + `</div>`;
@@ -185,15 +194,26 @@ function renderCity() {
   /* G2: زیرنویس یک‌سطره برای هر صفحهٔ شهری که شمارهٔ اولش ۱ نیست
      (کربلا ۳–۲۰ و ۲۴، سامرا ۲۲–۲۳، کوفه ۲، کاظمین ۲۱): شماره‌ها ترتیب کلی
      سفر عتبات‌اند؛ نجف (شروع از ۱) زیرنویس ندارد. */
-  const nonFirst = city.section === "atabat" && city.ids.length > 0 && Math.min(...city.ids) !== 1;
-  $("city-note").textContent = nonFirst ? "شماره‌ها براساس ترتیب کلی مراحل سفر عتبات است." : "";
+  /* P2: یادداشت ترتیب کلی برای شهرهایی که شمارهٔ اولشان ۱ نیست (کربلا،
+     سامرا، کوفه، کاظمین؛ حلب؛ قم، شیراز، تهران): شماره‌ها ترتیب کلی همان
+     سفر/زیارت‌اند، نه ترتیب داخل شهر. */
+  const orderNote = (function () {
+    if (!city.section || !city.ids.length || Math.min(...city.ids) === 1) return "";
+    if (city.section === "atabat") return "شماره‌ها براساس ترتیب کلی مراحل سفر عتبات است.";
+    if (city.section === "syria") return "شماره‌ها براساس ترتیب کلی مراحل زیارات سوریه است؛ حلب از ۶ ادامه می‌یابد.";
+    if (city.section === "iran") return "شماره‌ها براساس ترتیب کلی مراحل زیارت ایران است.";
+    return "";
+  })();
+  $("city-note").textContent = orderNote;
+  /* P13: اگر کل بخش شهری کامل شده، تبریک را همین‌جا (صفحهٔ شهر) نشان بده. */
+  $("city-congrats").innerHTML = (city.section && sec && sec.steps.length > 0 && getProgress(city.section).length === sec.steps.length) ? congratsHTML(city.section) : "";
   /* S1: در مکه و مدینه صحنه زیر مسیر می‌آید (مثل کربلا)؛ پس صحنه به
      تهِ مسیر افزوده می‌شود و جایگاه صحنه خالی می‌ماند.
      G1: خط نقطه‌چین مسیر فقط دور گره‌هاست — گره‌ها در .path خودشان
      پیچیده می‌شوند تا خط در آخرین گره تمام شود، نه در پدینگ تهِ
      مسیر یا جعبه‌های صحنه ادامه یابد. */
   const scene = citySceneHTML(city);
-  const nodes = steps.map(s => stageNodeHTML(city.section, s, currentId(city.section))).join("");
+  const nodes = steps.map(s => stageNodeHTML(city.section, s, currentId(city.section), city.title)).join("");
   const path = nodes ? `<div class="path">${nodes}</div>` : "";
   if (city.id === "makka" || city.id === "madina") {
     $("city-path").innerHTML = path + scene;
@@ -216,7 +236,10 @@ function openSection(key) {
    با CSS پنهان‌اند) تا شمارش و ترتیب آزمون‌ها به‌هم نخورد؛ خواندن آزاد
    است و فقط نما گروه‌بندی شده است. */
 let expandedCity = null;
-function stageNodeHTML(key, s, cur) {
+function stageNodeHTML(key, s, cur, strip) {
+  /* P10: در صفحهٔ شهر، پیشوند نام شهر از برچسب گره حذف می‌شود (دمشق — …)؛
+     عنوان کامل در صفحهٔ مرحله و جست‌وجو دست نمی‌خورد. */
+  const nodeTitle = (strip && s.title.indexOf(strip + " — ") === 0) ? s.title.slice(strip.length + 3) : s.title;
   /* خواندن آزاد: گره‌ها سه حالت دارند — تمام‌شده، جاری (نخستین ناتمام)،
      باز (قابل خواندن، نه قفل). هیچ گرهی disabled نیست. حالت فقط از
      رنگ دایرهٔ شماره خوانده می‌شود (سبز = تمام‌شده، طلایی = جاری)؛
@@ -224,7 +247,7 @@ function stageNodeHTML(key, s, cur) {
   const st = isDone(key, s.id) ? "done" : (s.id === cur ? "current" : "open");
   return `<button class="node ${st}" onclick="openStep(${s.id})">
       <span class="num">${fa(s.id)}</span>
-      <b>${s.title}</b></button>`;
+      <b>${nodeTitle}</b></button>`;
 }
 function sectionPathHTML(key, sec, cur) {
   if (key !== "atabat" || typeof ATABAT_CITIES === "undefined") {
@@ -247,25 +270,23 @@ function sectionPathHTML(key, sec, cur) {
   }).join("");
 }
 function toggleCity(i) { expandedCity = i; renderSection(); }
+/* P13: پیام تکمیل بخش — هم در صفحهٔ بخش، هم در صفحهٔ شهر (بخش‌های شهری
+   در مسیر عادی به صفحهٔ بخش نمی‌رسند، پس تبریک را در شهر هم می‌بینند). */
+function congratsHTML(key) {
+  const p = loadProfile();
+  const tn = journeyTitleFor(key, p);
+  const photo = p.photo ? `<img class="cover-photo" src="${p.photo}" alt="عکس زائر">` : motifSVG(96);
+  /* C11: پیام خنثی تکمیل ایران و سوریه، به‌جای عنوان؛ عنوان سفر سوریه هم تا تصمیم مالک اعطا نمی‌شود. */
+  const h3 = key === "iran" ? "زیارت ایران تکمیل شد" : key === "syria" ? "زیارت سوریه تکمیل شد" : (tn ? "تبریک " + esc(tn) + "!" : "آفرین!");
+  return `<div class="box congrats">${photo}<h3>🎉 ${h3}</h3><p>بخش «${SECTIONS[key].title}» را کامل کردی؛ این سفر در کارنامهٔ زیارتی‌ات ثبت شد.</p></div>`;
+}
 function renderSection() {
   const key = currentSection, sec = SECTIONS[key], cur = currentId(key);
   const done = getProgress(key).length, total = sec.steps.length;
-  if (done === total && total > 0) {
-    const p = loadProfile();
-    const tn = journeyTitleFor(key, p);
-    const photo = p.photo ? `<img class="cover-photo" src="${p.photo}" alt="عکس زائر">` : motifSVG(96);
-    /* C11: پیام خنثی تکمیل ایران و سوریه، به‌جای عنوان؛ عنوان سفر سوریه هم تا تصمیم مالک اعطا نمی‌شود. */
-    const h3 = key === "iran" ? "زیارت ایران تکمیل شد" : key === "syria" ? "زیارت سوریه تکمیل شد" : (tn ? "تبریک " + esc(tn) + "!" : "آفرین!");
-    $("section-congrats").innerHTML = `<div class="box congrats">${photo}` +
-      `<h3>🎉 ${h3}</h3>` +
-      `<p>بخش «${sec.title}» را کامل کردی؛ این سفر در کارنامهٔ زیارتی‌ات ثبت شد.</p></div>`;
-  } else {
-    $("section-congrats").innerHTML = "";
-  }
+  $("section-congrats").innerHTML = (done === total && total > 0) ? congratsHTML(key) : "";
   $("section-scene").innerHTML = (key === "hajj" ? `<div class="photobanner fullimg"><img src="assets/hajj-tamattu-hamshahri.jpg" alt="اینفوگرافیک مناسک حج" loading="lazy"><p class="photocredit">منبع تصویر: همشهری آنلاین</p></div><div class="photobanner fullimg"><img src="assets/hajj-tamattu-local.png" alt="اینفوگرافیک بومی مناسک حج تمتع، ۱۹ گام" loading="lazy"><p class="photocredit">اینفوگرافیک بومی عمار غزنه — خلاصهٔ آموزشی ۱۹ گام حج</p></div><div class="photobanner fullimg"><img src="assets/hajj-13-ammar.png" alt="اینفوگرافیک مناسک ۱۳گانهٔ حج" loading="lazy"><p class="photocredit">اینفوگرافیک عمار غزنه — با الهام از طرح تسنیم</p></div>` : key === "umrah" ? `<div class="photobanner fullimg"><img src="assets/umrah-steps-ammar.png" alt="اینفوگرافیک ۷ گام عمرهٔ مفرده" loading="lazy"><p class="photocredit">اینفوگرافیک عمار غزنه — ۷ عمل عمرهٔ مفرده</p></div>` : "") + sectionScene(key);
   if (key === "hajj") {
-    $("section-scene").innerHTML += `<div class="box literary"><h3>حج، سفرِ بازگشت به مردم</h3><p>حج، سفری از خویشتن به سوی خداست، همراه با مردم؛ نه فقط انجام چند عمل. در احرام، لباس‌ها یکی می‌شود تا برابری دیده شود: فقط بنده است و پروردگار. گرد خانهٔ خدا، مردم یک مرکز را می‌گردند؛ در سعی، حضرت هاجر (س) یاد می‌دهد تلاش برای زندگی، خودِ عبادت است. مقام حضرت ابراهیم (ع)، زائر را می‌خواند که ابراهیم‌وار بزید و بایستد. عرفه شناخت است، منا آمادگیِ گذشتن از دلبستگی‌هاست، و قربانی، رها کردن دلبستگیِ خویش. حجِ بزرگ‌تر، آن‌جاست که زائر از خدمت به خویش، به خدمت به مردم بازمی‌گردد؛ با آگاهی و مسئولیت.</p></div>` +
-      `<div class="box gold"><h3>چک‌لیست احکام اصلی حج تمتع (۱۳ عمل، نزد آیت‌الله العظمی سیستانی)</h3><p>۱ احرام از مکه (رکن) ۲ وقوف عرفات (رکن) ۳ وقوف مشعر (رکن) ۴ رمی عقبه ۵ قربانی ۶ حلق یا تقصیر ۷ طواف حج (رکن) ۸ نماز طواف ۹ سعی (رکن) ۱۰ طواف نساء ۱۱ نماز طواف نساء ۱۲ بیتوتهٔ منا در شب‌های ۱۱ و ۱۲ ۱۳ رمی سه‌گانه در روزهای ۱۱ و ۱۲.</p><p>ترتیب روز عید: رمی، قربانی، حلق یا تقصیر، طواف و نماز و سعی، طواف نساء، بازگشت به منا. زائر افغانستانی که فاصله‌اش بیش از ۸۸ کیلومتر است، وظیفه‌اش حج تمتع است.</p><p class="small">📖 منابع: مناسک حج آیت‌الله العظمی سیستانی و مناسک حج آیت‌الله العظمی فیاض و مناسک حج آیت‌الله العظمی محقق کابلی (رحمت الله علیه)؛ اختلاف‌های مشعر، رمی روز ۱۳ و حلق سال‌اولی در چت‌بات اپ آمده است.</p></div>`;
+    $("section-scene").innerHTML += `<div class="box literary"><h3>حج، سفرِ بازگشت به مردم</h3><p>حج، سفری از خویشتن به سوی خداست، همراه با مردم؛ نه فقط انجام چند عمل. در احرام، لباس‌ها یکی می‌شود تا برابری دیده شود: فقط بنده است و پروردگار. گرد خانهٔ خدا، مردم یک مرکز را می‌گردند؛ در سعی، حضرت هاجر (س) یاد می‌دهد تلاش برای زندگی، خودِ عبادت است. مقام حضرت ابراهیم (ع)، زائر را می‌خواند که ابراهیم‌وار بزید و بایستد. عرفه شناخت است، منا آمادگیِ گذشتن از دلبستگی‌هاست، و قربانی، رها کردن دلبستگیِ خویش. حجِ بزرگ‌تر، آن‌جاست که زائر از خدمت به خویش، به خدمت به مردم بازمی‌گردد؛ با آگاهی و مسئولیت.</p></div>`;
   }
   $("section-progress").style.width = (total ? Math.round(done * 100 / total) : 0) + "%";
   $("section-progress-text").textContent = done > 0 ? `${fa(done)} از ${fa(total)} مرحله تمام شده` : `${fa(total)} مرحله در پیش است`;
@@ -385,14 +406,14 @@ function renderStepDetail(id) {
 
 /* ---------- آکاردئون کارت‌های فرعی صفحهٔ مرحله ----------
    بنر و بلوک اصلی «تو چه باید بکنی؟ / چرا؟» همیشه باز می‌مانند؛
-   کارت‌های فرعی (شماره‌دار، اینفوگرافیک نقشه‌ای، حاجات، گذر ادبی)
+   کارت‌های فرعی (شماره‌دار، اینفوگرافیک نقشه‌ای، حاجات، سخنی پیش از زیارت)
    بسته شروع می‌شوند و هر بار فقط یکی باز است؛ زدن سربرگ کارت باز،
    همان را می‌بندد. کارت اول (عبادی و اعمال) پیش‌فرض باز است.
    در محیط آزمونِ بدون DOM واقعی، تابع بی‌صدا برمی‌گردد. */
 const ACC_TITLES = [
   "۱. مراحل عبادی و اعمال",
   "۲. تورهای مجازی و پانوراما",
-  "۳. 📣 گزارش‌های سفر",
+  "۳. 📣 گزارش کاروان‌های عمار غزنه",
   "۴. خودت را بسنج",
   "۵. 📝 خاطرهٔ شخصی و عکس در این مکان",
   "۶. 🖼 اینفوگرافیک کلی این مرحله",
@@ -403,7 +424,7 @@ function accordifyStep() {
   const detail = $("step-detail");
   if (!detail.querySelectorAll) return;
   /* کارت اول (عبادی و اعمال) پیش‌فرض باز است؛ بقیه بسته و تک‌باز.
-     گذر ادبی سربرگ ندارد و با برچسب «گذر ادبی» جمع می‌شود و هرگز
+     گذر ادبی سربرگ ندارد و با برچسب «سخنی پیش از زیارت» جمع می‌شود و هرگز
      کارتِ بازِ پیش‌فرض نیست. شمارهٔ نمایشی کارت‌های شماره‌دار، به
      ترتیب دیده‌شدن، از نو شماره می‌خورد (صفحهٔ بی‌تور/گزارش ۱،۲،۳،۴
      می‌خواند نه ۱،۴،۵،۶)؛ کارت‌های بی‌شماره شماره‌ای مصرف نمی‌کنند
@@ -414,7 +435,7 @@ function accordifyStep() {
     const h = card.querySelector("h3");
     let label = null;
     if (h && ACC_TITLES.includes(h.textContent.trim())) { label = h.textContent.trim(); h.remove(); }
-    else if (card.classList.contains("literary")) { label = "گذر ادبی"; }
+    else if (card.classList.contains("literary")) { label = "سخنی پیش از زیارت"; }
     else return;
     const m = label.match(/^([۰-۹]+)\.\s*(.*)$/);
     const shown = m ? (fa(++visibleNum) + ". " + m[2]) : label;
@@ -476,9 +497,19 @@ function searchSteps(q) {
   const needle = norm(q);
   if (!needle) return [];
   const out = [];
+  /* P11: نام بخش، کشور و شهرِ هر مرحله هم در شاخص جست‌وجو هست؛ پس
+     «سوریه» مرحله‌های سوریه و «کربلا» فقط مرحله‌های کربلا را می‌دهد. */
+  const sectionCountry = {};
+  const cityOf = {};
+  Object.entries(COUNTRY_CITIES).forEach(([ck, cities]) => {
+    cities.forEach(c => { sectionCountry[c.section] = COUNTRIES[ck].title; c.ids.forEach(id => { cityOf[c.section + "-" + id] = c.title; }); });
+  });
+  sectionCountry.umrah = COUNTRIES.arabia.title;
+  sectionCountry.hajj = COUNTRIES.arabia.title;
   Object.entries(SECTIONS).forEach(([key, sec]) => {
     sec.steps.forEach(s => {
-      if (norm(s.title).includes(needle) || norm(s.place || "").includes(needle)) out.push({ key, s });
+      const hay = norm(s.title + " " + (s.place || "") + " " + sec.title + " " + (sectionCountry[key] || "") + " " + (cityOf[key + "-" + s.id] || ""));
+      if (hay.includes(needle)) out.push({ key, s });
     });
   });
   return out;

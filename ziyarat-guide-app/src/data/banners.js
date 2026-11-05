@@ -51,7 +51,13 @@ const BANNERS = {
   "madina-1": "madina-uhud", "madina-2": "madina-quba",
   "madina-3": "madina-qiblatayn", "madina-4": "madina-saba",
   "madina-5": "madina-ghamama", "madina-6": "madina-ijabah",
-  "atabat-23": "atabat-balad"
+  "atabat-23": "atabat-balad",
+  /* بنرهای سوریه (P6، ۵ نوامبر ۲۰۲۶، چشم‌خوانی‌شده): بنر هر مرحله =
+     نامزد ۱ همان مرحله، جز ۱ که نامزد ۱ رد شد (بنر = ۱-۲) و ۷ که
+     بنر = ۷-۳ است (۷-۱ و ۷-۲ V&A، حقوق نامشخص). */
+  "syria-1": "syria-1", "syria-2": "syria-2", "syria-3": "syria-3",
+  "syria-4": "syria-4", "syria-5": "syria-5", "syria-6": "syria-6",
+  "syria-7": "syria-7"
 };
 /* اعتبار زیر هر بنر مرحله (zg-v7): چون بنرهای تازه همه از کامانز
    نیستند، اعتبار سخت‌کدشدهٔ «ویکی‌مدیا کامانز» در رندر با این نگاشت
@@ -81,6 +87,8 @@ const BANNER_CREDITS = {
   "madina-4": "عکس: ویکی‌مدیا کامانز",
   "madina-5": "عکس: ویکی‌مدیا کامانز",
   "madina-6": "عکس: ویکی‌مدیا کامانز",
-  "atabat-23": "عکس: ویکی‌مدیا کامانز"
+  "atabat-23": "عکس: ویکی‌مدیا کامانز",
+  "syria-1": "عکس: ویکی‌مدیا کامانز (عکس: امیر حسامی‌نژاد / تسنیم)",
+  "syria-7": "عکس: Syria Photo Guide (عکس: Daniel Demeter) — مجوز در دست بررسی"
 };
 const SECTION_BANNERS = { umrah: "kaaba", hajj: "kaaba", atabat: "ali", iran: "reza" };

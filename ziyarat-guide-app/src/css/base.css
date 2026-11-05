@@ -18,12 +18,12 @@ h1{font-size:var(--fs-26);color:var(--emerald);margin:var(--sp-8) 0;font-weight:
 h2{font-size:var(--fs-21);color:var(--emerald);margin:var(--sp-8) 0;font-weight:900}
 p{font-size:var(--fs-16);margin:var(--sp-5) 0}
 /* دکمهٔ بازگشت — یک جای ثابت در همهٔ صفحه‌ها: بالای صفحه، سمت راست */
-.backbar{position:sticky;top:0;z-index:10;background:var(--white);padding:var(--sp-8) 0;
-  border-bottom:1px solid #e8e0cf;display:flex;justify-content:space-between;align-items:center;gap:var(--sp-8)}
+.backbar{position:sticky;top:0;z-index:10;background:var(--white);padding:var(--sp-8) var(--sp-13);
+  border-bottom:1px solid #e8e0cf;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--sp-8)}
 .backbtn{height:var(--btn-sm);padding:0 var(--sp-13);border-radius:var(--r-8);
   border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-size:var(--fs-16)}
 .backbtn:active{transform:translateY(2px)}
-.fontctl{display:flex;gap:var(--sp-5);flex:none;margin-inline-start:auto}
+.fontctl{display:flex;gap:var(--sp-5);flex:none;min-width:0;margin-inline-start:auto}
 .fontctl button{width:var(--btn-sm);height:var(--btn-sm);border-radius:var(--r-8);
   border:1px solid var(--gold);background:var(--white);color:var(--emerald);font-weight:bold}
 .btn{display:block;width:100%;height:var(--btn);border:none;border-radius:var(--r-13);
@@ -44,3 +44,11 @@ p{font-size:var(--fs-16);margin:var(--sp-5) 0}
 
 /* برچسب کنترل قلم (۴ نوامبر ۲۰۲۶): «متن» کنار الف−/الف+ */
 .fontlabel{align-self:center;font-size:var(--fs-13);color:var(--charcoal);opacity:.7}
+
+/* P8: اعلان نسخهٔ تازه (پس از انتشار). */
+#sw-update{position:fixed;left:13px;right:13px;bottom:13px;z-index:50;background:var(--emerald);color:#fff;
+  border:1px solid var(--gold);border-radius:var(--r-13);padding:var(--sp-13);text-align:center;font-size:var(--fs-16);
+  box-shadow:0 8px 21px rgba(0,0,0,.3)}
+#sw-update button{background:var(--gold);color:var(--charcoal);border:none;border-radius:var(--r-8);
+  padding:var(--sp-5) var(--sp-13);font-weight:900;margin-inline-start:var(--sp-8);cursor:pointer}
+#sw-update #sw-dismiss{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}

@@ -2,7 +2,7 @@
    کش پوستهٔ اپ برای کارکرد آفلاین. بدون وابستگی خارجی در زمان اجرا؛
    فقط لینک‌های تور مجازی بیرونی‌اند و آفلاین باز نمی‌شوند.
    با هر انتشار، نسخهٔ کش (CACHE) بالا می‌رود. */
-const CACHE = "zg-v13";
+const CACHE = "zg-v14";
 const FILES = [
   "./index.html",
   "./manifest.json",
@@ -58,6 +58,13 @@ const FILES = [
   "./assets/banners/makka-zamzam.jpg",
   "./assets/banners/makka-muzdalifah.jpg",
   "./assets/banners/atabat-balad.jpg",
+  "./assets/banners/syria-1.jpg",
+  "./assets/banners/syria-2.jpg",
+  "./assets/banners/syria-3.jpg",
+  "./assets/banners/syria-4.jpg",
+  "./assets/banners/syria-5.jpg",
+  "./assets/banners/syria-6.jpg",
+  "./assets/banners/syria-7.jpg",
   "./src/css/variables.css",
   "./src/css/fonts.css",
   "./src/css/base.css",
