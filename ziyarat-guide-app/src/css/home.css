@@ -18,19 +18,14 @@
 .zcard .icon svg{width:60px;height:60px;filter:drop-shadow(0 6px 10px rgba(13,59,46,.35)) drop-shadow(0 2px 3px rgba(197,164,109,.45))}
 .zcard:active{transform:scale(.98)}
 .zcard.locked{opacity:.6}
-.zcard .tag{font-size:var(--fs-13);color:#967f3f;font-weight:bold}
+.zcard .tag{font-size:var(--fs-13);color:var(--emerald);font-weight:bold}
 .zcard b{font-size:var(--fs-21);color:var(--emerald);display:block;font-weight:900;
   text-shadow:0 1px 0 rgba(255,255,255,.8)}
 .zcard span{font-size:var(--fs-13);color:#555}
-/* بنر باریک لبه‌تیز دربارهٔ ما — گرادیان زمردی چندلایه، قاب طلایی زیرین و
-   سایهٔ عمیق؛ با نوار نوری مورب متحرک (تنها عنصر متحرک شاخص این صفحه) */
-.about-banner{position:relative;overflow:hidden;display:block;width:100%;margin-top:var(--sp-13);padding:var(--sp-8) var(--sp-13);
-  background:linear-gradient(180deg,#1a5c49 0%,var(--emerald) 55%,#083028 100%);color:#fff;font-size:var(--fs-16);font-weight:900;
-  border:none;border-bottom:2px solid var(--gold);border-radius:var(--r-8);text-align:center;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
-  box-shadow:0 4px 10px rgba(13,59,46,.25)}
+/* ردیف «دربارهٔ ما» در فهرست سه‌خط (فاز ۱ zg-v15) — مثل ردیف‌های ابزار:
+   سفید، آیکون‌دار، بی‌برق متحرک؛ بنر زمردی بزرگ پیشین حذف شد (P14). */
+.about-banner{position:relative;overflow:hidden}
 .about-banner::after{display:none}
-@keyframes shine{0%{right:-34%}55%,100%{right:110%}}
 
 /* ---------- دکمهٔ نصب اپ (مورد ۲۸) ---------- */
 .install-btn{width:100%}
@@ -62,20 +57,16 @@
 .city-btn span{font-size:var(--fs-13);color:#555;display:block;font-weight:400}
 .place-btn:active,.ritual-btn:active,.city-btn:active{transform:scale(.98)}
 
-/* کارت ادامهٔ سفر، شمارش معکوس و جست‌وجو (۴ نوامبر ۲۰۲۶) —
-   کارت ادامه تک‌خطی است (متن کامل در DOM می‌ماند؛ بلندیِ اضافه با
-   … بریده می‌شود) تا در خانه جای کمتری بگیرد و همچنان کار کند. */
-.continue-card{width:100%;text-align:right;padding:var(--sp-8) var(--sp-13);border:1px solid var(--gold);border-radius:var(--r-13);background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.countdown{font-weight:bold;color:var(--emerald)}
+/* جست‌وجو (کارت ادامهٔ سفر و شمارش معکوس در فاز ۱ zg-v15 حذف شدند؛
+   دستور مالک ۵ نوامبر ۲۰۲۶). */
 .search-box{margin-top:var(--sp-8)}
 .search-box input{width:100%;height:30px;border:1px solid var(--gold);border-radius:var(--r-8);padding:0 8px;font-family:inherit;font-size:var(--fs-16);background:var(--white)}
-.search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:8px 13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
+.search-item{display:block;width:100%;text-align:right;margin-top:5px;padding:13px;border:1px solid var(--gold-light);border-radius:var(--r-8);background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-16);cursor:pointer}
 
 /* ---------- سربرگ خانه: نماد + دکمهٔ سه‌خط (۵ نوامبر ۲۰۲۶) ----------
    خانه فقط چهار دکمهٔ کشوری دارد؛ نماد عمار غزنه در بالای صفحه است و
-   بقیه (سلام، ادامهٔ سفر، جست‌وجو، دربارهٔ ما، حالت حرم، مشخصات، کارت،
-   چک‌لیست، نصب) با دکمهٔ سه‌خط در بالای سمت راست باز می‌شوند و در
-   ورود به خانه بسته‌اند. */
+   بقیه (سلام، جست‌وجو، ابزار سفر، دربارهٔ ما) با دکمهٔ سه‌خط در بالای
+   سمت راست باز می‌شوند و در ورود به خانه بسته‌اند. */
 .home-header{position:relative;text-align:center;padding-top:var(--sp-13)}
 .home-logo{height:56px;width:auto;display:block;margin:0 auto var(--sp-8)}
 .hamburger-btn{position:absolute;top:var(--sp-5);right:0;width:auto;min-width:44px;height:44px;padding:0 var(--sp-13);display:flex;align-items:center;justify-content:center;gap:var(--sp-5);
@@ -90,3 +81,29 @@
 /* P9: نوار نازک طلایی پیشرفت زیر کارت کشور (بدون عدد/کلمه). */
 .country-progress{flex:1 1 100%;display:block;height:4px;border-radius:2px;background:#e8e0cf;overflow:hidden;margin-top:var(--sp-5)}
 .country-progress i{display:block;height:100%;background:var(--gold);border-radius:2px}
+/* برچسب عددی کنار نوار پیشرفت کشور (P2-10) — زمردیِ پررنگ: ‎#555 روی کرمِ ته‌کارت کم‌رنگ دیده می‌شد (دیده‌شده با چشم در شات ۳۹۰ فاز ۲). */
+.country-count{flex:1 1 100%;font-size:var(--fs-13);color:var(--emerald);font-weight:700}
+
+/* ---------- فهرست سه‌خط، بازطراحی فاز ۱ zg-v15 (۵ نوامبر ۲۰۲۶) ----------
+   گروه‌بندی با برچسب؛ حالت حرم ردیف تمام‌عرض با زیرنویس (سوییچ نیست،
+   نما است — پس برچسبش مقصد را می‌گوید نه وضعیت)؛ چهار ابزار کارت
+   آیکون‌دار فشردهٔ دو ستونه؛ چیپ آیکون یکدست طلایی در همهٔ ردیف‌ها. */
+.more-label{font-size:var(--fs-13);font-weight:900;color:var(--emerald);margin:var(--sp-21) 0 var(--sp-8);text-align:right}
+.more-row{display:flex;align-items:center;gap:var(--sp-13);width:100%;text-align:right;
+  padding:var(--sp-13);border-radius:var(--r-13);border:1px solid var(--gold);
+  background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--charcoal);
+  font-family:inherit;font-size:var(--fs-16);font-weight:900;cursor:pointer}
+.more-row:active{transform:scale(.98)}
+.about-banner.more-row{background:var(--white);border:1px solid var(--gold-light)}
+.more-tx{display:flex;flex-direction:column;gap:2px;flex:1;text-align:right;min-width:0}
+.more-tx small{font-size:var(--fs-13);color:#555;font-weight:400}
+.more-chev{color:var(--gold);font-size:var(--fs-21);line-height:1;flex:none}
+.more-ic{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%;
+  background:linear-gradient(180deg,#fdf8ec,#f3e6c2);border:1px solid var(--gold);font-size:var(--fs-21)}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-8);margin-top:var(--sp-8)}
+.more-card{display:flex;flex-direction:column;align-items:center;gap:var(--sp-8);
+  padding:var(--sp-13) var(--sp-8);border-radius:var(--r-13);border:1px solid var(--gold-light);
+  background:var(--white);color:var(--charcoal);font-family:inherit;font-size:var(--fs-13);
+  font-weight:900;cursor:pointer;text-align:center;line-height:1.6}
+.more-card:active{transform:scale(.98)}
+.more-card.install-btn{width:100%}

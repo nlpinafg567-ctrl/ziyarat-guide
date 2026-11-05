@@ -19,12 +19,16 @@
 /* سربرگ جریان مرحله (قدم‌به‌قدم): فقط «مرحلهٔ X از Y» و دو دکمه؛
    دکمهٔ غیرفعال در دو سر مسیر، چیدمان را ثابت نگه می‌دارد. */
 .stepflow{display:flex;align-items:center;gap:var(--sp-8);margin:0 0 var(--sp-8)}
-.stepflow-btn{flex:none;max-width:34%;white-space:normal;text-align:center;padding:8px;border:1px solid var(--gold);border-radius:var(--r-8);
+.stepflow-btn{flex:none;max-width:34%;white-space:normal;text-align:center;padding:13px 8px;border:1px solid var(--gold);border-radius:var(--r-8);
   background:linear-gradient(180deg,#fdf8ec,var(--cream-deep));color:var(--emerald);
   font-size:var(--fs-13);font-weight:900}
 .stepflow-btn:disabled{opacity:.35;border-color:#cbbf9f;cursor:default}
 .stepflow-mid{flex:1;text-align:center;color:var(--emerald);font-size:var(--fs-16)}
 .stepflow-mid b{display:block}
+/* مسیر کوچک بالای صفحهٔ مرحله (P1-03): خانه / کشور / شهر / مرحلهٔ N از M */
+.crumb{font-size:var(--fs-13);color:#555;margin-bottom:var(--sp-8)}
+.crumb button{background:none;border:none;padding:0;color:var(--emerald);font-size:inherit;font-weight:900;cursor:pointer}
+.crumb span{color:#555}
 /* مسیر اینفوگرافیک — خط شماره‌دار عمودی */
 .path{position:relative;margin:var(--sp-13) var(--sp-8);padding-right:var(--sp-34)}
 .path::before{content:"";position:absolute;right:21px;top:0;bottom:0;width:4px;
@@ -55,7 +59,7 @@
 .cityhead b{color:var(--emerald);font-size:var(--fs-16);font-weight:900;display:block}
 .cityhead span span{font-size:var(--fs-13);color:#555;display:block}
 .cityarrow{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-  background:var(--gold);color:#fff;font-weight:900}
+  background:var(--gold);color:var(--charcoal);font-weight:900}
 .citybody{display:none;padding:var(--sp-13) 0 0}
 .citybody.open{display:block}
 .citybody .node:last-child{margin-bottom:0}
@@ -130,7 +134,7 @@
    سربرگ دکمهٔ واقعی است (aria-expanded)؛ بدنه با گذر نرم باز و بسته می‌شود.
    بنر و بلوک اصلی «تو چه باید بکنی؟» آکاردئون نیستند و همیشه باز می‌مانند. */
 .acc-head{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-13);
-  width:100%;padding:0;background:none;border:none;cursor:pointer;
+  width:100%;min-height:44px;padding:5px 0;background:none;border:none;cursor:pointer;
   font:inherit;font-size:var(--fs-16);font-weight:900;color:var(--emerald);text-align:right}
 .acc-head .acc-arrow{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
   background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--emerald);
